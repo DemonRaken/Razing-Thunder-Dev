@@ -25,7 +25,7 @@ define tt = Character(kind=t, what_color="#4A86E8")#, cb_blipfile=None)
 
 define c = Character("Catalina Moreno", kind=bb, image="cata")
 
-
+define e = Character ("Esteban Rojas", kind=bb)
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
 define tg = Character("Thug", kind=bb)
