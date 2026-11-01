@@ -3,7 +3,7 @@ on:
     branches:
       - develop
       - preview
-      - live
+      - main
 
 # Job that runs on container image ghcr.io/bunnygungames/renpy-itch:latest
 jobs:
