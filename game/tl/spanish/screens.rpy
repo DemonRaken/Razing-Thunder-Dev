@@ -328,3 +328,23 @@ translate spanish strings:
     # game/screens.rpy:1083
     old "Opens the accessibility menu."
     new "Abre el menú de accesibilidad."
+
+# TODO: Translation updated at 2026-11-01
+
+translate spanish strings:
+
+    # game/screens.rpy:684
+    old "Upload Sync"
+    new "Subir sincronización"
+
+    # game/screens.rpy:688
+    old "Download Sync"
+    new "Descargar sincronización"
+
+    # game/screens.rpy:757
+    old "Transitions"
+    new "Transiciones"
+
+    # game/screens.rpy:1110
+    old "Start, Guide, B/Right Button"
+    new "Inicio, Guía, Botón B/Derecha"
