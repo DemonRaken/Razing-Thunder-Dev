@@ -1,4 +1,4 @@
-# Ren'Py Built-in Configuration
+﻿# Ren'Py Built-in Configuration
 define config.side_image_only_not_showing = True   # make side image not show when full body is shown.
 define config.say_attribute_transition = Dissolve(0.2, alpha=True)   # Always add a dissolve when expression changes
 
@@ -11,7 +11,7 @@ default preferences.text_cps = 30
 # name of the character.
 
 define bb = Character(ctc="ctc_horse", ctc_pause="ctc_horse", ctc_position="fixed",
-                      window_background="textbox1",
+                      window_background="textbox3",
                       callback=blip, cb_blipfile="audio/tick.wav")
 
 

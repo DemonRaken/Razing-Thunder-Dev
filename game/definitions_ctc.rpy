@@ -22,8 +22,8 @@ init python:
     # --- Step 3: Put it in the bottom-right corner ---
     ctc_horse_final = Transform(
         ctc_horse_anim,
-        xpos=0.83,     # 0.0 = left edge, 1.0 = right edge
-        ypos=0.99,     # 0.0 = top edge,  1.0 = bottom edge
+        xpos=0.81,     # 0.0 = left edge, 1.0 = right edge
+        ypos=0.98,     # 0.0 = top edge,  1.0 = bottom edge
         xanchor=1.0,   # anchor the right side of the image
         yanchor=1.0,   # anchor the bottom of the image
     )
