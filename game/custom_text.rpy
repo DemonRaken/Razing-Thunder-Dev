@@ -8,8 +8,8 @@ define gui.text_color = "#FFFFFF"       # White dialogue text
 define gui.name_text_color = "#FFD700"  # Gold character names
 
 ## Text Outline (for readability)
-define gui.text_outlines = [(2, "#000000", 0, 0)] # 2px black outline
-define gui.name_text_outlines = [(2, "#000000", 0, 0)]
+define gui.text_outlines = [(1, "#8C4704", 0, 0)] # 1px saddle brown outline
+define gui.name_text_outlines = [(1, "#8C4704", 0, 0)]
 
 ## Font Sizes
 define gui.text_size = 34  # Adjust for readability
