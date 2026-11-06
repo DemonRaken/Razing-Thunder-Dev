@@ -278,6 +278,8 @@ label act1:
 
   lt "Wasting no time, I enthusiastically put my phone away into my pocket and rushto get everything I need before heading to meet the person who made the request."
 
+  scene test fence
+
   tl "{b}9:20 AM. \nPlaza.{/b}"
 
   lt "This should be the place… Chispa makes it a cinch to get around in no time."
@@ -320,11 +322,20 @@ label act1:
 
   tt "My specialty is offering my services as a private investigator. Sadly, business on that front hasn't picked up lately, so-"
 
+  hide tony
+  show cata neutral
+
   c "—hey. I'm talking to you. Are you even listening?"
 
   t "Wha- sorry! I zoned out there for a sec."
 
+  hide cata
+  show tony what det neutral drop at vpunch, center
+
   c "Good grief. As I was saying, who you are is inconsequential, and my reputation precedes me, so let's keep introductions short."
+
+  show cata neutral at right
+  show tony smile drop at left
 
   tt "Geez… you sure know how to pick 'em, boss. This is gonna be one hell of a day…"
 
