@@ -11,7 +11,7 @@ default preferences.text_cps = 30
 # name of the character.
 
 define bb = Character(ctc="ctc_horse", ctc_pause="ctc_horse", ctc_position="fixed",
-                      window_background="textbox3",
+                      window_background="textbox5",
                       callback=blip, cb_blipfile="audio/tick.wav")
 
 
