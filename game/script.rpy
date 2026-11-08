@@ -212,9 +212,14 @@ label act1:
 
   ch "Neigh!"
 
+  hide leo
+  hide thug
+
   tl "{b}8:15 AM. \nName of Tony's Odd Jobs Agency.{/b}"
 
-  lt "Last night, we came across the person I was looking for shortly after. The guy hadn't run too far away, and it looked like the color drained from his face the moment I brought up the debt collector looking for him."
+  
+
+  lt leo neutral "Last night, we came across the person I was looking for shortly after. The guy hadn't run too far away, and it looked like the color drained from his face the moment I brought up the debt collector looking for him."
 
   lt "Getting him to spill the beans wasn't easy, but his reactions when Castillo's name was brought up said it all."
 
@@ -247,10 +252,15 @@ label act1:
   lt "...at least, I hope they aren't."
 
   lt "Either way, it's clear there is more than meets the eye! That's why today, I am going to talk to other victims of their ploys and gather clues to bring those fiends to justice—"
+  show leo
+  hide leo
+  
 
 # Make screen shake here because phone went off and maybe add photoshpped whatsapp conversation!!!1
 
   "{i}*RING!*{/i}" with vpunch
+
+  show leo closed
 
   l "…? Oh, I got a message."
 
@@ -258,11 +268,14 @@ label act1:
 
   l "You gotta be kidding me… why now of all times? I already cleaned all the windows yesterday!"
 
+  show leo yell
+
   l "I really don't want to open this, but I'll be in a world of pain later if I ignore it…"
 
   lt "*Shivers.*"
 
   lt "Tapping on the notification while letting out a deep sigh, I read what the boss sent me. "
+  show leo neutral
 
   lt "Yup. She's got a new gig for me. A special one at that, considering it's last-minute and happening today."
 
@@ -294,6 +307,9 @@ label act1:
 
   lt "I turn over to the voice addressing me with disdain."
 
+  show leo neutral at left
+  show cata neutral at right
+
   x "It's useless to show off whatever caretaker abilities you have. You won't be using them."
 
   l "What? I am not showing off. I came here on horseback from my workplace."
@@ -311,8 +327,6 @@ label act1:
 
   c "{color=#FF9900}Antonio Ortiz. {/color}I know."
 
-  hide leo neutral
-  hide thug
 
   show tony neutral
 

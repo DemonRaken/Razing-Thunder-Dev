@@ -4,10 +4,9 @@ screen language_select:
     vbox:
         xalign 0.5
         yalign 0.5
-        text "Elige tu idioma\nChoose your language"
-        textbutton "Español" action [Language("spanish"), Return()]
-        textbutton "English" action [Language(None), Return()]
-        
+        text "{color=#FF0000}Elige tu idioma/Choose your language{/color}"
+        textbutton "{color=#FF0000}Español{/color}" action [Language("spanish"), Return()]
+        textbutton "{color=#FF0000}English{/color}" action [Language(None), Return()]
 
 
 label splashscreen:
@@ -23,7 +22,8 @@ label splashscreen:
     scene white with dissolve
     with Pause(1)
 
-    show text "{color=#000000}Raken Presents...{/color}" with dissolve
+    #show text "{color=#FF0000}Una producción de Bravo Jeremias{/color}" with dissolve
+    show text "{color=#FF0000}Una producción de Raken...{/color}" with dissolve
     with Pause(2)
 
     hide text with dissolve
