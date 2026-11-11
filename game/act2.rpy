@@ -258,5 +258,204 @@ label act2:
             tt "The duo nods at me before going back to their business."
 
             tt "Alright, where to go next…?"
-                    
+    label paddock1:
+        scene placeholder_paddock
+        tl "Razing Thunder Derby. \nPaddock."
+        
+        tt "This place isn't too far from the stables. Looks like a few racers are getting their horses fitted with equipment and parading them around for the spectators."
+
+        tt "Others seem to be coming and going to the betting booth en masse—"
+
+        x "Hey, you."
+
+        t "…?"
+
+        show rena smile with dissolve at left
+
+        x "Yes, you, the guy with the dumb face."
+
+        tt "The hell?"
+
+        x "I saw you earlier tagging along with Catalina. I'm shocked that girl would spare any time to talk with friends."
+
+        t "Well… she hired me as her trainer."
+
+        x "Hah! So you're the new unlucky bastard, huh?"
+        show est smile with dissolve at right
+        x "Now, now, you just met the poor guy and you're already giving him a hard time?"
+
+        x "Sorry about that. I know she can be a handful."
+
+        x "Hey, don't go saying sorry on my behalf!"
+
+        t "It's alright. I'm Antonio Ortiz. From how you're dressed, I'm guessing you two will be competing in the race too?"
+
+        e "That's right. Pleasure to meet you. I'm Esteban Rojas, and this here—"
+
+        r "Renata Vargas. Burn that into your head, 'cause that name will be making headlines after I get first place."
+
+        e "Technically, you already won the previous race."
+
+        r "Yeah, but those dumbass officials voided the result and made us race again."
+
+        t "With good reason. If the horses are at risk, that takes precedence over—"
+
+        r "Who cares? It's just petty excuses. You don't want your ride fainting? Feed it properly, then. You won't see Picaro making a blunder like that."
+
+        r "Not like I would expect you to get it."
+
+        t "Why you…! Ugh, I'd better just ask what I need to and get out of here." 
+
+
+        # Dossier: Presenting evidence (mate)
+        label paddock1_presenting:
+            r "So you can be useful. I was feeling pretty thirsty."
+
+            r "This shit better not be lukewarm."
+
+            e "You don't have to drink it if you don't like it, Renata."
+
+            t "It isn't lukewarm! That'd defeat the point of carrying a thermos."
+
+            r "We'll see about that… *sip sip sip*"
+
+            r "…Hm. Hah! Not bad. I'll be keeping this."
+
+            t "Wha—oh, haha. Good one."
+
+            r "…"
+
+            e "Renata, I believe that's his…"
+
+            r "What? He can get another one."
+
+            tt "This was a mistake."
+        label paddock1_investigating:
+        label paddock1_topic1:
+            t "So you said Picaro is in good health, but do you know anything about the other jockeys' horses? Any idea why they keep collapsing…?"
+
+            r "How the hell should I know? You think I waste my time following those losers all day, huh?"
+
+            t "You could have overheard something or noticed something out of the ordinary, I don't know…!"
+
+            r "You wish. Even if I had, why should I tell you?"
+
+            e "Renata."
+
+            r "What? For all I know, he's behind it. He might even be trying to find out whether anyone's onto him."
+
+            t "I just want to know what's causing it so I can stop it!"
+
+            r "Hah, a puny guy like you? Catalina sent you on an errand to protect her mule?"
+
+            t "No. I'm doing it for the sake of all the competing horses, not just hers."
+
+            r "…Hmph."
+
+            e "That's very admirable. Unfortunately, there isn't much we can tell you. We double-checked the water supply and the food used here for signs of foul play, but everything seems clean."
+
+            t "You checked this yourselves?"
+
+            e "Yeah. No trainer wants to see another horse collapse, so most of us collaborated to see if we could find anything amiss."
+
+            r "We started checking crap after that dolt Valentina fell on her ass during the last race."
+
+            t "I see... Then, let me ask you something. Do the horses show any signs of exhaustion before the race? Or exhibit any unusual behavior?"
+
+            e "Not quite. Every horse is examined and saddled before the race begins. If they were feeling unwell to begin with, they wouldn't be cleared to participate."
+
+            e "If a horse is truly unwell, a professional will spot it immediately. They were perfectly healthy right up until the moment they fell."
+
+            t "Zero signs? Are you sure about that?"
+
+            e "I stake my reputation on it, Antonio. A trainer's eye doesn't miss these things."
+
+            tt "He sounds incredibly confident. But if the horses were truly fine, why did they collapse? Unless… he's lying about what he saw."
+
+            t "Have any collapsed after the race?"
+
+            r "Are you brain-dead? The races have only been stopped because horses fainted during them. What does it matter what happens afterward?"
+
+            e "It would certainly be concerning if horses were collapsing even after the event was postponed, but I'm not aware of anything like that happening."
+
+            t "I see…"
+
+            tt "I'd like to be as reassured as Esteban seems to be. But I wonder… Who actually performs these inspections? And how thorough are they, really? If there's room to manipulate the results, then…"
+        label paddock1_topic2:
+            t "What can you tell me about Catalina?"
+
+            r "HER? That ice queen makes Elsa look warm and friendly. Can't stand her."
+
+            tt "T-The one from the movie…?"
+
+            e "Her riding skills are remarkable, as expected from someone of her lineage. She's among the top contenders, and one we're keeping a close eye on."
+
+            r "Bah! I already beat her in the previous race, and I'll do it again today!"
+
+            t "Bitter rivals to the end, huh?"
+
+            e "It's only natural. Renata wants to beat the best and stand at the top."
+
+            r "It's especially sweet to take down some sheltered girl who's built her career on her parents' money."
+
+            e "That's selling her a little short, don't you think?"
+
+            r "Whatevs. All the wealth in the world means jack if you can't compete in the race."
+
+            tt "She's yelling at me, but she's brushing Pícaro like he's made of glass. Her hands are completely gentle with him."
+
+            t "Why wouldn't she be able to compete?"
+
+            r "You gotta have a trainer to help prep before the start of the race. The bare minimum legal obligations, you see. I'm certain the host would do without that if he could get away with it."
+
+            tt "That's concerning."
+
+            t "I've been wondering about that. What happened to her previous trainer? Why is it that no one would take the job?"
+
+            r "Cause no one wants to get involved in shady crap, that's why!"
+
+            t "Meaning…?"
+
+            r "She's behind all those accidents you mentioned, genius. She's been getting rid of anyone who stands in her way!"
+
+            r "It's pathetic, really. Things should be settled on the racetrack, not by using money, connections, or whatever to take out the competition. It means nothing if you win that way."
+
+            e "Those are just rumors, Antonio. There's no proof that Catalina has anything to do with the incidents."
+
+            r "Hmph. Believe what you want. I wouldn't get anywhere near that woman if I were you."
+
+            r "Though I guess in your case you can't avoid it. You're shit out of luck."
+
+            tt "So that's why nobody wanted the job…"
+
+            tt "I can't say I'm thrilled about being treated like some disposable placeholder."
+
+            tt "Still, that's not what I came here for. As long as she leaves me to my own devices, this arrangement works in my favor."
+        label paddock1_complete:         
+            e "Oh, look at the time. We'd better wrap things up here, Renata."
+
+            r "Yeah, yeah. The old geezers have had a good look at who's gonna leave everyone else in the dust by now."
+
+            t "You wanted the elderly to see Pícaro?"
+
+            r "Not just them, dumbass! Anyone here, really."
+
+            e "There are plenty of people who decide who to bet on just by watching the horses move around the parade ring. That's what makes this such an important moment to show off."
+
+            t "Oh, that makes sense…"
+
+            r "I wouldn't stick around out here this long if I had a choice, though. Watching me race before should be more than enough."
+
+            e "We have obligations, Renata. You wouldn't want to lose all that support from your sponsors, would you?"
+
+            r "…"
+
+            e "So, there you have it. Good luck to you, Antonio."
+
+            hide rena with dissolve
+            hide est with dissolve
+
+            tt "The two of them went back to resume the parade. Sponsors, huh...? Must be some kind of contractual obligation. I wonder how many other jockeys have to put up with that."
+
+            tt "I can't imagine Catalina being one of them, given what I've heard about her and her family's wealth. Ugh…"
     return

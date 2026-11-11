@@ -20,9 +20,12 @@ define tt = Character(kind=t, what_color="#4A86E8", what_outlines=[(2,"#000000",
 window_background="textbox6")#, cb_blipfile=None)
 
 define c = Character("Catalina Moreno", kind=bb, image="cata")
-define e = Character ("Esteban Rojas", kind=bb)
-define lu = Character ("Lucas Mendoza", kind=bb)
-define v = Character ("Vicente Ruiz", kind=bb)
+define r = Character ("Renata Vargas", kind=bb, image="rena")
+define lu = Character ("Lucas Mendoza", kind=bb, image = "luc")
+
+define e = Character ("Esteban Rojas", kind=bb, image="est")
+define v = Character ("Vicente Ruiz", kind=bb, image="vi")
+
 #NPCs
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
