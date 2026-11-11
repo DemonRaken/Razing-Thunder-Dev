@@ -51,7 +51,7 @@ screen dossier_ui():
 
                     textbutton "Button [i]":
                         xysize (200, 50)
-                        action Return(i)
+                        #action Return(i)
         hbox:
             yalign 0.125
             xalign 0.4
