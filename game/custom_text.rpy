@@ -8,20 +8,20 @@ define gui.text_color = "#FFFFFF"       # White dialogue text
 define gui.name_text_color = "#FFD700"  # Gold character names
 
 ## Text Outline (for readability)
-##define gui.text_outlines = [(1, "#000000", 0, 0)] # 1px saddle brown outline
+define gui.text_outlines = [(1, "#000000", 1, 1)] # 1px saddle brown outline
 define gui.name_text_outlines = [(1, "#8C4704", 0, 0)]
 
 ## Font Sizes
-define gui.text_size = 39  # Adjust for readability
+define gui.text_size = 37  # Adjust for readability
 define gui.name_text_size = 48 # Names slightly larger
 
 ## Name box customizations
-define gui.name_xpos = 0.015
+define gui.name_xpos = 0.005
 define gui.name_ypos = 5
 
 ## Dialogue customization
 define gui.dialogue_xpos = 0.12
-define gui.dialogue_ypos = 0.32
+define gui.dialogue_ypos = 0.33
 define gui.dialogue_width = 0.76
 
 # Textbox fine tweaking
