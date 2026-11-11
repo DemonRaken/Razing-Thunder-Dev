@@ -150,6 +150,31 @@ label act2:
 
         lu "I don't mind. There's still time before the race begins."
 
+        label racetrack1_investigating:
+            # Grandstands
+            # Check=Seats
+            t "I read this derby can accommodate about 100,000 people. It'll probably get a lot more crowded in a few hours, once the main event starts."
+            # When checking again
+            t "If I weren't working on a case, it'd be nice to kick back and just watch the races."
+
+            # Luxury Box
+            t "The luxury box. Us mortals who don't want to sell one of our kidneys are forbidden from entering."
+            t "A café, air conditioning, binoculars, an all-you-can-eat buffet, and an amazing view of the racetrack… Those VIP spectators have everything they could want."
+
+            # When checking again
+            t "While those first-class seats are reserved for VIPs, the café and the buffet aren't off-limits to the public."
+            t "I'm pretty sure whatever prices they're charging over there are way out of my wallet's league, though. I'll pass."
+
+            # Main Racetrack
+            # Monitor
+            t "A screen showing recordings of the racers. You can watch the jockeys here once they go out of sight, along with the current standings."
+            t "Given the aerial footage, they probably use a drone to film it."
+            # When checking again
+            t "Heh. It would be pretty funny if someone filmed everything on horseback, staying ahead of all the other jockeys. No one can keep up with the cameraman."
+        label racetrack1_presenting:
+            v "Gonna have to turn you down, Antonio. On Lucas' behalf, that is!"
+            v "Can't let the jockey drink something weird before the race. I'll take the hit."
+            lu "You just want to hog it for yourself."
         label racetrack1_topic1:
             t "Know anything about the horses that keep collapsing mid-race?"
 
