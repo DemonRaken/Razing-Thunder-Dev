@@ -42,22 +42,12 @@ label CE_end:
    $ renpy.block_rollback()
    return
 
-
-
-label testCE:
-   menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
-      "Jump to DeleteMe":
-            jump deleteme
-      "Jump to Act1":
-            jump act1
-
 label testCataCE:
    show screen dossier_icon
    t "Hello, Cata, I've got up a corner. Kabadon!"
    c "Oh no!"
    t "oh yes!"
    jump cata_flawed_testimony_CE
-
 
 label cata_flawed_testimony_CE:
    call CE_start

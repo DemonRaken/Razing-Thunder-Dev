@@ -1,5 +1,10 @@
 define config.overlay_screens += ["dossier_icon"]
 
+#style dossier:
+
+style dossier_text:
+    color "#000000"
+
 screen dossier_ui():
     modal True
     zorder 10
@@ -15,31 +20,87 @@ screen dossier_ui():
         #ysize 400
         #modal True
 
-        vpgrid:
-
-            cols 4
-            draggable True
-            mousewheel True
-
-            text "Top-Left"
-            text "Top-Right"
-        
-            text "Center-Left"
-            text "Center-Right"
-
-            text "Bottom-Left"
-            text "Bottom-Right"
-
-
+        vbox:
             xalign 0.25
-            yalign 0.3
-    
-            for i in range(1, 11):
+            yalign 0.55
+            label "Items":
+                xalign 0.5
+                yalign 0.5
+            vpgrid:
 
-                textbutton "Button [i]":
-                    xysize (200, 50)
-                    action Return(i)
+                cols 3
+                spacing 5
+                draggable True
+                mousewheel True
+                ysize 650
+                xsize 560
+                scrollbars "vertical"
 
+                text "Top-Left"
+                text "Top-Right"
+            
+                text "Center-Left"
+                text "Center-Right"
+
+                text "Bottom-Left"
+                text "Bottom-Right"
+
+
+        
+                for i in range(1, 61):
+
+                    textbutton "Button [i]":
+                        xysize (200, 50)
+                        action Return(i)
+        hbox:
+            yalign 0.125
+            xalign 0.4
+            spacing 30
+            imagebutton:
+                idle "button-sel"
+                idle_foreground Text(_("Evidence"), xalign=0.5, yalign=0.5)
+                #hover "button-sel-hover"
+                hover_foreground Text(_("Evidence"), xalign=0.5, yalign=0.5)
+                action Return()   
+            imagebutton:
+                idle "button-empty"
+                idle_foreground Text(_("Profiles"), xalign=0.5, yalign=0.5)
+                #hover "button-empty-hover"
+                hover_foreground Text(_("Profiles"), xalign=0.5, yalign=0.5)
+                action Return()
+            imagebutton:
+                idle "button-empty"
+                idle_foreground Text(_("Notes"), xalign=0.5, yalign=0.5)
+                #hover "button-empty-hover"
+                hover_foreground Text(_("Notes"), xalign=0.5, yalign=0.5)
+                action Return()
+            imagebutton:
+                idle "button-empty"
+                idle_foreground Text(_("Map"), xalign=0.5, yalign=0.5)
+                #hover "button-empty-hover"
+                hover_foreground Text(_("Map"), xalign=0.5, yalign=0.5)
+                action Return()
+
+        vbox:
+            xalign 0.75
+            yalign 0.60
+            xsize 550
+            label "Whatever item Name is maybe":
+                xalign 0.5
+            frame:
+                xpadding 10
+                ypadding 10
+                xalign 0.5
+                add "evidence-mate" xalign 0.5 ysize 200 xsize 200
+
+            fixed:
+                xfill True
+                ysize 3
+                add Solid("#ff0000") 
+            text "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel dolor nunc. Donec ac tempor augue, eget euismod diam. Sed cursus quam id felis blandit.":
+                style "dossier_text"
+            
+            
         vbox:
             xalign 0.94
             yalign 0.4
