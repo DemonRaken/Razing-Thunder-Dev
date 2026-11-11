@@ -21,6 +21,8 @@ window_background="textbox6")#, cb_blipfile=None)
 
 define c = Character("Catalina Moreno", kind=bb, image="cata")
 define e = Character ("Esteban Rojas", kind=bb)
+define lu = Character ("Lucas Mendoza", kind=bb)
+define v = Character ("Vicente Ruiz", kind=bb)
 #NPCs
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
