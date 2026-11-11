@@ -28,6 +28,7 @@
 
 label act2:
     scene placeholder_stables
+    with dissolve
     tl "9:40 AM.\nRazing Thunder Derby.\nStables."
 
     tt "Whew… we're finally done with all the paperwork. I'm \"{color=#FF9900}Dama de Plata's{/color}\" trainer now, even if only in name."
@@ -103,7 +104,7 @@ label act2:
         x "Keep letting your nerves control the reins and you'll burn through the animal's stamina before you reach the halfway point of the track. If you don't fall off first, that is."
 
         # Lucas sprite here.
-        show lucas test at left with dissolve
+        show lu test at left with dissolve
         x "I know. But I already fell behind in the last race. I can't pull any punches."
 
         tt "Overhearing their conversation, I hop over the railing and invite myself into their chat."
@@ -270,7 +271,7 @@ label act2:
 
         t "…?"
 
-        show rena smile with dissolve at left
+        show rena smile at left with dissolve 
 
         x "Yes, you, the guy with the dumb face."
 
@@ -281,7 +282,7 @@ label act2:
         t "Well… she hired me as her trainer."
 
         x "Hah! So you're the new unlucky bastard, huh?"
-        show est smile with dissolve at right
+        show est smile at right with dissolve 
         x "Now, now, you just met the poor guy and you're already giving him a hard time?"
 
         x "Sorry about that. I know she can be a handful."
@@ -458,4 +459,706 @@ label act2:
             tt "The two of them went back to resume the parade. Sponsors, huh...? Must be some kind of contractual obligation. I wonder how many other jockeys have to put up with that."
 
             tt "I can't imagine Catalina being one of them, given what I've heard about her and her family's wealth. Ugh…"
-    return
+    label stables1:
+        scene placeholder_stables
+        # Only after moving areas once at least.
+        tl "Razing Thunder Derby.\n Stables."
+        
+        show cata yell at right with dissolve
+        c "I told you already, I've got that matter handled. You can buzz off now."
+
+        t "…?"
+        show seb smile at left with dissolve
+        x "Nonsense! I know your situation very well. There's no need to put on a tough act."
+
+        show cata angry
+        c "It's not an act. It's reality."
+
+        x "So stubborn. I can get in touch with one of my men in no time, really. All you have to do is—"
+        
+        show cata smile
+        c "…Great timing. Look over there. My trainer is back."
+
+        x "What?"
+
+        t "…Hey there! How's it going?"
+
+        x "This chump with the scar? He isn't even dressed for the job!"
+
+        tt "Excuse me!? My clothes are very classy!"
+
+        show cata smile3
+        c "It doesn't matter. All the paperwork has been taken care of. You can check with the desk if you don't believe me."
+
+        x "Tch. That's exactly what I'll do. Then I'll have this country bumpkin out of my Derby!"
+
+        hide seb with dissolve
+
+        show cata angry with dissolve
+
+        c "Since when did it become your Derby…?"
+
+        t "Geez. That man almost makes you seem nice in comparison, Catalina."
+
+        show cata neutral at center with dissolve
+        c "Careful, Ortiz. Just because I can't afford to fire you doesn't mean I won't dock your pay."
+
+        t "…Yes, ma'am."
+
+        tt "Who was that, anyway? I'd better ask before she starts ignoring me again."
+        label stables1_presenting:
+            # Dossier > Presenting Mate
+            show cata neutral with dissolve
+            c "How kind of you. What brand of yerba did you use?"
+
+            t "Tarawii."
+            
+            show cata frown with dissolve
+            c "…You might as well have picked some grass off the ground. It wouldn't make a difference."
+            
+            show cata smile2 with dissolve
+            c "Next time, try using Crauz."
+
+            t "But I like Tarawii..."
+        label stables1_investigating:
+            # Investigation
+            # Stepladder
+            t "Looks like a sturdy step ladder. Maybe someone was changing a lightbulb?"
+            show cata neutral
+            c "It's just a regular ladder."
+            t "No, no, see? It folds! That makes it the natural evolution of the standard ladder!"
+            c "…"
+        label stables1_topic1:
+            t "Who were you talking to, Catalina? I could tell from a mile away you couldn't stand the sight of him."
+            
+            show cata neutral
+            c "Sebastian Castillo. He's the Sponsorship Director for one of Razing Thunder's main sponsors. They back a handful of jockeys here, including top contenders like Vargas."
+
+            t "Castillo— as in, from THE Castillo family!?"
+
+            c "So you've already heard about them. That saves me time."
+
+            # Check a flag if they answered they know Moreno in ACT 1. If yes:
+
+            show cata smile
+            c "You hardly look the part, but you're surprisingly well-informed. That is... commendable."
+
+            tt "What kind of backhanded compliment is that…?"
+
+            # If they don't know Moreno:
+
+            show cata angry
+            c "…How is it that you know about a lowlife like him, but not me? Frankly, I am appalled."
+
+            tt "Because it's my JOB to deal with crooks like him…"
+
+            #Back to main branch
+
+            show cata neutral
+            c "The sponsorship is merely a front. They do actually back jockeys, however…"
+
+            t "It comes with its own 'perks', right?"
+
+            show cata angry
+            c "Yes. You're bombarded with guidelines on how to drive betting activity. How to behave on social media, in public…"
+
+            show cata neutral with dissolve
+            c "They even give you 'recommendations' on which races to go all-in on, and which ones to intentionally throw."
+
+            t "All-in— you mean they're telling competitors when to lose and when to win?"
+
+            t "But that would completely rig the results!"
+
+
+            c "…And now you know how they build their wealth. Not that they'd ever admit to it. They simply label it 'consulting'."
+
+            t "That's despicable… all for the sake of manipulating the betting market, huh?"
+
+            show cata angry
+            c "I hear they even run their own off-the-books betting syndicate. It's quite lucrative, especially during events like this. I want no part of it, however."
+
+            tt "Clandestine gambling…"
+
+            t "Do you know which jockeys are sponsored by the Castillos?"
+
+            show cata neutral
+            c "I don't bother remembering the fodder."
+
+            tt "That's brutal…"
+
+            c "One does come to mind, though. Vargas. She's their top pick for promotion. Renata Vargas."
+
+            t "Interesting…"
+        label stables1_topic2:
+            t "I, uh… I heard some unsavory rumors going around."
+            show cata neutral
+            c "Oh?"
+
+            t "From the other jockeys, I mean. Mostly about you."
+
+            c "I see. And?"
+
+            t "What do you mean, 'and'!? Don't you care about being slandered? They're saying you're using your money to bribe trainers into quitting. Some even claim you're behind the horses collapsing."
+            
+            show cata smile3
+            c "I have an inkling of who told you about that last one. It's not the first time I've heard those accusations from the likes of her."
+            
+            show cata neutral with dissolve
+            c "So? Do you believe those rumors?"
+
+            menu:
+                "Yes":
+                    jump rumors_yes
+                "No":
+                    jump rumors_no                
+            label rumors_yes:
+                t "It's not just one person saying it. Quite a few people seem to believe it. Plus, you're in a rather favorable position to pull it off, so…"
+
+                show cata angry
+                c "…If you've already made up your mind, there's not much more for me to say."
+                jump stables1_complete
+            label rumors_no:
+                t "Rumors are just that. Rumors. I need solid evidence to back those claims. That's why I'm asking you directly."
+
+                show cata neutral
+                c "…You're acting as if my word alone were indisputable proof."
+
+                t "Well, it might not be, but it's reassuring to hear it from you nonetheless."
+                jump stables1_complete
+         
+        label stables1_complete:
+            show cata frown with dissolve
+
+            c "…I suppose now you understand why I hired you, then."
+
+            t "Because no amount of money is worth the risk?"
+            show cata angry
+            c "It ruins the reputation of any self-respecting trainer who wants a future in the industry. Most don't want to be caught up in some blackmail scheme or be told to sabotage the racehorses. Ridiculous…"
+
+            t "So then, the rumors aren't true?"
+
+            show cata neutral
+            c "I want to win through my skill, not rely on petty tricks like that."
+
+            tt "That's a relief to hear, but I wonder how much of that I can really believe."
+
+            show cata smile3 with dissolve
+            c "Now, if you aren't planning on quitting after learning all of this, I expect you to be ready on time."
+
+            t "You got it. By the way…"
+
+            show cata neutral
+
+            c "What is it?"
+
+            t "How come I don't get a matching uniform? You know, a blue tracksuit, maybe?"
+
+            
+            show cata smile2 with dissolve
+            c "Sorry, I didn't know your size, so I didn't order one."
+
+            t "Did my boss not tell you…?"
+
+            show cata smile with dissolve
+            c "I didn't ask her."
+
+            tt "Figures…"
+
+            t "It doesn't have to be brand new. Hand-me-downs are fine."
+
+            show cata yell with dissolve
+
+            c "First off, no trainer of mine would wear recycled clothing. Second, I have no interest in letting you wear the clothes of a coward who quit. They've already been disposed of."
+
+            tt "So much for that."
+    label lockers1:
+        scene placeholder_lockers
+        with dissolve
+        x "You can't be serious about going through with this little event."
+
+        x "Oh, but I am! Don't you know? The show must go on!"
+
+        tt "What's with this commotion...?"
+
+        show en grin at left
+        with dissolve
+        
+        show me neutral at right
+        with dissolve
+
+        x "There isn't going to be much of a show if all your participants keep dropping like flies!"
+
+        x "Well now! It's your job to prevent that, yes? It's why I made an exception and allowed you in."
+
+        x "Yeah. A job you aren't making any easier for me to carry out."
+
+        x "Has my magnanimous cooperation not been to your liking, Inspector?"
+
+        x "If you're not happy, then I am not happy."
+
+        x "Oh, I'm pretty unhappy, alright, you conniving son of a—"
+
+        t "Hey, hey! What's going on here?"
+
+        x "Oh! Howdy, young man. The inspector here and I were having a pleasant chat about the Razing Thunder event."
+
+        x "It's anything but pleasant... What the hell are you doing here, Ortiz? I've got enough crap to deal with as it is, thanks to this guy."
+
+        x "Ah, you two are already acquainted?"
+
+        x "Regrettably."
+
+        t "It's nice to see you too, Inspector Medina."
+
+        me "…I swear, if I find out you sneaked in here, I'm—"
+
+        x "Oho, a trespasser? Quite daring. I have security on speed dial for cases like this."
+
+        t "Whoa! Hang on now, I'm here on a job! Catalina Moreno hired me as her trainer! You can check with her if you want."
+
+        x "That's wonderful news! I was worried that Ms. Moreno wouldn't be able to compete after her trainer walked out on her…"
+
+        me "Why did she have to go and get you of all people?"
+
+        t "Apparently, I was the only one willing to take the job…"
+
+        me "…That checks out."
+
+        t "So, who is this you were talking to…?"
+
+        en "Ah, where are my manners? Lorenzo Villarreal. I'm the organizer of the greatest horse-racing event you're ever likely to experience."
+
+        t "Oh…! You're the host of Razing Thunder?"
+
+        $ renpy.notify("Dossier Updated.")
+
+        en "Indeed I am, my boy! How's the place been treating you so far? No doubt the caviar and champagne have sweetened your stay."
+
+        t "I… haven't had either of those."
+
+        en "Ah. I see. You're one of *those*. Rest assured, you will still be able to enjoy yourself at my Derby."
+
+        tt "What does that even mean…? Anyway, this is a perfect chance to ask about the clandestine gambling. There's no way the host himself doesn't know anything about it."
+        label lockers1_investigating:
+            # Weighing Scale
+            tt "A weighing scale used by the jockeys. They have to meet a specific weight requirement before competing."
+
+            # Recheck
+            tt "Let me test it out... 168 lbs. Yup, it's working properly."
+
+
+            # Lockers
+            tt "A row of lockers for the jockeys. Do they get assigned one, or can they just pick whichever one is available?"
+
+            # Recheck
+            tt "We trainers have a separate locker room elsewhere. If it's empty, I might use it to transform into El Leopardo!"
+
+            tt "…If the situation calls for it, anyway. But I doubt it."
+
+            # Riding Equipment
+            tt "Helmets, goggles, boots... Everything you'd need to stay safe on the track."
+
+            # Recheck
+            tt "Personally, I prefer going at it without a helmet. It's more stylish, and you can feel the wind... Such a rush."
+        label lockers1_topic1:
+            # The Razing Thunder Derby (Single Topic)
+
+            t "What can you tell me about the competition? What makes it so prestigious?"
+
+            en "My boy! Are those eyes of yours just for decoration? Have you not taken a single look around you?"
+
+            tt "This coming from the guy wearing alien sunglasses indoors..."
+
+            en "We have a staggering capacity of over 100,000 spectators! Gourmet meals to feast on before each race…"
+
+            en "Top professional jockeys gathered in one place, carefully selected based on their records and achievements. State-of-the-art facilities! A jaw-dropping prize of SEVEN AND A HALF MILLION DOLLARS for the winner!"
+
+            en "I tell you, name me one competition more glamorous than mine, and I'll eat my hat!"
+
+            t "Uh… the Olympics?"
+
+            en "Those are only held every four years, Mr. Ortiz. Razing Thunder is right at your fingertips every year! It's our very own carnival."
+
+            t "How are you able to afford all this?"
+
+            en "Certainly not through my merit alone, I assure you. Though my sheer brilliance accounts for a good chunk of it."
+
+            en "Sponsors, my boy! Everyone makes a generous contribution to get their name out at such a spectacular event as this."
+
+            en "On that note, make sure you place your bets using BETFIGHTER! There's a handsome prize pool waiting to be won."
+
+            t "I-I'm good, thanks. Since you brought up betting, do you know anything about people running clandestine gambling operations based on the race results?"
+
+            me "Yes, Villarreal. Know anything about that? You love keeping your customers hooked on betting."
+
+            en "Goodness, no! I assure you, we only work with official betting houses! Admittedly, hosting a private event gives me more freedom to choose which betting houses we affiliate with…"
+
+            en "…but I'd never stoop so low! What do you take me for?"
+
+            me "A greedy bastard."
+
+            en "Inspector, Inspector… If I were as avaricious as you make me out to be, you and that young man would have been charged for entry by now. And not at retail price, mind you!"
+
+            me "Piss off. You know I'm investigating, and you've only allowed a handful of my subordinates into the Derby."
+
+            en "Those are merely precautions! Would you really have me let a plethora of officers swarm the place and scare away the public?"
+
+            me "I don't give a rat's ass if they get scared. They can leave. They SHOULD leave, before something worse happens."
+
+            en "Evacuate them, you mean? We complied with your demands the previous two times, and you came up empty-handed. I only wish for the event to run its course properly this time."
+
+            me "Tch…"
+            
+            jump lockers1_complete
+        label lockers1_complete:
+            en "Well now, I'm afraid I have quite a few matters that require my personal attention."
+
+            en "Enjoy your stay, and do look forward to the race!"
+
+            t "Wait! I wanted to ask you about—"
+
+            # He leaves
+
+            hide en with dissolve
+            t "…The racehorses. *Sigh.*"
+            
+            show me neutral at center
+            with dissolve
+            me "Don't bother. You should know better than to expect anything from a guy like him."
+
+            t "But he's the host of this whole operation. He's bound to know something."
+
+            me "Sure. Doesn't mean he'll share a word of it if there's a chance it'll hurt his profits."
+
+            t "Ugh… What about you, Inspector? Have the police made any progress?"
+
+            me "…We've got a few leads, but we can't properly investigate them until this whole spectacle is over."
+
+            t "How come? I'd assume you have more than enough authority to get a search warrant."
+
+            me "Let's just say the orders from the higher-ups are pretty clear: 'Get the hell out of there.'"
+
+            t "You've got to be kidding me."
+
+            me "It's out of my hands. This is all private property, technically. There's only so much we can do without a new incident being reported."
+
+            me "And even then, it'll take time. They've got security crawling all over this place. I swear, not even a mouse could slip past those guards."
+
+            t "…Thankfully, I'm not nearly as restricted as you are."
+
+            me "If you're thinking of doing something stupid, don't."
+
+            t "Haha, I wouldn't dream of it…"
+
+            me "…"
+
+            me "Here."
+
+            # Receives Medical Report
+            $ renpy.notify("Medical Report obtained!")
+
+            t "Huh? What's this?"
+
+            me "A copy of the examination results for Perla Negra and the other horses that collapsed."
+
+            me "They were examined here after the incidents, but I don't trust a single veterinarian on this payroll."
+
+            me "As far as I'm concerned, that slimeball Villarreal has them all in his pocket."
+
+            t "I'll give it a thorough read, then. Thanks, Inspector!"
+
+            me "Don't mention it. Seriously, don't. I don't even know why I'm handing this over to you."
+
+            t "We're on the same side here. We both want to get to the truth—"
+
+            me "Pull any stupid crap, and the next place you'll be investigating is a jail cell."
+
+            t "G-Got it…!"
+
+            me "I'm out."
+
+            hide me with dissolve
+            t "There she goes…"
+
+            tt "I should give this a proper read when I get the chance. For now, I'll add it to my Dossier."
+    label act2_inves_complete:
+        with dissolve
+        # Phone Call / Ringtone / something
+        "*Bleep!*"
+
+        show tony neutral with dissolve
+
+        tt "Huh? I'm getting a phone call. Unknown number… I don't like this. Is it a spam call?"
+
+        "*Beep.*"
+
+        t "Hello?"
+
+        x "Mr. Ortiz. Ms. Moreno is expecting you in the parking lot. A package of hers is being delivered there."
+
+        show tony det neutral right
+        t "A package? Who is this?"
+
+        "*Beep.*"
+        show tony what drop
+        t "They hung up…"
+
+        show tony neutral
+        tt "I don't like this one bit. Why would she be expecting a package at a time like this?"
+
+        show tony neutral closed
+        tt "And why have me pick it up? Strange. I'll try texting her."
+
+        tt "..."
+        
+        show tony what aw drop
+        tt "…And she's ignoring me. Oh well, there's still some time before the race begins. I might as well go see what this is about…"
+        
+        with dissolve
+        jump parking
+    label parking:
+        scene placeholder_parkinglot
+        with dissolve
+
+        tt "Alright, I'm here now… I guess it makes sense that it's mostly empty, since the race is about to start."
+
+        x "Thank you for making it here so quickly, pal."
+
+        t "It's no—"
+
+        # 3 NPC Thug Sprites go here.
+
+        t "…problem?"
+
+        tt "Three men in expensive-looking suits surround me. One holds a baton, another an iron wrench, and the last is sporting a pair of heavy brass knuckles."
+
+        tga "Yeah, the boys and I didn't want to risk you ignoring our call."
+
+        tgb "The boss would've been pretty pissed if you hadn't shown up."
+
+        tgc "He sends his regards, by the way! Real noble of you, helping out that little jockey girl."
+
+        tga "But she's got a new trainer now, so you can hit the road."
+
+        t "Is that so? I think I'd like to confirm that with my employer directly, then."
+
+        tgb "Huh? Why? You don't believe us?"
+
+        tgc "You're breaking our hearts here, man."
+
+        t "I'm sure you'll survive. If that's all, I'll be leaving—"
+
+        tt "Just as I turned around, one of them stepped in to block my path."
+
+        tga "Leaving so soon? But we haven't even given you the package."
+
+        t "…And what package would that be?"
+
+        tt "I watch one of them toss an envelope near my feet. I glance back at them, then carefully open it to check the contents."
+
+        t "…Money."
+
+        tgb "Consider it compensation for the sudden job termination."
+
+        tgc "You got paid for your time, and then some! Consider yourself lucky."
+
+        t "Yeah. Really lucky."
+
+        tga "So, move along now. The exit is that way."
+
+        tt "He gestures with his head toward the parking lot exit. They aren't even gonna let me go get La Chispa?"
+
+        tt "They really don't want me anywhere near her. In that case, I—"
+
+        menu:
+                "Refuse to leave":
+                    jump p_refuse
+                "Take the money and leave":
+                    jump p_givein               
+
+        label p_givein:
+                tt "It's a lot of money, but if I walk away now, not only am I leaving La Chispa behind, I'm losing what might be my only chance to figure out what's actually happening in this derby…!"
+                menu:
+                    "On second thought...":
+                        jump p_refuse
+                    "Leave anyway":
+                        jump p_badend
+                label p_badend:
+                    t "Alright. This looks like more than I was going to make from this gig anyway."
+
+                    tga "Take it and go, then. Come on."
+
+                    tt "I begrudgingly take the bribe and leave the derby."
+                    with dissolve
+                    "Bad ending. The truth was lost. But you can pay rent at least."
+                    return        
+        label p_refuse:
+            t "Sorry, I won't be accepting this money. You can hand it back to your boss. Or keep it for yourselves."
+
+            tgb "Wow, really? We can keep it—"
+
+            tga "Idiot! Of course we can't take it! Listen here, you little shit. You can leave here walking with the money, or you can leave in an ambulance. What's it gonna be?"
+
+            tt "Oh. OH! Dude, this is a golden chance! Okay, don't mess it up, Tony."
+
+            t "…Can't be helped, then."
+
+            tt "I take out my phone and call the emergency line, never taking my eyes off the three stooges."
+            
+            #Bleach Ref
+            t "Hello? Excuse me, I'd like to call an ambulance. Yes, I'm at the Razing Thunder Derby."
+
+            tga "The hell?"
+
+            tgc "We haven't done anything and he's scared shitless already."
+
+            t "The location is the parking lot area."
+
+            t "Number of ambulances…"
+
+            t "One, two, three…"
+
+            t "Three ambulances!"
+
+            tgabc "Damn you!"
+
+            tt "The three thugs charge at me. I—"
+
+            menu timed_fight (screen="timed_choice", timeout=2.0, timeout_label="p_badend2"):
+                "Disarm the man with the baton":
+                    jump p_baton
+                "Shoulder throw the man with the wrench":
+                    jump p_wrench
+                "Deflect the brass-knuckle punch":
+                    jump p_brass
+
+            label p_badend2:
+                # Timeout / Bad Ending Choice (Hesitation)
+
+                tt "I hesitate for a fraction of a second, overthinking my move as all three thugs close in at once. The window closes, and their combined attack hits me before I can react."
+
+                tga "Got you now, you arrogant punk!"
+
+                tt "Thug A swings his baton, catching me across the side of my head."
+
+                t "GAH—!"
+
+                tt "My vision flashes white. Before I can regain my balance, Thug B drives the heavy wrench into my ribs."
+
+                t "Guh...!"
+
+                tt "I double over, struggling to catch my breath. Thug C grabs me by the collar and drives a brass-knuckled punch into my stomach."
+
+                tgc "That's for sticking your nose where it doesn't belong!"
+
+                tt "Stumbling backward, I take another blow from the baton across my shoulder, sending me crashing onto the asphalt."
+
+                t "Ngh...! Damn it...!"
+
+                tt "I try to push myself up, only for Thug B to kick me back down."
+
+                tgb "Stay down!"
+
+                tt "The three villains surround me, delivering a final series of kicks and blows while I struggle to protect myself."
+
+                tga "What's wrong? Not so tough now, are you?!"
+
+                tt "A sharp kick hits my side. I curl up, barely able to move."
+
+                t "…Can't… get up…"
+
+                tt "My attackers finally step away, leaving me sprawled on the ground."
+
+                tgc "Heh. Should've stayed out of our business."
+
+                tt "Their footsteps gradually fade into the distance."
+
+                tt "I try to reach for my phone, but my arm gives out."
+
+                tt "My vision grows increasingly blurry. The sound of approaching sirens becomes distant and muffled."
+
+                tt "…Damn it…"
+                
+                with dissolve
+                return
+                
+                # Darkness takes over. Bad END.
+                # End.
+            label p_baton:
+                # Option 1 Choice: Deal with Thug A (Baton)
+
+                tt "The one with a baton steps up first, bringing it down in a heavy vertical strike. Muscle memory kicks in..."
+
+                tt "...and I step inside his guard, catching his wrist!"
+                
+                tt "I pivot hard, twisting his arm into a lock that forces him to drop the baton right into my hand."
+
+                tt "Before he can recover, I throw a quick back elbow, knocking him off-balance and sending him crashing right into his buddy. Both of them hit the asphalt in a tangle of limbs."
+
+                tt "The one with brass knuckles is the last one standing. He looks at his groaning friends, then at me, and lets out a frustrated roar." 
+                
+                tt "He charges forward, swinging a wild right hook aimed at my jaw."
+
+                tt "I duck under the swing, grab his wrist, and twist it sharply against his back, forcing him down onto the hood of the nearest car."
+
+                tt "With his arm pinned and his balance completely broken, I deliver a sharp, controlled strike with the heel of my hand to the side of his neck. His eyes roll back, and he slumps forward onto the hood, completely out cold."
+
+                jump parking_complete
+
+                # Go to Fight Aftermath
+            label p_wrench:
+                # Option 2 Choice: Deal with Thug B (Wrench)
+
+                tt "The guy with the wrench lunges with a wild, horizontal swing. It's a powerful hit, but way too slow."
+
+                tt "I duck under the blow, grab his extended arm, and use his own momentum to execute a clean shoulder throw."
+
+                tt "He flies over my back and lands squarely on top of the man with brass knuckles, both out for the count now."
+
+                tt "The baton guy is the last one left. He snaps the weapon open, face red with anger. He lunges at me with a quick, aggressive jab."
+
+                tt "I parry his arm outward, step inside his guard, and deliver a sharp elbow to his ribs."
+
+                tt "As he doubles over from the impact, I sweep his legs out from under him, sending him crashing onto the concrete."
+
+                tt "The baton skitters away, out of reach."
+
+                jump parking_complete
+            label p_brass:
+                # Option 3 Choice: Deal with Thug C (Brass Knuckles)
+
+                tt "The man with brass knuckles charges forward with an aggressive right hook, the metal in his hand glinting in the light."
+
+                tt "I parry the strike outward with my forearm, lock his arm, and redirect his forceful punch straight into one of the other men's chest."
+
+                tga "Oof! Watch where you're punching, you idiot!"
+
+                tt "While the two argue, I give the brass knuckle wearer a sharp shove, sending him stumbling backward into the baton holding one. Both lose their footing and crash onto the ground."
+
+                tt "That leaves the one with a wrench. He raises it and charges at me with a wild swing."
+
+                tt "I sidestep the attack, letting him pass right by me."
+
+                tt "Before he can turn around, I grab his shoulder and use his momentum to send him crashing face-first onto the hood of a nearby car."
+
+                tt "Lights out for him. I watch him drop the wrench onto the ground as the alarm of the car goes off."
+                jump parking_complete
+        label parking_complete:
+            # Aftermath
+            show tony det smile drop with dissolve
+            t "Whew… Their boss is gonna be furious when he sees the dry-cleaning bill for those fancy suits. And the hospital bills, too."
+
+            tt "I kick the envelope containing the bribe money towards one of the groaning thugs."
+
+            show tony det neutral
+            t "Keep the change."
+
+            show tony neutral
+            tt "Straightening my collar, I turn back towards the stables, only to hear a series of shouts and screams in the distance."
+
+            show tony det yell with dissolve
+            t "What's going on now…!? I'd better hurry!"
+            
+            with dissolve
+            # Act 2 End
+    jump act3

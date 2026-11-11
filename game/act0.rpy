@@ -7,6 +7,8 @@ label start:
         jump act1
       "Jump to Act II":
         jump act2
+      "Jump to Act III":
+        jump act3
       "Jump to DeleteMe":
         jump deleteme
 

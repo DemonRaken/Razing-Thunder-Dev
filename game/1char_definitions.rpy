@@ -21,15 +21,23 @@ window_background="textbox6")#, cb_blipfile=None)
 
 define c = Character("Catalina Moreno", kind=bb, image="cata")
 define r = Character ("Renata Vargas", kind=bb, image="rena")
-define lu = Character ("Lucas Mendoza", kind=bb, image = "luc")
+define lu = Character ("Lucas Mendoza", kind=bb, image = "lu")
 
 define e = Character ("Esteban Rojas", kind=bb, image="est")
 define v = Character ("Vicente Ruiz", kind=bb, image="vi")
+define s = Character ("Sebastian Castillo", kind=bb, image="seb")
+define en = Character ("Lorenzo Villareal", kind=bb, image="en")
+define me = Character ("Sofía Medina", kind=bb, image="me")
 
 #NPCs
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
 define tg = Character("Thug", kind=bb)
+
+define tga = Character("Thug A", kind=bb)
+define tgb = Character("Thug B", kind=bb)
+define tgc = Character("Thug C", kind=bb)
+define tgabc = Character("Thug A, B & C", kind=bb)
 
 # Change narrator to use the bb base
 define narrator = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav", cb_bliploop=True)

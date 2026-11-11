@@ -164,7 +164,7 @@ label act1:
 
   lt "Wasting no time, I enthusiastically put my phone away into my pocket and rushto get everything I need before heading to meet the person who made the request."
 
-  scene test fence
+  scene placeholder_park
 
   tl "{b}9:20 AM. \nPlaza.{/b}"
 
@@ -180,8 +180,7 @@ label act1:
 
   lt "I turn over to the voice addressing me with disdain."
 
-  show leo neutral at left
-  show cata neutral at right
+  show cata neutral with dissolve
 
   x "It's useless to show off whatever caretaker abilities you have. You won't be using them."
 
@@ -225,8 +224,6 @@ label act1:
   show tony smile drop at left
 
   tt "Geez… you sure know how to pick 'em, boss. This is gonna be one hell of a day…"
-
-  
 
   menu:
 
@@ -319,4 +316,4 @@ label act1continues:
 
   tt "Huffing, I hold onto the reins and hurry to go after my 'delightful' employer."
 
-return
+jump act2
