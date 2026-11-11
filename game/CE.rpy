@@ -7,7 +7,7 @@ style ce_button_text:
    selected_color "#f00"
 
 screen ce_ui():
-   """Cross Examination UI Buttons"""
+
    tag ce
    zorder 1
    hbox:
