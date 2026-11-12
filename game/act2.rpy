@@ -527,6 +527,7 @@ label act2:
             show cata neutral
             c "It's just a regular ladder."
             t "No, no, see? It folds! That makes it the natural evolution of the standard ladder!"
+            show cata deadpan with dissolve
             c "…"
         label stables1_topic1:
             t "Who were you talking to, Catalina? I could tell from a mile away you couldn't stand the sight of him."
