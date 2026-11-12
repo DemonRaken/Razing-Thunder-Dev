@@ -4,20 +4,21 @@ define config.say_attribute_transition = Dissolve(0.2, alpha=True)   # Always ad
 default preferences.text_cps = 30   
 
 define bb = Character(ctc="ctc_horse", ctc_pause="ctc_horse", ctc_position="fixed",
-                      window_background="textbox5",
-                      callback=blip, cb_blipfile="audio/tick.wav")
+                      window_background="textbox7",
+                      callback=blip, cb_blipfile="audio/tick.wav",
+                      what_justify=True)
 
 
 define x = Character("???", kind=bb)
 #Leopardo
 define l = Character("El Leopardo", kind=bb, image="leo")
 define lt = Character(kind=l, what_color="#4A86E8",  what_outlines=[(2,"#000000", 1, 1)],
-window_background="textbox6")#, cb_blipfile=None)
+window_background="textbox8")#, cb_blipfile=None)
 
 #Tony
 define t = Character("Antonio Ortiz", kind=l, image="tony")
 define tt = Character(kind=t, what_color="#4A86E8", what_outlines=[(2,"#000000", 1, 1)],
-window_background="textbox6")#, cb_blipfile=None)
+window_background="textbox8")#, cb_blipfile=None)
 
 define c = Character("Catalina Moreno", kind=bb, image="cata")
 define r = Character ("Renata Vargas", kind=bb, image="rena")
@@ -46,6 +47,6 @@ define narrator = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav"
 define tl = Character(what_color="#38761D",  
 what_outlines=[(2,"#000000", 1, 1)],
 kind=narrator,
-window_background="textbox6", 
-what_text_align=0.5, 
-what_xalign=0.5)
+window_background="textbox9",
+what_text_align=0.5-0.12,
+what_xalign=0.5-0.12)

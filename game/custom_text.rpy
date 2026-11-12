@@ -20,15 +20,15 @@ define gui.name_xpos = 0.005
 define gui.name_ypos = 5
 
 ## Dialogue customization
-define gui.dialogue_xpos = 0.12
+define gui.dialogue_xpos = 0.08
 define gui.dialogue_ypos = 0.33
-define gui.dialogue_width = 0.72 #0.76
+define gui.dialogue_width = 0.69 #0.76
 
 # Textbox fine tweaking
 style window:    
     xalign 0.9
-    xsize 1536
-    ysize 301
+    xsize 1536 #1536
+    ysize 301 #301
     yalign 0.97
     #xfill False
     #ysize 0.9
