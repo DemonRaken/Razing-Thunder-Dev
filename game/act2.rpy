@@ -995,9 +995,9 @@ label act2:
 
         # 3 NPC Thug Sprites go here.
         
-        show thug at center
-        show thug_copy at left
-        show thug_copy2 at right
+        show tthug at center
+        show tthug_copy at left
+        show tthug_copy2 at right
         with dissolve
         
         t neutral "…problem?"
@@ -1088,91 +1088,18 @@ label act2:
             tgc "We haven't done anything and he's scared shitless already."
 
             t neutral "The location is the parking lot area."
+            t "Number of ambulances..."
 
-            t "Number of ambulances…"
-
-            # LEFT
-            show placeholder_parkinglot:
-                zoom 2.0
-                xalign 0.0
-                yalign 1.0
-                linear 2.0 yalign 0.0
-            # LEFT THUG
-            
-            hide thug_copy
-            hide thug_copy2
-            
-            show thug at center:
-                zoom 3.0
-                xalign 0.0
-                yalign 1.0
-                linear 2.0 yalign 0.0              
-
+            show layer master at cam_move(2.5, 0.2, 0.8,  2.5, 0.2, 0.3)
             t "One..."
 
-            # RIGHT
-            show placeholder_parkinglot:
-                xalign 1.0
-                yalign 1.0
-                linear 2.0 yalign 0.0
-
-            hide thug_copy
-            hide thug
-            show thug_copy2 at center:
-                zoom 3.0
-                xalign 1.0
-                yalign 1.0
-                linear 2.0 yalign 0.0
-
+            show layer master at cam_move(2.5, 0.8, 0.8,  2.5, 0.8, 0.3)
             t smile "Two..."
 
-            # MIDDLE
-            show placeholder_parkinglot:
-                xalign 0.5
-                yalign 1.0
-                linear 2.0 yalign 0.0
-
-            hide thug_copy2
-            hide thug
-            show thug_copy at center:
-                zoom 3.0
-                xalign 0.5
-                yalign 1.0
-                linear 2.0 yalign 0.0
-
+            show layer master at cam_move(2.5, 0.5, 0.8,  2.5, 0.5, 0.3)
             t det smile "Three..."
 
-                        # RESET
-
-            hide thug_copy
-            hide thug_copy2
-            hide thug
-            show placeholder_parkinglot:
-                linear 1.0 zoom 1.0 xalign 0.5 yalign 0.5         
-            
-            
-            #show thug at center:
-            #    zoom 3.0
-            #    xalign 0.5
-            #    yalign 0.0
-            #    zoom 1.5
-            #    yalign 1.0
-            
-            show thug at center:
-                alpha 0.0
-                zoom (1.5)
-                linear 1.0 alpha 1.0
-
-            show thug_copy at left:
-                alpha 0.0
-                zoom (1.5)
-                linear 1.0 alpha 1.0
-                        
-            show thug_copy2 at right:
-                alpha 0.0
-                zoom (1.5)
-                linear 1.0 alpha 1.0
-            
+            show layer master at cam_move(2.5, 0.5,  0.3,  1.0, 0.5,  0.5)
             t det grin "Three ambulances!"
 
             tgabc "Damn you!"
@@ -1236,9 +1163,9 @@ label act2:
 
                 tgc "Heh. Should've stayed out of our business."
 
-                hide thug
-                hide thug_copy
-                hide thug_copy2
+                hide tthug
+                hide tthug_copy
+                hide tthug_copy2
                 with Dissolve(1.0)
                 tt "Their footsteps gradually fade into the distance."
 
@@ -1259,7 +1186,7 @@ label act2:
                 # Darkness takes over. Bad END.
                 # End.
             label p_baton:
-                # Option 1 Choice: Deal with Thug A (Baton)
+                # Option 1 Choice: Deal with tthug A (Baton)
 
                 tt "The one with a baton steps up first, bringing it down in a heavy vertical strike. Muscle memory kicks in..."
 
@@ -1270,10 +1197,10 @@ label act2:
 
                 tt det neutral "Before he can recover, I throw a quick back elbow, knocking him off-balance and sending him crashing right into his buddy. Both of them hit the asphalt in a tangle of limbs."
 
-                hide thug
-                hide thug_copy
+                hide tthug
+                hide tthug_copy
                 with dissolve
-                show thug_copy2 at center
+                show tthug_copy2 at center
                 with move
 
                 tt "The one with brass knuckles is the last one standing. He looks at his groaning friends, then at me, and lets out a frustrated roar." 
@@ -1288,14 +1215,14 @@ label act2:
                 
                 tt "completely out cold."
 
-                hide thug_copy2
+                hide tthug_copy2
                 with dissolve
 
                 jump parking_complete
 
                 # Go to Fight Aftermath
             label p_wrench:
-                # Option 2 Choice: Deal with Thug B (Wrench)
+                # Option 2 Choice: Deal with tthug B (Wrench)
 
                 tt det neutral "The guy with the wrench lunges with a wild, horizontal swing. It's a powerful hit, but way too slow."
 
@@ -1304,8 +1231,8 @@ label act2:
                 with vpunch
                 tt det "He flies over my back and lands squarely on top of the man with brass knuckles, both out for the count now."
 
-                hide thug_copy
-                hide thug_copy2
+                hide tthug_copy
+                hide tthug_copy2
                 with dissolve
 
                 tt "The baton guy is the last one left. He snaps the weapon open, face red with anger. He lunges at me with a quick, aggressive jab."
@@ -1315,14 +1242,14 @@ label act2:
                 with vpunch
                 tt "As he doubles over from the impact, I sweep his legs out from under him, sending him crashing onto the concrete."
 
-                hide thug
+                hide tthug
                 with dissolve
 
                 tt "The baton skitters away, out of reach."
 
                 jump parking_complete
             label p_brass:
-                # Option 3 Choice: Deal with Thug C (Brass Knuckles)
+                # Option 3 Choice: Deal withtthug C (Brass Knuckles)
 
                 tt det neutral "The man with brass knuckles charges forward with an aggressive right hook, the metal in his hand glinting in the light."
 
@@ -1333,11 +1260,11 @@ label act2:
 
                 tt det neutral "While the two argue, I give the brass knuckle wearer a sharp shove, sending him stumbling backward into the baton holding one. Both lose their footing and crash onto the ground."
 
-                hide thug
-                hide thug_copy2
+                hide tthug
+                hide tthug_copy2
                 with dissolve
 
-                show thug_copy at center
+                show tthug_copy at center
                 with move
 
                 tt det neutral right "That leaves the one with a wrench. He raises it and charges at me with a wild swing."
@@ -1347,7 +1274,7 @@ label act2:
                 with vpunch
                 tt det yell "Before he can turn around, I grab his shoulder and use his momentum to send him crashing face-first onto the hood of a nearby car."
 
-                hide thug_copy
+                hide tthug_copy
                 with dissolve
 
                 tt "Lights out for him. I watch him drop the wrench onto the ground as the alarm of the car goes off."

@@ -1,29 +1,29 @@
-image thug:
+image tthug:
     zoom 1.5
     "thug.png"
 
-image thug_copy:
+image tthug_copy:
     zoom 1.5
     "thug.png"
 
-image thug_copy2:
+image tthug_copy2:
     zoom 1.5
-    "thug.png"   
+    "thug.png"
 
 
 
 # ---------------------------------------------------------------------------
-# Thug positions in the wide shot.
+# tthug positions in the wide shot.
 # xanchor 0.5 puts the sprite's CENTER at px (0..1), which makes the camera
 # focus points below predictable regardless of how wide the sprite is.
 # ---------------------------------------------------------------------------
-transform thug_pos(px, py=1.0):
+transform char_pos(px, py=1.0):
     xpos px xanchor 0.5
     ypos py yanchor 1.0
 
 
 # ---------------------------------------------------------------------------
-# Camera move: interpolate the whole master layer (background + all thugs)
+# Camera move: interpolate the whole master layer (background + all tthugs)
 # from state (fz, fx, fy) to state (tz, tx, ty).
 #
 #   zoom    z    : 1.0 = wide shot, 2.5 = close-up
@@ -49,26 +49,24 @@ transform cam_move(fz, fx, fy, tz, tx, ty, dur=1.5):
 
 label debug_ambulances:
     scene placeholder_parkinglot
-    show thug       at thug_pos(0.15)
-    show thug_copy  at thug_pos(0.50)
-    show thug_copy2 at thug_pos(0.85)
+    show tthug       at char_pos(0.15)
+    show tthug_copy  at char_pos(0.50)
+    show tthug_copy2 at char_pos(0.85)
 
     t neutral "The location is the parking lot area."
     t "Number of ambulances&"
 
-    # Wide  ->  Left thug
-    show layer master at cam_move(1.0, 0.5,  0.5,  2.5, 0.15, 0.6)
+    show layer master at cam_move(2.5, 0.2, 0.8,  2.5, 0.2, 0.3)
     t "One..."
 
-    # Left  ->  Right thug   (pan across, stays zoomed)
-    show layer master at cam_move(2.5, 0.85, 0.6,  2.5, 0.5,  0.6)
+
+    show layer master at cam_move(2.5, 0.8, 0.8,  2.5, 0.8, 0.3)
     t smile "Two..."
 
-    # Right ->  Center thug  (pan back, stays zoomed)
-    
-    show layer master at cam_move(2.5, 0.15, 0.6,  2.5, 0.85, 0.6)
+
+    show layer master at cam_move(2.5, 0.5, 0.8,  2.5, 0.5, 0.3)
     t det smile "Three..."
 
-    # Center -> Wide         (zoom out, all three visible again)
-    show layer master at cam_move(2.5, 0.5,  0.6,  1.0, 0.5,  0.5)
+    show layer master at cam_move(2.5, 0.5,  0.3,  1.0, 0.5,  0.5)
     t det grin "Three ambulances!"
+    jump start
