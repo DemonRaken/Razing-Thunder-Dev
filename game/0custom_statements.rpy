@@ -23,3 +23,10 @@ python early:
         parse=lambda l: l.rest().strip(),
         execute=_setside_execute,
     )
+
+transform slightright:
+    xalign 0.75
+    yalign 1.0
+transform slightleft:
+    xalign 0.25
+    yalign 1.0

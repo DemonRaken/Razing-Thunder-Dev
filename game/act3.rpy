@@ -1,8 +1,9 @@
 label act3:
     scene placeholder_park
-    with dissolve
-    show tony smile normal at left
-    show leo point at right
+    with fade
+    
+    show tony smile at slightleft
+    show leo point at slightright
     "Work in progress."
-    with dissolve
-return
+    
+    return

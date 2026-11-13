@@ -33,15 +33,18 @@ define me = Character ("Sofía Medina", kind=bb, image="me")
 #NPCs
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
-define tg = Character("Thug", kind=bb)
 
+define tg = Character("Thug", kind=bb)
 define tga = Character("Thug A", kind=bb)
 define tgb = Character("Thug B", kind=bb)
 define tgc = Character("Thug C", kind=bb)
 define tgabc = Character("Thug A, B & C", kind=bb)
 
 # Change narrator to use the bb base
-define narrator = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav", cb_bliploop=True)
+define narrator = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav", cb_bliploop=True,
+window_background="textbox9",
+what_text_align=0.5-0.12,
+what_xalign=0.5-0.12)
 
 # The time and location
 define tl = Character(what_color="#38761D",  

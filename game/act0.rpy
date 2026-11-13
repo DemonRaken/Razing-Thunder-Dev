@@ -11,6 +11,8 @@ label start:
         jump act3
       "Jump to DeleteMe":
         jump deleteme
+      "Jump to Debug Ambulances":
+        jump debug_ambulances
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"
