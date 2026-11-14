@@ -128,8 +128,8 @@ _("""Etiam lobortis nulla odio, non bibendum felis suscipit non. Duis erat nibh,
 define de_mask = Evidence(
     _("Mask"),
     "evidence-mask-transparent", # Image file
-    _("This epic mask can make you 1000 times more handsome."),
-_("""Duis erat nibh,""")
+    _("Personal possessions."),
+_("""The mask I use to conceal my identity when fighting crime.""")
 )
 
 define de_medicalreport = Evidence(
@@ -184,7 +184,7 @@ define de_casualclothes = Evidence(
 )
 
 define de_notebook = Evidence(
-    _("Side Jobs Notebook"),
+    _("Notebook"),
     "evidence-notebook",
     _("Found in Lucas's locker"),
     _("""A small, black, leather-bound notebook with worn corners and yellowed pages. It contains handwritten entries listing race dates, horse names, and monetary values. Most entries are checked off, except for the last one.
@@ -194,6 +194,21 @@ define de_notebook = Evidence(
     \n Lucero $5,000""")
 )
 
+define de_autopsy = Evidence(
+    _("Autopsy Report"),
+    "evidence-autopsy",
+    _("Obtained from the police"),
+    _("Victim: Vicente [SURNAME]\n\
+    Estimated Time of Death: [TIME]\n\
+    Cause of Death: Severe blunt force trauma to the back of the head.\n\
+    \n\
+    Findings:\n\
+    - Severe blunt force trauma to the back of the head.\n\
+    - Multiple bruises across the face and front of the body.\n\
+    - Both legs fractured.\n\
+    - No apparent injuries to the hands or forearms.\n")
+)
+
 define de_screen = Evidence(
     _("Screen"),
     "screen",  # Image file
@@ -201,6 +216,12 @@ define de_screen = Evidence(
     _("No, Monika won't come out of it, no matter how much you stare at it.")
 )
 
+define dp_tony = CharacterProfile(
+    _("Antonio Ortiz"),
+    "side tony smile",  # Image file
+    _("Age: 22"),
+    _("Me. Part-time private investigator and handyman; full-time ally of justice.")
+)
 define dp_leo = CharacterProfile(
     _("El Leopardo"),
     "side leo grin shine",  # Image file

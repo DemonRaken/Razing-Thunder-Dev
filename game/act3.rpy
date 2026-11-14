@@ -363,19 +363,248 @@ label intervene:
     lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
 
     #click shovel
-    lt "Why is this poor shovel "
+    lt "Wait a minute... What's this doing here?"
 
-    
+    lt "A stable shovel. Someone must've left it behind this stall."
+
+    lt "The blade is covered in something dark and flaky. At first, I thought it was dirt..."
+
+    l "...Wait. Is that blood!?"
+
+    lt "And this dent... Looks like it's been damaged pretty badly."
+
+    lt "A dent and blood... some hairs are caught along the edge. Don't tell me this is..."
+
+    lt "...I should have one of the inspector's subordinates run tests on it right away."
+
+    lt "This here... might be the murder weapon!"
+
+    lt "Alright, what's next...?"
     
     label lockers_inves:
     scene placeholder_lockers
     with fade
-    "You find evidence the lockers."
+    l "What's with this locker? It's been left open."
+    lt "As I walked over to close it, something in there catches my attention."
+    l "A... hawaiin shirt? A pair of sunglasses, too..."
+    lt "I guess these must belong to one of the jockeys."
+    l "Hm? Hey, that's a notebook on top of the trousers..."
+    lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
+    l "What do we have here... \n... \n...!?"
+    lt "T-This...! The pages here are full with dates from various derby competitions!"
+    lt "I recognize some of the horses' names, too..."
+    lt "Perla Negra is listed here! That's the one they showed on the news!"
+    l "There's something written next to the name... '$7,000'?"
+    lt "That's a lot of money... is this a betting record? But ultimately, Perla Negra lost that race..."
+    
+    lt "...and so did a few of the other listed horses here, now that I think about it."
+    
+    lt "Their names came up when I first began to look into the incidents."
+    
+    lt "Hmm... these horses... their names are all crossed out. The only one that isn't is... 'Lucero'."
+    l "Lucero... Haven't I heard that name before?"
+    lt "...! Oh yeah! That's Lucas' horse! But why is $5,000 written next to it...?"
+    lt "Mmmh... I should really find out who this locker belongs to."
+    
+    l "Does this one have a nameplate? It does. Let's see..."
+    
+    l "Huh!? Lucas Mendoza?"
+    
+    lt "The hell? Why does he have a notebook listing his own horse?"
+    
+    l "This is so weird... I'll have to look into it further. I should get moving for now."
+
+    label breakroom_intro:
+    lt "I've never been here before, but during the day, I saw Castillo's underlings coming and going through the hallway that leads here."
+
+    lt "There's no mistaking them. They all wear those ridiculously expensive, flashy golden suits."
+
+    lt "I think most of them have left by now, but... there might still be someone inside."
+
+    lt "What should I do? I definitely need to check this place out. And while I could just kick the door down..."
+
+    lt "...that would only attract unwanted attention. I don't need them calling for backup. I have to be swift."
+
+    l "..."
+
+    menu:
+        "Pretend to be room service.":
+            jump roomservice
+        "Make them think there's a fire.":
+            jump fireprank
+
+    label fireprank:
+        lt "I take out my phone and search for a 'fire alarm sound effect' video. I crank the volume all the way up and hit play."
+
+        lt "A few seconds later, I hear footsteps rushing toward the door. They're getting closer... Gotta hide!"
+
+        tg "AHHHH! FIRE! FIRE!!!"
+
+        lt "The underling bolts down the hallway, stumbling over his own feet before disappearing from view."
+
+        l "...Whew. Can't believe that actually worked."
+
+        lt "I pull the poncho off my head and wait a few seconds to make sure he isn't coming back. Once I'm certain the coast is clear, I slip into the unattended room."
+
+        lt "Now, let's see what you're hiding in here..."
+        jump breakroom_inves
+    label roomservice:
+        lt "Alright. It's risky, but it just might work."
+        l "*coughs* Room service!"
+        tg "Finally! I was starving!"
+        lt "The voice from inside opens the door."
+        tg "..."
+        tg "Wait..."
+
+        tg "We don't get room service delivered all the way out here—"
+
+        l "Haah!"
+
+        lt "I toss my poncho over the man's face, catching him completely off guard."
+
+        tg "!?"
+
+        lt "He stumbles around, struggling to pull it off. By the time he manages, I've already stepped in close."
+
+        lt "I drive my palm into his jaw."
+
+        tg "Oof!"
+
+        lt "He crumples to the cold floor, unconscious. I retrieve my poncho and casually sling it back over my shoulder."
+
+        l "Take five."
+
+        lt "Now, let's see what you're hiding in here..."
+        jump breakroom_inves
+    
     label breakroom_inves:
-    "You find evidence in the Staff Break Room."
+    lt "This looks like some kind of staff break room."
+
+    lt "A few chairs, a table... Nothing too interesting."
+
+    lt "Hm...? That looks like a trash bin."
+
+    lt "Heh... It may look unimportant, but every good detective knows a crucial piece of evidence could be hiding in one of those!"
+
+    lt "Well, at least I hope that's the case. Now, what have we got here?"
+
+    lt "Rubbish, empty bottles, cigarettes... That's a fire hazard."
+
+    lt "...! Hey, there's a black bag underneath all this. It's been crumpled up, too."
+
+    lt "I dig through the rubbish and pull the bag out. Whoa, this thing is way bigger than I expected..."
+
+    lt "I turn it inside out, and something immediately catches my eye."
+
+    lt "What the...? Why is there so much blood in here!?"
+
+    lt "I take a closer look. It's definitely dried blood..."
+
+    lt "It's stained a large portion of the bag's interior..."
+
+    lt "..."
+
+    lt "Don't tell me... Is this a body bag? How long has this blood been here...?"
+
+    l "Nnh... I need to get this thing analyzed. Pronto."
+
+
+    #Investigation
+
     label inves_complete:
-    "You find all the evidence and go back to the Main Race track."
+    of "Mr. Leopardo, correct?"
+    lt "Ah- one of the police officers working for Medina just approached me."
+    l "Indeed, that would be me! How may I help you?"
+    of "We ran tests of the things you found and have the results. These are copies of them."
+    l "Much appreciated, friend! With this, we're one step closer to bringing down the villain behind it!"
+    of "R-Right... that was all."
+    lt "I watch him leave in a hurry."
+    lt "Hmm... I made some solid leeways here. Next, I should check-"
+    "*beep!*"
+    lt "Who's calling me now? ... \nThe inspector?"
+    l "Hello?"
+    me "Get your ass over to the main racetrack. Time's up."
+    l "Uh. What do you mean time's up-"
+    me "It means this stupid event will start in about 30 minutes and I've done all that I can to stop them from leaving."
+    l "That's crazy! They can't go ahead with the race with a killer on the loose!"
+    l "You're with the police! You have the authority to detain them and-"
+    me "Don't tell me what I already know. Just get over here."
+    "*beep*"
+    l "She hung up..."
+    lt "This is messed up. But no matter..."
+    l "...for the ally of justice is here to save the truth! Prepare yourselves, villains!"
+
     label ce1:
+    scene placeholder_granstands
+    with fade
+    lt "I rush all the way over here. The inspector is surrounded by officers, Castillo's underlings, and the jockeys..."
+
+    lt "Time for my dramatic entrance."
+
+    en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
+
+    me "Then you clearly don't understand the situation."
+
+    en "I promise you, once the race is over, you'll have my full cooperation!"
+
+    me "That's not how this works. You have to—"
+
+    l "—look past your selfish desires and face your responsibilities!"
+
+    me "Exactly—wait, what?"
+
+    lt "With a running leap and a flip, I let my poncho flutter dramatically through the air before striking a pose with my arms."
+
+    l "The nightmare of criminals and fighter for justice..."
+
+    l "El Leopardo is here to assist!"
+
+    me ".............."
+
+    r "Yo. What's this freak's deal?"
+
+    c "...?"
+
+    en "E-Excuse me? Sir, I don't know what kind of game you're playing here, but—"
+
+    l "This is no game. This is a matter of life and death, and you're trying to look the other way!"
+
+    en "Erm... Well, we're already behind schedule, you see..."
+
+    me "Despicable..."
+
+    s "What are you waiting for!? Kick this clown out of my derby—"
+
+    show en neutral
+    pause 1.0
+
+    s "I mean... kick him out of your derby already! He's a lunatic!"
+
+    l "Ah, but would you still say the same if I offered you the answers to this case?"
+
+    s "The answers? Don't kid yourself! What would a masked freak like you know?"
+
+    l "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
+
+    s "WHAT!? I, uh... I don't know what he's talking about. I would never..."
+
+    s "More importantly, there's no need to waste any more time on this!"
+
+    s "We already know who the culprit is!"
+
+    lt "If it's coming from this guy, I seriously doubt it..."
+
+    s "It was that suspicious character found near the body: Antonio Ortiz!"
+
+    l "Say whaaaaaat!?"
+
+    s "Yes, yes. Allow me to enlighten you."
+
+    #CE goes here.
+
+    # contra 1: tony killed him at the top of the railings
+    # contra 2: tony used the bag to carry the body from the stables
+
     "You Cross-Examine to prove its not an accident."
     label ce2:
     "You Cross Examine to defend yourself."

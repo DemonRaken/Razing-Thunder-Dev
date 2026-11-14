@@ -34,6 +34,8 @@ define me = Character ("Sofía Medina", kind=bb, image="me")
 define tv = Character("TV Reporter", kind=bb)
 define ch = Character("La Chispa", kind=bb)
 
+define of = Character("Officer", kind=bb)
+
 define tg = Character("Thug", kind=bb)
 define tga = Character("Thug A", kind=bb)
 define tgb = Character("Thug B", kind=bb)
