@@ -2,17 +2,29 @@
 
 # The game starts from label start.
 label start:
+    $ ccc = 50
+    while ccc > 0:
+        $ dossier.add(de_mask)
+        $ dossier.add(de_mate)
+        $ dossier.add(dp_leo)
+        $ dossier.add(de_screen)
+        $ dossier.add(de_medicalreport)
+        $ ccc -= 1
+      
+    scene placeholder_office:
+        blur 150
+        linear 3.0 blur 0
     menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
-      "Jump to Act I":
-        jump act1
-      "Jump to Act II":
-        jump act2
-      "Jump to Act III":
-        jump act3
-      "Jump to DeleteMe":
-        jump deleteme
-      "Jump to Debug Ambulances":
-        jump debug_ambulances
+        "Jump to Act I":
+            jump act1
+        "Jump to Act II":
+            jump act2
+        "Jump to Act III":
+            jump act3
+        "Jump to DeleteMe":
+            jump deleteme
+        "Jump to Debug Ambulances":
+            jump debug_ambulances
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"
