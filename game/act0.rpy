@@ -1,19 +1,44 @@
-# The debugging starts here.
+init python:
+    def _shake(trans, st, at, dt=3.0, dist=30):
+        if st <= dt:
+            decay = 1.0 - (st / dt)
+            trans.xoffset = int(dist * decay * (renpy.random.random() * 2 - 1))
+            trans.yoffset = int(dist * decay * (renpy.random.random() * 2 - 1))
+            return 0.01
+        return None
+
+transform earthquake(dt=3.0, dist=30):
+    function renpy.curry(_shake)(dt=dt, dist=dist)   
+
+define flash = Fade(0.02, 0.0, 0.5, color="#fff")   
 
 # The game starts from label start.
 label start:
-    $ ccc = 50
+    $ ccc = 20
     while ccc > 0:
         $ dossier.add(de_mask)
         $ dossier.add(de_mate)
         $ dossier.add(dp_leo)
         $ dossier.add(de_screen)
         $ dossier.add(de_medicalreport)
+        $ dossier.add(de_victimnotes)
+        $ dossier.add(de_shovel)
+        $ dossier.add(de_blooddrops)
+        $ dossier.add(de_bodybag)
+        $ dossier.add(de_callrecords)
+        $ dossier.add(de_casualclothes)
+        $ dossier.add(de_notebook)
         $ ccc -= 1
       
     scene placeholder_office:
         blur 150
         linear 3.0 blur 0
+    show leo neutral at slightleft
+    show cata neutral at slightright
+    show layer master at earthquake(dt=2.0, dist=150)
+    c "Geez, that was scary."
+    show leo grin shine with flash
+    t "It's all daijoubuuu!"
     menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
         "Jump to Act I":
             jump act1

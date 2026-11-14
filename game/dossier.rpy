@@ -21,9 +21,9 @@ style dossier_text:
     color "#fffb00"
 
 screen _dossier_items_chooser:
-                label "[dossier_tab]":
-                    xalign 0.9
-                    yalign 0.5
+                # label "[dossier_tab]":
+                #     xalign 0.9
+                #     yalign 0.5
                 vpgrid:
 
                     cols 4
@@ -59,12 +59,19 @@ screen dossier_ui():
     default notes_right_value = VariableInputValue("persistent.dossier_notes_page_right", default=False)
     default dossier_tab = "evidence"
     default dossier_select = None
+    default dossier_map = None
     fixed:
         xalign 0.5
         yalign 0.5
         add "dossier/dossier.png":
             xalign 0.5
             yalign 0.5
+        
+        # showif dossier_tab == "map":
+        #     add "dossier_map_filtered":
+        #         xalign 0.5
+        #         yalign 0.5
+
         #xpadding 20
         #ypadding 10
         #xsize 880
@@ -81,8 +88,8 @@ screen dossier_ui():
         showif renpy.get_screen("ce", tag_only=True):
             imagebutton:
                     idle "button-empty"
-                    idle_foreground Text("Objection!", xalign=0.5, yalign=0.5)
-                    hover_foreground Text("Objection!", xalign=0.5, yalign=0.5)
+                    idle_foreground Text("Present!", xalign=0.5, yalign=0.5)
+                    hover_foreground Text("Present!", xalign=0.5, yalign=0.5)
                     action [SetVariable("ce_mode", "object"), SetVariable("ce_object", dossier_select), Hide("dossier_ui"), Return()]
                     xalign 0.010
                     yalign 0.805
@@ -115,7 +122,32 @@ screen dossier_ui():
             showif dossier_tab == "profiles":
                 use _dossier_items_chooser
             elif dossier_tab == "map":
-                pass
+                imagemap:
+                    xpos 0.02
+                    ground "dossier_map_filtered"
+                    hover "dossier_map_filtered_hover"
+                    selected_idle "dossier_map_filtered_sel"
+                    selected_hover "dossier_map_filtered_sel"
+
+                    hotspot (441, 130, 234, 195):
+                        selected (dossier_map == mp_grandstands)
+                        action SetScreenVariable("dossier_map", mp_grandstands)
+                    hotspot (251, 373, 161, 172):
+                        selected (dossier_map == mp_breakroom)
+                        action SetScreenVariable("dossier_map", mp_breakroom)
+                    hotspot (407, 392, 132, 140):
+                        selected (dossier_map == mp_corridor)
+                        action SetScreenVariable("dossier_map", mp_corridor)
+                    hotspot (575, 392, 132, 140):
+                        selected (dossier_map == mp_paddock)
+                        action SetScreenVariable("dossier_map", mp_paddock)
+                    hotspot (700, 392, 132, 140):
+                        selected (dossier_map == mp_stables)
+                        action SetScreenVariable("dossier_map", mp_stables)
+                    hotspot (466, 618, 191, 164):
+                        selected (dossier_map == mp_lockers)
+                        action SetScreenVariable("dossier_map", mp_lockers)
+                    
             elif dossier_tab == "notes":
 
                 button:
@@ -141,7 +173,7 @@ screen dossier_ui():
             xalign 0.75
             ypos 0.2
             xsize 550
-            showif dossier_tab in ["evidence", "profiles", "map"]:
+            showif dossier_tab in ["evidence", "profiles"]:
                 label (dossier_select.name if dossier_select else _("No Item Selected")):
                     xalign 0.5
                 fixed:
@@ -185,6 +217,41 @@ screen dossier_ui():
                     scrollbars "vertical"
                     mousewheel True
                     text (dossier_select.desc_long if dossier_select else _("No Item Selected")):
+                        style "dossier_text"
+            elif dossier_tab == "map":
+                null height 15
+                label (dossier_map.name if dossier_map else _("Select A Location")):
+                    xalign 0.5
+                fixed:
+                    xfill True
+                    ysize 3
+                    add Solid("#ff0000") 
+                null height 5
+                frame:
+                    xpadding 10
+                    ypadding 10
+                    xalign 0.5
+                    $ page2iconsize = 240
+                    frame:
+                        xpadding 10
+                        ypadding 10
+                        xalign 0.5 ysize page2iconsize+20 xsize page2iconsize*2+20
+                        if dossier_map:
+                            add Transform(dossier_map.image, size=(page2iconsize*2,page2iconsize))
+                    
+
+                null height 6
+                fixed:
+                    xfill True
+                    ysize 3
+                    add Solid("#ff0000") 
+                null height 6
+
+                viewport:
+                    ysize 320
+                    scrollbars "vertical"
+                    mousewheel True
+                    text (dossier_map.desc if dossier_map else _("Select A Location")):
                         style "dossier_text"
             elif dossier_tab == "notes":
                 button:
