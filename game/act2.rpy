@@ -772,6 +772,25 @@ label act2:
 
         t what aw drop "It's nice to see you too, Inspector Medina."
 
+        scene black 
+        show me neutral at center
+        with fade
+
+        tt smile "Police inspector Sofia Medina. We've worked together on cases before."
+
+        tt aha "...well. It's more accurate to say I've crashed into crime scenes that she happened to be in charge of. To help, of course!"
+
+        tt neutral right "The inspector managed to take me in for questioning a while ago, so she knows about me being El Leopardo..."
+
+        tt neutral closed "...but as for how I'm still allowed to walk free? I have no idea."
+
+        tt neutral "Arbitrary exercise of justice will put you in the slammer. We're both aware of that. So why?—"
+
+        scene placeholder_lockers
+        show en grin at left        
+        show me neutral at slightright
+        with fade
+
         me "…I swear, if I find out you sneaked in here, I'm—"
 
         x "Oho, a trespasser? Quite daring. I have security on speed dial for cases like this."
@@ -785,6 +804,8 @@ label act2:
         t aw smile drop "Apparently, I was the only one willing to take the job…"
 
         me "…That checks out."
+
+        tt neutral drop "Phew... she won't send the K9s after me now, at least."
 
         t neutral "So, who is this you were talking to…?"
 

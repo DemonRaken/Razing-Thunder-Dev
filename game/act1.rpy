@@ -216,8 +216,9 @@ label act1:
   c "{color=#FF9900}Antonio Ortiz. {/color}I know."
 
   
-  scene black with fade
-  show tony neutral with dissolve
+  scene black
+  show tony neutral
+  with fade
 
   tt "…indeed. El Leopardo's secret identity- the man behind the mask is none other than Antonio Ortiz."
 
@@ -228,8 +229,9 @@ label act1:
 
   tt "My specialty is offering my services as a private investigator. Sadly, business on that front hasn't picked up lately, so-"
   
-  scene placeholder_park with fade
-  show cata yell with dissolve
+  scene placeholder_park
+  show cata yell
+  with fade
 
   c "—hey. I'm talking to you. Are you even listening?"
 
