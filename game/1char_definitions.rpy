@@ -1,7 +1,10 @@
 # Character Definitions
 define config.side_image_only_not_showing = True   # make side image not show when full body is shown.
 define config.say_attribute_transition = Dissolve(0.2, alpha=True)   # Always add a dissolve when expression changes
-default preferences.text_cps = 30   
+define config.window_hide_transition = None   
+
+init 1:
+    default preferences.text_cps = 30
 
 define bb = Character(ctc="ctc_horse", ctc_pause="ctc_horse", ctc_position="fixed",
                       window_background="textbox7",
@@ -43,15 +46,17 @@ define tgc = Character("Thug C", kind=bb)
 define tgabc = Character("Thug A, B & C", kind=bb)
 
 # Change narrator to use the bb base
-define narrator = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav", cb_bliploop=True,
+define n = Character(kind=bb, callback=blip, cb_blipfile="audio/type.wav", cb_bliploop=True,
 window_background="textbox9",
 what_text_align=0.5-0.12,
 what_xalign=0.5-0.12)
 
+define narrator = Character(window_background=None) # workaround around this issue https://github.com/renpy/renpy/issues/4527
+
 # The time and location
 define tl = Character(what_color="#38761D",  
 what_outlines=[(2,"#000000", 1, 1)],
-kind=narrator,
+# kind=narrator,
 window_background="textbox9",
 what_text_align=0.5-0.12,
 what_xalign=0.5-0.12)

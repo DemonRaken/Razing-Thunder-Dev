@@ -1,3 +1,4 @@
+
 init python:
     def frame_anim(folder, timings, prefix="frame"):
         """Build a looping Animation from numbered PNG frames.
@@ -40,9 +41,9 @@ define holdit_duration_sum = sum(holdit_duration)
 image holdit:
     Transform(
         frame_anim("cutins/gifs/holdit", holdit_duration),
-        zoom= 1.5,
+        zoom= 2.0,
         xalign=0.5,
-        yalign=-0.1
+        yalign=0.5
         )
     pause holdit_duration_sum
     Null()
@@ -54,9 +55,9 @@ define objection_duration_sum = sum(objection_duration)
 image objection:
     Transform(
         frame_anim("cutins/gifs/objection", objection_duration),
-        zoom= 1.5,
+        zoom= 2.0,
         xalign=0.5,
-        yalign=0.0
+        yalign=0.5
         )
     pause objection_duration_sum
     Null()
@@ -68,12 +69,19 @@ define takethat_duration_sum = sum(takethat_duration)
 image takethat:
     Transform(
         frame_anim("cutins/gifs/takethat", takethat_duration),
-        zoom= 1.5,
+        zoom= 2.0,
         xalign=0.5,
-        yalign=-0.1
+        yalign=0.5
         )
     pause takethat_duration_sum
     Null()
+
+label cutin(name):
+    $ dur = getattr(renpy.store, f"{name}_duration_sum")
+    $ renpy.show(name)
+    pause dur
+    $ renpy.hide(name)
+    return   
 
 #xysize=(config.screen_width, config.screen_height)
 # ============================================================

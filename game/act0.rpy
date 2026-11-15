@@ -26,23 +26,24 @@ label start:
     $ dossier.add(de_callrecords)
     $ dossier.add(de_casualclothes)
     $ dossier.add(de_notebook)
-      
     scene placeholder_office:
         blur 150
         linear 3.0 blur 0
+    "Hello, I am the narration system."
+    n "No, I am the real narrator"
     show leo neutral at slightleft
     show cata neutral at slightright
     show layer master at earthquake(dt=2.0, dist=150)
     c "Geez, that was scary."
     show leo grin shine with flash
     l "It's all daijoubuuu!"
-    show objection
+    call cutin("objection")
     l "Objection! I am fine!"
-    show holdit
+    call cutin("holdit")
     c "Hold it! Why do you yell near me?!!"
-    show takethat
+    call cutin("takethat")
     l "Take That! You are doing it too!"
-    show cross_examination
+    call cutin("cross_examination")
     c "Just come and let's do my Cross-Examination and be done with it."
     menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
         "Jump to Act I":
