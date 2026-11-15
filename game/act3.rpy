@@ -588,6 +588,8 @@ label intervene:
 
     s "WHAT!? I, uh... I don't know what he's talking about. I would never..."
 
+    me "..."
+
     s "More importantly, there's no need to waste any more time on this!"
 
     s "We already know who the culprit is!"
@@ -604,6 +606,82 @@ label intervene:
 
     # contra 1: tony killed him at the top of the railings
     # contra 2: tony used the bag to carry the body from the stables
+    # Breather, Medina finally gets to present people's alibis to Tony.
+
+    s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
+    #p
+    l "My- *cough* what is so questionable about that young man's appearance?"
+    s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
+    lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+
+    s "But no more! He's clearly a suspicious person!"
+    #p
+    lt "What makes you so sure about that?"
+    s "I'm getting there, mask freak! Stop interrupting me."
+    
+    s "We all saw him prodding and standing near the body."
+    #p
+    l "Uh... perhaps he was just trying to help the downed man?"
+    s "Now he's a parademic? Please!"
+    lt "I do know some first aid..."
+
+    s "Who does that? A cold blooded murderer!"
+    #p
+    l "It's a bit of a stretch to label him a murderer just for that!"
+    s "Say what you want, the police should just arrest him and let us run things here!"
+    lt "I don't know if I'll be so lucky twice if I end up there again.
+    "
+    s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
+    #p - contra is here
+    l "He dropped him right after the attack?"
+    s "Are your ears clogged? Yes!"
+    l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
+    s "Who?"
+    l "...the victim."
+    s "Oh. Yes. Don't make me repeat the same over and over!"
+    lt "I will when you stop contradicting yourself over and over."
+    
+    lt "I'm not about to let this guy frame me for murder."
+    lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
+
+    #continue here
+    l "So you are saying that this Mr. Ortiz attacked the victim at the top of the grandstands... then threw the man over the railings..."
+    l "...where he would then land as he was found at the parade ring. Am I getting this right?"
+
+    s "A good summary! If you get it, how about you leave already?"
+
+    l "Except that explanation is riddled with problems."
+
+    s "H-How dare you!"
+
+    l "If Mr. Ortiz threw him off from that high up, how did he show up to \"prod\" at the corpse, as you put it before?"
+    s "He ran! All the way down, very fast."
+
+    l "Except it's quite the distance to cover. He would arrived after you, not before you."
+
+    l "That's not the biggest problem though."
+
+    s "There's more...?"
+
+    l "Unfortunately for you, yes, there is more."
+
+    l "There was a distinct lack of blood at the top of the grandstands."
+
+    s "That's easy! It got cleaned up!"
+
+    l "Luminol test."
+
+    s "What?"
+
+    l "Forensics examined the area carefully. Even if blood is wiped clean, luminol can get a reaction and tell us where blood where our eyes can't see it."
+
+    l "Yet none was to be found at the railing or ground from where he was thrown off."
+
+    l "But there is one place where the victim's blood was found. Care to take a guess?"
+
+    s "..Mmmmnngh...."
+
+
 
     "You Cross-Examine to prove its not an accident."
     label ce2:

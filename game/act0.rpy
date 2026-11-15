@@ -14,21 +14,18 @@ define flash = Fade(0.02, 0.0, 0.5, color="#fff")
 
 # The game starts from label start.
 label start:
-    $ ccc = 20
-    while ccc > 0:
-        $ dossier.add(de_mask)
-        $ dossier.add(de_mate)
-        $ dossier.add(dp_leo)
-        $ dossier.add(de_screen)
-        $ dossier.add(de_medicalreport)
-        $ dossier.add(de_victimnotes)
-        $ dossier.add(de_shovel)
-        $ dossier.add(de_blooddrops)
-        $ dossier.add(de_bodybag)
-        $ dossier.add(de_callrecords)
-        $ dossier.add(de_casualclothes)
-        $ dossier.add(de_notebook)
-        $ ccc -= 1
+    $ dossier.add(de_mask)
+    $ dossier.add(de_mate)
+    $ dossier.add(dp_leo)
+    $ dossier.add(de_screen)
+    $ dossier.add(de_medicalreport)
+    $ dossier.add(de_victimnotes)
+    $ dossier.add(de_shovel)
+    $ dossier.add(de_blooddrops)
+    $ dossier.add(de_bodybag)
+    $ dossier.add(de_callrecords)
+    $ dossier.add(de_casualclothes)
+    $ dossier.add(de_notebook)
       
     scene placeholder_office:
         blur 150
@@ -38,7 +35,15 @@ label start:
     show layer master at earthquake(dt=2.0, dist=150)
     c "Geez, that was scary."
     show leo grin shine with flash
-    t "It's all daijoubuuu!"
+    l "It's all daijoubuuu!"
+    show objection
+    l "Objection! I am fine!"
+    show holdit
+    c "Hold it! Why do you yell near me?!!"
+    show takethat
+    l "Take That! You are doing it too!"
+    show cross_examination
+    c "Just come and let's do my Cross-Examination and be done with it."
     menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
         "Jump to Act I":
             jump act1
