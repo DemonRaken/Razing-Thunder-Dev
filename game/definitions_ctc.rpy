@@ -40,7 +40,9 @@ define holdit_duration_sum = sum(holdit_duration)
 image holdit:
     Transform(
         frame_anim("cutins/gifs/holdit", holdit_duration),
-        xysize=(config.screen_width, config.screen_height)
+        zoom= 1.5,
+        xalign=0.5,
+        yalign=-0.1
         )
     pause holdit_duration_sum
     Null()
@@ -52,7 +54,9 @@ define objection_duration_sum = sum(objection_duration)
 image objection:
     Transform(
         frame_anim("cutins/gifs/objection", objection_duration),
-        xysize=(config.screen_width, config.screen_height)
+        zoom= 1.5,
+        xalign=0.5,
+        yalign=0.0
         )
     pause objection_duration_sum
     Null()
@@ -64,11 +68,14 @@ define takethat_duration_sum = sum(takethat_duration)
 image takethat:
     Transform(
         frame_anim("cutins/gifs/takethat", takethat_duration),
-        xysize=(config.screen_width, config.screen_height)
+        zoom= 1.5,
+        xalign=0.5,
+        yalign=-0.1
         )
     pause takethat_duration_sum
     Null()
 
+#xysize=(config.screen_width, config.screen_height)
 # ============================================================
 #  ANIMATED CTC (HORSE) — First VERSION
 # ============================================================
