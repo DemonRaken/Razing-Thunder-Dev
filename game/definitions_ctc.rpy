@@ -41,9 +41,9 @@ define holdit_duration_sum = sum(holdit_duration)
 image holdit:
     Transform(
         frame_anim("cutins/gifs/holdit", holdit_duration),
-        zoom= 2.0,
-        xalign=0.5,
-        yalign=0.5
+        zoom= 1.7,
+        xalign= 0.5,
+        yalign= 0.5
         )
     pause holdit_duration_sum
     Null()
@@ -55,9 +55,9 @@ define objection_duration_sum = sum(objection_duration)
 image objection:
     Transform(
         frame_anim("cutins/gifs/objection", objection_duration),
-        zoom= 2.0,
-        xalign=0.5,
-        yalign=0.5
+        zoom= 1.7,
+        xalign= 0.5,
+        yalign= 0.5
         )
     pause objection_duration_sum
     Null()
@@ -69,9 +69,9 @@ define takethat_duration_sum = sum(takethat_duration)
 image takethat:
     Transform(
         frame_anim("cutins/gifs/takethat", takethat_duration),
-        zoom= 2.0,
-        xalign=0.5,
-        yalign=0.5
+        zoom= 1.7,
+        xalign= 0.5,
+        yalign= 0.5
         )
     pause takethat_duration_sum
     Null()
