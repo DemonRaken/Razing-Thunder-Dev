@@ -58,6 +58,16 @@ label start:
             jump debug_ambulances
         "Jump to Debug Investigation":
             jump debug_investigation
+        "Jump to Debug Room":
+            jump debug_room
+        "Jump to Debug":
+            jump debug
+label debug_room:
+    scene placeholder_breakroom
+    show leo smile
+    with fade
+    l "This is a debug room!"
+    return
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"

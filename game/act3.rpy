@@ -691,9 +691,9 @@ label intervene:
     l "...? It seems you don't intend on dropping the accusation."
 
     s "Of course not! And you will see why right now!"
-
+label debug:
     # contra 2: tony used the bag to carry the body from the stables
-    #Leo vs Seb Round 2
+    #Leo vs Seb Round 2 CE
     default ce_seb_bodybag = False
     label vs_sebCE_3:
     scene placeholder_racetrack1
