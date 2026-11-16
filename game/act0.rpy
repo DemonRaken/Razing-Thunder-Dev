@@ -56,6 +56,8 @@ label start:
             jump deleteme
         "Jump to Debug Ambulances":
             jump debug_ambulances
+        "Jump to Debug Investigation":
+            jump debug_investigation
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"

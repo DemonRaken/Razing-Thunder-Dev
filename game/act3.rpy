@@ -605,9 +605,7 @@ label intervene:
     #CE goes here.
 
     # contra 1: tony killed him at the top of the railings
-    # contra 2: tony used the bag to carry the body from the stables
-    # Breather, Medina finally gets to present people's alibis to Tony.
-
+    
     s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
     #p
     l "My- *cough* what is so questionable about that young man's appearance?"
@@ -645,42 +643,204 @@ label intervene:
     lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
 
     #continue here
-    l "So you are saying that this Mr. Ortiz attacked the victim at the top of the grandstands... then threw the man over the railings..."
-    l "...where he would then land as he was found at the parade ring. Am I getting this right?"
+    l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
+    l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
 
-    s "A good summary! If you get it, how about you leave already?"
+    s "A fine summary! Now that you understand, how about you leave already?"
 
-    l "Except that explanation is riddled with problems."
+    l "Except your explanation is riddled with holes."
 
     s "H-How dare you!"
 
-    l "If Mr. Ortiz threw him off from that high up, how did he show up to \"prod\" at the corpse, as you put it before?"
-    s "He ran! All the way down, very fast."
+    l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
 
-    l "Except it's quite the distance to cover. He would arrived after you, not before you."
+    s "He ran! All the way down, as fast as he could!"
 
-    l "That's not the biggest problem though."
+    l "It's quite a distance to cover. He would've arrived after you, not before you."
 
-    s "There's more...?"
+    l "And that's not even the biggest problem."
 
-    l "Unfortunately for you, yes, there is more."
+    s "There's... more?"
 
-    l "There was a distinct lack of blood at the top of the grandstands."
+    l "I'm afraid so. Lots more."
 
-    s "That's easy! It got cleaned up!"
+    l "For starters, there was a distinct lack of blood at the top of the grandstands."
+
+    s "That's easy! It was cleaned up!"
 
     l "Luminol test."
 
     s "What?"
 
-    l "Forensics examined the area carefully. Even if blood is wiped clean, luminol can get a reaction and tell us where blood where our eyes can't see it."
+    l "Forensics examined the area thoroughly. Even if someone wipes away the blood, luminol can still react with the traces left behind, revealing what the naked eye can't see."
 
-    l "Yet none was to be found at the railing or ground from where he was thrown off."
+    l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell."
 
-    l "But there is one place where the victim's blood was found. Care to take a guess?"
+    l "But there was one place where the victim's blood *was* found. Care to guess where?"
 
-    s "..Mmmmnngh...."
+    s "...Mmmmnngh...."
 
+    l "Allow me then: Vicente's blood was discovered at the derby's stables!"
+
+    s "I-Impossible!"
+
+    me "Forensics confirmed the blood is a match. There's no doubt about it."
+
+    s ".....that doesn't change a thing though!"
+
+    l "...? It seems you don't intend on dropping the accusation."
+
+    s "Of course not! And you will see why right now!"
+
+    # contra 2: tony used the bag to carry the body from the stables
+    #Leo vs Seb Round 2
+    default ce_seb_bodybag = False
+    label vs_sebCE_3:
+    scene placeholder_racetrack1
+    show seb smile3
+    with fade
+    call CE_start
+
+    s "Fine then, I will admit. That old crook died at the stables."
+    #press
+    if ce_mode == "object":
+        call vs_sebCE_wrong3
+    if ce_mode == "press":
+        $ ce_mode = None
+        l "Question."
+        s "Banter."
+        with fade
+
+    s "That still doesn't clear the country bumpkin's name!"
+    if ce_mode == "object":
+        call vs_sebCE_wrong3
+    if ce_mode == "press":
+        $ ce_mode = None
+        l "Question."
+        s "Banter."
+        with fade
+
+    if ce_seb_bodybag:
+        s "He attacked that trainer, then used some kind of body bag to transport him out from the stables!"
+        if ce_mode == "object":
+            $ ce_mode = None
+            if ce_object in [de_bodybag]:
+                call vs_sebCE_right3
+            else:
+                call vs_sebCE_wrong3
+        if ce_mode == "press":
+            $ ce_mode = None
+            l "Question."
+            s "Banter."
+            with fade
+    else:
+        s "He attacked that trainer, then moved his body away from the stables!"
+        if ce_mode == "object":
+            call vs_sebCE_wrong3
+        if ce_mode == "press":
+            $ ce_seb_bodybag = True
+            $ ce_mode = None
+            l "How did he pull that off in a derby full of people?"
+            l "I'd imagine Mr. Ortiz would risk being seen."
+            s "Must I spell it out? That runt didn't drag him by the feet in broad daylight!"
+            l "Then how did he do it?"
+            s "Some kind of bag, perhaps? Dark enough so no one can tell!"
+            lt "...people tend to give themselves away at times. This is one of them."
+            l "That sounds important. Revise your testimony, Mr. Castillo."
+            s "Fine, you creep. I'll say it as many times as needed."
+            with fade
+    
+
+    hide screen ce_ui
+    lt "Parts of his explanation are too vague. I should press for details."
+    lt "He's bound to mess up, that will be my chance to counter attack."
+    jump vs_sebCE_3
+
+    label vs_sebCE_wrong3:
+        $ ce_mode = None
+        t "Your testimony contradicts the evidence!!"
+        show seb smile
+        s "No."
+        t "Fuck!"
+        # Penalty Damage
+        $ ce_rep -= 1
+        with fade
+        return
+    
+    label vs_sebCE_right3:
+    $ ce_mode = None
+    $ ce_rep += 2
+    call CE_end
+    
+    
+    l "Interestingly enough... I agree with what you just said, Mr. Castillo."
+
+    s "Even numbskulls like you can listen to reason. There may be hope for you."
+
+    l "Sorry to disappoint you, but I was refering to the transportation method."
+
+    l "Yes, it's highly likely a bodybag was used to move the body."
+
+    l "But... the one you are accusing could not have used that bag."
+
+    s "H-How can you know that!? You can buy a bag like that anywhere!"
+
+    l "Yes. But you still need to dispose of it."
+
+    l "Mr. Castillo. Any ideas on where the body bag carrying the victim's body was located?"
+
+    s "Hah! How should I know!? Was it dumped in a river?"
+
+    l "It was found inside the staff's break room. At the bottom of their trash bin, to be more precise."
+
+    s "WHA- How do you-!?"
+
+    l "The door happened to be open. And an officer happened to check it."
+    
+    l "And what he found was quite graveous: a bag stained with dried blood beloging to the victim."
+
+    s "W-Wait, wait, wait I tell you! This... proves nothing!"
+
+    s "That creep just got rid of the bag in that room!"
+
+    l "That's impossible, and you know, Mr. Castillo."
+
+    s "...!"
+
+    l "Mr. Villareal, security has been heavily increased due to the collapsing incident, right?"
+
+    en "Huh? Yes, that is right. We got stricter patrols and make sure the public doesn't wander off where they shouldn't..."
+
+    l "This break room is one of those places. Unauthorized people can't put a foot there."
+
+    l "That means only people working on the inside would be able to dispose of the bag in the breakroom!"
+
+    s "AAAHHH!"
+
+    lt "Well, I did get in there relatively easy, but I am not going to tell him that. Specially when I got him on the ropes."
+
+    l "Mr. Castillo! You often like to mention calling in your underlings to handle things..."
+
+    l "How about it? Let's give them a call so they can tell us why an area meant for rest..."
+
+    l "...was hiding away a piece of evidence related to the murder."
+
+    l "I am sure they will have something very interesting to share with the rest of us!"
+
+    s "....n...nnnh...."
+
+    s "Nooooo!"
+
+    #fade here
+
+    me "Got some news. Castillo's 'fessed up. Two of them hid away that bodybag in the break room. On their boss' orders, of course."
+
+    l "I knew it... so that means, he-"
+
+    me "Hold it there. I know what you're thinking..."
+    
+    # Breather, Medina finally gets to present people's alibis to Tony.
+    
 
 
     "You Cross-Examine to prove its not an accident."

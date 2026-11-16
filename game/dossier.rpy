@@ -1,6 +1,8 @@
 define config.overlay_screens += ["dossier_icon"]
 define config.keymap['input_next_line'] = ['K_RETURN', 'K_KP_ENTER']   
 
+default dossier_tab_control = "evidence"
+
 init python:
     if persistent.dossier_notes_page_left is None:
         persistent.dossier_notes_page_left = ""
@@ -24,32 +26,36 @@ screen _dossier_items_chooser:
                 # label "[dossier_tab]":
                 #     xalign 0.9
                 #     yalign 0.5
-                vpgrid:
-
-                    cols 4
-                    spacing 5
-                    draggable True
-                    mousewheel True
+                fixed:
                     ysize 650
                     xsize 560
-                    scrollbars "vertical"
+                    vpgrid:
 
-                    default dbtnsize = 125
+                        cols 4
+                        spacing 5
+                        draggable True
+                        mousewheel True
+                        #ysize 650
+                        #xsize 560
+                        scrollbars "vertical"
 
-                    for i in dossier:
-                        if not isinstance(i, Evidence if dossier_tab == "evidence" else CharacterProfile):
-                            continue
+                        default dbtnsize = 125
 
-                        imagebutton:
-                            idle Transform(i.image, size=(dbtnsize, dbtnsize))
-                            idle_background Transform("evidence-empty", size=(dbtnsize, dbtnsize))
-                            hover_background Transform("evidence-empty", size=(dbtnsize, dbtnsize))
-                            idle_foreground Text(i.name, xalign=0.5, yalign=0.9, size=18)
-                            #hover "button-sel-hover"
-                            selected dossier_select == i
-                            selected_background Transform("evidence-sel", size=(dbtnsize, dbtnsize))
-                            hover_foreground Text(i.name, xalign=0.5, yalign=0.9)
-                            action SetScreenVariable("dossier_select", i)
+                        for i in dossier:
+                            if not isinstance(i, Evidence if dossier_tab == "evidence" else CharacterProfile):
+                                continue
+
+                            imagebutton:
+                                xysize (dbtnsize, dbtnsize)   # ← lock it
+                                idle Transform(i.image, size=(dbtnsize, dbtnsize))
+                                idle_background Transform("evidence-empty", size=(dbtnsize, dbtnsize))
+                                hover_background Transform("evidence-empty", size=(dbtnsize, dbtnsize))
+                                idle_foreground Text(i.name, xalign=0.5, yalign=0.9, size=18)
+                                #hover "button-sel-hover"
+                                selected dossier_select == i
+                                selected_background Transform("evidence-sel", size=(dbtnsize, dbtnsize))
+                                hover_foreground Text(i.name, xalign=0.5, yalign=0.9)
+                                action SetScreenVariable("dossier_select", i)
 
 screen dossier_ui():
     modal True
@@ -57,7 +63,7 @@ screen dossier_ui():
     tag dossier
     default notes_left_value = VariableInputValue("persistent.dossier_notes_page_left", default=False)
     default notes_right_value = VariableInputValue("persistent.dossier_notes_page_right", default=False)
-    default dossier_tab = "evidence"
+    default dossier_tab = dossier_tab_control
     default dossier_select = None
     default dossier_map = None
     fixed:
@@ -85,7 +91,7 @@ screen dossier_ui():
             null height 5
             textbutton "Close" action Hide("dossier_ui")   
 
-        showif renpy.get_screen("ce", tag_only=True):
+        showif renpy.get_screen("ce", tag_only=True) or aai_active and aai_mode == "present":
             imagebutton:
                     idle "button-empty"
                     idle_foreground Text("Present!", xalign=0.5, yalign=0.5)
