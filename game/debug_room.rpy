@@ -23,7 +23,7 @@ label debug_room:
     c "You bet it is!"
     show layer master:
         linear 4.0 blur 250
-        linear 4.0 zoom 2
+        #linear 4.0 zoom 2
     menu timed_menu (screen="timed_choice", timeout=4.0, timeout_label="testCataCE"):
         "jump to Debug CutIn Test":
             jump debug_cutins_test

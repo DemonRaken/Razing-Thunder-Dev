@@ -1,157 +1,155 @@
 label act3:
+    label act3intro:
+        scene placeholder_paddock
+        with fade
+        tl "Razing Thunder Derby.\n Paddock. \n Evening."
+        tt "Running at full speed, the gathering crowd immediately gets my attention. Following their gaze, I move past people to see what's got their attention…"
+        tt "...and in that moment, the sense of dread that had been building up in my chest as I rushed over washes away, overcome by anger and disbelief."
 
-scene placeholder_paddock
-with fade
-tl "Razing Thunder Derby.\n Paddock. \n Evening."
-tt "Running at full speed, the gathering crowd immediately gets my attention. Following their gaze, I move past people to see what's got their attention…"
+        #Insert here CG of Vicente dead on the ground.
+        scene placeholder_bodycg
+        with dissolve
 
-tt "...and in that moment, the sense of dread that had been building up in my chest as I rushed over washes away, overcome by anger and disbelief."
+        tt "On the ground of the parade ring area lay the body of Vicente Ruiz, whom I had just spoken with not long ago, blood seeping from his head."
 
-#Insert here CG of Vicente dead on the ground.
-scene placeholder_bodycg
-with dissolve
+        t "What the hell…!?"
 
-tt "On the ground of the parade ring area lay the body of Vicente Ruiz, whom I had just spoken with not long ago, blood seeping from his head."
+        tt "I quickly glance around my immediate surroundings, searching for anyone trying to run away." 
 
-t "What the hell…!?"
+        tt "I only see people gasping and muttering among themselves, some even pulling out their phones to snap pictures."
 
-tt "I quickly glance around my immediate surroundings, searching for anyone trying to run away." 
+        t "Nnh.."
 
-tt "I only see people gasping and muttering among themselves, some even pulling out their phones to snap pictures."
+        tt "Unable to pinpoint the attacker, I rush over, crouching next to where Vicente lies."
 
-t "Nnh.."
+        tt "Expecting the worst, I check for a pulse at his neck, hoping to find even the faintest sign of life…!"
 
-tt "Unable to pinpoint the attacker, I rush over, crouching next to where Vicente lies."
+        t "......he's dead."
 
-tt "Expecting the worst, I check for a pulse at his neck, hoping to find even the faintest sign of life…!"
+        tt "Damn it… how did this happen!?"
 
-t "......he's dead."
+        tt "I hear more footsteps rushing in, familiar voices reacting to the gruesome scene as I move my hand away from the corpse."
 
-tt "Damn it… how did this happen!?"
+        show lu nervous2 at center
+        show rena nervous4 at left
+        show cata nervous2 at right
+        with dissolve
 
-tt "I hear more footsteps rushing in, familiar voices reacting to the gruesome scene as I move my hand away from the corpse."
+        lu "Don Vicente…!"
 
-show lu nervous2 at center
-show rena nervous4 at left
-show cata nervous2 at right
-with dissolve
+        r "Woah- what the fuck is going on here!?"
 
-lu "Don Vicente…!"
+        c "That's one of the trainers…"
 
-r "Woah- what the fuck is going on here!?"
+        hide rena
+        hide cata
+        with dissolve
 
-c "That's one of the trainers…"
-
-hide rena
-hide cata
-with dissolve
-
-show me angry at right with dissolve
+        show me angry at right with dissolve
 
 
-me "Everyone, back off. Now. I'm clearing the area, this is a crime scene."
+        me "Everyone, back off. Now. I'm clearing the area, this is a crime scene."
 
-lu "This can't be happening…"
+        lu "This can't be happening…"
 
-show en yell3 at left
-with dissolve
+        show en yell3 at left
+        with dissolve
 
-en "Ah- it must be a misunderstanding, inspector!"
+        en "Ah- it must be a misunderstanding, inspector!"
 
-show me yell
+        show me yell
 
-me "I don't care how you try to spin it, that's a dead body. I'm having my people come in to secure the scene."
+        me "I don't care how you try to spin it, that's a dead body. I'm having my people come in to secure the scene."
 
-show en nervous2
+        show en nervous2
 
-en "Yes, I am aware that's your duty…! But see, the race is about to start in about thirty minutes…"
+        en "Yes, I am aware that's your duty…! But see, the race is about to start in about thirty minutes…"
 
-show me yell2
+        show me yell2
 
-me "Are you kidding me? That's what you're concerned about?"
+        me "Are you kidding me? That's what you're concerned about?"
 
-hide me
-hide en
-hide lu
-with dissolve
+        hide me
+        hide en
+        hide lu
+        with dissolve
 
-show seb frown at slightleft 
-with dissolve
+        show seb frown at slightleft 
+        with dissolve
 
-s "The wondrous host is quite serious. We really can't have yet another cancellation of the event."
+        s "The wondrous host is quite serious. We really can't have yet another cancellation of the event."
 
-show me angry at slightright
-with dissolve
+        show me angry at slightright
+        with dissolve
 
-me "You've got your priorities pretty screwed, Castillo. Listen here, whatever happened here…"
+        me "You've got your priorities pretty screwed, Castillo. Listen here, whatever happened here…"
 
-show me sweat2
-me "...needs to be dealt with right away. There could be a murderer lurking around for all we know."
+        show me sweat2
+        me "...needs to be dealt with right away. There could be a murderer lurking around for all we know."
 
-hide me
-hide seb
-with dissolve
+        hide me
+        hide seb
+        with dissolve
 
-show en nervous2 with dissolve
-en "Mmngh…"
-hide en
-with dissolve
+        show en nervous2 with dissolve
+        en "Mmngh…"
+        hide en
+        with dissolve
 
-show seb smile2 at slightleft
-show me angry at slightright
-with dissolve
+        show seb smile2 at slightleft
+        show me angry at slightright
+        with dissolve
 
-s "That would be concerning! But rest assured, I just asked a few people around here- they all said the same thing. This old fool- I mean, this man fell off the grandstands."
+        s "That would be concerning! But rest assured, I just asked a few people around here- they all said the same thing. This old fool- I mean, this man fell off the grandstands."
 
-show me sweat
+        show me sweat
 
-me "What…?"
+        me "What…?"
 
-tt "We all look up in unison towards the top of the grandstands. True, a fall from there would be lethal depending on how you land."
+        tt "We all look up in unison towards the top of the grandstands. True, a fall from there would be lethal depending on how you land."
 
-show seb neutral
+        show seb neutral
 
-s "If you don't believe me, go ahead and ask around. I'm sure you'll be met with the same responses."
+        s "If you don't believe me, go ahead and ask around. I'm sure you'll be met with the same responses."
 
-tt "Only sparing him a glare, the inspector immediately begins questioning some of the nearby onlookers… who pretty much say the same thing."
+        tt "Only sparing him a glare, the inspector immediately begins questioning some of the nearby onlookers… who pretty much say the same thing."
 
-show seb smile2
-s "So you see, this is but a tragic accident."
+        show seb smile2
+        s "So you see, this is but a tragic accident."
 
-en "It is quite regrettable… however, these things can happen. I will take care of it."
+        en "It is quite regrettable… however, these things can happen. I will take care of it."
 
-tt "With a snap of his fingers, security staff begin to approach from within the crowd. Oh no, are they already going to dispose of the body…?"
+        tt "With a snap of his fingers, security staff begin to approach from within the crowd. Oh no, are they already going to dispose of the body…?"
 
-me "Tch, you're pulling that card now?"
+        me "Tch, you're pulling that card now?"
 
-tt "Whatever reinforcements the inspector could call, they'll arrive too late. By then, some evidence might be lost."
+        tt "Whatever reinforcements the inspector could call, they'll arrive too late. By then, some evidence might be lost."
 
-tt "I have to do something, quick! I-"
+        tt "I have to do something, quick! I-"
 
-menu:
-    "Speak up and intervene.":
-        jump intervene
-    "Stay quiet and watch things play out.":
-        jump silent
+        menu:
+            "Speak up and intervene.":
+                jump intervene
+            "Stay quiet and watch things play out.":
+                jump silent
 
-label silent:
-"Bad end."
-return
+        label silent:
+        "Bad end."
+        return
+    label intervene:
+        t "Wait a moment! This is no accident! It's murder."
 
-label intervene:
-    t "Wait a moment! This is no accident! It's murder."
+        me "Ortiz..."
 
-    me "Ortiz..."
+        s "Hah? Wait a moment, y-you...! What are you doing-"
 
-    s "Hah? Wait a moment, y-you...! What are you doing-"
+        s "I mean... what are you saying? Didn't you hear what all these people said already?"
 
-    s "I mean... what are you saying? Didn't you hear what all these people said already?"
+        tt "Hmph. Surprised I'm still hanging around...?"
 
-    tt "Hmph. Surprised I'm still hanging around...?"
+        t "I did. But that doesn't make it an accident."
 
-    t "I did. But that doesn't make it an accident."
-
-    s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
+        s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
 
     #Tony vs Seb
     label vs_sebCE:
@@ -314,9 +312,7 @@ label intervene:
 
     tt "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
     tt "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
-    tt "First, I need to make a quick stop to the trainer lockers..."
-
-        
+    tt "First, I need to make a quick stop to the trainer lockers..."      
     
     #InvestigationsAreasNow, access from map
     label paddock_inves:
@@ -338,360 +334,411 @@ label intervene:
     "You find evidence in the parade ring."
 
     label racetrack_inves:
-    scene placeholder_granstands
-    with fade
-    #Inves point Vip Lunge box
-    lt "It's closed off for now, with police officers standing guard."
-    lt "If I had to guess, Inspector Medina is questioning people inside."
-    lt "I swear... Lorenzo must be fighting like hell to keep anyone from being taken to the police station."
-    #railing
-    lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
-    lt "You'd have to deliberately climb over it to jump... or have someone throw you over."
+        scene placeholder_granstands
+        with fade
+        #Inves point Vip Lunge box
+        lt "It's closed off for now, with police officers standing guard."
+        lt "If I had to guess, Inspector Medina is questioning people inside."
+        lt "I swear... Lorenzo must be fighting like hell to keep anyone from being taken to the police station."
+        #railing
+        lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
+        lt "You'd have to deliberately climb over it to jump... or have someone throw you over."
     
     label stables_inves:
-    scene placeholder_stables
-    with fade
-    lt "Hey Chispa. Hope you weren't feeling too lonely without me."
-    lt "Wait... this place feels... off. Something's different."
-    #click mountain of hay
-    lt "Why is there a bunch of hay in the middle of the ground? You'd think the staff would tidy up the place more."
-    lt "Hang on, I can see something underneath it..."
-    lt "Kneeling over, I begin to brush away all of the hay."
-    lt "What the...!? This looks like someone's blood...!"
-    lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
-    lt "Huh? The trail suddenly ends before reaching the entrance."
-    lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
+        scene placeholder_stables
+        with fade
+        lt "Hey Chispa. Hope you weren't feeling too lonely without me."
+        lt "Wait... this place feels... off. Something's different."
+        #click mountain of hay
+        lt "Why is there a bunch of hay in the middle of the ground? You'd think the staff would tidy up the place more."
+        lt "Hang on, I can see something underneath it..."
+        lt "Kneeling over, I begin to brush away all of the hay."
+        lt "What the...!? This looks like someone's blood...!"
+        lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
+        lt "Huh? The trail suddenly ends before reaching the entrance."
+        lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
 
-    #click shovel
-    lt "Wait a minute... What's this doing here?"
+        #click shovel
+        lt "Wait a minute... What's this doing here?"
 
-    lt "A stable shovel. Someone must've left it behind this stall."
+        lt "A stable shovel. Someone must've left it behind this stall."
 
-    lt "The blade is covered in something dark and flaky. At first, I thought it was dirt..."
+        lt "The blade is covered in something dark and flaky. At first, I thought it was dirt..."
 
-    l "...Wait. Is that blood!?"
+        l "...Wait. Is that blood!?"
 
-    lt "And this dent... Looks like it's been damaged pretty badly."
+        lt "And this dent... Looks like it's been damaged pretty badly."
 
-    lt "A dent and blood... some hairs are caught along the edge. Don't tell me this is..."
+        lt "A dent and blood... some hairs are caught along the edge. Don't tell me this is..."
 
-    lt "...I should have one of the inspector's subordinates run tests on it right away."
+        lt "...I should have one of the inspector's subordinates run tests on it right away."
 
-    lt "This here... might be the murder weapon!"
+        lt "This here... might be the murder weapon!"
 
-    lt "Alright, what's next...?"
+        lt "Alright, what's next...?"
     
     label lockers_inves:
-    scene placeholder_lockers
-    with fade
-    l "What's with this locker? It's been left open."
-    lt "As I walked over to close it, something in there catches my attention."
-    l "A... hawaiin shirt? A pair of sunglasses, too..."
-    lt "I guess these must belong to one of the jockeys."
-    l "Hm? Hey, that's a notebook on top of the trousers..."
-    lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
-    l "What do we have here... \n... \n...!?"
-    lt "T-This...! The pages here are full with dates from various derby competitions!"
-    lt "I recognize some of the horses' names, too..."
-    lt "Perla Negra is listed here! That's the one they showed on the news!"
-    l "There's something written next to the name... '$7,000'?"
-    lt "That's a lot of money... is this a betting record? But ultimately, Perla Negra lost that race..."
-    
-    lt "...and so did a few of the other listed horses here, now that I think about it."
-    
-    lt "Their names came up when I first began to look into the incidents."
-    
-    lt "Hmm... these horses... their names are all crossed out. The only one that isn't is... 'Lucero'."
-    l "Lucero... Haven't I heard that name before?"
-    lt "...! Oh yeah! That's Lucas' horse! But why is $5,000 written next to it...?"
-    lt "Mmmh... I should really find out who this locker belongs to."
-    
-    l "Does this one have a nameplate? It does. Let's see..."
-    
-    l "Huh!? Lucas Mendoza?"
-    
-    lt "The hell? Why does he have a notebook listing his own horse?"
-    
-    l "This is so weird... I'll have to look into it further. I should get moving for now."
+        scene placeholder_lockers
+        with fade
+        l "What's with this locker? It's been left open."
+        lt "As I walked over to close it, something in there catches my attention."
+        l "A... hawaiin shirt? A pair of sunglasses, too..."
+        lt "I guess these must belong to one of the jockeys."
+        l "Hm? Hey, that's a notebook on top of the trousers..."
+        lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
+        l "What do we have here... \n... \n...!?"
+        lt "T-This...! The pages here are full with dates from various derby competitions!"
+        lt "I recognize some of the horses' names, too..."
+        lt "Perla Negra is listed here! That's the one they showed on the news!"
+        l "There's something written next to the name... '$7,000'?"
+        lt "That's a lot of money... is this a betting record? But ultimately, Perla Negra lost that race..."
+        
+        lt "...and so did a few of the other listed horses here, now that I think about it."
+        
+        lt "Their names came up when I first began to look into the incidents."
+        
+        lt "Hmm... these horses... their names are all crossed out. The only one that isn't is... 'Lucero'."
+        l "Lucero... Haven't I heard that name before?"
+        lt "...! Oh yeah! That's Lucas' horse! But why is $5,000 written next to it...?"
+        lt "Mmmh... I should really find out who this locker belongs to."
+        
+        l "Does this one have a nameplate? It does. Let's see..."
+        
+        l "Huh!? Lucas Mendoza?"
+        
+        lt "The hell? Why does he have a notebook listing his own horse?"
+        
+        l "This is so weird... I'll have to look into it further. I should get moving for now."
 
     label breakroom_intro:
-    lt "I've never been here before, but during the day, I saw Castillo's underlings coming and going through the hallway that leads here."
+        lt "I've never been here before, but during the day, I saw Castillo's underlings coming and going through the hallway that leads here."
 
-    lt "There's no mistaking them. They all wear those ridiculously expensive, flashy golden suits."
+        lt "There's no mistaking them. They all wear those ridiculously expensive, flashy golden suits."
 
-    lt "I think most of them have left by now, but... there might still be someone inside."
+        lt "I think most of them have left by now, but... there might still be someone inside."
 
-    lt "What should I do? I definitely need to check this place out. And while I could just kick the door down..."
+        lt "What should I do? I definitely need to check this place out. And while I could just kick the door down..."
 
-    lt "...that would only attract unwanted attention. I don't need them calling for backup. I have to be swift."
+        lt "...that would only attract unwanted attention. I don't need them calling for backup. I have to be swift."
 
-    l "..."
+        l "..."
 
-    menu:
-        "Pretend to be room service.":
-            jump roomservice
-        "Make them think there's a fire.":
-            jump fireprank
+        menu:
+            "Pretend to be room service.":
+                jump roomservice
+            "Make them think there's a fire.":
+                jump fireprank
 
-    label fireprank:
-        lt "I take out my phone and search for a 'fire alarm sound effect' video. I crank the volume all the way up and hit play."
+        label fireprank:
+            lt "I take out my phone and search for a 'fire alarm sound effect' video. I crank the volume all the way up and hit play."
 
-        lt "A few seconds later, I hear footsteps rushing toward the door. They're getting closer... Gotta hide!"
+            lt "A few seconds later, I hear footsteps rushing toward the door. They're getting closer... Gotta hide!"
 
-        tg "AHHHH! FIRE! FIRE!!!"
+            tg "AHHHH! FIRE! FIRE!!!"
 
-        lt "The underling bolts down the hallway, stumbling over his own feet before disappearing from view."
+            lt "The underling bolts down the hallway, stumbling over his own feet before disappearing from view."
 
-        l "...Whew. Can't believe that actually worked."
+            l "...Whew. Can't believe that actually worked."
 
-        lt "I pull the poncho off my head and wait a few seconds to make sure he isn't coming back. Once I'm certain the coast is clear, I slip into the unattended room."
+            lt "I pull the poncho off my head and wait a few seconds to make sure he isn't coming back. Once I'm certain the coast is clear, I slip into the unattended room."
 
-        lt "Now, let's see what you're hiding in here..."
-        jump breakroom_inves
-    label roomservice:
-        lt "Alright. It's risky, but it just might work."
-        l "*coughs* Room service!"
-        tg "Finally! I was starving!"
-        lt "The voice from inside opens the door."
-        tg "..."
-        tg "Wait..."
+            lt "Now, let's see what you're hiding in here..."
+            jump breakroom_inves
+        label roomservice:
+            lt "Alright. It's risky, but it just might work."
+            l "*coughs* Room service!"
+            tg "Finally! I was starving!"
+            lt "The voice from inside opens the door."
+            tg "..."
+            tg "Wait..."
 
-        tg "We don't get room service delivered all the way out here—"
+            tg "We don't get room service delivered all the way out here—"
 
-        l "Haah!"
+            l "Haah!"
 
-        lt "I toss my poncho over the man's face, catching him completely off guard."
+            lt "I toss my poncho over the man's face, catching him completely off guard."
 
-        tg "!?"
+            tg "!?"
 
-        lt "He stumbles around, struggling to pull it off. By the time he manages, I've already stepped in close."
+            lt "He stumbles around, struggling to pull it off. By the time he manages, I've already stepped in close."
 
-        lt "I drive my palm into his jaw."
+            lt "I drive my palm into his jaw."
 
-        tg "Oof!"
+            tg "Oof!"
 
-        lt "He crumples to the cold floor, unconscious. I retrieve my poncho and casually sling it back over my shoulder."
+            lt "He crumples to the cold floor, unconscious. I retrieve my poncho and casually sling it back over my shoulder."
 
-        l "Take five."
+            l "Take five."
 
-        lt "Now, let's see what you're hiding in here..."
-        jump breakroom_inves
-    
-    label breakroom_inves:
-    lt "This looks like some kind of staff break room."
+            lt "Now, let's see what you're hiding in here..."
+            jump breakroom_inves
+        label breakroom_inves:
+            lt "This looks like some kind of staff break room."
 
-    lt "A few chairs, a table... Nothing too interesting."
+            lt "A few chairs, a table... Nothing too interesting."
 
-    lt "Hm...? That looks like a trash bin."
+            lt "Hm...? That looks like a trash bin."
 
-    lt "Heh... It may look unimportant, but every good detective knows a crucial piece of evidence could be hiding in one of those!"
+            lt "Heh... It may look unimportant, but every good detective knows a crucial piece of evidence could be hiding in one of those!"
 
-    lt "Well, at least I hope that's the case. Now, what have we got here?"
+            lt "Well, at least I hope that's the case. Now, what have we got here?"
 
-    lt "Rubbish, empty bottles, cigarettes... That's a fire hazard."
+            lt "Rubbish, empty bottles, cigarettes... That's a fire hazard."
 
-    lt "...! Hey, there's a black bag underneath all this. It's been crumpled up, too."
+            lt "...! Hey, there's a black bag underneath all this. It's been crumpled up, too."
 
-    lt "I dig through the rubbish and pull the bag out. Whoa, this thing is way bigger than I expected..."
+            lt "I dig through the rubbish and pull the bag out. Whoa, this thing is way bigger than I expected..."
 
-    lt "I turn it inside out, and something immediately catches my eye."
+            lt "I turn it inside out, and something immediately catches my eye."
 
-    lt "What the...? Why is there so much blood in here!?"
+            lt "What the...? Why is there so much blood in here!?"
 
-    lt "I take a closer look. It's definitely dried blood..."
+            lt "I take a closer look. It's definitely dried blood..."
 
-    lt "It's stained a large portion of the bag's interior..."
+            lt "It's stained a large portion of the bag's interior..."
 
-    lt "..."
+            lt "..."
 
-    lt "Don't tell me... Is this a body bag? How long has this blood been here...?"
+            lt "Don't tell me... Is this a body bag? How long has this blood been here...?"
 
-    l "Nnh... I need to get this thing analyzed. Pronto."
+            l "Nnh... I need to get this thing analyzed. Pronto."
 
 
-    #Investigation
+    #Investigation COMPLETE
 
     label inves_complete:
-    of "Mr. Leopardo, correct?"
-    lt "Ah- one of the police officers working for Medina just approached me."
-    l "Indeed, that would be me! How may I help you?"
-    of "We ran tests of the things you found and have the results. These are copies of them."
-    l "Much appreciated, friend! With this, we're one step closer to bringing down the villain behind it!"
-    of "R-Right... that was all."
-    lt "I watch him leave in a hurry."
-    lt "Hmm... I made some solid leeways here. Next, I should check-"
-    "*beep!*"
-    lt "Who's calling me now? ... \nThe inspector?"
-    l "Hello?"
-    me "Get your ass over to the main racetrack. Time's up."
-    l "Uh. What do you mean time's up-"
-    me "It means this stupid event will start in about 30 minutes and I've done all that I can to stop them from leaving."
-    l "That's crazy! They can't go ahead with the race with a killer on the loose!"
-    l "You're with the police! You have the authority to detain them and-"
-    me "Don't tell me what I already know. Just get over here."
-    "*beep*"
-    l "She hung up..."
-    lt "This is messed up. But no matter..."
-    l "...for the ally of justice is here to save the truth! Prepare yourselves, villains!"
+        of "Mr. Leopardo, correct?"
+        lt "Ah- one of the police officers working for Medina just approached me."
+        l "Indeed, that would be me! How may I help you?"
+        of "We ran tests of the things you found and have the results. These are copies of them."
+        l "Much appreciated, friend! With this, we're one step closer to bringing down the villain behind it!"
+        of "R-Right... that was all."
+        lt "I watch him leave in a hurry."
+        lt "Hmm... I made some solid leeways here. Next, I should check-"
+        "*beep!*"
+        lt "Who's calling me now? ... \nThe inspector?"
+        l "Hello?"
+        me "Get your ass over to the main racetrack. Time's up."
+        l "Uh. What do you mean time's up-"
+        me "It means this stupid event will start in about 30 minutes and I've done all that I can to stop them from leaving."
+        l "That's crazy! They can't go ahead with the race with a killer on the loose!"
+        l "You're with the police! You have the authority to detain them and-"
+        me "Don't tell me what I already know. Just get over here."
+        "*beep*"
+        l "She hung up..."
+        lt "This is messed up. But no matter..."
+        l "...for the ally of justice is here to save the truth! Prepare yourselves, villains!"
 
     label ce1:
-    scene placeholder_granstands
-    with fade
-    lt "I rush all the way over here. The inspector is surrounded by officers, Castillo's underlings, and the jockeys..."
+        scene placeholder_granstands
+        with fade
+        lt "I rush all the way over here. The inspector is surrounded by officers, Castillo's underlings, and the jockeys..."
 
-    lt "Time for my dramatic entrance."
+        lt "Time for my dramatic entrance."
 
-    en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
+        en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
 
-    me "Then you clearly don't understand the situation."
+        me "Then you clearly don't understand the situation."
 
-    en "I promise you, once the race is over, you'll have my full cooperation!"
+        en "I promise you, once the race is over, you'll have my full cooperation!"
 
-    me "That's not how this works. You have to—"
+        me "That's not how this works. You have to—"
 
-    l "—look past your selfish desires and face your responsibilities!"
+        l "—look past your selfish desires and face your responsibilities!"
 
-    me "Exactly—wait, what?"
+        me "Exactly—wait, what?"
 
-    lt "With a running leap and a flip, I let my poncho flutter dramatically through the air before striking a pose with my arms."
+        lt "With a running leap and a flip, I let my poncho flutter dramatically through the air before striking a pose with my arms."
 
-    l "The nightmare of criminals and fighter for justice..."
+        l "The nightmare of criminals and fighter for justice..."
 
-    l "El Leopardo is here to assist!"
+        l "El Leopardo is here to assist!"
 
-    me ".............."
+        me ".............."
 
-    r "Yo. What's this freak's deal?"
+        r "Yo. What's this freak's deal?"
 
-    c "...?"
+        c "...?"
 
-    en "E-Excuse me? Sir, I don't know what kind of game you're playing here, but—"
+        en "E-Excuse me? Sir, I don't know what kind of game you're playing here, but—"
 
-    l "This is no game. This is a matter of life and death, and you're trying to look the other way!"
+        l "This is no game. This is a matter of life and death, and you're trying to look the other way!"
 
-    en "Erm... Well, we're already behind schedule, you see..."
+        en "Erm... Well, we're already behind schedule, you see..."
 
-    me "Despicable..."
+        me "Despicable..."
 
-    s "What are you waiting for!? Kick this clown out of my derby—"
+        s "What are you waiting for!? Kick this clown out of my derby—"
 
-    show en neutral
-    pause 1.0
+        show en neutral
+        pause 1.0
 
-    s "I mean... kick him out of your derby already! He's a lunatic!"
+        s "I mean... kick him out of your derby already! He's a lunatic!"
 
-    l "Ah, but would you still say the same if I offered you the answers to this case?"
+        l "Ah, but would you still say the same if I offered you the answers to this case?"
 
-    s "The answers? Don't kid yourself! What would a masked freak like you know?"
+        s "The answers? Don't kid yourself! What would a masked freak like you know?"
 
-    l "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
+        l "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
 
-    s "WHAT!? I, uh... I don't know what he's talking about. I would never..."
+        s "WHAT!? I, uh... I don't know what he's talking about. I would never..."
 
-    me "..."
+        me "..."
 
-    s "More importantly, there's no need to waste any more time on this!"
+        s "More importantly, there's no need to waste any more time on this!"
 
-    s "We already know who the culprit is!"
+        s "We already know who the culprit is!"
 
-    lt "If it's coming from this guy, I seriously doubt it..."
+        lt "If it's coming from this guy, I seriously doubt it..."
 
-    s "It was that suspicious character found near the body: Antonio Ortiz!"
+        s "It was that suspicious character found near the body: Antonio Ortiz!"
 
-    l "Say whaaaaaat!?"
+        l "Say whaaaaaat!?"
 
-    s "Yes, yes. Allow me to enlighten you."
+        s "Yes, yes. Allow me to enlighten you."
 
-    #CE goes here.
+        #CE goes here.
 
-    # contra 1: tony killed him at the top of the railings
-    
-    s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
-    #p
-    l "My- *cough* what is so questionable about that young man's appearance?"
-    s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
-    lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+        # contra 1: tony killed him at the top of the railings
+        label vs_sebCE2:
+            scene placeholder_racetrack2
+            show seb smile3
+            with fade
+            call CE_start
 
-    s "But no more! He's clearly a suspicious person!"
-    #p
-    lt "What makes you so sure about that?"
-    s "I'm getting there, mask freak! Stop interrupting me."
-    
-    s "We all saw him prodding and standing near the body."
-    #p
-    l "Uh... perhaps he was just trying to help the downed man?"
-    s "Now he's a parademic? Please!"
-    lt "I do know some first aid..."
+            s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
+            if ce_mode == "object":
+                call vs_sebCE_wrong2
+            if ce_mode == "press":
+                $ ce_mode = None
+                l "My- *cough* what is so questionable about that young man's appearance?"
+                s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
+                lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+                with fade
+            
 
-    s "Who does that? A cold blooded murderer!"
-    #p
-    l "It's a bit of a stretch to label him a murderer just for that!"
-    s "Say what you want, the police should just arrest him and let us run things here!"
-    lt "I don't know if I'll be so lucky twice if I end up there again.
-    "
-    s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
-    #p - contra is here
-    l "He dropped him right after the attack?"
-    s "Are your ears clogged? Yes!"
-    l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
-    s "Who?"
-    l "...the victim."
-    s "Oh. Yes. Don't make me repeat the same over and over!"
-    lt "I will when you stop contradicting yourself over and over."
-    
-    lt "I'm not about to let this guy frame me for murder."
-    lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
+            s "But no more! He's clearly a suspicious person!"
+            if ce_mode == "object":
+                call vs_sebCE_wrong2
+            #p
+            if ce_mode:
+                $ ce_mode = None
+                lt "What makes you so sure about that?"
+                s "I'm getting there, mask freak! Stop interrupting me."
+                with fade
+            
+            s "We all saw him prodding and standing near the body."
+            if ce_mode == "object":
+                call vs_sebCE_wrong2
+            #p
+            if ce_mode:
+                $ ce_mode = None
+                l "Uh... perhaps he was just trying to help the downed man?"
+                s "Now he's a parademic? Please!"
+                lt "I do know some first aid..."
+                with fade
 
-    #continue here
-    l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
-    l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
+            s "Who does that? A cold blooded murderer!"
+            if ce_mode == "object":
+                call vs_sebCE_wrong2
+            #p
+            if ce_mode:
+                $ ce_mode = None
+                l "It's a bit of a stretch to label him a murderer just for that!"
+                s "Say what you want, the police should just arrest him and let us run things here!"
+                lt "I don't know if I'll be so lucky twice if I end up there again.
+                "
+                with fade
+            
+            s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
+            #p - contra is here , blood drops
+            if ce_mode == "object":
+                if ce_object in [de_blooddrops]:
+                    call vs_sebCE_right2
+                else:
+                    call vs_sebCE_wrong2
+            if ce_mode:
+                $ ce_mode = None
+                l "He dropped him right after the attack?"
+                s "Are your ears clogged? Yes!"
+                l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
+                s "Who?"
+                l "...the victim."
+                s "Oh. Yes. Don't make me repeat the same over and over!"
+                lt "I will when you stop contradicting yourself over and over."
+                with fade
+            
+            hide screen ce_ui
+            lt "I'm not about to let this guy frame me for murder."
+            lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
+            jump vs_sebCE2
 
-    s "A fine summary! Now that you understand, how about you leave already?"
+            #continue here
+            label vs_sebCE_wrong2:
+                $ ce_mode = None
+                t "Your testimony contradicts the evidence!!"
+                show seb smile
+                s "No."
+                t "Fuck!"
+                # Penalty Damage
+                $ ce_rep -= 1
+                with fade
+                return
+            label vs_sebCE_right2:
+                $ ce_mode = None
+                $ ce_rep += 2
+                call CE_end
+                jump act3_continue2
+        label act3_continue2:
+            l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
+            l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
 
-    l "Except your explanation is riddled with holes."
+            s "A fine summary! Now that you understand, how about you leave already?"
 
-    s "H-How dare you!"
+            l "Except your explanation is riddled with holes."
 
-    l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
+            s "H-How dare you!"
 
-    s "He ran! All the way down, as fast as he could!"
+            l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
 
-    l "It's quite a distance to cover. He would've arrived after you, not before you."
+            s "He ran! All the way down, as fast as he could!"
 
-    l "And that's not even the biggest problem."
+            l "It's quite a distance to cover. He would've arrived after you, not before you."
 
-    s "There's... more?"
+            l "And that's not even the biggest problem."
 
-    l "I'm afraid so. Lots more."
+            s "There's... more?"
 
-    l "For starters, there was a distinct lack of blood at the top of the grandstands."
+            l "I'm afraid so. Lots more."
 
-    s "That's easy! It was cleaned up!"
+            l "For starters, there was a distinct lack of blood at the top of the grandstands."
 
-    l "Luminol test."
+            s "That's easy! It was cleaned up!"
 
-    s "What?"
+            l "Luminol test."
 
-    l "Forensics examined the area thoroughly. Even if someone wipes away the blood, luminol can still react with the traces left behind, revealing what the naked eye can't see."
+            s "What?"
 
-    l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell."
+            l "Forensics examined the area thoroughly. Even if someone wipes away the blood, luminol can still react with the traces left behind, revealing what the naked eye can't see."
 
-    l "But there was one place where the victim's blood *was* found. Care to guess where?"
+            l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell."
 
-    s "...Mmmmnngh...."
+            l "But there was one place where the victim's blood *was* found. Care to guess where?"
 
-    l "Allow me then: Vicente's blood was discovered at the derby's stables!"
+            s "...Mmmmnngh...."
 
-    s "I-Impossible!"
+            l "Allow me then: Vicente's blood was discovered at the derby's stables!"
 
-    me "Forensics confirmed the blood is a match. There's no doubt about it."
+            s "I-Impossible!"
 
-    s ".....that doesn't change a thing though!"
+            me "Forensics confirmed the blood is a match. There's no doubt about it."
 
-    l "...? It seems you don't intend on dropping the accusation."
+            s ".....that doesn't change a thing though!"
 
-    s "Of course not! And you will see why right now!"
-label debug:
+            l "...? It seems you don't intend on dropping the accusation."
+
+            s "Of course not! And you will see why right now!"
+label act3_continue3:
     # contra 2: tony used the bag to carry the body from the stables
     #Leo vs Seb Round 2 CE
     default ce_seb_bodybag = False
@@ -771,9 +818,9 @@ label debug:
     $ ce_mode = None
     $ ce_rep += 2
     call CE_end
+    jump act3_continue4
     
-    
-    
+label act3_continue4:
     l "Interestingly enough... I agree with what you just said, Mr. Castillo."
 
     s "Even numbskulls like you can listen to reason. There may be hope for you yet."
@@ -832,6 +879,9 @@ label debug:
 
     s "Nooooo!"
 
+    scene placeholder_racetrack2
+    with fade
+
     #fade here
 
     me "Got some news. Castillo's men finally 'fessed up. Two of them hid the body bag in the break room. On their boss' orders, of course."
@@ -842,6 +892,26 @@ label debug:
 
     #Choose here, but no real consequences, Medina interrupts you. Heck, make a time out choice even.
 
+    menu:
+        "Esteban":
+            jump act3_continue5
+        "Catalina":
+            jump act3_continue5
+        "El Leopardo":
+            jump act3_continue5
+        "Sebastian":
+            jump act3_continue5
+        "Renata":
+            jump act3_continue5
+        "Medina":
+            jump act3_continue5
+        "Lorenzo":
+            jump act3_continue5
+        "Lucas":
+            jump act3_continue5
+        "Castillo's Underlings":
+            jump act3_continue5
+label act3_continue5:
     me "Hold it right there. I know what you're thinking..."
     
     # Breather, Medina finally gets to present people's alibis to Tony.
@@ -855,7 +925,7 @@ label debug:
     me "That leaves us with these suspects."
 
     l "Really? Just them?"
-
+    
     me "That's what we're left with after ruling out the possibility of a random attack."
 
     l "Just to get this out of the way... What about robbery?"
@@ -880,338 +950,513 @@ label debug:
 
 
     # Joint Testimony goes here.
+label bigCE:
+    default ce_rena_phone = False
+    default ce_luca_cloth = False
+    scene placeholder_racetrack1
+    show en neutral
+    with fade
+    call CE_start
 
     en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
-
-    # Press
-    l "Does it really count as overseeing if you're doing it from up there?"
-    en "Most certainly! It offers the best view, after all! You can see the entire racetrack!"
-
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "Does it really count as overseeing if you're doing it from up there?"
+            en "Most certainly! It offers the best view, after all! You can see the entire racetrack!"
+            with fade
+    
     en "But the inspector here insisted on following me everywhere!"
-    # Press
-    l "Huh... Is that true, Inspector?"
-    me "Damn right it is. I needed answers, one way or another."
-    lt "Scary."
-
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "Huh... Is that true, Inspector?"
+            me "Damn right it is. I needed answers, one way or another."
+            lt "Scary."
+            with fade
+    
     en "She even brought Mr. Castillo along! I had the 'pleasure' of being stuck with the two of them until 10:42 AM."
-    l "I've got two questions. Are you certain about the time? And why was Mr. Castillo there?"
-    en "Absolutely! There are several monitors displaying the news and movies, each with a clock."
-    me "I can vouch for that. And as for that scumbag, I wanted to keep an eye on him."
-    l "Smart thinking, considering everything... Did he do anything in particular while he was with you?"
-    me "Just his usual nonsense. He spent most of the time on his phone."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "I've got two questions. Are you certain about the time? And why was Mr. Castillo there?"
+            en "Absolutely! There are several monitors displaying the news and movies, each with a clock."
+            me "I can vouch for that. And as for that scumbag, I wanted to keep an eye on him."
+            l "Smart thinking, considering everything... Did he do anything in particular while he was with you?"
+            me "Just his usual nonsense. He spent most of the time on his phone."
+            with fade
 
     r "I was at the café from 10 AM. I was starving, so I figured I'd grab something to eat."
-
-    # Press
-    l "What did you have?"
-    r "What the hell do you care? You gonna write an article about it and post it online?"
-    l "No, that wasn't what I had in mind... Just carry on."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "What did you have?"
+            r "What the hell do you care? You gonna write an article about it and post it online?"
+            l "No, that wasn't what I had in mind... Just carry on."
+            with fade
 
     r "Anyway, I got a phone call from my trainer about twenty minutes later. Give or take."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "Could you be a little more specific about the time...?"
+            r "You really are insufferable, you know that?"
+            lt "I'm just doing my job."
+            r "Ugh, just look at it yourself. See? 10:17 AM. Close enough, isn't it?"
+            l "I suppose..."
+            l "Would you mind if we played the recording? Just to be thorough."
+            r "Knock yourself out. It's pretty boring shit, though."
+            lt "..."
+            lt "Most of the call was just Esteban checking in on Renata, asking where she was and telling her he'd meet her at the café."
+            lt "The whole thing lasted about four minutes."
+            lt "I should make a note of that."
+            # Dossier updated!!!!
+            with fade
 
-    # Press
-    l "Could you be a little more specific about the time...?"
-    r "You really are insufferable, you know that?"
-    lt "I'm just doing my job."
-
-    r "Ugh, just look at it yourself. See? 10:17 AM. Close enough, isn't it?"
-    l "I suppose..."
-
-    l "Would you mind if we played the recording? Just to be thorough."
-    r "Knock yourself out. It's pretty boring shit, though."
-
-    lt "..."
-    lt "Most of the call was just Esteban checking in on Renata, asking where she was and telling her he'd meet her at the café."
-    lt "The whole thing lasted about four minutes."
-    lt "I should make a note of that."
-
-    # Dossier updated.
-
-    es "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
-
-    # Press
-    l "Did you notice anything unusual while you were there?"
-    es "I'm afraid not. I was simply relaxing and watching the other jockeys and their horses go by."
+    e "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "Did you notice anything unusual while you were there?"
+            e "I'm afraid not. I was simply relaxing and watching the other jockeys and their horses go by."
+            l "I see... and how long did you stay there for, again?"
+            e "About 17 minutes, give or take."
+            with fade
 
     r "The old man showed up a little while after the call, and we headed to the racetrack to do some preparations."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "So you left together sometime around 10:24 AM... Were you together the entire time after that?"
+            r "Nah. After he showed up at the café, I went to the restroom while he watched my stuff."
+            e "I even had to pay for her meal while waiting for her return. I dare say it was a rather calculated move on her part."
+            r "Buzz off. I let you use my money to pay!"
+            with fade
+    
+    if ce_rena_phone:
+        r "We left at 10:34 AM! That's when all that corpse-related bullshit happened! I'm NOT lying!"
+        if ce_mode == "object":
+            call bigCE_wrong
+        if ce_mode == "press":
+                $ ce_mode = None
+                    # Press — Nothing new
+                l "You're absolutely certain about that, even knowing the body was reported at 10:42?"
+                r "Maybe the report got the time wrong, then! I KNOW I left that café at 10:24, after meeting the old man!"
+                with fade
+    else:
+        r "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
+        if ce_mode == "object":
+            # Press — CONTRADICTION! THEY COULDN'T HAVE LEFT AT 10:34 BECAUSE THE BODY WAS REPORTED AT 10:42 AM!
+            if ce_object in [de_victimnotes]:
+                call bigCE_Renata
+            else:
+                call bigCE_wrong
+       
+        if ce_mode == "press":
+                $ ce_mode = None
+                l "And that's when you came across the body?"
+                r "Yeah. Turns out Enzo's security staff sucks at their jobs, huh? Letting a murderer in."
+                en "Excuse me!? My security personnel are highly trained professionals, fully equipped to handle any situation!"
+                lt "Those same professionals somehow managed to miss a bunch of crooks carrying a body around in broad daylight..."
+                lt "...Wait. When exactly did Renata say they left? Something's weird here..."
+                with fade
+    
+    label bigCE_Renata:
+        $ ce_rena_phone = True
+        $ ce_mode = None
+        $ ce_rep += 2
+        # Objection
+        l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
+        r "Are you deaf? Yeah."
+        l "And you left because the discovery of the body caused a commotion."
+        r "That's right, Captain Obvious."
+        l "That's impossible, Ms. Vargas."
+        r "Huh? Are you calling me a liar?"
+        l "Do you know what time the body was reported?"
+        r "Like I said! Sometime around 10:34!"
+        l "10:42 AM. You're off by eight minutes."
+        r "What? But that's not—"
+        e "Perhaps Renata simply got confused about the time...?"
+        r "I'm NOT confused! We met at 10:24 AM, and it wasn't even ten minutes before people started screaming and making a scene!"
+        r "I know because I checked my phone before we left the café!"
+        lt "Her timing is clearly off, but she insists she's not mistaken..."
+        lt "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
+        lt "I'll have to keep this in mind."
+        with fade
+        return
 
-    # Press
-    l "So you left together sometime around 10:24 AM... Were you together the entire time after that?"
-    r "Nah. After he showed up at the café, I went to the restroom while he watched my stuff."
-    es "I even had to pay for her meal while waiting for her return. I dare say it was a rather calculated move on her part."
-    r "Buzz off. I let you use my money to pay!"
-
-    r "Anyway, shit hit the fan less than ten minutes later. We both left to see what all the commotion was about."
-
-    # Press — CONTRADICTION! THEY COULDN'T HAVE LEFT AT 10:34 BECAUSE THE BODY WAS REPORTED AT 10:42 AM!
-
-    l "And that's when you came across the body?"
-    r "Yeah. Turns out Enzo's security staff sucks at their jobs, huh?"
-    en "Excuse me!? My security personnel are highly trained professionals, fully equipped to handle any situation!"
-    lt "Those professionals somehow managed to miss a bunch of crooks carrying a body around in broad daylight..."
-
-    lt "...Wait. When exactly did Renata say they left? Something doesn't add up..."
-
-    # Objection
-    l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
-    r "Are you deaf? Yeah."
-    l "And you left because the discovery of the body caused a commotion."
-    r "That's right, Captain Obvious."
-    l "That's impossible."
-    r "Huh? Are you calling me a liar?"
-    l "Ms. Vargas, do you know what time the body was reported?"
-    r "Like I said! Sometime around 10:34!"
-    l "10:42 AM. You're off by eight minutes."
-    r "What? But that's not—"
-    es "Perhaps Renata simply got confused about the time...?"
-    r "I'm NOT confused! We met at 10:24, and it wasn't even ten minutes before people started screaming and making a scene!"
-    r "I know because I checked my phone before we left the café!"
-
-    lt "Her timing is clearly off, but she insists she's not mistaken..."
-    lt "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
-    lt "I'll have to keep this in mind."
-
-    # Another update if the player has already objected to this.
-
-    r "We left at 10:34 AM! That's when all that corpse-related bullshit happened! I'm NOT lying!"
-
-    # Press — Nothing new
-    l "You're absolutely certain about that, even knowing the body was reported at 10:42?"
-    r "Maybe the report got the time wrong, then! I KNOW I left that café at 10:24, after meeting the old man!"
 
     lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "Since that was the last time he was seen alive, I have to ask... Did he seem any different than usual?"
+            lu "Not really. He was his usual nagging, straightforward self."
+            with fade
+    
+    if ce_luca_cloth:
+        lu "I don't know why those clothes and that notebook were in my locker!"
+        if ce_mode == "object":
+            call bigCE_wrong
+        if ce_mode == "press":
+                $ ce_mode = None
+                # Press — No new contradiction
+                l "Are you absolutely certain none of these things belong to you?"
+                lu "I am! I swear! I have no idea how they got there!"
+                l "..."
+                with fade
+    else:
+        lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without asking for permission."
+        # Press — CONTRADICTION! LUCAS HAS THE HAWAIIAN SHIRT IN HIS LOCKER!
+        if ce_mode == "object":
+            $ ce_mode = None
+            if ce_object in [de_casualclothes, de_notebook]:
+                call bigCE_Lucas
+            else:
+                call bigCE_wrong
+        if ce_mode == "press":
+                $ ce_mode = None
+                l "Can you remember anything distinctive about this man?"
+                lu "...Just that he was wearing an orange shirt with flowers on it. Sorry."
+                l "That's fine. What exactly was he doing with your horse?"
+                lu "He was petting Lucero and letting him lick his hands. We were worried he might be feeding him something he shouldn't."
+                l "I see..."
+                with fade
 
+
+    label bigCE_Lucas:
+        # Counter response here.
+        $ ce_luca_cloth = True
+        $ ce_mode = None
+        $ ce_rep += 2
+        l "Let me ask you something, Mr. Mendoza. Is this the outfit the man was wearing?"
+        lu "Yes! That's exactly what he had on. But... how do you...?"
+        l "I'm having a hard time believing you saw someone else wearing these."
+        lu "Huh?"
+        l "After all, these clothes were found inside your personal locker!"
+        lu "What!?"
+        l "Care to explain that?"
+        lu "I... I don't know! I don't own clothes like that! I really did see someone wearing that outfit!"
+
+        me "Damn. Why does a tacky vacation outfit matter, Leopardo? Do you have something against Hawaiian shirts?"
+        l "I don't have anything against them, Inspector..."
+        l "It's not the clothes themselves that bother me. It's where they were found."
+        l "Mr. Mendoza claims he saw someone wearing them, yet they were found in his possession..."
+        l "And that's not all. They were found alongside another rather peculiar item."
+
+        me "A peculiar item?"
+        l "This notebook, to be precise. I'm still trying to make heads or tails of it myself..."
+        me "Let me see that..."
+        me "...! Aren't these all the horses that collapsed before their races?"
+        l "So you recognize them too. And it looks like each entry has a monetary value attached to it."
+        me "A betting ledger? But all these horses ended up losing... And the last entry is for your own horse."
+        me "Care to explain this, Mendoza?"
+
+        lu "I-I don't know anything about that! The notebook isn't mine! Neither are the clothes!"
+        me "Denying everything isn't going to get you very far..."
+        with fade
+        return
+
+    #ONLY WHEN YOU SPOT THE TWO EXISTING CONTRAS THIS SHOULD SHOW UP!!
+    label bigCE_bigbrain:
+        lt "Lucas doesn't seem to be lying. But then, how did these things end up in his locker...?"
+        lt "And what about Renata getting the time wrong?"
+        lt "Hmm... Should I take another look at the alibis, or call it here?"
+        # Choice.
+        # Take another look: go back to the CE (possibly set a flag indicating the Lucas contradiction has been found).
+        # If ending the interrogation, skip to selecting a culprit.
+
+      
+
+    lu "Don Vicente said he'd handle it himself, then went after that person towards the stables. I headed over to the observation area by the grandstands."
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "How long did you stay there?"
+            lu "About twenty-five minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
+            l "I see..."
+            with fade
     # Press
-    l "Since that was the last time he was seen alive, I have to ask... Did he seem any different than usual?"
-    lu "Not really. He was his usual nagging, straightforward self."
-
-    lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without even asking permission."
-
-    # Press — CONTRADICTION! LUCAS HAS THE HAWAIIAN SHIRT IN HIS LOCKER!
-
-    l "Can you remember anything distinctive about this man?"
-    lu "...Just that he was wearing an orange shirt with flowers on it. Sorry."
-    l "That's fine. What exactly was he doing with your horse?"
-    lu "He was petting Lucero and letting him lick his hands. We were worried he might be feeding him something."
-    l "I see..."
-
-    # Counter response here.
-
-    l "Let me ask you something, Mr. Mendoza. Is this the outfit the man was wearing?"
-    lu "Yes! That's exactly what he had on. But... how do you...?"
-    l "I'm having a hard time believing you saw someone else wearing these."
-    lu "Huh?"
-    l "After all, these clothes were found inside your personal locker!"
-    lu "What!?"
-    l "Care to explain that?"
-    lu "I... I don't know! I don't own clothes like that! I really did see someone wearing that outfit!"
-
-    me "Damn. Why does a tacky vacation outfit matter, Leopardo? Do you have something against Hawaiian shirts?"
-    l "I don't have anything against them, Inspector..."
-    l "It's not the clothes themselves that bother me. It's where they were found."
-    l "Mr. Mendoza claims he saw someone wearing them, yet they were found in his possession..."
-    l "And that's not all. They were found alongside another rather peculiar item."
-
-    me "A peculiar item?"
-    l "This notebook, to be precise. I'm still trying to make heads or tails of it myself..."
-    me "Let me see that..."
-    me "...! Aren't these all the horses that collapsed before their races?"
-    l "So you recognize them too. And it looks like each entry has a monetary value attached to it."
-    me "A betting ledger? But all these horses ended up losing... And the last entry is for your own horse."
-    me "Care to explain this, Mendoza?"
-
-    lu "I-I don't know anything about that! The notebook isn't mine! Neither are the clothes!"
-    me "Denying everything isn't going to get you very far..."
-
-    lt "He doesn't seem to be lying. But then, how did these things end up in his locker...?"
-    lt "Hmm... Should I take another look at the alibis, or call it here?"
-
-    # Choice.
-    # Take another look: go back to the CE (possibly set a flag indicating the Lucas contradiction has been found).
-    # If ending the interrogation, skip to selecting a culprit.
-
-    lu "I don't know why those clothes and that notebook were in my locker!"
-
-    # Press — No new contradiction
-    l "Are you absolutely certain none of these things belong to you?"
-    lu "I am! I swear! I have no idea how they got there!"
-    l "..."
-
-    lu "Don Vicente said he'd handle it himself, then went after that person. I headed over to the observation area by the grandstands."
-
-    # Press
-    l "How long did you stay there?"
-    lu "About twenty-five minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
-    l "I see..."
+    
 
     c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
-    l "That's it? Can't you tell me a little more about what you were doing?"
-    c "Would you like me to recite my entire training routine? I don't see how that's relevant to the investigation."
-    me "It isn't."
-    l "Did you speak to any of the other jockeys, perhaps? Or...?"
-    c "No."
-    lt "Well, that was incredibly helpful."
-
+    if ce_mode == "object":
+        call bigCE_wrong
+    if ce_mode == "press":
+            $ ce_mode = None
+            l "That's it? Can't you tell me a little more about what you were doing?"
+            c "Would you like me to recite my entire training routine? I don't see how that's relevant to the investigation."
+            me "It isn't."
+            l "Did you speak to any of the other jockeys, perhaps? Or...?"
+            c "No."
+            lt "Well, that was incredibly helpful."
+            with fade
     # End
+    hide screen ce_ui     
 
     lt "Let's go over everything... Assuming my math hasn't gotten rusty..."
-
-    lt "Villareal, Sebastian, and the Inspector were together at the luxury observatory from 10 AM until 10:42."
-    lt "Renata was at the café from 10 AM. She received a call from Esteban at 10:17, met him at 10:24, and then they headed for the racetrack together..."
-    lt "According to her, they left around 10:34 to investigate the commotion."
-    lt "Before meeting her, Esteban claims he was taking a smoking break by the grandstands from 10 AM."
-    lt "Lucas was with Vicente at the parade ring from 10 AM for about ten minutes. Afterwards, he spent roughly twenty-five minutes at the observation area by the grandstands."
-    lt "Whew... That's quite a few accounts to keep track of. But I think I've got the picture."
+    lt "Lorenzo, Sebastian, and the inspector were together at the luxury observatory from 10 AM until 10:42 AM."
+    lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM.They met at 10:24 AM at the cafe before heading off for the racetrack."
+    lt "But they left at 10:34 AM to investigate the big commotion around Vicente's body."
+    lt "Esteban was smoking from 10 AM to 10:17 AM by the grandstands."
+    lt "Lucas was with Vicente at the parade ring from 10 AM for about ten minutes. Afterwards, he spent roughly 25 minutes at the observation area by the grandstands."
+    lt "...my head hurts. I'm going to write all of that down."
+    #UPDATE DOSSIER WITH ALIBIS NOTES!!!!
 
     me "Got all that? Only a handful of these accounts can be independently confirmed, but at least we've got a clearer picture of everyone's whereabouts."
     me "Now, do you have any issues with the alibis?"
 
     lt "That's a good question. After hearing all of that, is there anything about these alibis that bothers me?"
 
-    # Big problems. (Go back to the interrogation.)
-    l "I do. There are a couple of things I'd like to ask about."
+    if ce_rena_phone and ce_luca_cloth:
+        jump act3_thoughtroute
+    else:
+        menu:
+            "Something bothers me":
+                # Big problems. (Go back to the interrogation.)
+                l "I do. There are a couple of more of things I'd like to ask about."
+                jump bigCE
+            "Nothing bothers me":
+                # No problems. (End interrogation.)
+                l "I think we've covered everything, Inspector. We can move on."
+                jump act3_continue6    
 
-    # No problems. (End interrogation.)
-    l "I think we've covered everything, Inspector. We can move on."
-
-
-    
+label act3_thoughtroute:
+    scene black
+    show leo think closed
+    with fade
     # Found both contradictions
-    lt "As the Inspector pointed out, these alibis are difficult to verify..."
-    lt "However, two things stand out."
-    lt "Renata's account is off by about ten minutes. She's adamant that the body was reported earlier than it actually was."
-    lt "And Lucas had in his possession the very clothes worn by someone he claims was feeding his horse."
+    lt "..."
+    lt "Gaaah, it's as the inspector said! These alibis are difficult to verify..."
+    lt "However, two things stand out after all the questions I asked."
+    lt "First: Renata's account is off by about ten minutes. She's adamant that the body was reported earlier than it actually was."
+    lt "Second: Lucas had in his possession the very clothes worn by someone he claims was feeding his horse."
     lt "Not to mention that notebook listing all the horses that collapsed during previous races..."
     lt "Both of them are sticking to their stories despite the evidence. What am I supposed to make of this...?"
+    lt "Guess it's time to give the ol' noggin a good workout. I'm gonna go over the facts one more time."
 
     #Thoughtt route!!!
+    #make a thought route bg for this part
+    #with fade
+    label rock_kick_shovel:
+        show leo think closed
+        l "According to Lucas, Vicente left the parade ring to pursue someone wearing an orange Hawaiian shirt."
+        l "That would have led him to the stables."
+        l "When he caught up with that person, he was attacked with..."
 
-    lt "Wait a minute..."
-    lt "Renata's phone was ten minutes behind. That's why she believes they met at 10:24."
-    lt "But Esteban knows what time it actually was."
-    lt "Why would he repeat her version of events...?"
-    lt "Unless he needed her to believe they'd been together earlier than they really were."
+        menu:  
+            "A shovel":
+                jump tr_shovel
+            "A rock":
+                jump tr_rock
+            "A roundhouse kick":
+                jump tr_kick
+        label tr_rock:
+                show leo think closed drop
+                l "Um... no, I don't think a rock was used at all. At least, none has been found so far with the victim's blood."
+                l "Focus, me!"
+                jump rock_kick_shovel
+        label tr_kick:
+                show leo think closed drop
+                l "If the death blow was a kick to the head, that must have been one hell of a martial artist to pull off such a fatality."
+                l "But this isn't a kung fu movie... think! I know I found a likely murder weapon!"
+                jump rock_kick_shovel
+        label tr_shovel:
+            l "The shovel is the most likely weapon. It has a dent in it, and the victim's blood was found on it."
+            l "That means blood must have been left behind at the scene."
+            jump call4help
+            
+    label call4help:
+        show leo think closed
+        l "After killing Vicente, the culprit..."
+        menu:
+            "Ran away in a panic":
+                jump tr_panic
+            "Called for help":
+                jump tr_help
+           
+        label tr_panic:
+            show leo think closed drop
+            l "I mean. I am sure they were feeling panicked and all..."
+            l "But if they just ran off, it wouldn't explain why the body wasn't found at the stables."
+            jump call4help
+    
+        label tr_help:
+            show leo think closed
+            l "Castillo's underlings have already confessed to helping cover up the murder."
+            l "They put the body inside that black body bag and threw it from the grandstands."
+            l "So the culprit must have called them in to help dispose of the body!"
+            l "But that still leaves one question..."
+            l "What did the culprit do after leaving the stables?"
+            show leo think closed drop
+            l "..."
+            show leo think closed
+            l "...Maybe I need to approach this from another angle."
+            l "The murder method itself is more or less established. I should focus on what's still unexplained."
+            l "For starters..."
+            jump locker_items
+    label locker_items:
+        show leo think closed
+        l "Lucas and that orange Hawaiian shirt."
+        l "He insists neither the clothes nor the notebook belong to him."
+        l "So the reason those items ended up in his locker must be..."
+        menu:
+            "He forgot he put them there":
+                jump tr_forgot
+            "Somenoe else put them there":
+                jump tr_someone_else        
+            "He's lying about not putting them there":
+                jump tr_lying
 
-    lt "The clothes and notebook weren't simply left behind. Someone wanted them found in Lucas's locker."
-    lt "And whoever planted them must have known about the horse-doping operation..."
-    lt "Someone who could approach the horses, tamper with the evidence, and coordinate with the Castillos..."
+    label tr_forgot:
+        show leo think closed drop
+        l "If he'd simply forgotten about them, he should have recognized them when I brought them up."
+        l "Besides, why would he draw attention to something incriminating in his own locker?"
+        jump locker_items
+    label tr_lying:
+        show leo think closed drop
+        l "If he were lying, why would he draw attention to the clothes he's trying to conceal in the testimony?"
+        l "His story would only make things worse for him."
+        jump locker_items
 
-    lt "At times like this, it helps to go over the facts one more time."
+    label tr_someone_else:
+        show leo think closed
+        l "Someone deliberately planted the orange shirt and the notebook in his locker."
+        l "That's certainly possible, assuming Lucas is telling the truth."
+        l "But who would have done it?"
+        menu:
+            "Vicente":
+                jump tr_vicente
+            "Hawaiian-shirt person":
+                jump tr_hawaiia
+            "Catalina":           
+                jump tr_catalina
+    label tr_vicente:
+        show leo think closed drop
+        l "Wait, wasn't Vicente the one chasing the man with the orange clothes...?"
+        l "Why would he just grab those and randomnly drop them in Lucas' locker?"
+        l "I might be overthinking this..."
+        jump tr_someone_else
+    label tr_catalina:
+        show leo think closed drop
+        l "That doesn't make any sense... Catalina doesn't have any reason to plant those items."
+        l "Plus, I'm pretty sure they mentioned it was a man who was wearing them."
+        l "Lucas would had immediately recognized it was a blonde woman if it really was Catalina."
+        jump tr_someone_else
+    label tr_hawaiia:
+        show leo think closed
+        l "Of course! The man wearing those clothes must have been the one who planted them, along with the notebook."
+        l "But why? What did he stand to gain?"
+        l "He could have disposed of the evidence almost anywhere..."
+        l "...Wait. He could have put them anywhere, but he chose Lucas's locker."
+        l "That's because..."
+        menu:
+            "He wanted them to be found":
+                jump tr_found
+            "He brought Lucas a change of clothes":
+                jump tr_clothes
 
-    lt "According to Lucas, Vicente left the parade ring to pursue someone wearing an orange Hawaiian shirt."
-    lt "That would have led him to the stables."
-    lt "And when he caught up with that person, he was attacked with..."
 
-    # >A shovel
-    # A rock
-    # A roundhouse kick.
+    label tr_clothes:
+        show leo think closed drop
+        l "He brought Lucas fresh clothing... that doesn't sound right."
+        l "He flee when followed, so that already implies not wanting to run in them."
+        l "Plus, if it was just spare clothing, he would had at least told Lucas about it."
+        l "But it didn't seem to me like Lucas was expecting any new batch of clothes coming today."
+        jump tr_hawaiia
+    label tr_found:
+        show leo think closed
+        l "He wanted them to be found! That's why he left them in Lucas's locker."
+        l "Come to think of it, the locker was even left wide open..."
+        l "And it wasn't just the clothes. The notebook was planted there too."
+        l "Both items would immediately make Lucas look guilty if someone discovered them."
+        l "But why would having that notebook and those clothes be so incriminating?"
+        l "The notebook lists several racehorses, alongside a series of monetary values."
+        l "And almost every entry has been crossed out..."
+    
+    label tr_notebook:
+        show leo think closed
+        l "I should take a closer look at what this notebook actually represents."
+        l "What do all the horses listed in this notebook have in common?"
+        menu:
+            "The horses won":
+                jump tr_won
+            "The horses are cool":
+                jump tr_cool
+            "The horses lost":
+                jump tr_lost
 
-    lt "The shovel is the most likely weapon. It has a dent in it, and the victim's blood was found on it."
-    lt "That means blood must have been left behind at the scene."
-    lt "After killing Vicente, the culprit..."
+        label tr_won:
+            l "The horses won.... no, I'm sure that's definitely wrong."
+            l "Yes, they might have won some of their races, but these made the headlines because they collapsed and lost the race."
+            l "Perla Negra is the one I can remember most vividly."
+            jump tr_notebook
+        label tr_cool:
+            l "All of the horses are, in fact, very cool, majestic creatures."
+            l "..."
+            l "But that doesn't help me get any closer to solving things!"
+            l "Focus, Tony...!"
+            jump tr_notebook
+        label tr_lost:
+            l "Even a quick check of the race results confirms it. Every horse with a crossed-out entry lost after collapsing during its race."
+            l "Except for the last one: Lucero."
+            jump tr_losing_horse
+    label tr_losing_horse:
+        l "If an entry is crossed out, that usually means it's been dealt with..."
+        l "Wait. I think I'm onto something."
+        l "If every name has been crossed out except one, then that means..."
+        menu:
+            "Lucero is a winning horse":
+                jump tr_winning_horse
+            "Lucero is a losing horse":
+                jump tr_loser_horse
+        label tr_winning_horse:
+            l "Go, Lucero! You are a winner!"
+            l "...I don't that's what the notebook is trying to convey..."
+            jump tr_losing_horse
+    label tr_loser_horse:
+            l "Lucero is supposed to lose. But I checked the race results, and he hasn't collapsed like the others."
+            l "His name hasn't been crossed out yet..."
+            l "He's supposed to lose, but his entry is still untouched. That must mean..."
+            menu:
+                "He'll become a legendary horse":
+                    jump tr_legend
+                "His loss hasn't happened yet":
+                    jump tr_loss
+    label tr_legend:
+        l "No... that seems wrong." 
+        l "If I believed a horse would become legendary, I would never put them in this notebook."
+        jump tr_loser_horse
 
-    # Ran away in a panic
-    # Carried the body
-    # >Called for help
-
-    lt "Castillo's underlings have already confessed to helping cover up the murder."
-    lt "They put the body inside that black body bag and threw it from the grandstands."
-
-    lt "So the culprit must have called them in to help dispose of the body."
-    lt "But that still leaves one question..."
-    lt "What did the culprit do after leaving the stables?"
-    lt "...Maybe I need to approach this from another angle."
-    lt "The murder itself is more or less established. I should focus on what's still unexplained."
-    lt "For starters..."
-
-    lt "Lucas and that orange Hawaiian shirt. He insists neither the clothes nor the notebook belong to him."
-    lt "So the reason those items ended up in his locker must be..."
-
-    # He forgot he put them there
-    # >Someone else put them there
-    # He's lying about putting them there
-
-    # Wrong answer: He forgot he put them there.
-    lt "If he'd simply forgotten about them, he should have recognized them when I brought them up."
-    lt "Besides, why would he draw attention to something incriminating in his own locker?"
-
-    # Wrong answer: He's lying about putting them there.
-    lt "If he were lying, why would he insist that someone else had been wearing those clothes?"
-    lt "His story would only make things worse for him."
-
-    lt "Someone deliberately planted the orange shirt and the notebook in his locker."
-    lt "That's certainly possible, assuming Lucas is telling the truth."
-    lt "But who would have done it?"
-
-    # Vicente
-    # >The man at the parade
-    # Catalina
-
-    # Wrong answers
-    lt "That doesn't make sense. Neither Vicente nor Catalina had any reason to plant those items in Lucas's locker."
-
-    lt "Of course! The man wearing those clothes must have been the one who planted them, along with the notebook."
-    lt "But why? What did he stand to gain?"
-    lt "He could have disposed of the evidence almost anywhere..."
-    lt "...Wait. He could have put them anywhere, but he chose Lucas's locker."
-    lt "That's because..."
-
-    # >He wanted them to be found.
-    # He brought Lucas a change of clothes.
-    # He got the wrong locker.
-
-    # Wrong answers
-    lt "No, that doesn't add up. None of those explanations account for why the notebook was planted alongside the clothes."
-
-    lt "He wanted them to be found! That's why he left them in Lucas's locker."
-    lt "Come to think of it, the locker was even left open..."
-
-    lt "And it wasn't just the clothes. The notebook was planted there too."
-    lt "Both items would immediately make Lucas look guilty if someone discovered them."
-
-    lt "But why would having that notebook and those clothes be so incriminating?"
-    lt "The notebook lists several racehorses, alongside a series of monetary values."
-    lt "And almost every entry has been crossed out..."
-    lt "I should take a closer look at what this notebook actually represents."
-
-    lt "What do all the horses listed in this notebook have in common?"
-
-    # >The horses lost.
-    # The horses won.
-    # The horses are cool.
-
-    lt "Even a quick check of the race results confirms it. Every horse with a crossed-out entry lost after collapsing during its race."
-    lt "Except for the last one: Lucero."
-    lt "If an entry is crossed out, that usually means it's been dealt with..."
-
-    lt "Wait. I think I'm onto something."
-    lt "If every name has been crossed out except one, then that means Lucero..."
-
-    # Is a winning horse
-    # >Is a losing horse
-    # Was forgotten about
-
-    lt "Lucero is supposed to lose. But I checked the race results, and he hasn't collapsed like the others."
-    lt "His name hasn't been crossed out yet..."
-
-    lt "He's supposed to lose, but his entry is still untouched. That must mean..."
-
-    # >His loss hasn't happened yet.
-    # He'll become a legendary horse.
-
-    lt "Exactly! His name hasn't been crossed out because his loss hasn't happened yet."
-    lt "He's being targeted for an upcoming race!"
-    lt "And that's right... that man was doting on Lucero!"
-
-    lt "He wasn't just petting the horse. He was doing something to sabotage him!"
-
-    lt "But that still doesn't explain the monetary values..."
-    lt "Even by clandestine standards, these figures are a little too specific."
-    lt "And there's a pattern to them, too..."
-    lt "The amount listed for Perla Negra is considerably higher than the one for Lucero."
-    lt "Could it have something to do with the horses' reputations?"
-    lt "The more prestigious the horse, the higher the amount..."
-    lt "Hmm... these numbers here... what do they represent?"
+    label tr_loss:
+        l "Exactly! His name hasn't been crossed out because his loss hasn't happened yet."
+        l "He's being targeted for an upcoming race!"
+        l "And that's right... that man was doting on Lucero!"
+        l "He wasn't just petting the horse. He was doing something to sabotage him!"
+        l "But that still doesn't explain the monetary values..."
+        l "Even by clandestine standards, these figures are a little too specific."
+        l "And there's a pattern to them, too..."
+    label tr_compensation:
+        l "The amount listed for Perla Negra is considerably higher than the one for Lucero."
+        l "Could it have something to do with the horses' reputations?"
+        l "The more prestigious the horse, the higher the amount..."
+        l "Hmm... these numbers here... what do they represent?"
+        menu:
+            "How much it will cost to heal them":
+                jump tr_heal
+            "How much money one gains if they lose":
+                jump tr_moneygain
+            "How much money one loses if they lose":
+                jump tr_moneylose
 
     # How much it will cost to nurse them back to health
     # >How much compensation someone receives if they lose
@@ -1294,7 +1539,7 @@ label debug:
     lt "Their accounts would have to match, down to the minute."
 
 
-
+label act3_continue6:
     # Did not find both contradictions
     lt "Most of them spent their time alone, so it's certainly difficult to verify or disprove their alibis..."
     lt "Nothing in particular stands out to me right now."
@@ -1532,6 +1777,726 @@ label debug:
     l "Things aren't always what they seem. Their seemingly close relationship may have been far more strained than we thought."
 
     l "In any case, Mr. Mendoza's alibi is just as shaky as the rest."
+
+    #Accuse Esteban (true end)
+
+    
+    l "..."
+
+    me "...You're unusually quiet."
+
+    r "This masked weirdo... How long are you planning to stand there in silence!?"
+
+    en "Yes, this is no time for naps. We are all exhausted, in one way or another, after this ordeal."
+
+    c "I'm feeling fine."
+
+    r "Always gotta be a fucking contrarian..."
+
+    c "I don't want to hear that from you."
+
+    me "Well? Have you figured anything out? Otherwise, I'm going to proceed with—"
+
+    l "Yes. I've got something, alright."
+
+    lu "...!"
+
+    l "The culprit is...!"
+
+    l "There are two things that have been bothering me. Why did Mr. Mendoza lie about the notebook and the clothes...?"
+
+    l "And why does Ms. Vargas keep insisting on a timeline that's clearly off?"
+
+    r "Like I told you, it's because—"
+
+    l "Your phone, right?"
+
+    r "Y-Yeah... So you get it."
+
+    l "And therein lies the problem."
+
+    me "What do you mean?"
+
+    l "Why does that discrepancy work in Ms. Vargas's favor in the first place? Assuming her phone's clock was accurate, that is."
+
+    me "Why does it work? An alibi establishes that someone was somewhere else at a particular time. If another person can corroborate that, it becomes much harder to dispute."
+
+    me "...!"
+
+    l "Exactly! So why is it that, despite the discrepancy in her timeline..."
+
+    l "...Mr. Rojas hasn't said a word about how his own account is just as inaccurate?"
+
+    e "...!"
+
+    r "Huh? Hold up! Where the hell is this coming from!?"
+
+    l "It's quite simple, Ms. Vargas."
+
+    l "Mr. Rojas hasn't bothered correcting your mistaken timeline of events."
+
+    l "Why is that?"
+
+    e "..."
+
+    l "Because doing so would cost him a rather convenient alibi!"
+
+    r "What!?"
+
+    l "Your call with him was at 10:17 AM, according to your phone."
+
+    r "Y-Yeah...?"
+
+    l "That's when Vicente was murdered. Did it sound like Mr. Rojas was in the middle of, say, a struggle?"
+
+    r "No. He sounded like his usual self..."
+
+    e "And what exactly are you implying, sir?"
+
+    l "Given what we've established, that call couldn't have taken place before 10:27 AM at the earliest."
+
+    l "Yet you never once challenged her account. You were perfectly content to let us believe it happened ten minutes earlier."
+
+    c "In other words, he's using her."
+
+    e "That's a grave accusation. On what grounds are you making it?"
+
+    l "Then answer me a simple question. When did you first go to investigate the commotion surrounding the body?"
+
+    e "Previously, I believed that would have been around 10:32 AM..."
+
+    e "Although I now realize that timeline was mistaken."
+
+    l "Mr. Rojas. Earlier, you claimed you were on a smoking break until 10:17..."
+
+    l "...but that call didn't happen until 10:27."
+
+    l "So what were you actually doing for almost half an hour, Mr. Rojas?"
+
+    e "I can't say I appreciate being put on the spot like this..."
+
+    me "You tied your own noose by failing to come clean earlier."
+
+    e "Yes, I suppose I did... So allow me to clear things up."
+
+    e "That said, if you suspect me simply because my account is off by a few minutes..."
+
+    l "Ten minutes."
+
+    e "If that is the standard we're applying, shouldn't the same logic apply to Ms. Vargas?"
+
+    r "What the fuck, man?"
+
+    #menu:
+
+        #"Press on.":
+      #      jump press_on
+
+       # "You're right.":
+        #    jump reconsider_accusation
+
+    #label reconsider_accusation:
+
+      #  l "You make a good point. If your whereabouts are unaccounted for, then so are Ms. Vargas's..."
+
+     #   r "Give me a break! I didn't do shit! I told you I was at the café!"
+
+        # Continue alternate route
+
+    #label press_on:
+
+    #    l "You're deflecting, Mr. Rojas. I asked you a question. Answer it."
+
+    e "Hmph. If you insist. But I'll be filing a formal complaint over this slander. With the Inspector present, I expect it to be handled swiftly."
+
+    me "Only if you're talking out of your ass."
+
+    me "If I were you, I'd be more concerned about being caught doing just that."
+
+    e "Your concern is noted."
+
+    e "I hesitate to share this, but I suppose I have no choice now that things have come to this..."
+
+    # Ce vs Esteban
+
+    e "My smoking break really did take that long. A bad habit, I'm well aware."
+
+    e "After I met with Renata at the café, she confessed her guilt to me about what she had done."
+
+    e "She killed a man in cold blood… and was terrified of the consequences."
+
+    e "Renata even enlisted the help of her sponsors to cover her tracks before eventually turning to me..."
+
+    e "We worked together for a long time as trainer and jockey, so I felt compelled to protect her."
+
+    e "She insisted on changing the times on our phones to provide her with a cover story."
+
+    e "I realize now that this was the wrong thing to do. My apologies."
+
+    # Inner monologue
+
+    lt "Renata couldn't have anticipated that Esteban would call her. He knows that, so he's claiming she suggested changing their clocks when they met at the café."
+
+    lt "I can't really dispute that now. Maybe if his fingerprints were on her phone...? But I'm sure he'd find a way to explain those away, too."
+
+    lt "Hm... If I can't establish Renata's innocence through the tampering with her phone's clock..."
+
+    lt "...maybe I should attack one of his other claims instead?"
+
+    # CE Loop
+
+    l "So you are making her take the fall for this…!?"
+
+    e "Not at all! This is painful for me too. To think someone I worked closely with would turn out to have done such a thing…"
+
+    r "....."
+
+    e "Well? Was my explanation sufficient?"
+
+    # Yes.
+
+    # Hell no.
+
+    # Hell no
+
+    lt "Painful? This is nothing but convenient for you. Pushing your sins onto others…"
+
+    lt "I'll expose how rotten you really are!"
+
+    # Renata orange clothes
+
+    # Press
+
+    l "You mean Castillo's people, yes? Are you saying Ms. Vargas went out of her way to contact them?"
+
+    e "I'm afraid so. The situation must have overwhelmed her. She killed a man, for crying out loud."
+
+    l "When exactly did she contact them?"
+
+    e "A little while after murdering Vicente, or so she told me."
+
+    lt "That's funny... I happen to think she did no such thing."
+
+    # Objection = Present Renata's Phone (Update evidence description)
+
+    l "That's fascinating. It is true that the Inspector established that Castillo's men were contacted by their boss to dispose of the body..."
+
+    l "...which means the killer must have reached out to either them or Mr. Castillo."
+
+    e "We are on the same page, it seems."
+
+    l "Unfortunately for you, it would have been impossible for her to make that call."
+
+    l "Take another look at Ms. Vargas's phone. The only call registered in its history came from none other than you, Mr. Rojas."
+
+    e "That's hardly evidence, Mr. Leopardo. She could have simply deleted the call from her history."
+
+    l "Gotcha now."
+
+    e "C-Come again...?"
+
+    l "Certainly, that's entirely possible."
+
+    l "..."
+
+    l "So why didn't she delete YOUR call from her history as well?"
+
+    e "That's...!"
+
+    l "It would have been as simple as asking. You were certainly willing enough to cover for her. I'm sure you would have deleted it on your end in a heartbeat, too."
+
+    e "That's..."
+
+    l "I'll tell you why: because you needed a record of that call to remain."
+
+    l "You needed it to establish your own alibi and frame her once the discrepancy in her timeline came to light..."
+
+    l "...You'd come out on top either way, Mr. Rojas!"
+
+    e "Uungh!"
+
+    e "Y-You are just wildly guessing here...! You don't have anything to back up those claims!"
+
+    l "Perhaps we should sprinkle this line of reasoning with some evidence, then."
+
+    e "What...?"
+
+    l "All we have to do..."
+
+    # Is check with the phone provider
+
+    # Is check Esteban's phone history
+
+    l "We can check with the phone providers for Ms. Vargas and Mr. Castillo."
+
+    l "Then we'll know for sure who called whom, and when."
+
+    l "Inspector. If you would."
+
+    me "Don't have to tell me twice."
+
+    # Fade
+
+    me "I reached out to the phone provider companies. And what do you know? That noose just got an awful lot tighter for you, bud."
+
+    e "..."
+
+    l "What did they say?"
+
+    me "First, there aren't any unaccounted calls on Renata's phone from today."
+
+    r "Because I didn't delete anything...!"
+
+    me "...what we did find was one interesting conversation between Rojas and Castillo. Care to listen?"
+
+    # Fade to black, convo replays.
+
+    "Call at 10:19 AM."
+
+    s "Hello?"
+
+    e "It's me."
+
+    s "Oh, my golden goose! How are things going?"
+
+    e "There's... a situation."
+
+    s "Oh my. Sounds like trouble."
+
+    s "Say no more. Text me the location and I'll take care of it!"
+
+    # End phone convo
+
+    l "That was certainly insightful."
+
+    r "You...! I can't believe it! You told that scum to clean up your mess!? And then you tried to make me take the fall for it?"
+
+    e "It's regrettable that things have spiralled this far..."
+
+    r "What...?"
+
+    e "Inspector, it seems Renata is willing to pin the crime on me until the very end."
+
+    r "You...!"
+
+    me "What do you mean?"
+
+    e "I know how this looks. Rest assured, I wasn't calling him to 'clean my mess', as Renata put so eloquently."
+
+    e "It was to clean up her mess."
+
+    r "This again!?"
+
+    me "You're changing your story again."
+
+    e "Only because I wanted to protect Renata. But in doing so, I became too deeply involved."
+
+    e "Allow me to elaborate."
+
+    lt "Uh-oh. I sense an immense amount of gaslighting coming our way."
+
+    lt "Should I cut him off now?"
+
+    # Let him continue
+
+    # Cut him off
+
+    # Let him continue
+
+    lt "I'm a believer that everyone deserves a fair chance to tell their side of the story..."
+
+    lt "...but if I let him keep lying his way out of this, we'll be here all day. I must stop him now."
+
+    # Jump to Cut him off
+
+    # Cut him off
+
+    l "I'm afraid there's no need for that."
+
+    e "What...? I have a right to explain myself—"
+
+    l "You stumbled upon her at the stables and contacted Mr. Castillo. Did I get that right?"
+
+    e "Wh... I mean, yes, that is what I was about to say."
+
+    r "I was never at the stables! I was at the café!"
+
+    e "Renata, how long will you keep struggling like this?"
+
+    l "You're the one struggling in vain, Mr. Rojas."
+
+    l "You speak of illusions that can never become reality."
+
+    e "What...!?"
+
+    l "The reason you're wrong is because..."
+
+    # Choose
+
+    # The phone call
+
+    # Wrong answer
+
+    l "Cover the sun with your hand, and the sun will still be there."
+
+    l "You called Mr. Castillo to arrange the cover-up. That much is clear."
+
+    l "But then, ten minutes later, you called Renata and arranged to meet her."
+
+    e "That was to help her establish an alibi—"
+
+    l "No. It was to establish YOUR alibi."
+
+    l "Think about it. If you'd already been helping Renata cover up the murder, why would you need to arrange a meeting with her afterward?"
+
+    l "You could have simply claimed you'd been together the entire time."
+
+    l "But you didn't. You made a separate call, arranged a meeting, and made sure there was a record of it."
+
+    l "Because you needed someone who could corroborate your whereabouts after the murder."
+
+    l "You weren't helping Renata hide her crime, Mr. Rojas. You were making sure she could help hide yours!"
+
+    e "Uuunngho!!"
+
+    e "Y-You...! Just who do you think you are, accusing me like this!?"
+
+    e "I'm no killer! I won't stand for some random guy in a mask spreading lies about me!"
+
+    me "Do you deny the allegations, then?"
+
+    e "Of course I do! I deny every last one of them! Besides, what reason would I have to kill a fellow trainer!?"
+
+    e "None, that's what!"
+
+    lt "So it's finally come to this. Every desperate killer's last line of defense: motive."
+
+    lt "Until now, I had no idea what could have driven him to kill Vicente..."
+
+    lt "But there's no room for doubt anymore."
+
+    l "Very well, then. Let us put an end to this dance. The real main event will begin any moment now, after all."
+
+    en "Eek—! That's right! I've become so engrossed in all this that I nearly forgot about the race...!"
+
+    e "It will end, alright! With you behind bars for accusing an innocent man!"
+
+    # Last CE
+
+    e "There's no reason for me to kill him!"
+
+    e "I barely spoke to the man! Are you now going to say I hated him!?"
+
+    e "We were both trainers! I stand to gain nothing from his death."
+
+    e "I was simply going about my duties as a trainer that morning."
+
+    e "I had no reason to interfere with his work, let alone attack him!"
+
+    e "Why would I throw away my career over someone I barely knew?"
+
+    e "I had absolutely nothing to gain from his death!"
+
+    lt "This it. One last push, and he's done for."
+
+    lt "I have to keep on pressing until I find a weakness!"
+
+    e "There's no reason for me to kill him!"
+
+    #p
+
+    l "Banter."
+
+    e "I barely spoke to the man! Are you now going to say I hated him!?"
+
+    #p
+
+    l "Banter."
+
+    e "We were both trainers! I stand to gain nothing from his death."
+
+    #p
+
+    l "Banter."
+
+    e "I was... simply going about my duties as a trainer that morning."
+
+    #press
+
+    l "I thought you were having a break to smoke?"
+
+    e "That's- ugh! Alright, so I was smoking! Happy!?"
+
+    lt "Not until you confess your crimes, villain!"
+
+    e "I had no reason to interfere with his work, let alone attack him!"
+
+    #press
+
+    e "Why would I throw away my career over someone I barely knew?"
+
+    #p
+
+    l "Why would Renata? She's in the same position as you."
+
+    e "A mistake from youth? A wish to take out a competitor through their trainer?"
+
+    l "Those aren't answers, they are guesses at best!"
+
+    e "Shut up! Ask her if you want to know so badly!"
+
+    lt "No good. He's losing his marbles. This line of questioning isn't going anywhere."
+
+    l "Someone did interfere with his work that morning, though. He wouldn't be dead otherwise."
+
+    e "It's got nothing to do with me. I have no need to meddle with other trainers."
+
+    e "I had no reason to interfere with his work, let alone attack him!"
+
+    l "Someone did interfere with his work that morning, though. He wouldn't be dead otherwise."
+
+    e "It's got nothing to do with me. I have no need to meddle with other trainers."
+
+    lt "Meddle with other trainers..."
+
+    lt "Vicente's work... What was he doing right before he died?"
+
+   # menu:
+
+      #  "Getting food for the horse":
+            # wrong
+
+       # "Trailing someone":
+            # correct
+
+     #   "Prepping the horse":
+            # wrong
+
+    l "Mr. Rojas. I think I finally understand."
+
+    e "What nonsense will you spout now?"
+
+    l "Mr. Ruiz was following someone who had been petting Lucero without permission."
+
+    l "You know what that means?"
+
+    e "Just get to the point! How does this mystery person count as a reason for me to interfere with Vicente!?"
+
+    l "You've got that backwards."
+
+    l "The Hawaiian-shirt man isn't the reason you went after Mr. Ruiz."
+
+    l "He's the reason Mr. Ruiz came after YOU."
+
+    e "WHAT!?"
+
+    r "I-I'm really lost here..."
+
+    lu "Why does the man Don Vicente was following even matter...?"
+
+    l "Because Mr. Rojas is that man."
+
+    e "UOOOOAAAH!?"
+
+    r "That's insane! They would've recognized each other!"
+
+    l "Even with sunglasses, a hat, and a crowd?"
+
+    r "...!"
+
+    l "You put on the disguise, let Lucero lick your hand, then went back to the stables to change."
+
+    l "Vicente followed you, caught you, and discovered exactly what you were doing."
+
+    e "Hold it! That logic is twisted! You still can't prove it was me!"
+
+    l "But I can!"
+
+    e "I-Impossible!?"
+
+    lt "Vicente catching him by surprise at the stables means this wasn't a premeditated murder."
+
+    lt "That means, without a doubt, that he must have failed to conceal something in the evidence that would inevitably point back to him..."
+
+    lt "Just like the blood drops at the stables, the body bag... it was all one big rush job."
+
+    lt "Then it follows that the same applies to the disguise in the locker and the notebook he planted."
+
+    lt "Both of those things... Whatever he couldn't erase in his haste, I should focus on that...!"
+
+    # The fingerprints
+    # The handwriting
+    # The names in the list
+
+    # Choose the fingerprints
+
+    l "Your fingerprints, Mr. Rojas!"
+
+    e "!?"
+
+    l "You tried to get rid of the evidence by stuffing both the clothes and this notebook into Lucas's locker."
+
+    l "This notebook is a hit list. Every horse that collapsed is written here, along with the payment you received for each one. Lucero was today's target."
+
+    l "But there's no way you could have wiped those clean!"
+
+    me "Not to mention, traces of DNA will definitely turn up if you've worn it more than once..."
+
+    e "That's... those aren't..."
+
+    l "We're way past the point where you can claim your clothes were stolen."
+
+    l "You saw an opportunity to get ahead of the others, and exploited it at their expense."
+
+    l "Just like you did to Ms. Vargas and Mr. Mendoza. And to so many other jockeys!"
+
+    e "N-No! None of that is true! IT'S NOT!"
+
+    l "Mr. Ruiz caught onto you... and you silenced him by taking his life!"
+
+    l "The killer in this case... is none other than you, Esteban Rojas!"
+
+    # Dramatic pause, panning across every character
+
+    e "..."
+
+    e "......"
+
+    e "T-The clothes... I didn't— no, the collapses don't matter! I'm not behind them—"
+
+    e "The phone, I didn't call— I mean, I didn't mean to call— the shovel, he got in the way— he wasn't— he wasn't supposed to be there!"
+
+    e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH!"
+
+    # Esteban collapses
+
+    
+# Epilogue goes here.
+
+    me "..."
+    me "You are now under arrest. You have the right to remain silent. Anything you say can and will be used against you."
+
+    e "..."
+
+    r "Why...? Why the fuck would you do any of this?"
+    r "Drugging other jockeys' horses... and killing someone, what is WRONG with you!?"
+
+    lu "I shouldn't have let Don Vicente face you alone, damn it...!"
+
+    c "Anyone stooping that low is only trying to make up for their own lack of skill."
+
+    e "H-Haah... how could any of you understand?"
+    e "You're just some privileged brat whose victories were practically assured, Catalina. You're set for life."
+    e "Lucas never stood a real chance in this competition. You would've dropped out even if I did nothing..."
+    e "And you, Renata... you dare ask what's wrong with me? What's wrong with YOU!? Never accepting any of Castillo's help...!"
+
+    e "But I'm not like you. I welcomed it wholeheartedly. All I had to do was make a few animals sick enough, and we had ourselves a booming business."
+    e "Heh, then came the threats. Making the big bucks comes with a price, of course..."
+    e "I wanted to quit, but they wouldn't let me. So, since I was already knee-deep in that mess, I might as well go all the way and do it at the most prestigious derby! Why not!"
+
+    e "It was fine anyway, wasn't it!? No people were getting hurt! Just a few bruises from falling on the racetrack! They can walk it off!"
+
+    l "You... are you so deluded that you think nobody got hurt?"
+
+    e "Haha....ha?"
+
+    l "Don't try to excuse your actions by saying no one got hurt. You committed animal abuse time and time again just to satisfy your own greed."
+    l "Those horses are already subjected to plenty of stress just to race at peak capacity."
+    l "What you did could leave them with lifelong side effects. Maybe even kill them if you got the dosage wrong."
+
+    l "If you're still unable to see the harm you've caused these creatures..."
+    l "If all you can think about is trampling others to win, then you're a failure. Both as a trainer and as a human being."
+
+    e "..."
+
+    # Another fade. Officers take him away.
+
+
+    
+    me "You managed to make that freak go silent. Impressive."
+    l "It was not me, but the special effect the words of truth had on his soul, Inspector!"
+    me "...I'll tolerate your little act since you wrapped up the case nice and tight."
+    me "Thank you, El Leopardo."
+
+    lt "Wow. Genuine gratitude from the inspector. That's rare..."
+
+    l "...It is no trouble! I must now depart, for the next case awaits me!"
+    l "Farewell!"
+
+    lt "I salute everyone present, then run off until I'm out of sight, before heading back to the trainers' lockers to change into my normal clothes."
+
+    # Fade. Now on the main racetrack again.
+
+
+    
+    t "Whew... seems like I made it before the race begins."
+
+    r "Yo, dumbface! Do you know where that masked guy went off to!?"
+    t "Hm? Masked guy? I don't know..."
+    r "Damn. Here I was hoping to thank him for helping me out there."
+    r "I've always known those bastards from Castillo's organization were using me as a poster girl for their little betting operation..."
+    r "But I didn't think they'd take things that far."
+
+    c "You thought I was the one behind those incidents, right?"
+    r "Ugh..."
+
+    lu "I also believed the rumors about you. I'm sorry."
+
+    t "How's Lucero doing? Did a vet check him?"
+    lu "Yes. He's stable, but he fell unconscious because of whatever Esteban gave him."
+    lu "I don't even want to think about what would've happened if he'd run in the actual race..."
+
+    r "That greedy host seems to have grown a conscience and allowed the race to be delayed for a couple of hours, at least."
+    lu "Yeah. Lucero and I will be ready by then. Count on it."
+    r "Hah, don't think that means you'll be getting past me."
+
+    # Those two leave, only Cata and Tony are left.
+
+    t "It's nice to see everyone getting along."
+    c "It is certainly more pleasant than the constant bickering the loud one is always provoking."
+    c "It seems your kind act of believing Renata moved her heart."
+
+    t "Yeah..."
+    t "..."
+    t "Wait, my act? Wasn't, uh... wasn't that the guy you all saw appear out of nowhere and speak funny?"
+
+    c "I stand by what I said."
+
+    t "Catalina, I think you've got the wrong idea... that person wasn't—"
+
+    c "Seriously? Your hairstyle and clothes match for the most part."
+    c "And you didn't even bother changing your voice that much. All you did was cover your eyes."
+    c "Honestly, I'm more shocked nobody else noticed it was you."
+
+    t "......."
+
+    c "...Relax. I'm not going to tell."
+    t "Ugh... thanks."
+
+    c "Maybe invest in some glasses, though. Surely that'll fool almost anyone."
+
+    t "Oh, shut it. Don't you have a race to win?"
+    c "That, I do."
+
+    tt "I watch her start heading toward the starting gate, but she suddenly turns around to face me."
+
+    c "What are you standing around for? Aren't you going to help me with the final preparations?"
+    c "Just because we have a few hours doesn't mean we can take it easy."
+
+    t "...! Help you...? I mean, yes, coming right away!"
+
+    # Fade into black.
+
+    t ""
+
+
+    #Ending animation or something. Maybe just narration.
+    #Renata should be thankful for Leo's help, regrets having mde it this far through these methods and wants to start fresh from the bottom. Lucas is elated to havewon second place. The prize is enough to not go out of business. The host should be happy and congratulate Tony for not dying on the job, and offers him a full time job as a caretaker. Tony is greateful but he comments he cant accept he already one- no, two jobs already and has his hands full. The host heard about the odd jobs agency, but is confused about the second supposed job. Tony should say something cryptic or silly, but not outright explain what its. Next, he leaves the derby and we get a narration of what happens to each racer. Have a final message or something and skip to the credits.
+
+    "The end."
+    return
+    
+
 
     label haanin_es2:
     menu:

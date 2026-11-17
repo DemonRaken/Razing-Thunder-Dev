@@ -144,10 +144,10 @@ define de_medicalreport = Evidence(
 )
 
 define de_victimnotes = Evidence(
-    _("Victim's Condition"),
+    _("Victim's Notes"),
     "evidence-victim-notes",  # Image file
     _("Notes taken by Antonio."),
-    _(" A large wound is visible on the back of the head, while multiple bruises cover the face and front of the body. The arms rest limply at the victim's sides, with no apparent injuries to the hands or forearms. Both legs appear to be broken.")
+    _("Body discovery: 10:42 AM\nA large wound is visible on the back of the head, while multiple bruises cover the face and front of the body.\nThe arms rest limply at the victim's sides, with no apparent injuries to the hands or forearms. Both legs appear to be broken.")
                         
 )
 
@@ -191,7 +191,7 @@ define de_notebook = Evidence(
     "evidence-notebook",
     _("Found in Lucas's locker"),
     _("""A small, black, leather-bound notebook with worn corners and yellowed pages. It contains handwritten entries listing race dates, horse names, and monetary values. Most entries are checked off, except for the last one.
-    \n ~~Relámpago~~ - $3,000
+    \n Relámpago - $3,000
     \n Merluza Pelusa - $4,000
     \n Perla Negra $7,000
     \n Lucero $5,000""")

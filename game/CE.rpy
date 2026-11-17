@@ -29,6 +29,28 @@ screen ce_ui():
          bar value ce_rep range 10 xsize 200 ysize 20 yalign 0.5
       textbutton "▶" action Return()
               
+screen game_over():
+      tag game_over
+      zorder 100
+      frame:
+         xalign 0.5
+         yalign 0.5
+         background "#000000"
+         text "Game Over":
+            font gui.name_text_font 
+            size 272
+            color "#ffffff"
+
+label game_over:
+      $ renpy.block_rollback()
+      stop music
+      scene black with dissolve   # fade to black
+      show screen game_over()          # show the text + decoration
+      pause 3.0                        # keep it on screen for 3 seconds
+      hide screen game_over with dissolve
+      $ MainMenu(confirm=False)()      # return to main menu
+      return   
+
 
 
 label CE_start:
@@ -47,7 +69,7 @@ label CE_end:
 
 label testCataCE:
    show screen dossier_icon
-   t "Hello, Cata, I've got up a corner. Kabadon!"
+   t "Hello, Cata, I've got you up a corner. Kabadon!"
    c "Oh no!"
    t "oh yes!"
    jump cata_flawed_testimony_CE
@@ -110,7 +132,8 @@ label cata_flawed_testimony_CE_wrong:
    c "No."
    t "Fuck!"
    # Penalty Damage
-   $ ce_rep -= 1
+   #$ ce_rep -= 1
+   call ce_penalty(2)
    return
    
 
@@ -121,3 +144,13 @@ label cata_flawed_testimony_CE_right:
    c "Seems like you do."
    call CE_end
    jump deleteme
+
+label ce_penalty(amount):
+   $ ce_rep -= amount
+   if ce_rep <= 0:
+      call CE_end
+      lt "Ack. Something happened to me."
+      scene black with fade
+      n "Leopardo Suddenly Collapsed on the spot."
+      n "He never woke up."
+      call game_over

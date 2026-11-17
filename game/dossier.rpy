@@ -281,18 +281,19 @@ screen dossier_ui():
 
 screen dossier_icon:
     zorder 100
-    draggroup:
-        drag:
-            drag_name "dossier_icon"
-            draggable True
-            drag_raise True
-            xpos 0.9
-            ypos 0.65
-            clicked ToggleScreen("dossier_ui")
-            imagebutton:
-                idle "dossier/dossier_icon.png"
-                #hover "dossier/dossier_icon_hover.png"
-                #focus_mask True
+    showif not renpy.get_screen("game_over", tag_only=True):
+        draggroup:
+            drag:
+                drag_name "dossier_icon"
+                draggable True
+                drag_raise True
+                xpos 0.9
+                ypos 0.65
+                clicked ToggleScreen("dossier_ui")
+                imagebutton:
+                    idle "dossier/dossier_icon.png"
+                    #hover "dossier/dossier_icon_hover.png"
+                    #focus_mask True
 
 # screen timed_choice(items, timeout=5.0, timeout_label=None):
 #     # Reuse the ren'py normal choice layout
