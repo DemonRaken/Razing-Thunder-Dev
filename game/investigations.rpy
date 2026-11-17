@@ -88,6 +88,43 @@ screen aai_main_menu():
         textbutton "Move" style "aai_button":
             action [SetVariable("aai_mode", "move"), Return()]
 
+
+screen aai_examine_debug_breakroom():
+        imagemap:
+            idle "placeholder_breakroom"
+            hover Transform("placeholder_breakroom",  matrixcolor=BrightnessMatrix(0.3))
+            hotspot (1327, 205, 369, 673) action Call("aai_examine_debug_breakroom_fridge")
+            hotspot (344, 479, 652, 361) action Call("aai_examine_debug_breakroom_table")
+            hotspot (850, 327, 471, 149) action Call("aai_examine_debug_breakroom_kitchen")
+            hotspot (1705, 511, 230, 433) action Call("aai_examine_debug_breakroom_trash")
+            
+
+
+label aai_examine_debug_breakroom_fridge:
+    lt "This is a fridge. I know how it works."
+    lt "Nothing of interest."
+    return
+
+label aai_examine_debug_breakroom_table:
+    lt "There is nothing on the table. It seems for eating."
+    lt "I knew it, there is old bubblegum underneath it. Eww."
+    return
+
+label aai_examine_debug_breakroom_kitchen:
+    lt "There is a sink, dirty dishes I don't want to wash."
+    lt "Microwave with no food or anything."
+    lt "It smells of... something burnt?"
+    lt "That's all about this."
+    return
+
+label aai_examine_debug_breakroom_trash:
+    lt "Oh! Oh! Delicious! I found a Mate in here!"
+    $ dossier.add(de_mate)
+    lt "I think I am done with the investigation!"
+    $ aai_investigated(mp_breakroom)
+    return
+
+
 label debug_investigation:
     jump debug_investigation_start
 
@@ -137,9 +174,9 @@ label debug_investigate_breakroom:
     c "Not so fast! What are you doing here? Did you plan to steal my lunch?"
     l "No... I came to investigate."
     c "Fine, let me help you"
-    show cata angry at right
-    show leo grin shine at left
     while aai_active:
+        show cata angry at right
+        show leo grin shine at left
         call screen aai_main_menu
         c "I sense that you want to [aai_mode] with me, let's do this!"
         while aai_mode == "talk":
@@ -161,8 +198,10 @@ label debug_investigate_breakroom:
                     $ aai_mode = None
         if aai_mode == "examine":
             if mp_breakroom in aai_travel_left:
-                n "There is nothing to do here. However, you investigated everything in here!"
-                $ aai_investigated(mp_breakroom)
+                while(mp_breakroom in aai_travel_left):
+                    call screen aai_examine_debug_breakroom
+                #n "There is nothing to do here. However, you investigated everything in here!"
+                #$ aai_investigated(mp_breakroom)
             else:
                 lt "I've already investigated every nook and cranny in here."
                 lt "I better MOVE somewhere else instead."

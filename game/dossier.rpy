@@ -100,7 +100,7 @@ screen dossier_ui():
                     action [SetVariable("ce_mode", "object"), SetVariable("ce_object", dossier_select), Hide("dossier_ui"), Return()]
                     xalign 0.010
                     yalign 0.805
-        showif dossier_tab_control == "map":
+        showif dossier_tab_control == "map" and dossier_map:
             imagebutton:
                     idle "button-sel"
                     idle_foreground Text("Travel!", xalign=0.5, yalign=0.5)

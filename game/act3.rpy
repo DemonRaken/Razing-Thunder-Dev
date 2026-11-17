@@ -1084,6 +1084,217 @@ label debug:
     lt "Not to mention that notebook listing all the horses that collapsed during previous races..."
     lt "Both of them are sticking to their stories despite the evidence. What am I supposed to make of this...?"
 
+    #Thoughtt route!!!
+
+    lt "Wait a minute..."
+    lt "Renata's phone was ten minutes behind. That's why she believes they met at 10:24."
+    lt "But Esteban knows what time it actually was."
+    lt "Why would he repeat her version of events...?"
+    lt "Unless he needed her to believe they'd been together earlier than they really were."
+
+    lt "The clothes and notebook weren't simply left behind. Someone wanted them found in Lucas's locker."
+    lt "And whoever planted them must have known about the horse-doping operation..."
+    lt "Someone who could approach the horses, tamper with the evidence, and coordinate with the Castillos..."
+
+    lt "At times like this, it helps to go over the facts one more time."
+
+    lt "According to Lucas, Vicente left the parade ring to pursue someone wearing an orange Hawaiian shirt."
+    lt "That would have led him to the stables."
+    lt "And when he caught up with that person, he was attacked with..."
+
+    # >A shovel
+    # A rock
+    # A roundhouse kick.
+
+    lt "The shovel is the most likely weapon. It has a dent in it, and the victim's blood was found on it."
+    lt "That means blood must have been left behind at the scene."
+    lt "After killing Vicente, the culprit..."
+
+    # Ran away in a panic
+    # Carried the body
+    # >Called for help
+
+    lt "Castillo's underlings have already confessed to helping cover up the murder."
+    lt "They put the body inside that black body bag and threw it from the grandstands."
+
+    lt "So the culprit must have called them in to help dispose of the body."
+    lt "But that still leaves one question..."
+    lt "What did the culprit do after leaving the stables?"
+    lt "...Maybe I need to approach this from another angle."
+    lt "The murder itself is more or less established. I should focus on what's still unexplained."
+    lt "For starters..."
+
+    lt "Lucas and that orange Hawaiian shirt. He insists neither the clothes nor the notebook belong to him."
+    lt "So the reason those items ended up in his locker must be..."
+
+    # He forgot he put them there
+    # >Someone else put them there
+    # He's lying about putting them there
+
+    # Wrong answer: He forgot he put them there.
+    lt "If he'd simply forgotten about them, he should have recognized them when I brought them up."
+    lt "Besides, why would he draw attention to something incriminating in his own locker?"
+
+    # Wrong answer: He's lying about putting them there.
+    lt "If he were lying, why would he insist that someone else had been wearing those clothes?"
+    lt "His story would only make things worse for him."
+
+    lt "Someone deliberately planted the orange shirt and the notebook in his locker."
+    lt "That's certainly possible, assuming Lucas is telling the truth."
+    lt "But who would have done it?"
+
+    # Vicente
+    # >The man at the parade
+    # Catalina
+
+    # Wrong answers
+    lt "That doesn't make sense. Neither Vicente nor Catalina had any reason to plant those items in Lucas's locker."
+
+    lt "Of course! The man wearing those clothes must have been the one who planted them, along with the notebook."
+    lt "But why? What did he stand to gain?"
+    lt "He could have disposed of the evidence almost anywhere..."
+    lt "...Wait. He could have put them anywhere, but he chose Lucas's locker."
+    lt "That's because..."
+
+    # >He wanted them to be found.
+    # He brought Lucas a change of clothes.
+    # He got the wrong locker.
+
+    # Wrong answers
+    lt "No, that doesn't add up. None of those explanations account for why the notebook was planted alongside the clothes."
+
+    lt "He wanted them to be found! That's why he left them in Lucas's locker."
+    lt "Come to think of it, the locker was even left open..."
+
+    lt "And it wasn't just the clothes. The notebook was planted there too."
+    lt "Both items would immediately make Lucas look guilty if someone discovered them."
+
+    lt "But why would having that notebook and those clothes be so incriminating?"
+    lt "The notebook lists several racehorses, alongside a series of monetary values."
+    lt "And almost every entry has been crossed out..."
+    lt "I should take a closer look at what this notebook actually represents."
+
+    lt "What do all the horses listed in this notebook have in common?"
+
+    # >The horses lost.
+    # The horses won.
+    # The horses are cool.
+
+    lt "Even a quick check of the race results confirms it. Every horse with a crossed-out entry lost after collapsing during its race."
+    lt "Except for the last one: Lucero."
+    lt "If an entry is crossed out, that usually means it's been dealt with..."
+
+    lt "Wait. I think I'm onto something."
+    lt "If every name has been crossed out except one, then that means Lucero..."
+
+    # Is a winning horse
+    # >Is a losing horse
+    # Was forgotten about
+
+    lt "Lucero is supposed to lose. But I checked the race results, and he hasn't collapsed like the others."
+    lt "His name hasn't been crossed out yet..."
+
+    lt "He's supposed to lose, but his entry is still untouched. That must mean..."
+
+    # >His loss hasn't happened yet.
+    # He'll become a legendary horse.
+
+    lt "Exactly! His name hasn't been crossed out because his loss hasn't happened yet."
+    lt "He's being targeted for an upcoming race!"
+    lt "And that's right... that man was doting on Lucero!"
+
+    lt "He wasn't just petting the horse. He was doing something to sabotage him!"
+
+    lt "But that still doesn't explain the monetary values..."
+    lt "Even by clandestine standards, these figures are a little too specific."
+    lt "And there's a pattern to them, too..."
+    lt "The amount listed for Perla Negra is considerably higher than the one for Lucero."
+    lt "Could it have something to do with the horses' reputations?"
+    lt "The more prestigious the horse, the higher the amount..."
+    lt "Hmm... these numbers here... what do they represent?"
+
+    # How much it will cost to nurse them back to health
+    # >How much compensation someone receives if they lose
+    # How much money someone loses if they lose
+
+    # Wrong: Cost of treatment
+    lt "I doubt it. Severely. If these were medical expenses, why would someone be recording them alongside horses that collapsed during races?"
+    lt "Besides, if they were paying for treatment, they'd have to be warning the owners..."
+
+    # Wrong: Money lost
+    lt "Why would someone sabotage these horses if they were losing money every time one collapsed?"
+    lt "That'd be one hell of a masochistic business model. I should rethink this."
+
+    # Correct: Compensation
+    lt "Compensation... That's it!"
+    lt "Someone is being paid every time one of these horses is made to collapse!"
+    lt "That would explain why the amounts differ. The more prestigious the horse, the higher the compensation for sabotaging it."
+    lt "And if Lucero is listed here, that means someone is being paid to make him collapse next..."
+    lt "This isn't just someone tampering with racehorses."
+    lt "It's an organized operation. Someone is paying people to rig the races!"
+
+
+
+    
+    lt "That leaves the matter of Renata's alibi."
+    lt "She keeps insisting they left at 10:34, even though the body wasn't reported until 10:42."
+    lt "That's an eight-minute discrepancy. I don't think I should just dismiss it..."
+    lt "Why did Renata mistake the time of the body report?"
+
+    # She doesn't know how to count
+    # She wanted to fabricate an alibi
+    # >Her phone's time was off
+
+    lt "Her phone's time was off... but in what way?"
+
+    # >Ten minutes slow
+    # Ten minutes fast
+    # The time was correct
+
+    lt "If her phone was ten minutes slow, then technically, what she's saying is true."
+    lt "The discovery at 10:42 would have appeared as 10:32 on her phone."
+
+    lt "Wait... If she's basing her entire alibi on that clock, then she wasn't at the café at 10:00, but at 10:10 AM!"
+    lt "Everything shifts forward by ten minutes..."
+    lt "Her meeting with Esteban would have been at 10:34 instead of 10:24."
+    lt "And they would have left at 10:42, right when the body was discovered."
+
+    lt "That's quite a coincidence..."
+    lt "But why would her phone be running ten minutes slow in the first place?"
+
+    # It was broken
+    # >Someone changed its time
+
+    lt "Nowadays, phones synchronize their clocks automatically."
+    lt "You'd have to go out of your way to change the time manually."
+
+    lt "Changing the clock could certainly make someone's alibi look convincing, especially when they're relying on their call history..."
+    lt "But that wouldn't fool the phone provider. Their records would still show the actual time of the calls."
+    lt "It's risky, but if the timing is carefully arranged, it could work."
+
+    lt "But that leaves one question..."
+    lt "Who changed Renata's phone clock?"
+
+    # Renata herself
+    # >Someone else
+
+
+    # Renata herself
+    lt "Renata could have changed the clock herself, sure..."
+    lt "...but that would only make sense if she were the one making the call."
+    lt "She had no way of knowing when she'd receive a call, if at all."
+    lt "Which means there's virtually no reason for her to deliberately change her phone's time."
+
+    # Correct: Someone else
+    lt "Someone else tampered with her phone's clock...! That's it!"
+    lt "It would explain why she's so adamant that the times are correct, even when they aren't."
+    lt "Besides, if Renata had done it herself, her account of the meeting wouldn't necessarily match Esteban's."
+    lt "Hell, she couldn't even have known there WOULD be a meeting to account for!"
+    lt "She couldn't have known when he'd call her, either."
+    lt "Their accounts would have to match, down to the minute."
+
+
+
     # Did not find both contradictions
     lt "Most of them spent their time alone, so it's certainly difficult to verify or disprove their alibis..."
     lt "Nothing in particular stands out to me right now."
