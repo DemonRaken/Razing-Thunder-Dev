@@ -3,6 +3,7 @@ define config.keymap['input_next_line'] = ['K_RETURN', 'K_KP_ENTER']
 
 default dossier_tab_control = "evidence"
 
+
 init python:
     if persistent.dossier_notes_page_left is None:
         persistent.dossier_notes_page_left = ""
@@ -99,14 +100,14 @@ screen dossier_ui():
                     action [SetVariable("ce_mode", "object"), SetVariable("ce_object", dossier_select), Hide("dossier_ui"), Return()]
                     xalign 0.010
                     yalign 0.805
-        
-        imagebutton:
-                idle "button-sel"
-                idle_foreground Text("Travel!", xalign=0.5, yalign=0.5)
-                hover_foreground Text("Travel!", xalign=0.5, yalign=0.5)
-                action Return()
-                xalign 1-0.01
-                yalign 1-0.805+0.11
+        showif dossier_tab_control == "map":
+            imagebutton:
+                    idle "button-sel"
+                    idle_foreground Text("Travel!", xalign=0.5, yalign=0.5)
+                    hover_foreground Text("Travel!", xalign=0.5, yalign=0.5)
+                    action [SetVariable("aai_travel", dossier_map), Return()]
+                    xalign 1-0.01
+                    yalign 1-0.805+0.11
         
         hbox:
             yalign 0.125

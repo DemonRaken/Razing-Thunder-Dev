@@ -26,8 +26,11 @@ init -1 python:
             self.items = []
 
         def add(self, item):
-            renpy.notify(_("Dossier has been updated.") + " " + item.name + " " + _("was discovered.") )
-            self.items.append(item)
+            if item not in self.items:
+                renpy.notify(_("Dossier has been updated.") + " " + item.name + " " + _("was discovered.") )
+                self.items.append(item)
+            else:
+                renpy.notify(_("It's already in the dossier."))
 
         def remove(self, index):
             self.items.pop(index)
