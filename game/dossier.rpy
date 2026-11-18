@@ -291,10 +291,8 @@ screen dossier_icon:
                 xpos 0.88
                 ypos 0.8
                 clicked ToggleScreen("dossier_ui")
-                imagebutton:
-                    idle "dossier/dossier_icon.png"
-                    #hover "dossier/dossier_icon_hover.png"
-                    #focus_mask True
+                idle_child "dossier/dossier_icon2.png"
+                hover_child "dossier/dossier_icon3.png"
 
 # screen timed_choice(items, timeout=5.0, timeout_label=None):
 #     # Reuse the ren'py normal choice layout

@@ -3047,11 +3047,16 @@ label EpilogueNarration:
         scene placeholder_park
         show me neutral
         with fade
-        me "What a goddamn headache of a case. No wonder we never found signs of any intruders, it was someone from the inside all along."
-        me "Unfortunate as it is, it helped us to take down that"
+        me "What a goddamn headache of a case. No wonder we never found any signs of intruders. It was someone from the inside all along."
+        me "As unfortunate as this incident has been, it helped us take down the clandestine betting network."
+        me "Those people are gonna be facing long sentences, hopefully."
+        me "Guess it paid off letting that guy run free around the crime scene."
+        me "I'm willing to overlook him showing up here because of that. But next time, the gloves are off."
+
     label End_Lorenzo:
         scene placeholder_racetrack1
         show en grin
+        with fade
         en "Hahaha...! A success! This has been a complete success! Look at everyone's euphoric smiles!"
         show en neutral
         en "Well, if you overlook the fact that someone was been murdered in my derby... my condolences to the family."
@@ -3074,10 +3079,30 @@ label EpilogueNarration:
         scene placeholder_office
         show luca smile
         with fade
+        
+        lu "I got second place in the race...! I... I really wouldn't have made it without Don Vicente's help."
+        
+        show lu smile2
+        lu "I... I wish he could've seen it happen."
+        
+        show lu smile
+        lu "...Second place gets half the prize money. I'll be able to keep competing as a jockey with that."
+        
+        show lu neutral
+        lu "Some sponsors reached out after the race, too, though I haven't decided which one I'll go with..."
+        
+        show lu smile3
+        lu "Next time, Lucero and I are crossing the finish line in first place. We'll only get better from here on out."
+
     label End_Renata:
         scene placeholder_office
         show rena smile2
         with fade
+        r "Ugh... it pisses me off that those bastards were using me and Pícaro for so long!"
+        r "Wish I got to clobber at least one of them. Now none of my wins really count."
+        r "...meh, that's fine by me. I don't want them. Not like that."
+        r "The masked weirdo did me a huge favor, getting rid of that creep."
+        r "We never really clicked anyway. "
     label End_Catalina:
         scene placeholder_office
         show cata smile
