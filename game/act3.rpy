@@ -220,10 +220,14 @@ label act3:
     
     label vs_sebCE_wrong:
         $ ce_mode = None
-        t "Your testimony contradicts the evidence!!"
+        t "This part of your testimony doesn't make a lick of sense, Sebastian!"
         show seb smile
-        s "No."
-        t "Fuck!"
+        s "Wait a moment, I have to check the time on my watches."
+        t "Eh?"
+        s "I was afraid of this. It does seem like it's 'listen to stupid' o'clock right now."
+        t "Gah!!"
+        $ ce_rep -= 1
+        t "Damn. Looks like I was wrong..."
         # Penalty Damage
         $ ce_rep -= 1
         with fade
@@ -689,10 +693,11 @@ label act3:
             #continue here
             label vs_sebCE_wrong2:
                 $ ce_mode = None
-                t "Your testimony contradicts the evidence!!"
+                l "Mr. Castillo, you have made a serious mistake in your testimony!"
                 show seb smile
-                s "No."
-                t "Fuck!"
+                s "The only mistake here is that rag you are carrying around."
+                l "Ugh...!"
+                lt "It's not a rag, it's a poncho..."
                 # Penalty Damage
                 $ ce_rep -= 1
                 with fade
@@ -761,14 +766,14 @@ label act3_continue3:
     with fade
     call CE_start
 
-    s "Fine then, I will admit. That old crook died at the stables."
+    s "Fine then, I admit it. That old crook died at the stables."
     #press
     if ce_mode == "object":
         call vs_sebCE_wrong3
     if ce_mode == "press":
         $ ce_mode = None
-        l "Question."
-        s "Banter."
+        l "Was that so hard?"
+        s "S-Silence!"
         with fade
 
     s "That still doesn't clear the country bumpkin's name!"
@@ -776,8 +781,9 @@ label act3_continue3:
         call vs_sebCE_wrong3
     if ce_mode == "press":
         $ ce_mode = None
-        l "Question."
-        s "Banter."
+        l "Why do you insist on calling m- on calling him that..?"
+        s "I have twenty reasons explaining why. Number one..."
+        l "Never mind. Moving on..."
         with fade
 
     if ce_seb_bodybag:
@@ -790,8 +796,11 @@ label act3_continue3:
                 call vs_sebCE_wrong3
         if ce_mode == "press":
             $ ce_mode = None
-            l "Question."
-            s "Banter."
+            l "Where did he get the bag from?"
+            s "How should I know? I am not a criminal! eBay? Drone delivery?"
+            lt "Man. If drones started handing out crime tools like candy, we'd all be in big trouble."
+            lt "Speaking of trouble... it doesn't seem Sebastian has realized what it means to have used that method."
+            lt "At the very least, I know it's impossible for me to have done it. I just gotta prove it now!"
             with fade
     else:
         s "He attacked that trainer, then moved his body away from the stables!"
@@ -818,10 +827,11 @@ label act3_continue3:
 
     label vs_sebCE_wrong3:
         $ ce_mode = None
-        t "Your testimony contradicts the evidence!!"
+        l "Your testimony contradicts the evidence!"
         show seb smile
         s "No."
-        t "Fuck!"
+        lt "Fuck!"
+        lt "Ugh, that didn't go so well..."
         # Penalty Damage
         $ ce_rep -= 1
         with fade
@@ -2109,8 +2119,8 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "A bad habit indeed. Your words are like smoke that will be carried away by the wind."
+            e "Heh, give me some credibility, Mr. Leopardo, I just started to explain things..."
             with fade
         
         show est frown
@@ -2119,8 +2129,9 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "And what exactly would drive her to do that?"
+            e "I like to believe I am a rather reliable person. It's only natural she would seek support from her trainer."
+            lt "Reliable? More like arrogant."
             with fade
         
         show est frown2
@@ -2129,8 +2140,12 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "Why didn't you immediately alert the police?"
+            e "As something of a mentor figure, I didn't want to abandon her like that."
+            e "Would you be able to turn someone close to you over to the authorities, Mr. Leopardo?"
+            l "Yes."
+            e "Oh? Then perhaps you, too, are the cold-blooded type..."
+            lt "...I just want justice to be served. That's all."
             with fade
         
         # Objection = Present Renata's Phone (Update evidence description)
@@ -2163,8 +2178,10 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "You say you've worked together for a long time. Didn't it strike you as strange that she would suddenly murder someone?"
+            e "Quite so. But as you may know, Renata tends to have some... explosive outbursts."
+            e "I simply chalked it up to that."
+            lt "This guy..."
             with fade
         
         e "She insisted on changing the times on our phones to provide her with a cover story."
@@ -2173,8 +2190,10 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "So you're saying Renata came up with that on the spot?"
+            e "Rather than on the spot, she must have been dreading it ever since I called."
+            e "Perhaps she had a guilty conscience, in case the police looked into her phone?"
+            lt "Right. Sounds more like someone's trying to shift the blame here."
             with fade
         
         e "I realize that this was the wrong thing to do. My apologies."
@@ -2182,8 +2201,9 @@ label debug:
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
-            l "Banter."
-            e "Answer."
+            l "That's it? You're willing to confess to being an accomplice to MURDER, and 'my apologies' is all you can say?"
+            e "I deeply regret it, Mr. Leopardo. I assure you. I am ready to accept whatever punishment the law deems fit."
+            lt "Oh, the law would've let you slip free if they'd bought your little charade. That's why I'm here."
             with fade
 
         # CE LOOPS HERE!!!
@@ -2592,7 +2612,15 @@ label LastCE:
     show est yell
     with fade
     call CE_start
+    
     e "There's no reason for me to kill Vicente!"
+    if ce_mode == "object":
+            call LastCE_WRONG
+    if ce_mode == "press":
+        $ ce_mode = None
+        l "I'm not so sure about that. There are a number of reasons one can have to kill a man."
+        e "None of them apply to me! And you will see why soon."
+        with fade
     
     show est yell-rerd
     e "I barely spoke to the man! Are you now going to say I hated him!?"
@@ -2600,8 +2628,9 @@ label LastCE:
             call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
-        l "Banter."
-        e "Answer."
+        l "I wouldn't say you have to hate him to have a reason to silence him."
+        e "Is that right? Then what reason would that be!?"
+        lt "You know damn well what your reason is..."
         with fade
 
     show est grit-red
@@ -2610,8 +2639,12 @@ label LastCE:
             call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
-        l "Banter."
-        e "Answer."
+        l "So the idea of having less competition to increase your odds of winning only applies to Ms. Vargas and not you?"
+        e "I am not the one getting on the damn horse, Leopardo...!"
+        e "My job is to prepare her for the race, not compete against the other trainers."
+        l "And yet, her victories reflect on you too, don't they?"
+        e "..."
+        e "Of course they do. But that hardly makes me responsible for what happened!"
         with fade
     
     show est angry
@@ -2684,8 +2717,11 @@ label LastCE:
             call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
-        l "Banter."
-        e "Answer."
+        l "People have killed for less. It isn't always about getting something from it."
+        e "How rich! So now I am a psycho killer, is that it!?"
+        l "I'm saying that a lack of motive doesn't make you innocent."
+        e "And I'm saying you have absolutely nothing to support that accusation!"
+        lt "He's getting awfully worked up over a simple question..."
         with fade
 
     #CE LOOPS HERE!
