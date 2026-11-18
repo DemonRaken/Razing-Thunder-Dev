@@ -1458,85 +1458,120 @@ label act3_thoughtroute:
             "How much money one loses if they lose":
                 jump tr_moneylose
 
-    # How much it will cost to nurse them back to health
-    # >How much compensation someone receives if they lose
-    # How much money someone loses if they lose
+        label tr_heal:
+            l "I doubt it. Severely. If these were medical expenses, why would someone be recording them alongside horses that collapsed during races?"
+            l "Besides, if they were paying for treatment, they'd have to be warning the owners..."
+            jump tr_compensation
+        label tr_moneylose:
+            l "Why would someone sabotage these horses if they were losing money every time one collapsed!?"
+            l "That'd be one hell of a masochistic business model! I should rethink this."
+            jump tr_compensation
+    label tr_moneygain:
+        l "Compensation... That's it!"
+        l "Someone is being paid every time one of these horses is made to collapse!"
+        l "That would explain why the amounts differ. The more prestigious the horse, the higher the compensation for sabotaging it."
+        l "And if Lucero is listed here, that means someone is being paid to make him collapse next..."
+        l "This isn't just someone tampering with racehorses."
+        l "It's an organized operation. Someone is paying people to rig the races!"
+        jump tr_rena1
+    label tr_rena1:
+        l "That leaves the matter of Renata's alibi."
+        l "She keeps insisting they left at 10:34, even though the body wasn't reported until 10:42."
+        l "That's an eight-minute discrepancy. I don't think I should just dismiss it..."
+        l "Why did Renata mistake the time of the body report?"
+        menu:
+            "She doesn't know how to count":
+                jump tr_rena_count
+            "She wanted to fabricate an alibi":
+                jump tr_rena_alibi
+            "Her phone's time was off":
+                jump tr_rena_off
+        label tr_rena_count:
+            l "Haha... in all seriousness, insulting her in my mind won't give me real answer."
+            l "I should refocus..."
+            jump tr_rena1
+        label tr_rena_alibi:
+            l "Would she really go through all that trouble to fabricate an alibi?"
+            l "She had no way of knowing Esteban would call her, let alone when."
+            l "And the call itself would leave a timestamped record..."
+            l "No, that doesn't add up. I should refocus..."
+            jump tr_rena1
+        label tr_rena_off:
+            lt "Her phone's time was off... but in what way?"
+            menu:
+                "Ten minutes slow":
+                    jump tr_rena_slow
+                "Ten minutes fast":
+                    jump tr_rena_fast
+                "The time was correct":
+                    jump tr_rena_correct
 
-    # Wrong: Cost of treatment
-    lt "I doubt it. Severely. If these were medical expenses, why would someone be recording them alongside horses that collapsed during races?"
-    lt "Besides, if they were paying for treatment, they'd have to be warning the owners..."
+            label tr_rena_slow:
+                l "No, that doesn't sound right. If her clock were ten minutes fast, she would've found out about the commotion at 10:52 AM."
+                l "She definitely didn't say that. Let's think this through again..."
+                jump tr_rena_off
 
-    # Wrong: Money lost
-    lt "Why would someone sabotage these horses if they were losing money every time one collapsed?"
-    lt "That'd be one hell of a masochistic business model. I should rethink this."
-
-    # Correct: Compensation
-    lt "Compensation... That's it!"
-    lt "Someone is being paid every time one of these horses is made to collapse!"
-    lt "That would explain why the amounts differ. The more prestigious the horse, the higher the compensation for sabotaging it."
-    lt "And if Lucero is listed here, that means someone is being paid to make him collapse next..."
-    lt "This isn't just someone tampering with racehorses."
-    lt "It's an organized operation. Someone is paying people to rig the races!"
-
+            label tr_rena_fast:
+                l "No, no... if the time was correct, then this body discovery discrepancy wouldn't had happened in the first place!"
+                l "Think, Tony, think...!"
+                jump tr_rena_off
+            label tr_rena_correct:
+                l "If her phone was ten minutes slow, then technically, what she's saying is true."
+                l "The discovery at 10:42 would have appeared as 10:32 on her phone."
+                jump tr_rena2
+                
+    label tr_rena2:
+        l "Wait... If she's basing her entire alibi on that clock, then she wasn't at the café at 10:00, but at 10:10 AM!"
+        l "Everything shifts forward by ten minutes..."
+        l "Her meeting with Esteban would have been at 10:34 instead of 10:24."
+        l "And they would have left at 10:42, right when the body was discovered."
+        l "That's quite a coincidence..."
+        l "But why would her phone be running ten minutes slow in the first place?"
+        menu:
+            "It was broken":
+                jump tr_rena_broken
+            "Someone changed its time":
+                jump tr_rena_changed
+        label tr_rena_broken:
+            l "Nah, if her phone was broken I would had noticed when she showed it to me."
+            l "Renata or the inspector would had mentioned it too. I need to re-think this."
+            jump tr_rena2
+        label tr_rena_changed:
+            l "Nowadays, phones synchronize their clocks automatically."
+            l "You'd have to go out of your way to change the time manually."
+            jump tr_rena3
+    label tr_rena3:
+        l "Changing the clock could certainly make someone's alibi look convincing, especially when they're relying on their call history..."
+        l "But that wouldn't fool the phone provider. Their records would still show the actual time of the calls."
+        l "It's risky, but if the timing is carefully arranged, it could work."
+        l "But that leaves one question..."
+        l "Who changed Renata's phone clock?"
+        menu:
+            "Renata herself":
+                jump tr_rena_herself
+            "Someone else":
+                jump tr_rena_someone
+        label tr_rena_herself:
+            l "Renata could have changed the clock herself, sure..."
+            l "...but that would only make sense if she were the one making the call."
+            l "She had no way of knowing when she'd receive a call, if at all."
+            l "Which means there's virtually no reason for her to deliberately change her phone's time."
+            jump tr_rena3
+        label tr_rena_someone:
+            l "Someone else tampered with her phone's clock...! That's it!"
+            l "It would explain why she's so adamant that the times are correct, even when they aren't."
+            l "Besides, if Renata had done it herself, her account of the meeting wouldn't necessarily match Esteban's."
+            l "Hell, she couldn't even have known there WOULD be a meeting to account for!"
+            l "She couldn't have known when he'd call her, either."
+            l "Their accounts would have to match, down to the minute."
+            l "...."
+            l "So that is it..."
+            l "Someone is being paid to sabotage the horses listed in the notebook and tried to frame Lucas for it..."
+            l "...and the time in Renata's phone was tampered with without her knowledge!!"
+    #THOUGHT ROUTE FINISH!!!!!!
 
 
     
-    lt "That leaves the matter of Renata's alibi."
-    lt "She keeps insisting they left at 10:34, even though the body wasn't reported until 10:42."
-    lt "That's an eight-minute discrepancy. I don't think I should just dismiss it..."
-    lt "Why did Renata mistake the time of the body report?"
-
-    # She doesn't know how to count
-    # She wanted to fabricate an alibi
-    # >Her phone's time was off
-
-    lt "Her phone's time was off... but in what way?"
-
-    # >Ten minutes slow
-    # Ten minutes fast
-    # The time was correct
-
-    lt "If her phone was ten minutes slow, then technically, what she's saying is true."
-    lt "The discovery at 10:42 would have appeared as 10:32 on her phone."
-
-    lt "Wait... If she's basing her entire alibi on that clock, then she wasn't at the café at 10:00, but at 10:10 AM!"
-    lt "Everything shifts forward by ten minutes..."
-    lt "Her meeting with Esteban would have been at 10:34 instead of 10:24."
-    lt "And they would have left at 10:42, right when the body was discovered."
-
-    lt "That's quite a coincidence..."
-    lt "But why would her phone be running ten minutes slow in the first place?"
-
-    # It was broken
-    # >Someone changed its time
-
-    lt "Nowadays, phones synchronize their clocks automatically."
-    lt "You'd have to go out of your way to change the time manually."
-
-    lt "Changing the clock could certainly make someone's alibi look convincing, especially when they're relying on their call history..."
-    lt "But that wouldn't fool the phone provider. Their records would still show the actual time of the calls."
-    lt "It's risky, but if the timing is carefully arranged, it could work."
-
-    lt "But that leaves one question..."
-    lt "Who changed Renata's phone clock?"
-
-    # Renata herself
-    # >Someone else
-
-
-    # Renata herself
-    lt "Renata could have changed the clock herself, sure..."
-    lt "...but that would only make sense if she were the one making the call."
-    lt "She had no way of knowing when she'd receive a call, if at all."
-    lt "Which means there's virtually no reason for her to deliberately change her phone's time."
-
-    # Correct: Someone else
-    lt "Someone else tampered with her phone's clock...! That's it!"
-    lt "It would explain why she's so adamant that the times are correct, even when they aren't."
-    lt "Besides, if Renata had done it herself, her account of the meeting wouldn't necessarily match Esteban's."
-    lt "Hell, she couldn't even have known there WOULD be a meeting to account for!"
-    lt "She couldn't have known when he'd call her, either."
-    lt "Their accounts would have to match, down to the minute."
 
 
 label act3_continue6:

@@ -7,20 +7,41 @@ init python:
             return 0.01
         return None
 
+    
 transform earthquake(dt=3.0, dist=30):
     function renpy.curry(_shake)(dt=dt, dist=dist)   
 
 define flash = Fade(0.02, 0.0, 0.5, color="#fff")   
 
+transform status_indicator:
+    alpha 0.0
+    linear 1.0 alpha 1.0
+    pause 2.0
+    linear 1.0 alpha 0.0
+    repeat
+
+screen status_indicator(annoucement, colorize):
+    text annoucement at status_indicator:
+        color colorize
+        bold True
+        italic True
+        size 70
+        xpos 20
+        ypos 20
+        outlines [(2, "#FFFFFF", 0, 0)]
+
 
 label debug_room:
+    show screen status_indicator("Debug Room", "#FF0000")
     scene placeholder_breakroom
     show leo smile
     with fade
     l "This is the debug room!"
     show leo smile at left
     show cata smile at right
-    c "You bet it is!"
+    c "You bet it is! Here, take your dossier!"
+    $ dossier_enabled = True
+    l "Thanks!"
     show layer master:
         linear 4.0 blur 250
         #linear 4.0 zoom 2

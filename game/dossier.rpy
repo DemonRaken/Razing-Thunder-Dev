@@ -1,5 +1,6 @@
 define config.overlay_screens += ["dossier_icon"]
 define config.keymap['input_next_line'] = ['K_RETURN', 'K_KP_ENTER']   
+default dossier_enabled = False
 
 default dossier_tab_control = "evidence"
 
@@ -281,7 +282,7 @@ screen dossier_ui():
 
 screen dossier_icon:
     zorder 100
-    showif not renpy.get_screen("game_over", tag_only=True):
+    showif not renpy.get_screen("game_over", tag_only=True) and dossier_enabled:
         draggroup:
             drag:
                 drag_name "dossier_icon"
