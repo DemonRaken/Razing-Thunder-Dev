@@ -77,6 +77,17 @@ label cheat_get_all_evidence:
     $ dossier.add(de_callrecords)
     $ dossier.add(de_casualclothes)
     $ dossier.add(de_notebook)
+    $ dossier.add(de_autopsy)
+    $ dossier.add(dp_tony)
+    $ dossier.add(dp_chispa)
+    $ dossier.add(dp_catalina)
+    $ dossier.add(dp_renata)
+    $ dossier.add(dp_lucas)
+    $ dossier.add(dp_esteban)
+    $ dossier.add(dp_vicente)
+    $ dossier.add(dp_medina)
+    $ dossier.add(dp_lorenzo)
+
     return
 
 label debug_cutins_test:

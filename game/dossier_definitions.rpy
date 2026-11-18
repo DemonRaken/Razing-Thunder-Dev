@@ -82,13 +82,13 @@ default dossier = Dossier()
 define mp_grandstands = MapData(
     _("Main Racetrack"),
     "placeholder_granstands",  # Image file
-    _("Grandstands are also known as Main Race Tracks.")
+    _("A massive seating area where spectators gather to watch the races.")
 )
 
 define mp_breakroom = MapData(
     _("Staff Break Room"),
     "placeholder_breakroom",  # Image file
-    _("Here the staff eats lunch and does other things.")
+    _("A resting area where the Derby's staff can take a break between their duties, eat lunch and do other things.")
 )
 
 define mp_corridor = MapData(
@@ -100,21 +100,21 @@ define mp_corridor = MapData(
 define mp_paddock = MapData(
     _("Parade Ring"),
     "placeholder_paddock",  # Image file
-    _("The Parade Ring is also known as Paddock.")
+    _("An area where horses are presented before the race, allowing spectators and jockeys to see them up close.")
 )
 
 
 define mp_stables = MapData(
     _("Stables"),
     "placeholder_stables",  # Image file
-    _("Horses can be found in here.")
+    _("The facilities where horses are housed, groomed, and prepared for competition.")
 )
 
 
 define mp_lockers = MapData(
     _("Jockeys Locker Room"),
     "placeholder_lockers",  # Image file
-    _("All sorts of items belonging to the Jockeys can be found in here.")
+    _("A designated area where jockeys can change clothes, store their belongings, and prepare for their races.")
 )
 
 
@@ -123,8 +123,8 @@ define mp_lockers = MapData(
 define de_mate = Evidence(
     _("Mate"),
     "mate-transparent", # Image file
-    _("This mate is passed down the generations."),
-_("""Etiam lobortis nulla odio, non bibendum felis suscipit non. Duis erat nibh, feugiat viverra porta vel, luctus vel orci. Donec maximus porttitor tempus. Etiam metus nunc, blandit vel nisl sed.
+    _("Personal possessions."),
+_("""Bitter and ready for the road.
 """)
 )
 
@@ -136,10 +136,10 @@ _("""The mask I use to conceal my identity when fighting crime.""")
 )
 
 define de_medicalreport = Evidence(
-    _("Medical Report"),
+    _("Veterinary Medical Report"),
     "evidence-med-report",  # Image file
     _("Obtained from Inspector Medina."),
-    _("Horse feels ill from bad drugs.")
+    _("Examination confirmed acute Halosodrin (Sodrin-HX) poisoning in the affected horses. The substance causes progressive muscular weakness and impaired coordination. Symptoms may remain subtle while the animal is at rest, but strenuous physical activity can rapidly aggravate its effects, resulting in cardiac irregularities and sudden collapse during exertion. No injection marks or evidence of injected substances were found. Traces of Halosodrin were instead detected around the horses' mouths, indicating oral exposure. The compound is a veterinary additive intended for cattle and poultry, but highly toxic to horses.")
                         
 )
 
@@ -162,25 +162,25 @@ define de_blooddrops = Evidence(
     _("Dried Bloodstains"),
     "evidence-blood-drops",
     _("Found inside the stables"),
-    _("A trail of dried blood drops. It leads from a small pool of blood towards the entrance, where it abruptly ends. The pool of blood has been covered with loose hay.")
+    _("A trail of dried blood drops. It leads from a small pool of blood towards the stable's entrance, where it abruptly ends. The pool of blood has been covered with loose hay.")
 )
 
 define de_bodybag = Evidence(
-    _("Black Body Bag"),
+    _("Body Bag"),
     "evidence-body-bag",
     _("Found in the staff break room"),
     _("A large black plastic body bag, capable of holding an adult-sized person. It was stuffed inside a trash bin and hastily covered with other discarded rubbish. Its interior is heavily stained with dried blood.")
 )
 
 define de_callrecords = Evidence(
-    _("Call Records"),
+    _("Renata's Phone"),
     "evidence-call-records",
-    _("Obtained from the phone provider"),
-    _("Records of a phone call between Esteban and Renata.")
+    _("Obtained from Renata"),
+    _("The phone's call log. Its only call from today was from Esteban, at 10:17 AM.")
 )
 
 define de_casualclothes = Evidence(
-    _("Casual Clothing"),
+    _("Orange Clothes"),
     "evidence-casual-clothes",
     _("Found in Lucas's locker"),
     _("A colorful Hawaiian shirt, a pair of beige trousers, dark aviator sunglasses, and casual shoes.")
@@ -190,26 +190,18 @@ define de_notebook = Evidence(
     _("Notebook"),
     "evidence-notebook",
     _("Found in Lucas's locker"),
-    _("""A small, black, leather-bound notebook with worn corners and yellowed pages. It contains handwritten entries listing race dates, horse names, and monetary values. Most entries are checked off, except for the last one.
-    \n Relámpago - $3,000
-    \n Merluza Pelusa - $4,000
-    \n Perla Negra $7,000
-    \n Lucero $5,000""")
+    _("""A small, notebook with worn corners and pages. It contains handwritten entries listing race dates, horse names, and monetary values. Most entries are checked off, except for the last one.
+    \n {s}Relámpago — $3,000 {/s}
+    \n {s}Merluza Pelusa — $4,000{/s}
+    \n {s}Perla Negra — $7,000{/s}
+    \n Lucero — $5,000""")
 )
 
 define de_autopsy = Evidence(
     _("Autopsy Report"),
     "evidence-autopsy",
     _("Obtained from the police"),
-    _("Victim: Vicente [SURNAME]\n\
-    Estimated Time of Death: [TIME]\n\
-    Cause of Death: Severe blunt force trauma to the back of the head.\n\
-    \n\
-    Findings:\n\
-    - Severe blunt force trauma to the back of the head.\n\
-    - Multiple bruises across the face and front of the body.\n\
-    - Both legs fractured.\n\
-    - No apparent injuries to the hands or forearms.\n")
+    _("""{u}Victim{/u}: Vicente Ruiz\n{u}Estimated Time of Death{/u}: 10:17 AM\n{u}Cause of Death{/u}: Severe blunt force trauma to the back of the head.\nSustained multiple bruises across the face and front of the body. Both legs fractured. No apparent injuries to the hands or forearms.""")
 )
 
 define de_screen = Evidence(
@@ -230,4 +222,66 @@ define dp_leo = CharacterProfile(
     "side leo grin shine",  # Image file
     _("The Leopard man always carries a mate!"),
     _("Here comes the Leopard man to the rescue! After that he will treat you to his mate!")
+)
+
+define dp_chispa = CharacterProfile(
+    _("La Chispa"),
+    "side chispa smile",  # Image file
+    _("Age: 4"),
+    _("My trusty mare and partner in crime-fighting. I couldn't ask for a better friend to watch my back.")
+)
+define dp_catalina = CharacterProfile(
+    _("Catalina Moreno"),
+    "pcata",
+    _("Age: 26"),
+    _("A cold, direct, and perfectionist jockey who strives for undisputed superiority. Horse: Dama de Plata.")
+)
+
+define dp_medina = CharacterProfile(
+    _("Sofía Medina"),
+    "pmedi",
+    _("Age: 34"),
+    _("A methodical and capable local police inspector. Known for her dry demeanor and occasional sarcasm, she takes her investigations seriously.")
+)
+
+define dp_lorenzo = CharacterProfile(
+    _("Lorenzo Villarreal"),
+    "penzo",
+    _("Age: 55"),
+    _("The flamboyant host of the Razing Thunder Derby. A large, top-hat-wearing showman who puts the success and spectacle of the event above everything else.")
+)
+
+define dp_sebastian = CharacterProfile(
+    _("Sebastian Castillo"),
+    "pseb",
+    _("Age: 28"),
+    _("A wealthy heir and Renata's sponsor. Arrogant, impulsive, and an avid gambler. He has a taste for luxury watches.")
+)
+
+define dp_lucas = CharacterProfile(
+    _("Lucas Mendoza"),
+    "plu",
+    _("Age: 25"),
+    _("A reserved and hardworking jockey, often considered the underdog of the competition. Horse: Lucero.")
+)
+
+define dp_vicente = CharacterProfile(
+    _("Vicente Ruiz"),
+    "pvi",
+    _("Age: 48"),
+    _("Lucas's trainer. A patient and pragmatic person who believes success comes from discipline and consistent effort.")
+)
+
+define dp_renata = CharacterProfile(
+    _("Renata Vargas"),
+    "prena",
+    _("Age: 23"),
+    _("A loud, boastful, and hot-tempered jockey who wants to prove her worth through her own abilities. Horse: Pícaro.")
+)
+
+define dp_esteban = CharacterProfile(
+    _("Esteban Rojas"),
+    "pes",
+    _("Age: 42"),
+    _("Renata's trainer. A disciplined, cordial, and professional person who presents himself as dependable and courteous.")
 )

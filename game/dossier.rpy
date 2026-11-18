@@ -22,7 +22,7 @@ transform dossier_fade:
 #style dossier:
 
 style dossier_text:
-    color "#fffb00"
+    color "#7890d4"
 
 screen _dossier_items_chooser:
                 # label "[dossier_tab]":
