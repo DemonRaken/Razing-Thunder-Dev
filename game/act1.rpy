@@ -174,6 +174,12 @@ label act1:
 
   show leo think smile drop
   lt "Wasting no time, I enthusiastically put my phone away into my pocket and rush to get everything I need before heading to meet the person who made the request."
+  show leo smile
+  l "Oop! I shouldn't forget to bring my Dossier with me!"
+  $ dossier_enabled = True
+  $ renpy.notify(_("Dossier Obtained."))
+  l "Vital information always goes there. It would be no joke to say that the very balance of the world depends on it...!"
+  lt "Anyway, time to move!"
   show leo at right
   with move
 

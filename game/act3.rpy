@@ -1,4 +1,6 @@
+
 label act3:
+    $ dossier_enabled = True
     label act3intro:
         scene placeholder_paddock
         with fade
@@ -152,8 +154,18 @@ label act3:
         s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
 
     #Tony vs Seb
+    label vs_seb_Testimony:
+        scene placeholder_bodycg
+        call fx_testimony
+        show seb smile3
+        with fade
+        
+        s "I say my testimony here."
+        s "I am done."
+        t "Wow that was a long testimony. (not)"
     label vs_sebCE:
         scene placeholder_bodycg
+        show screen status_indicator("Interrogation", "#FF0000")
         show seb smile3
         with fade
         call CE_start
@@ -953,6 +965,7 @@ label act3_continue5:
 label bigCE:
     default ce_rena_phone = False
     default ce_luca_cloth = False
+label bigCE_loop:
     scene placeholder_racetrack1
     show en neutral
     with fade
@@ -972,7 +985,7 @@ label bigCE:
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
-            l "Huh... Is that true, Inspector?"
+            l "Huh... Is that true, inspector?"
             me "Damn right it is. I needed answers, one way or another."
             lt "Scary."
             with fade
@@ -1067,7 +1080,7 @@ label bigCE:
                 lt "Those same professionals somehow managed to miss a bunch of crooks carrying a body around in broad daylight..."
                 lt "...Wait. When exactly did Renata say they left? Something's weird here..."
                 with fade
-    
+    jump bigCE_loop
     label bigCE_Renata:
         $ ce_rena_phone = True
         $ ce_mode = None
@@ -1202,7 +1215,16 @@ label bigCE:
             with fade
     # End
     hide screen ce_ui     
-
+    label bigCE_wrong:
+        $ ce_mode = None
+        l "Your testimony contradicts the evidence!!"
+        show me neutral
+        me "No."
+        l "Fuck!"
+        # Penalty Damage
+        $ ce_rep -= 1
+        with fade
+        return
     lt "Let's go over everything... Assuming my math hasn't gotten rusty..."
     lt "Lorenzo, Sebastian, and the inspector were together at the luxury observatory from 10 AM until 10:42 AM."
     lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM.They met at 10:24 AM at the cafe before heading off for the racetrack."

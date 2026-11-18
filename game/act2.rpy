@@ -27,6 +27,7 @@
     #return
 
 label act2:
+    $ dossier_enabled = True
     scene placeholder_stables
     with fade
     tl "9:40 AM.\nRazing Thunder Derby.\nStables."

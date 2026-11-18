@@ -288,8 +288,8 @@ screen dossier_icon:
                 drag_name "dossier_icon"
                 draggable True
                 drag_raise True
-                xpos 0.9
-                ypos 0.65
+                xpos 0.88
+                ypos 0.8
                 clicked ToggleScreen("dossier_ui")
                 imagebutton:
                     idle "dossier/dossier_icon.png"

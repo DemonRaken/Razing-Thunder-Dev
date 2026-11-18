@@ -7,7 +7,11 @@ init python:
             return 0.01
         return None
 
-    
+label fx_testimony:
+    show screen status_indicator("Testimony", "#385cff")
+    play sound "audio/type.wav"
+    return
+ 
 transform earthquake(dt=3.0, dist=30):
     function renpy.curry(_shake)(dt=dt, dist=dist)   
 
