@@ -9,9 +9,12 @@ init python:
 
 label fx_testimony:
     show screen status_indicator("Testimony", "#385cff")
-    play sound "audio/type.wav"
+    #play sound "audio/type.wav"
     return
- 
+label fx_interrogation:
+    show screen status_indicator("Interrogation", "#FF0000")
+    #play sound "audio/type.wav"
+    return
 transform earthquake(dt=3.0, dist=30):
     function renpy.curry(_shake)(dt=dt, dist=dist)   
 
