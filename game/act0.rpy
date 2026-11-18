@@ -15,4 +15,6 @@ label start:
             jump debug
         "Jump to Debug Room":
             jump debug_room
+        "Jump to bigCE":
+            jump bigCE
     return

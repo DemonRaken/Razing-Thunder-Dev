@@ -1081,30 +1081,7 @@ label bigCE_loop:
                 lt "...Wait. When exactly did Renata say they left? Something's weird here..."
                 with fade
     jump bigCE_loop
-    label bigCE_Renata:
-        $ ce_rena_phone = True
-        $ ce_mode = None
-        $ ce_rep += 2
-        # Objection
-        l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
-        r "Are you deaf? Yeah."
-        l "And you left because the discovery of the body caused a commotion."
-        r "That's right, Captain Obvious."
-        l "That's impossible, Ms. Vargas."
-        r "Huh? Are you calling me a liar?"
-        l "Do you know what time the body was reported?"
-        r "Like I said! Sometime around 10:34!"
-        l "10:42 AM. You're off by eight minutes."
-        r "What? But that's not—"
-        e "Perhaps Renata simply got confused about the time...?"
-        r "I'm NOT confused! We met at 10:24 AM, and it wasn't even ten minutes before people started screaming and making a scene!"
-        r "I know because I checked my phone before we left the café!"
-        lt "Her timing is clearly off, but she insists she's not mistaken..."
-        lt "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
-        lt "I'll have to keep this in mind."
-        with fade
-        return
-
+    
 
     lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
     if ce_mode == "object":
@@ -1144,7 +1121,29 @@ label bigCE_loop:
                 l "I see..."
                 with fade
 
-
+    label bigCE_Renata:
+        $ ce_rena_phone = True
+        $ ce_mode = None
+        $ ce_rep += 2
+        # Objection
+        l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
+        r "Are you deaf? Yeah."
+        l "And you left because the discovery of the body caused a commotion."
+        r "That's right, Captain Obvious."
+        l "That's impossible, Ms. Vargas."
+        r "Huh? Are you calling me a liar?"
+        l "Do you know what time the body was reported?"
+        r "Like I said! Sometime around 10:34!"
+        l "10:42 AM. You're off by eight minutes."
+        r "What? But that's not—"
+        e "Perhaps Renata simply got confused about the time...?"
+        r "I'm NOT confused! We met at 10:24 AM, and it wasn't even ten minutes before people started screaming and making a scene!"
+        r "I know because I checked my phone before we left the café!"
+        lt "Her timing is clearly off, but she insists she's not mistaken..."
+        lt "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
+        lt "I'll have to keep this in mind."
+        with fade
+        return
     label bigCE_Lucas:
         # Counter response here.
         $ ce_luca_cloth = True
@@ -1213,18 +1212,9 @@ label bigCE_loop:
             c "No."
             lt "Well, that was incredibly helpful."
             with fade
-    # End
-    hide screen ce_ui     
-    label bigCE_wrong:
-        $ ce_mode = None
-        l "Your testimony contradicts the evidence!!"
-        show me neutral
-        me "No."
-        l "Fuck!"
-        # Penalty Damage
-        $ ce_rep -= 1
-        with fade
-        return
+    # BigCE End
+
+    hide screen ce_ui 
     lt "Let's go over everything... Assuming my math hasn't gotten rusty..."
     lt "Lorenzo, Sebastian, and the inspector were together at the luxury observatory from 10 AM until 10:42 AM."
     lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM.They met at 10:24 AM at the cafe before heading off for the racetrack."
@@ -1239,6 +1229,17 @@ label bigCE_loop:
 
     lt "That's a good question. After hearing all of that, is there anything about these alibis that bothers me?"
 
+    label bigCE_wrong:
+        $ ce_mode = None
+        l "Your testimony contradicts the evidence!!"
+        show me neutral
+        me "No."
+        l "Fuck!"
+        # Penalty Damage
+        $ ce_rep -= 1
+        with fade
+        return
+
     if ce_rena_phone and ce_luca_cloth:
         jump act3_thoughtroute
     else:
@@ -1246,7 +1247,7 @@ label bigCE_loop:
             "Something bothers me":
                 # Big problems. (Go back to the interrogation.)
                 l "I do. There are a couple of more of things I'd like to ask about."
-                jump bigCE
+                jump bigCE_loop
             "Nothing bothers me":
                 # No problems. (End interrogation.)
                 l "I think we've covered everything, Inspector. We can move on."
@@ -1386,8 +1387,6 @@ label act3_thoughtroute:
                 jump tr_found
             "He brought Lucas a change of clothes":
                 jump tr_clothes
-
-
     label tr_clothes:
         show leo think closed drop
         l "He brought Lucas fresh clothing... that doesn't sound right."
@@ -1404,7 +1403,6 @@ label act3_thoughtroute:
         l "But why would having that notebook and those clothes be so incriminating?"
         l "The notebook lists several racehorses, alongside a series of monetary values."
         l "And almost every entry has been crossed out..."
-    
     label tr_notebook:
         show leo think closed
         l "I should take a closer look at what this notebook actually represents."
@@ -1458,7 +1456,6 @@ label act3_thoughtroute:
         l "No... that seems wrong." 
         l "If I believed a horse would become legendary, I would never put them in this notebook."
         jump tr_loser_horse
-
     label tr_loss:
         l "Exactly! His name hasn't been crossed out because his loss hasn't happened yet."
         l "He's being targeted for an upcoming race!"
@@ -1540,8 +1537,7 @@ label act3_thoughtroute:
             label tr_rena_correct:
                 l "If her phone was ten minutes slow, then technically, what she's saying is true."
                 l "The discovery at 10:42 would have appeared as 10:32 on her phone."
-                jump tr_rena2
-                
+                jump tr_rena2             
     label tr_rena2:
         l "Wait... If she's basing her entire alibi on that clock, then she wasn't at the café at 10:00, but at 10:10 AM!"
         l "Everything shifts forward by ten minutes..."
@@ -1591,11 +1587,6 @@ label act3_thoughtroute:
             l "Someone is being paid to sabotage the horses listed in the notebook and tried to frame Lucas for it..."
             l "...and the time in Renata's phone was tampered with without her knowledge!!"
     #THOUGHT ROUTE FINISH!!!!!!
-
-
-    
-
-
 label act3_continue6:
     # Did not find both contradictions
     lt "Most of them spent their time alone, so it's certainly difficult to verify or disprove their alibis..."
