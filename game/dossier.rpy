@@ -1,6 +1,6 @@
 define config.overlay_screens += ["dossier_icon"]
 define config.keymap['input_next_line'] = ['K_RETURN', 'K_KP_ENTER']   
-default dossier_enabled = False
+default dossier_enabled = True
 
 default dossier_tab_control = "evidence"
 

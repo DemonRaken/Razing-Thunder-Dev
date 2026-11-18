@@ -1163,7 +1163,6 @@ label bigCE_loop:
     lt "That's a good question. After hearing all of that, is there anything about these alibis that bothers me?"
 
 
-
     if ce_rena_phone and ce_luca_cloth:
         jump act3_thoughtroute
     else:
@@ -2979,10 +2978,19 @@ label Epilogue:
     lu "I also believed the rumors about you. I'm sorry."
 
     t "How's Lucero doing? Did a vet check him?"
-    lu "Yes. He's stable, but he fell unconscious because of whatever Esteban gave him."
+    lu "Yeah. He's stable, but he fell unconscious because of whatever Esteban gave him."
     lu "I don't even want to think about what would've happened if he'd run in the actual race..."
+    
+    t "Wait... with Vicente gone, aren't you without a trainer?"
+    t "Can you still participate?"
+    lu "I can, since we technically signed up properly and completed all the paperwork."
+    lu "Lorenzo said he could find me another trainer, but... I declined."
+    lu "I want it to be just Lucero and me. In honor of Don Vicente's memory."
+    t "..."
+    c "Normally, that wouldn't be allowed here. It's why I went through the trouble of hiring someone like you."
+    c "But Villareal called it an extraordinary circumstance and made an exception."
 
-    r "That greedy host seems to have grown a conscience and allowed the race to be delayed for a couple of hours, at least."
+    r "That greedy bastard seems to have grown a conscience and allowed the race to be delayed for a couple of hours, too."
     lu "Yeah. Lucero and I will be ready by then. Count on it."
     r "Hah, don't think that means you'll be getting past me."
 
@@ -2996,8 +3004,8 @@ label Epilogue:
     t "It's nice to see everyone getting along."
     show cata neutral at center
     with dissolve
-    c "It is certainly more pleasant than the constant bickering the loud one is always provoking."
-    c "It seems your kind act of believing Renata moved her heart."
+    c "It is certainly more pleasant than the constant bickering Vargas is always causing."
+    c "It seems your kind act of believing in her moved her heart."
 
     t "Yeah..."
     t "..."
@@ -3007,7 +3015,7 @@ label Epilogue:
 
     t "Catalina, I think you've got the wrong idea... that person wasn't—"
 
-    c "Seriously? Your hairstyle and clothes match for the most part."
+    c "Seriously? Your hairstyle and clothes match."
     c "And you didn't even bother changing your voice that much. All you did was cover your eyes."
     c "Honestly, I'm more shocked nobody else noticed it was you."
 
@@ -3029,29 +3037,47 @@ label Epilogue:
     t "...! Help you...? I mean, yes, coming right away!"
 
     # Fade into black.
+
 label EpilogueNarration:
+    $ dossier_enabled = False
     scene black
     with fade
     # Make Enzo say a few words befoer the start of the race
     # Here plays maybe an ending animation of Cata winning the Razing thunder.
     # Have people cheer and what nmot.
-    t "Ending narration."
-    t "Here I am supposed to give you some life changing evidence."
-    t "And also I should tell you what becomes of each character."
-    t "And of course, I should tell you what me and Chispa did."
-    t "We just went back to the agency."
-    t "I am yet not at the level of a detective I wanna be."
-    t "Some day, I will become a superhero that can save everyone with the truth...!"
-    t "The end."
+    #Ending animation or something. Maybe just narration.
+    en "Ladies and gentlemen! The moment you've been waiting for is here!"
+    en "The Razing Thunder race will commence... NOW!"
+    # Here plays maybe an ending animation of Cata winning the Razing thunder.
+    
+    #This narration is meant to be faceless. No tony emotes.
+    t "And that's how the Razing Thunder case came to an end."
+    t "Catalina managed to overtake the competition and finish first, followed by Lucas and Renata."
+    t "It does feel a bit weird to be celebrating when someone died just a few hours ago..."
+    t "...but justice has been served. I think maybe it's okay, this time."
+    t "Some say winning is everything. That success is measured by how far you can climb, how much you can achieve, and how many people you leave behind."
+    t "But there's no point in reaching the top if you end up alone, trampling everyone along the way..."
+    t "Soon enough, you'll become blinded by those desires and forget what you were fighting for in the first place."
+    t "Turning competition into exploitation, and ambition into a free pass to hurt others."
+    t "Ultimately, the greatest loss isn't your reputation, your money, or even your freedom... it's yourself."
+    t "It's not worth it if you lose sight of who you are on your way to victory."
+    t "Those who help you along the way... if you stick together until the end, even if you fall short of your expectations..."
+    t "That's still a win in my book. At least, that's what I think."
+    t "Oh, right. It's back to business for me. But as for everyone else..."
+
     label End_Medina:
         scene placeholder_park
-        show me neutral
+        show me sweat2
         with fade
         me "What a goddamn headache of a case. No wonder we never found any signs of intruders. It was someone from the inside all along."
+        show me neutral
         me "As unfortunate as this incident has been, it helped us take down the clandestine betting network."
-        me "Those people are gonna be facing long sentences, hopefully."
-        me "Guess it paid off letting that guy run free around the crime scene."
-        me "I'm willing to overlook him showing up here because of that. But next time, the gloves are off."
+        show me angry
+        me "Those people are gonna be facing long sentences."
+        show me smile2
+        me "...Guess it paid off letting that guy run free around the crime scene."
+        show me smile
+        me "I'm willing to overlook him showing up there because of that. But next time, the gloves are off."
 
     label End_Lorenzo:
         scene placeholder_racetrack1
@@ -3064,7 +3090,7 @@ label EpilogueNarration:
         en "To think there were lowlives seeking to take advantage of my generosity!"
         show en nervous2
         en "W-What? No, of course I had no hand in the clandestine gambling!"
-        show en yel
+        show en yell
         en "No matter how much the inspector insists, I don't need to partake in the Castillos' schemes to offer everyone a wondrous experience!"
         show en neutral
         en "...That said, I didn't exactly put a stop to it, did I? Even after hearing the rumors. I will ensure there is no repeat of this next year."
@@ -3076,8 +3102,8 @@ label EpilogueNarration:
         en "It left me quite perplexed, specially since he mentioned working two jobs already."
         en "I've learned that one of them is at a weird agency, but what could the second one be? He simply wouldn't say..."
     label End_Lucas:
-        scene placeholder_office
-        show luca smile
+        scene placeholder_lockers
+        show lu smile
         with fade
         
         lu "I got second place in the race...! I... I really wouldn't have made it without Don Vicente's help."
@@ -3095,26 +3121,69 @@ label EpilogueNarration:
         lu "Next time, Lucero and I are crossing the finish line in first place. We'll only get better from here on out."
 
     label End_Renata:
-        scene placeholder_office
+        scene placeholder_stables
+        show rena yell2
+        with fade
+        
+        r "Ugh... it pisses me off that those bastards were using Pícaro and me for so long!"
+        show rena angry
+        r "Wish I could've clobbered at least one of them. Now none of my wins really count."
+        show rena neutral
+        r "...Meh, that's fine by me. I don't want them. Not like that, even if it means starting from zero."
+
+        show rena smile
+        r "The masked guy did me a huge favor by getting rid of that creep."
+        show rena smile3
+        r "Now that's someone I could work with!"
         show rena smile2
-        with fade
-        r "Ugh... it pisses me off that those bastards were using me and Pícaro for so long!"
-        r "Wish I got to clobber at least one of them. Now none of my wins really count."
-        r "...meh, that's fine by me. I don't want them. Not like that."
-        r "The masked weirdo did me a huge favor, getting rid of that creep."
-        r "We never really clicked anyway. "
+        r "He disappeared, though... eh. Maybe I'll just steal Cata's trainer, then. He'll do."
+
     label End_Catalina:
-        scene placeholder_office
-        show cata smile
+        scene placeholder_parkinglot
+        show cata surprise
         with fade
+        c "Honestly... what an unfair arrangement."
+        
+        show cata neutral
+        c "I asked for someone to pretend to be my trainer, and to stick around until the end. Nothing more."
+        
+        c "Instead, I got a guy playing hero who managed to get rid of those poisoning this competition and allowed the race to continue."
+        
+        c "..."
+        
+        show cata smile2
+        c "Really... I got way more than I was expecting."
+
+        show cata neutral
+        c "That's why I tried to even things out by offering him a permanent position."
+        
+        show cata yell
+        c "But he rejected it. What nerve."
+        
+        show cata smile
+        c "...Though I had a feeling that was going to be his response."
+        
+        show cata smile2
+        c "Even after hearing how many zeroes his paycheck would have, he still said no while fighting back tears. How stubborn."
+
         
     label End_Antonio:
         scene placeholder_office
         show tony smile
         with fade
-
-    #Ending animation or something. Maybe just narration.
-    
-
-    "The end."
+        t "...and that's a wrap. Whew, I finally finished organizing the files on this case."
+        show tony aha
+        t "Chispa was so eager to go for a run after watching the race, I barely had a moment to archive these..."
+        show tony what drop
+        t "I already updated boss on how things went. She gave me an earful for turning down not one, but two offers..."
+        show tony det smile
+        t "...but it can't be helped. El Leopardo's still got a duty to carry out, and I have to see it through."
+        show tony grin
+        t "Now then! I wonder what kind of mysteries I'll run into next."
+        
+        pause 1.0
+        scene black
+        with fade
+        "The end."
+        #Why do you loop back to Esteban's CE!? Go back to the main menu!!!!
 return
