@@ -1188,10 +1188,12 @@ label bigCE_loop:
 
 label bigCE_wrong:
     $ ce_mode = None
-    l "Your testimony contradicts the evidence!!"
+    l "This piece of proof shows the hole in that statement!"
     show me neutral
-    me "No."
-    l "Fuck!"
+    me "...I don't see anything wrong with it."
+    l "Are you sure? Maybe you have to check again."
+    me "Or maybe you should check if that mask isn't cutting off the oxygen flow to your brain."
+    lt "Ugh... just tell me I was mistaken. So rude..."
     # Penalty Damage
     $ ce_rep -= 1
     with fade
@@ -2224,29 +2226,27 @@ label debug:
     
     label vs_esteCE_WRONG:
         $ ce_mode = None
-        l "Your testimony contradicts the evidence!!"
+        l "Mr. Rojas, that statement doesn't hold water!"
         show me neutral
-        e "No."
-        l "Fuck!"
+        e "Really? I think it holds up quite well. Maybe you want to give it another try?"
+        l "Uh, yes, I think I would like that..."
+        lt "I messed that one up..."
         # Penalty Damage
         call ce_penalty(2)
         return
     label vs_esteCE_RIGHT:
         $ ce_mode = None
         $ ce_rep += 2
-        t "Actually, I do carry a mate with me. You are terribly wrong!"
-        e "Seems like you do."
+        show leo neutral
         call CE_end
+        l "That's fascinating. It is true that the Inspector established that Castillo's men were contacted by their boss to dispose of the body..."
+        l "...which means the killer must have reached out to either them or Mr. Castillo."
         jump vs_estebanCE2
 
     label vs_estebanCE2:
     hide screen status_indicator
     #OBJECTION
-
-    l "That's fascinating. It is true that the Inspector established that Castillo's men were contacted by their boss to dispose of the body..."
-
-    l "...which means the killer must have reached out to either them or Mr. Castillo."
-    
+    hide leo
     show est neutral
     e "We are on the same page, it seems."
 
@@ -2737,10 +2737,11 @@ label LastCE:
 
 label LastCE_WRONG:
     $ ce_mode = None
-    l "Your testimony contradicts the evidence!!"
+    l "This proves your testimony wrong, Mr. Rojas!!"
     show es angry
-    e "No."
-    l "Fuck!"
+    e "Ahahah! Getting so desperate that you're throwing random evidence around, Leopardo!?"
+    l "Guh...!"
+    lt "That was the wrong piece of evidence... Calm down, me. Let's try that!"
     # Penalty Damage
     call ce_penalty(3)
     return
