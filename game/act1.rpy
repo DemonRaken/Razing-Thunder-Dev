@@ -135,8 +135,11 @@ label act1:
   
 
 # Make screen shake here because phone went off and maybe add photoshpped whatsapp conversation!!!1
-
-  "{i}*RING!*{/i}" with vpunch
+  play sound "new_fashion_tone.ogg" fadein 0.5
+  show layer master at earthquake(dt=1.0, dist=2)
+  n "{i}*RING!*{/i}"
+  
+  
 
   show leo neutral
 
@@ -155,6 +158,13 @@ label act1:
   lt "*Shivers.*"
 
   lt "Tapping on the notification while letting out a deep sigh, I read what the boss sent me. "
+
+  show phone whatsapp boss 16 9 with dissolve:
+      xalign 0.5
+      yalign 0.3
+      size(450,816)
+  pause
+  hide phone whatsapp boss 16 9 with dissolve
   show leo neutral
 
   lt "Yup. She's got a new gig for me. A special one at that, considering it's last-minute and happening today."
@@ -181,6 +191,7 @@ label act1:
   $ dossier.add(de_mate)
   $ dossier.add(dp_tony)
   $ dossier.add(dp_chispa)
+  $ renpy.notify(_("Dossier is now available."))
   l "Vital information always goes there. It would be no joke to say that the very balance of the world depends on it...!"
   lt "Anyway, time to move!"
   show leo at right

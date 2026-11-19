@@ -329,7 +329,7 @@ label vs_sebCE:
         tt "Shit... I need to re-think this. It is a little crazy to think it happened mid-air. So then, that must mean he got it..."
         jump fall_choice
 
-    label b4fall:
+label b4fall:
     t "What if he was struck on the back of the head before he ever went over the railing?"
 
     t "He would've already been dead by then. His body would've fallen limp, unable to protect itself when it hit the ground."
@@ -349,7 +349,7 @@ label vs_sebCE:
     tt "First, I need to make a quick stop to the trainer lockers..."      
     
     #InvestigationsAreasNow, access from map
-    label paddock_inves:
+label paddock_inves:
     scene placeholder_paddock
     with fade
     lt "There. Now I'm dressed for the occasion. El Leopardo is on the case...!"
@@ -366,7 +366,7 @@ label vs_sebCE:
 
     #Investigation start Sign or animation or something.
 
-    label racetrack_inves:
+label racetrack_inves:
         scene placeholder_granstands
         with fade
         #Inves point Vip Lunge box
@@ -377,11 +377,20 @@ label vs_sebCE:
         lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
         lt "You'd have to deliberately climb over it to jump... or have someone throw you over."
     
-    label stables_inves:
-        scene placeholder_stables
-        with fade
-        lt "Hey Chispa. Hope you weren't feeling too lonely without me."
-        lt "Wait... this place feels... off. Something's different."
+label stables_inves:
+    scene placeholder_stables
+    with fade
+    lt "Hey Chispa. Hope you weren't feeling too lonely without me."
+    lt "Wait... this place feels... off. Something's different."
+
+    screen aai_examine_stables():
+        imagemap:
+            idle "placeholder_stables"
+            hover Transform("placeholder_stables",  matrixcolor=BrightnessMatrix(0.3))
+            hotspot (1327, 205, 369, 673) action Call("stables_blood")
+            hotspot (344, 479, 652, 361) action Call("stables_shovel")
+    
+    label stables_blood:
         #click mountain of hay
         lt "Why is there a bunch of hay in the middle of the ground? You'd think the staff would tidy up the place more."
         lt "Hang on, I can see something underneath it..."
@@ -390,9 +399,10 @@ label vs_sebCE:
         lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
         lt "Huh? The trail suddenly ends before reaching the entrance."
         lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
-        
-
-        #click shovel
+        return
+    
+    label stables_shovel:
+    #click shovel
         lt "Wait a minute... What's this doing here?"
 
         lt "A stable shovel. Someone must've left it behind this stall."
@@ -409,7 +419,9 @@ label vs_sebCE:
 
         lt "This here... might be the murder weapon!"
 
+        lt "This is a huge find... but, damn... what a way to go."
         lt "Alright, what's next...?"
+        return
         
     
     label lockers_inves:
