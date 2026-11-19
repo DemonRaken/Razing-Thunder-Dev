@@ -1841,16 +1841,170 @@ label act3_continue6:
     label choose_rena:
         show rena angry2
         l "Renata did it."
+        with fade
+
+        l "Renata Vargas, you are the culprit!"
+
+        r "What the fuck did you say!?"
+
+        r "Get real! I'm no damn killer!"
+
+        me "Leopardo, what are you basing this on?"
+
+        l "Ms. Vargas is one of the suspects without a clear alibi..."
+
+        l "Not to mention her connection to the Castillos. She's sponsored by them."
+
+        l "It isn't a stretch to say she could have enlisted their help to dispose of the body!"
+
+        me "...That is a possibility. Castillo's company has every reason to promote her image and boost its own by having her win."
+
+        me "Eliminating the competition would further that agenda."
+
+        r "Oh, this is so not happening! I hate those people as much as the next person!"
+
+        r "Come on, old man! Tell them! It's not me!"
+
+        e "..."
+
+        r "Old man...?"
+
+        e "I'm sorry, Renata. They're right about you being in a favorable position."
+
+        r "Not you too...!"
+
+        e "I can vouch for her not being the kind of person who would resort to murder... but..."
+
+        e "I also know how ambitious she is. How badly she wants to prove herself and establish herself as the very best."
+
+        r "You've got to be kidding me..."
+
+        me "That's reasonable suspicion in my book. You're under arrest, Ms. Vargas."
+
+        r "No! I'm not missing the Derby race over this crap! This is YOUR fault!"
+
+        # Wham! She punches Leopardo.
+
+        l "Agh!"
+
+        # Medina and several officers step in to restrain Renata as I watch from the ground, holding my bruised face.
+
+        lt "Yeowch... She packs a punch."
+
+        r "I won't forget this, you masked bastard!"
+
+        me "Take her away!"
+
+        r "Let me go! I didn't do it!"
+        
         scene black
         with fade
-        l "This is a bad end. Expand on me."
+
+        # Fade into black.
+
+        l "..."
+
+        l "The race continued as scheduled. All the competitors gave it their very best..."
+
+        l "Lucas was on his way to securing first place, with Catalina close behind in second."
+
+        l "But then, something unexpected happened. His horse collapsed, just like the others in the previous incidents."
+
+        l "The race wasn't stopped or postponed this time, though. Not with Lorenzo's wishes to consider."
+
+        l "When all was said and done, Catalina seemed utterly disappointed with how things had turned out..."
+
+        l "...and decided against accepting her prize, leaving the Derby altogether."
+
+        l "The police had decided to resume their investigation after the race, and they got to work..."
+
+        l "But despite Lorenzo's now-willing cooperation, with things having finally calmed down..."
+
+        l "They failed to find any conclusive evidence of Renata's guilt."
+
+        l "She was eventually released, but in this kind of elite competition, there are no second chances."
+
+        l "The Castillos cut all ties with her despite the allegations being disproven, closing many doors for her in the industry."
+
+        l "She's a fighter, so she hasn't given up yet, but I hear she's having a pretty rough time."
+
+        l "My accusations had wrongfully sabotaged someone's life. Ironically..."
+
+        l "...they had also allowed the real perpetrator to escape."
+
+        l "Maybe I should consider retiring as a detective if this is the kind of harm I cause..."
+
+        # End the game here
+
         with fade
         return
     label choose_seba:
-        l "Sebastian did it."
+        l "The culprit is none other than Sebastian Castillo!"
+
+        l "After having his subordinates dispose of the body and attempting to pass off Vicente's death as nothing more than an accident..."
+
+        l "He then tried to pin it on an innocent bystander!"
+
+        me "..."
+
+        me "That would be a plausible theory, and everything you've mentioned is true, yes."
+
+        me "But you're missing one small detail."
+
+        l "Huh? What's that?"
+
+        me "I was with him. At the time of the murder!"
+
+        l "..."
+
+        l "Oh..."
+
+        me "Don't 'oh' me! Were you not paying any attention!?"
+
+        en "My, it must have been quite a traumatic and exhausting ordeal if Mr. Leopardo managed to overlook such an important detail."
+
+        en "Once again, I was also present with the two of them. I assure you, the inspector speaks the truth."
+
+        me "Not that I'd lie about it to begin with. Do you think I enjoy giving that dirtbag an alibi?"
+
+        l "I-I see. Well, let me give it another try..."
+
+        me "No. You're clearly out of your depth. Castillo is definitely involved in some shady business, but Vicente's murder isn't one of them. Not directly, at least."
+
+        l "T-Then maybe he sent someone to carry out his orders...?"
+
+        me "...Throwing out random guesses isn't going to do you any good. We're done here."
+
+        me "I'm going to resume the investigation after the race. What a waste of my time..."
+
+        l "..."
+
         scene black
         with fade
-        l "This is a bad end. Expand on me."
+
+        lt "..."
+
+        lt "And with that, my involvement in the case came to an end."
+
+        lt "I didn't pay much attention to the race results. All I cared about was finding the truth behind Vicente's death."
+
+        lt "But I failed to do so."
+
+        lt "Days after the Derby, I learned that the search for the culprit had gone nowhere."
+
+        lt "By that point, any evidence that could have closed the case had long since disappeared."
+
+        lt "Not only had the real culprit gotten away, but Sebastian had managed to exploit a technicality and remain free."
+
+        lt "He's been sending his goons after me day after day to 'repay the favor' for our little encounters."
+
+        lt "I've fought them off as best I could, but one ambush caught me off guard."
+
+        lt "So this is the last thing I'll see, huh...? A bunch of crooked smiles and bright suits."
+
+        lt "Damn... it..."
+
+        # End game // game over screen
         with fade
         return
     
@@ -2024,9 +2178,89 @@ label act3_continue6:
         l "Things aren't always what they seem. Their seemingly close relationship may have been far more strained than we thought."
 
         l "In any case, Mr. Mendoza's alibi is just as shaky as the rest."
+
+        lu "Hang on a minute...! I'm not the killer!"
+
+        lu "I respected Mr. Ruiz! He believed in me and helped me grow as a jockey!"
+
+        lu "Even though I'm one of the lesser-known jockeys, even though I don't have any sponsors backing me..."
+
+        lu "He stayed by my side! And you're telling me I killed someone like that!?"
+
+        l "I'm afraid my suspicions have led me to that conclusion, Mr. Mendoza."
+
+        lu "But why!? Do you have any evidence!?"
+
+        # If you didn't do the thought route, continue from here.
+
+        e "Excuse me..."
+
+        l "Hm?"
+
+        r "The hell, old man? Don't interrupt them now. Looks like they caught goody two-shoes here for what he really is."
+
+        e "Yes, that's not my intention. I just couldn't help but notice something Mr. Mendoza said earlier."
+
+        lu "What...?"
+
+        e "You mentioned that Vicente followed someone wearing peculiar clothes?"
+
+        lu "Y-Yeah..."
+
+        lu "Ah... that must be it! The man Don Vicente followed! He's the one you're looking for!"
+
+        lt "The man in the Hawaiian shirt..."
+
+        l "Mr. Mendoza... I'm afraid that's impossible."
+
+        # If you did the thought route, continue from here.
+
+        l "Those clothes you're talking about were found inside your locker."
+
+        lu "Ah..."
+
+        l "If anything, I'd say that implicates you even further. You're blaming some non-existent man, and you even disguised yourself in those clothes!"
+
+        lu "No! This is wrong, I..."
+
+        me "I've heard enough. We'll take it from here. You're coming with us, Mr. Mendoza."
+
+        lu "......"
+
+        lt "Lucas's spirit seems broken as he resigns himself to being taken into police custody. I watch as he leaves the Derby."
+
+        lt "He insisted he wasn't the killer until the very end... Did he really kill his own trainer? And why?"
+
+        lt "Did I really make the right choice...?"
+
+        lt "..."
+
         scene black
         with fade
-        l "Final narration goes here."
+
+        l "The race continued as scheduled. All the competitors gave it their very best..."
+
+        l "And Renata came in first place, with Catalina finishing as the runner-up."
+
+        l "The police had decided to resume their investigation after the race, and they got to work..."
+
+        l "But despite Lorenzo's now-willing cooperation, with things having finally calmed down..."
+
+        l "They failed to establish any conclusive evidence of Lucas's guilt."
+
+        l "He was eventually released, but in this kind of elite competition, there are no second chances."
+
+        l "Having missed his last chance to revitalize his career, and with sponsors unwilling to back him due to the stigma surrounding his arrest..."
+
+        l "...Lucas was forced to retire as a jockey after the Derby, permanently."
+
+        l "My accusations had put an end to someone's dream."
+
+        l "And, in turn, they had allowed the real perpetrator to escape."
+
+        l "Maybe I should consider retiring as a detective, too, if this is the kind of harm I cause..."
+
+        # End THE GAME HERE
         with fade
         return
     label choose_este:
