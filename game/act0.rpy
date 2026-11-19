@@ -17,4 +17,6 @@ label start:
             jump debug_room
         "Jump to bigCE":
             jump bigCE
+        "Jump to Ending":
+            call ending_sequence
     return
