@@ -149,6 +149,9 @@ label act2:
 
         lu "I don't mind. There's still time before the race begins."
 
+        $ dossier.add(dp_lucas)
+        $ dossier.add(dp_vicente)
+
         label racetrack1_investigating:
             # Grandstands
             # Check=Seats
@@ -319,8 +322,8 @@ label act2:
         r "Not like I would expect you to get it."
 
         tt what det neutral "Why you…! Ugh, I'd better just ask what I need to and get out of here." 
-
-
+        $ dossier.add(dp_renata)
+        $ dossier.add(dp_esteban)
         # Dossier: Presenting evidence (mate)
         label paddock1_presenting:
             show rena smile with dissolve
@@ -651,6 +654,7 @@ label act2:
             c "One does come to mind, though. Vargas. She's their top pick for promotion. Renata Vargas."
 
             t neutral "Interesting…"
+            $ dossier.add(dp_sebastian)
         label stables1_topic2:
             t neutral drop "I, uh… I heard some unsavory rumors going around."
             show cata surprise with dissolve
@@ -824,6 +828,8 @@ label act2:
 
         tt what det drop "One of 'those'? What does that even mean…?" 
         tt neutral right "Anyway, this is a perfect chance to ask about the clandestine gambling. There's no way the host himself doesn't know anything about it."
+        $ dossier.add(dp_lorenzo)
+        $ dossier.add(dp_medina)
         label lockers1_investigating:
             # Weighing Scale
             tt neutral "A weighing scale used by the jockeys. They have to meet a specific weight requirement before competing."
@@ -942,7 +948,8 @@ label act2:
             me "Here."
 
             # Receives Medical Report
-            $ renpy.notify("Medical Report obtained!")
+            #$ renpy.notify("Medical Report obtained!")
+            $ dossier.add(de_medicalreport)
 
             t neutral "Huh? What's this?"
 

@@ -93,7 +93,7 @@ label act1:
   scene placeholder_office 
   with fade
 
-  tl "8:15 AM. \nTony's Odd Jobs Agency."  
+  tl "8:00 AM. \nTony's Odd Jobs Agency."  
 
   lt "Last night, we came across the person I was looking for shortly after. The guy hadn't run too far away, and it looked like the color drained from his face the moment I brought up the debt collector"
   
@@ -177,7 +177,10 @@ label act1:
   show leo smile
   l "Oop! I shouldn't forget to bring my Dossier with me!"
   $ dossier_enabled = True
-  $ renpy.notify(_("Dossier Obtained."))
+  $ dossier.add(de_mask)
+  $ dossier.add(de_mate)
+  $ dossier.add(dp_tony)
+  $ dossier.add(dp_chispa)
   l "Vital information always goes there. It would be no joke to say that the very balance of the world depends on it...!"
   lt "Anyway, time to move!"
   show leo at right
@@ -240,7 +243,7 @@ label act1:
   with fade
 
   c "—hey. I'm talking to you. Are you even listening?"
-
+  
   t neutral blush "Wha- sorry! I zoned out there for a sec."
   show cata angry
   c "Good grief. As I was saying, who you are is inconsequential, and my reputation precedes me, so let's keep introductions short."
@@ -293,6 +296,8 @@ label idk:
     jump act1continues
 
 label act1continues:
+  $ dossier.add(dp_catalina)
+  $ renpy.notify(_("Dossier updated."))
   t det neutral"Wait a moment… Did you say today? The event is resuming already? That's way too soon! What about the horse that collapsed a couple of days ago?"
 
   t "Have the organizers or the police at least figured out what happened?"

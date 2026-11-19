@@ -26,7 +26,9 @@ label act3:
 
         tt "Expecting the worst, I check for a pulse at his neck, hoping to find even the faintest sign of life…!"
 
-        t "......he's dead."
+        t "......he's dead. He's all bruised up, and his legs are bent in an unnatural way, too."
+
+        $ dossier.add(de_victimnotes)
 
         tt "Damn it… how did this happen!?"
 
@@ -136,49 +138,64 @@ label act3:
                 jump silent
 
         label silent:
-        "Bad end."
+        scene black
+        with fade
+        tt "I stay silent, watching things unfold without intervening."
+        tt "..."
+        tt "Just as feared, the derby staff take away Vicente's body before inspector Medina can properly secure the crime scene."
+        tt "The whole thing is dismissed as an accident."
+        tt "Was it really just a tragedy? Or was there a perpetrator behind his death?"
+        tt "Now I will never know the answer... nor am I really bothered to keep track of what happened at the race next."
         return
-    label intervene:
-        t "Wait a moment! This is no accident! It's murder."
+label intervene:
+    t "Wait a moment! This is no accident! It's murder."
 
-        me "Ortiz..."
+    me "Ortiz..."
 
-        s "Hah? Wait a moment, y-you...! What are you doing-"
+    s "Hah? Wait a moment, y-you...! What are you doing-"
 
-        s "I mean... what are you saying? Didn't you hear what all these people said already?"
+    s "I mean... what are you saying? Didn't you hear what all these people said already?"
 
-        tt "Hmph. Surprised I'm still hanging around...?"
+    tt "Hmph. Surprised I'm still hanging around...?"
 
-        t "I did. But that doesn't make it an accident."
+    t "I did. But that doesn't make it an accident."
 
-        s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
+    s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
 
-    #Tony vs Seb
-    label vs_seb_Testimony:
-        scene placeholder_bodycg
-        call fx_testimony
-        show seb smile3
+#Tony vs Seb
+label vs_seb_Testimony:
+    scene placeholder_bodycg
+    call fx_testimony
+    show seb smile3
+    with fade
+    
+    s "Get this through your thick skull: this was an accident."
+    s "He fell down from the grandstands and died when he hit the floor."
+    s "It's obvious! The fall killed him! Those bruises and injuries are exactly what you'd expect from such a fall! There's nothing suspicious here!"
+    s "Now, get out of the way so these gentlemen can do their job."
+    
+    hide screen status_indicator
+    t "So he just... happened to fall off from up there?"
+    s "What do you have infront of you? Stop wasting time and let the good inspector do her thing!"
+    t "Right after I ask you a few things..."
+    s "What is this, some kind of interrogation?"
+    tt "Yes, actually. And I'm going to find the flaw in your words."
+    
+label vs_sebCE:
+    scene placeholder_bodycg
+    call fx_interrogation
+    show seb smile3
+    with fade
+    call CE_start
+    
+    s "Get this through your thick skull: this was an accident."
+    if ce_mode == "object":
+        call vs_sebCE_wrong
+    if ce_mode == "press":
+        $ ce_mode = None
+        t "Why are you so sure about that?"
+        s "I'm getting to it, you impatient dolt! Hmph..."
         with fade
-        
-        s "I say my testimony here."
-        s "I am done."
-        t "Wow that was a long testimony. (not)"
-        hide screen status_indicator
-    label vs_sebCE:
-        scene placeholder_bodycg
-        call fx_interrogation
-        show seb smile3
-        with fade
-        call CE_start
-        
-        s "Get this through your thick skull: this was an accident."
-        if ce_mode == "object":
-            call vs_sebCE_wrong
-        if ce_mode == "press":
-            $ ce_mode = None
-            t "Why are you so sure about that?"
-            s "I'm getting to it, you impatient dolt! Hmph..."
-            with fade
     
     s "He fell down from the grandstands and died when he hit the floor."
     if ce_mode == "object":
@@ -348,7 +365,6 @@ label act3:
     lt "Maybe I should check the stables..."
 
     #Investigation start Sign or animation or something.
-    "You find evidence in the parade ring."
 
     label racetrack_inves:
         scene placeholder_granstands
@@ -374,6 +390,7 @@ label act3:
         lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
         lt "Huh? The trail suddenly ends before reaching the entrance."
         lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
+        
 
         #click shovel
         lt "Wait a minute... What's this doing here?"
@@ -393,6 +410,7 @@ label act3:
         lt "This here... might be the murder weapon!"
 
         lt "Alright, what's next...?"
+        
     
     label lockers_inves:
         scene placeholder_lockers
@@ -401,6 +419,8 @@ label act3:
         lt "As I walked over to close it, something in there catches my attention."
         l "A... hawaiin shirt? A pair of sunglasses, too..."
         lt "I guess these must belong to one of the jockeys."
+        $ dossier.add(de_casualclothes)
+
         l "Hm? Hey, that's a notebook on top of the trousers..."
         lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
         l "What do we have here... \n... \n...!?"
@@ -426,6 +446,8 @@ label act3:
         lt "The hell? Why does he have a notebook listing his own horse?"
         
         l "This is so weird... I'll have to look into it further. I should get moving for now."
+        
+        $ dossier.add(de_notebook)
 
     label breakroom_intro:
         lt "I've never been here before, but during the day, I saw Castillo's underlings coming and going through the hallway that leads here."
@@ -519,6 +541,7 @@ label act3:
             lt "Don't tell me... Is this a body bag? How long has this blood been here...?"
 
             l "Nnh... I need to get this thing analyzed. Pronto."
+            
 
 
     #Investigation COMPLETE
@@ -527,7 +550,13 @@ label act3:
         of "Mr. Leopardo, correct?"
         lt "Ah- one of the police officers working for Medina just approached me."
         l "Indeed, that would be me! How may I help you?"
-        of "We ran tests of the things you found and have the results. These are copies of them."
+        of "Here is a copy of the preliminary autopsy report."
+        $ dossier.add(de_autopsy)
+        of "We also ran tests of the things you found and have the results. These are copies of them."
+        $ dossier.add(de_shovel)
+        $ dossier.add(de_blooddrops)
+        $ dossier.add(de_bodybag)
+        
         l "Much appreciated, friend! With this, we're one step closer to bringing down the villain behind it!"
         of "R-Right... that was all."
         lt "I watch him leave in a hurry."
@@ -621,7 +650,27 @@ label act3:
             scene placeholder_racetrack2
             show seb smile3
             with fade
+            call fx_testimony
+            s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
+            s "But no more! He's clearly a suspicious person!"
+            s "We all saw him prodding and standing near the body."
+            s "Who does that? A cold blooded murderer!"
+            s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
+
+            hide screen status_indicator
+
+            l "Mr. Castillo... are you not basing your accusations on prejudice?"
+            l "That may have been just a very curious fellow."
+            s "How dare you! My words are very well-founded!"
+            s "Now, if you're done parroting, I believe the inspector has a criminal to catch."
+            l "Of course. Right as we're done going over your testimony."
+            s "Not this again... I'm getting déjà vu."
+            lt "Yeah, and I'm getting déjà vu too. A glaring contradiction, that is."
+            lt "After all the investigating I've done, I know this guy is dead wrong!"
+            lt "Now I just have to prove it!"
+
             call CE_start
+            call fx_interrogation
 
             s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
             if ce_mode == "object":
@@ -708,6 +757,7 @@ label act3:
                 call CE_end
                 jump act3_continue2
         label act3_continue2:
+            hide screen status_indicator
             l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
             l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
 
@@ -764,8 +814,20 @@ label act3_continue3:
     scene placeholder_racetrack1
     show seb smile3
     with fade
+    call fx_testimony
+    s "Fine then, I admit it. That old crook died at the stables."
+    s "That still doesn't clear the country bumpkin's name!"
+    s "He attacked that trainer, then moved his body away from the stables!"
+    
+    hide screen status_indicator
+    l "So... you stand by your accusation."
+    s "You don't get to where I am by retracting at the slightest error."
+    lt "It's been several errors."
+    lt "Hm... nothing in particular seems wrong, but that's because he's skimming over the details."
+    lt "I should press him and get a fuller picture of his version of events."
+    
     call CE_start
-
+    call fx_interrogation
     s "Fine then, I admit it. That old crook died at the stables."
     #press
     if ce_mode == "object":
@@ -980,8 +1042,38 @@ label bigCE_loop:
     scene placeholder_racetrack1
     show en neutral
     with fade
-    call CE_start
+    call fx_testimony
 
+    en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
+    en "But the inspector here insisted on following me everywhere!"
+    en "She even brought Mr. Castillo along! I had the 'pleasure' of being stuck with the two of them until 10:42 AM."
+    r "I was at the café from 10 AM. I was starving, so I figured I'd grab something to eat."
+    r "Anyway, I got a phone call from my trainer about twenty minutes later. Give or take."
+    e "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
+    r "The old man showed up a little while after the call, and we headed to the racetrack to do some preparations."
+    "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
+    lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
+    lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without asking for permission."
+    lu "Don Vicente said he'd handle it himself, then went after that person towards the stables. I headed over to the observation area by the grandstands."
+    c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
+    
+    hide screen status_indicator
+    scene placeholder_racetrack1
+    with fade
+    lt "Yikes... talk about an overload of information!"
+    lt "This is a lot to take in..."
+    lt "I better write some of it down now before I forget."
+    #Dossier- add alibis notes to the Dossier!!!!
+    $ dossier.add(de_alibi)
+    me "Hey, you're gonna ask them something or not?"
+    l "Oh, yes! Yes, I will."
+    lt "I wonder if there's anything off about these alibis. Let's find out.
+    "
+    call CE_start
+    call fx_interrogation
+    scene placeholder_racetrack1
+    show en neutral
+    with fade
     en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
     if ce_mode == "object":
         call bigCE_wrong
@@ -1039,6 +1131,7 @@ label bigCE_loop:
             lt "Most of the call was just Esteban checking in on Renata, asking where she was and telling her he'd meet her at the café."
             lt "The whole thing lasted about four minutes."
             lt "I should make a note of that."
+            $ dossier.add(de_callrecords)
             # Dossier updated!!!!
             with fade
 
@@ -1137,7 +1230,7 @@ label bigCE_loop:
     if ce_mode == "press":
             $ ce_mode = None
             l "How long did you stay there?"
-            lu "About twenty-five minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
+            lu "About 32 minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
             l "I see..."
             with fade
     # Press
@@ -1164,7 +1257,7 @@ label bigCE_loop:
     lt "But they left at 10:34 AM to investigate the big commotion around Vicente's body."
     lt "Esteban was smoking from 10 AM to 10:17 AM by the grandstands."
     lt "Lucas was with Vicente at the parade ring from 10 AM for about ten minutes. Afterwards, he spent roughly 25 minutes at the observation area by the grandstands."
-    lt "...my head hurts. I'm going to write all of that down."
+    lt "...my head hurts."
     #UPDATE DOSSIER WITH ALIBIS NOTES!!!!
 
     me "Got all that? Only a handful of these accounts can be independently confirmed, but at least we've got a clearer picture of everyone's whereabouts."
@@ -2681,10 +2774,14 @@ label LastCE:
             "Preparing Lucero for the race":
                 jump prephorse
         label food4horse:
-            lt "Wrong"
+            lt "Uh, no, I don't think food was mentioned once..."
+            lt "Not that it wouldn't be part of his duties as trainer."
+            lt "But I don't think they'd kill him over the last bale of hay."
             jump LastCE_Loop
         label prephorse:
-            lt "Wrong"
+            lt "Hmm... is that right?"
+            lt "I have the feeling someone told me in their alibi what Vicente was up to..."
+            lt "I should check the Dossier."
             jump LastCE_Loop
         label chasechase:
             jump LastCE_RIGHT
@@ -2819,10 +2916,15 @@ label LastCE_Continue:
         "Names on the list":
             jump final_list
     label final_handwriting:
-        l "wrong"
+        l "Your handwriting! If we analyze it, I'm sure it'll match yours!"
+        es "Hahaha... knock yourself out! You won't find a thing!"
+        lt "He's awfully confident... maybe this approach is a bust. Let's try something else."
         jump FinalStrike
     label final_list:
-        l "wrong"
+        l "The names on the list prove it was you!"
+        es "How!? They aren't related to me at all! I sure as hell don't see Pícaro on it!"
+        lt "Damn it, he's right. Only the names of the collapsing horses are written here."
+        lt "I need to calm down and think this through one more time...!"
         jump FinalStrike
     
     label final_prints:

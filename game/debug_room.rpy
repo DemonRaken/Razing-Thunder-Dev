@@ -78,6 +78,7 @@ label cheat_get_all_evidence:
     $ dossier.add(de_casualclothes)
     $ dossier.add(de_notebook)
     $ dossier.add(de_autopsy)
+    $ dossier.add(de_alibi)
     $ dossier.add(dp_tony)
     $ dossier.add(dp_chispa)
     $ dossier.add(dp_catalina)

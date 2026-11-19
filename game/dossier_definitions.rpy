@@ -182,7 +182,7 @@ define de_callrecords = Evidence(
 define de_casualclothes = Evidence(
     _("Orange Clothes"),
     "evidence-casual-clothes",
-    _("Found in Lucas's locker"),
+    _("Found in Lucas' locker"),
     _("A colorful Hawaiian shirt, a pair of beige trousers, dark aviator sunglasses, and casual shoes.")
 )
 
@@ -209,6 +209,13 @@ define de_screen = Evidence(
     "screen",  # Image file
     _("Just an ordinary screen showing a test pattern."),
     _("No, Monika won't come out of it, no matter how much you stare at it.")
+)
+
+define de_alibi = Evidence(
+    _("Alibi Notes"),
+    "evidence-alibi",  # Image file
+    _("Notes taken by Antonio."),
+    _("Medina, Sebastian and Lorenzo were together at the luxury observatory from 10:00 AM to 10:42 AM.\nRenata was at the luxury box's cafe since 10 AM. She received a call from Esteban at 10:17 AM. They met there at 10:24 AM and went to the racetrack. They left at 10:34 AM.\nEsteban was smoking from 10:00 AM to 10:17 AM by the grandstands.\nLucas was with Vicente at the parade ring from 10 AM to 10:10 AM. He stayed at the observation area by the grandstands until 10:42 AM.")
 )
 
 define dp_tony = CharacterProfile(
