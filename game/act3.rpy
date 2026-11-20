@@ -350,7 +350,8 @@ label b4fall:
 
     tt "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
     tt "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
-    tt "First, I need to make a quick stop to the trainer lockers..."      
+    tt "First, I need to make a quick stop to the trainer lockers..."  
+
     
     #InvestigationsAreasNow, access from map
 label paddock_inves:
@@ -403,7 +404,7 @@ label stables_inves:
         lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
         lt "Huh? The trail suddenly ends before reaching the entrance."
         lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
-        return
+        #return
     
     label stables_shovel:
     #click shovel
@@ -425,7 +426,7 @@ label stables_inves:
 
         lt "This is a huge find... but, damn... what a way to go."
         lt "Alright, what's next...?"
-        return
+        #return
         
     
     label lockers_inves:
@@ -663,7 +664,7 @@ label stables_inves:
 
         # contra 1: tony killed him at the top of the railings
         label vs_sebCE2:
-            scene placeholder_racetrack2
+            scene placeholder_racetrack1
             show seb smile3
             with fade
             call fx_testimony
