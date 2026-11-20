@@ -1,13 +1,13 @@
 image tthug:
-    zoom 1.5
+    zoom 1.0
     "thug.png"
 
 image tthug_copy:
-    zoom 1.5
+    zoom 1.0
     "thug.png"
 
 image tthug_copy2:
-    zoom 1.5
+    zoom 1.0
     "thug.png"
 
 

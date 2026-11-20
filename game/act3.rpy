@@ -9,8 +9,9 @@ label act3:
         tt "...and in that moment, the sense of dread that had been building up in my chest as I rushed over washes away, overcome by anger and disbelief."
 
         #Insert here CG of Vicente dead on the ground.
-        scene placeholder_bodycg
+        scene black
         with dissolve
+        play music sad
 
         tt "On the ground of the parade ring area lay the body of Vicente Ruiz, whom I had just spoken with not long ago, blood seeping from his head."
 
@@ -29,6 +30,7 @@ label act3:
         t "......he's dead. He's all bruised up, and his legs are bent in an unnatural way, too."
 
         $ dossier.add(de_victimnotes)
+        scene placeholder_racetrack1
 
         tt "Damn it… how did this happen!?"
 
@@ -148,6 +150,7 @@ label act3:
         tt "Now I will never know the answer... nor am I really bothered to keep track of what happened at the race next."
         return
 label intervene:
+    stop music
     t "Wait a moment! This is no accident! It's murder."
 
     me "Ortiz..."
@@ -257,6 +260,7 @@ label vs_sebCE:
         jump act3_continue
  
     label act3_continue:
+    
 
     t "It's true that, depending on how he landed, a fall from that height could have killed him..."
 

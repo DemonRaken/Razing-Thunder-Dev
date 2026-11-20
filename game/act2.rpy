@@ -31,7 +31,7 @@ label act2:
     scene placeholder_stables
     with fade
     tl "9:40 AM.\nRazing Thunder Derby.\nStables."
-
+    play music happy2
     tt "Whew… we're finally done with all the paperwork. I'm \"{color=#FF9900}Dama de Plata's{/color}\" trainer now, even if only in name."
     show cata neutral with dissolve
     c "Several participants have withdrawn from the competition, so there are plenty of vacant stalls. You can keep Chispa in one of them."
@@ -75,6 +75,7 @@ label act2:
 
     label racetrack1:
         scene placeholder_granstands with fade
+        stop music
         
         tl "Razing Thunder Derby. \nMain Racetrack."
         tt "I've seen this beauty of a track on my phone before, but…"
@@ -148,6 +149,7 @@ label act2:
         v "Right, those. If Lucas is feeling up to it, you can go ahead."
 
         lu "I don't mind. There's still time before the race begins."
+        play music happy
 
         $ dossier.add(dp_lucas)
         $ dossier.add(dp_vicente)
@@ -265,6 +267,7 @@ label act2:
     label paddock1:
         scene placeholder_paddock 
         with fade
+        stop music
         tl "Razing Thunder Derby. \nPaddock."
         
         tt "This place isn't too far from the stables. Looks like a few racers are getting their horses fitted with equipment and parading them around for the spectators."
@@ -322,6 +325,7 @@ label act2:
         r "Not like I would expect you to get it."
 
         tt what det neutral "Why you…! Ugh, I'd better just ask what I need to and get out of here." 
+        play music happy2
         $ dossier.add(dp_renata)
         $ dossier.add(dp_esteban)
         # Dossier: Presenting evidence (mate)
@@ -523,7 +527,9 @@ label act2:
     label stables1:
         scene placeholder_stables with fade
         # Only after moving areas once at least.
+        stop music
         tl "Razing Thunder Derby.\n Stables."
+        
         
         show cata yell at slightright
         with dissolve
@@ -571,6 +577,7 @@ label act2:
         t aw neutral drop "…Yes, ma'am."
 
         tt "Who was that, anyway? I'd better ask before she starts ignoring me again."
+        play music cata
         label stables1_presenting:
             # Dossier > Presenting Mate
             show cata neutral with dissolve
@@ -741,6 +748,7 @@ label act2:
     label lockers1:
         scene placeholder_lockers
         with fade
+        stop music
         x "You can't be serious about going through with this little event."
 
         x "Oh, but I am! Don't you know? The show must go on!"
@@ -828,6 +836,7 @@ label act2:
 
         tt what det drop "One of 'those'? What does that even mean…?" 
         tt neutral right "Anyway, this is a perfect chance to ask about the clandestine gambling. There's no way the host himself doesn't know anything about it."
+        play music enzo
         $ dossier.add(dp_lorenzo)
         $ dossier.add(dp_medina)
         label lockers1_investigating:
@@ -913,6 +922,7 @@ label act2:
             # He leaves
 
             hide en with dissolve
+            stop music
             t aw neutral drop"…The racehorses. *Sigh.*"
             
             show me neutral at center
@@ -1097,6 +1107,7 @@ label act2:
                     "Bad ending. The truth was lost. But you can pay rent at least."
                     return        
         label p_refuse:
+            play music intense
             t det yell "Sorry, I won't be accepting this money. You can hand it back to your boss. Or keep it for yourselves."
 
             tgb "Wow, really? We can keep it—"
@@ -1145,6 +1156,7 @@ label act2:
 
             label p_badend2:
                 # Timeout / Bad Ending Choice (Hesitation)
+                play music sad
 
                 tt neutral drop "I hesitate for a fraction of a second, overthinking my move as all three thugs close in at once. Their combined attack hits me before I can react."
 
@@ -1311,6 +1323,7 @@ label act2:
         label parking_complete:
             # Aftermath
             show tony det smile drop with dissolve
+            stop music
             t "Whew… Their boss is gonna be furious when he sees the dry-cleaning bill for those fancy suits. And the hospital bills, too."
 
             tt "I kick the envelope containing the bribe money towards one of the groaning thugs."

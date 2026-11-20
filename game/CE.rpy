@@ -57,6 +57,7 @@ label CE_start:
    # Turn off Rollback for the CE only
    #$ config.rollback_enabled = False
    $ renpy.block_rollback()
+   play music ce
    show screen ce_ui
    return
 
@@ -65,6 +66,7 @@ label CE_end:
    # Turn on RollBack again.
    #$ config.rollback_enabled = True
    $ renpy.block_rollback()
+   stop music
    return
 
 label testCataCE:

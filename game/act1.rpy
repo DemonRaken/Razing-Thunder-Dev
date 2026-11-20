@@ -1,7 +1,18 @@
 # ACT 1 Starts here.
 label act1:
+  scene black
+  x "It's the final stretch to the finish line!"
+  x "The contestants are giving it their all, but what is this...!?"
+  x "Perla Negra is taking the lead!"
+  x "Picaro is hot on her heels, with Dama de Plata closing in as well, followed by Lucero...!"
+  x "Perla Negra is about to win the Razing Thunder, and... what!?"
+  x "Suddenly, Perla Negra has collapsed on the racetrack! Just inches away from victory!"
+  x "Picaro is now the first to cross the finish line!!!"
+  x "Oh no! Valentina Rios has suffered a tremendous fall at high speed...!"
+  
   scene placeholder_backalley with dissolve:
     zoom 1.5
+  stop music
   tl "9:45 PM. \nAlleway."
 
   lt "The grip on my phone tightens instinctively as I watch the violent fall, shocked."
@@ -14,8 +25,8 @@ label act1:
 
   l "What a nasty fall! And she was so close to claiming first place, too…"
 
-  show thug at center:
-    zoom 1.5
+  show thug at center
+  play music eccentric
 
   tg "Bastard! When I get out of these, I'm going to smash that phone on your stupid face!"
 
@@ -89,11 +100,13 @@ label act1:
   l smile "Let's hurry up, Chispa. With some luck, we'll be done before the clock hits midnight."
 
   ch "Neigh!"
+  stop music
 
   scene placeholder_office 
   with fade
 
   tl "8:00 AM. \nTony's Odd Jobs Agency."  
+  play music happy
 
   lt "Last night, we came across the person I was looking for shortly after. The guy hadn't run too far away, and it looked like the color drained from his face the moment I brought up the debt collector"
   
@@ -194,6 +207,7 @@ label act1:
   $ renpy.notify(_("Dossier is now available."))
   l "Vital information always goes there. It would be no joke to say that the very balance of the world depends on it...!"
   lt "Anyway, time to move!"
+  stop music
   show leo at right
   with move
 
@@ -252,7 +266,7 @@ label act1:
   scene placeholder_park
   show cata yell
   with fade
-
+  play music cata fadein 1.0 fadeout 1.0
   c "—hey. I'm talking to you. Are you even listening?"
   
   t neutral blush "Wha- sorry! I zoned out there for a sec."
@@ -367,5 +381,6 @@ label act1continues:
   t aha "Thanks, girl. I can always count on you."
 
   tt smile "Huffing, I hold onto the reins and hurry to go after my 'delightful' employer."
+  stop music
 
 jump act2

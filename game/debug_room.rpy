@@ -112,7 +112,21 @@ label debug_cutins_test:
     call cutin("cross_examination")
     c "Just come and let's do my Cross-Examination and be done with it."
 
-
+    define audio.embrace = "audio/BGM/Peritune_Last_Embrace.ogg"
+    define audio.thought_route = "audio/BGM/Peritune_Cerebral_Maze.ogg"
+    define audio.sad = "audio/BGM/Peritune_Echoed_Art.ogg"
+    define audio.ending = "audio/BGM/Peritune_Last_Embrace.ogg"
+    define audio.ending2 = "audio/BGM/Peritune_Tender_Gaze.ogg"
+    define audio.ce = "audio/BGM/Peritune_Silent_Shadows_loop.ogg"
+    define audio.ce2 = "audio/BGM/Peritune_Silent_Witness_loop.ogg"
+    define audio.objection = "audio/BGM/PeriTune_Secret_Corridor_loop.ogg"
+    define audio.happy = "audio/BGM/PeriTune_Oceanfront_loop.ogg"
+    define audio.happy2 = "audio/BGM/Peritune_Sunlit_Cafe_loop.ogg"
+    define audio.eccentric = "audio/BGM/PeriTune_Backstreet_Swing_loop.ogg"
+    define audio.cata = "audio/BGM/Peritune_Black_Crystal_loop.ogg"
+    define audio.enzo = "audio/BGM/PerituneMaterial_Creep_loop.ogg"
+    define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
+    define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"   
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"

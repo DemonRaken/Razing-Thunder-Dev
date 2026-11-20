@@ -25,6 +25,7 @@ image ctc_horse = Transform(
     )
 
 # cross-examination
+define cross_examination_sfx = "sfx/chain.ogg"
 define cross_examination_duration = [0.05, 0.05, 0.05, 0.05, 0.75, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.75, 0.05, 0.05, 0.05, 0.05]
 define cross_examination_duration_sum = sum(cross_examination_duration)
 image cross_examination:
@@ -36,6 +37,7 @@ image cross_examination:
     Null()
 
 # holdit
+define holdit_sfx = "sfx/lasso.ogg"
 define holdit_duration = [0.04, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.50, 0.02]
 define holdit_duration_sum = sum(holdit_duration)
 image holdit:
@@ -50,6 +52,7 @@ image holdit:
 
 
 # objection
+define objection_sfx = "sfx/sword.ogg"
 define objection_duration = [0.04, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.50]
 define objection_duration_sum = sum(objection_duration)
 image objection:
@@ -64,6 +67,7 @@ image objection:
 
 
 # takethat
+define takethat_sfx = "sfx/sword.ogg"
 define takethat_duration = [0.04, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.60, 0.04]
 define takethat_duration_sum = sum(takethat_duration)
 image takethat:
@@ -78,6 +82,8 @@ image takethat:
 
 label cutin(name):
     $ dur = getattr(renpy.store, f"{name}_duration_sum")
+    $ sfx = getattr(renpy.store, f"{name}_sfx")
+    $ renpy.sound.play(sfx)
     $ renpy.show(name)
     pause dur
     $ renpy.hide(name)

@@ -56,7 +56,7 @@ define narrator = Character(window_background=None) # workaround around this iss
 # The time and location
 define tl = Character(what_color="#38761D",  
 what_outlines=[(2,"#000000", 1, 1)],
-# kind=narrator,
+kind= n,
 window_background="textbox9",
 what_text_align=0.5-0.12,
 what_xalign=0.5-0.12)

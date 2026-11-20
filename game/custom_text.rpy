@@ -3,6 +3,8 @@
 define gui.text_font = "LibreBaskerville-Regular.ttf"  # Font for dialogue
 define gui.name_text_font = "Cinzel-Regular.ttf"  # Font for character names
 
+define gui.main_menu_background = "main_menu"
+
 ## Text Colors
 define gui.text_color = "#FFFFFF"       # White dialogue text
 define gui.name_text_color = "#FFD700"  # Gold character names
@@ -36,6 +38,17 @@ style window:
     #ysize gui.textbox_height + 23
     #xsize 400
     #text_size 200
+
+screen main_menu():
+    tag menu
+    add gui.main_menu_background
+    frame:
+        style "main_menu_frame"
+    use navigation
+    add "logo.png":
+        xalign 0.7
+        yalign 0.1
+        zoom 0.8   
 
 #    background Frame("images/textbox/textbox2.png", 150, 150)   
 
