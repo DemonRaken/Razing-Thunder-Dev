@@ -123,10 +123,12 @@ label act3:
         show seb smile2
         s "So you see, this is but a tragic accident."
 
+        show en neutral
+
         en "It is quite regrettable… however, these things can happen. I will take care of it."
 
         tt "With a snap of his fingers, security staff begin to approach from within the crowd. Oh no, are they already going to dispose of the body…?"
-
+        show me sweat2
         me "Tch, you're pulling that card now?"
 
         tt "Whatever reinforcements the inspector could call, they'll arrive too late. By then, some evidence might be lost."
@@ -152,30 +154,38 @@ label act3:
             return
 label intervene:
     stop music
-    t "Wait a moment! This is no accident! It's murder."
+    t det yell "Wait a moment! This is no accident! It's murder."
+
+    show me sweat
 
     me "Ortiz..."
 
+    show seb angry3
     s "Hah? Wait a moment, y-you...! What are you doing-"
-
+    
+    show seb angry
     s "I mean... what are you saying? Didn't you hear what all these people said already?"
 
-    tt "Hmph. Surprised I'm still hanging around...?"
+    tt what det neutral "Hmph. Surprised I'm still hanging around...?"
 
-    t "I did. But that doesn't make it an accident."
-
+    t det neutral "I did. But that doesn't make it an accident."
+    
+    show seb neutral 
     s "As expected of a country bumpkin, I'll have to explain it nice and slow for you to understand..."
 
 #Tony vs Seb
 label vs_seb_Testimony:
     scene placeholder_paddock
     call fx_testimony
-    show seb smile3
+    show seb neutral
     with fade
-    
+    show seb angry
     s "Get this through your thick skull: this was an accident."
+    show seb neutral
     s "He fell down from the grandstands and died when he hit the floor."
+    show seb smile2
     s "It's obvious! The fall killed him! Those bruises and injuries are exactly what you'd expect from such a fall! There's nothing suspicious here!"
+    show seb grr    
     s "Now, get out of the way so these gentlemen can do their job."
     
     hide screen status_indicator
@@ -189,10 +199,10 @@ label vs_seb_Testimony:
 label vs_sebCE:
     scene placeholder_paddock
     call fx_interrogation
-    show seb smile3
+    show seb neutral
     with fade
     call CE_start
-    
+    show seb angry
     s "Get this through your thick skull: this was an accident."
     if ce_mode == "object":
         call cutin("objection")
@@ -201,9 +211,10 @@ label vs_sebCE:
         $ ce_mode = None
         call cutin("holdit")
         t "Why are you so sure about that?"
+        show seb grr
         s "I'm getting to it, you impatient dolt! Hmph..."
         with fade
-    
+    show seb neutral
     s "He fell down from the grandstands and died when he hit the floor."
     if ce_mode == "object":
         call cutin("objection")
@@ -212,9 +223,10 @@ label vs_sebCE:
         $ ce_mode = None
         call cutin("holdit")
         t "Would a fall from that height actually kill him?"
+        show seb grr
         s "H-He's dead, isn't he? So obviously it is!"
         with fade
-
+    show seb smile2
     s "It's obvious! The fall killed him! Those bruises and injuries are exactly what you'd expect from such a fall! There's nothing suspicious here!"
     if ce_mode == "object":
         call cutin("objection")
@@ -226,11 +238,12 @@ label vs_sebCE:
         $ ce_mode = None
         call cutin("holdit")
         t "And you're sure those injuries were all caused by the fall?"
+        show seb neutral
         s "Of course! What else could've caused them? Stop wasting my time!"
         tt "Hold on... Is that really the case? Something about his injuries doesn't add up."
         with fade
 
-
+    show seb grr
     s "Now, get out of the way so these gentlemen can do their job."
     if ce_mode == "object":
         call cutin("objection")
@@ -239,8 +252,9 @@ label vs_sebCE:
         $ ce_mode = None
         call cutin("holdit")
         t "I think you're jumping the gun a bit, trying to clean up so fast!"
+        show seb angry
         s "Mr. Villareal here has an event to run. The more time we waste on this, the more things will go off schedule."
-        t "Zero thoughts spared for the victim here.."
+        tt "Zero thoughts spared for the victim here.."
         with fade
 
     hide screen ce_ui
@@ -255,6 +269,7 @@ label vs_sebCE:
         show seb smile
         s "Wait a moment, I have to check the time on my watches."
         t "Eh?"
+        show seb smile3
         s "I was afraid of this. It does seem like it's 'listen to stupid' o'clock right now."
         t "Gah!!"
         $ ce_rep -= 1
@@ -272,44 +287,70 @@ label vs_sebCE:
  
     label act3_continue:
     hide screen status_indicator
-    
-
+    hide seb
+    show tony neutral closed at slightleft
+    with dissolve
     t "It's true that, depending on how he landed, a fall from that height could have killed him..."
-
+    
+    show seb smile3 at slightright
+    with dissolve
     s "So you get it! Now, do us all a favor and—"
-
+    
+    show tony det yell
     t "However! There's something you're overlooking."
 
+    show seb frown
     s "Huh?"
 
-    
-
+    show tony det neutral right
     t "Look at his arms. They're just lying at his sides, without any sign of him trying to break his fall."
 
+    show seb grr
     s "A-And? Maybe he didn't have time to react!"
 
+    show tony det neutral
     t "Maybe. But there's something else. His face and the front of his body are covered in bruises, as if he took the full impact of the fall face-first."
 
+    show seb angry3
+    with dissolve
     s "So what!? He fell face-first! That's what happens when you hit the ground!"
 
     t "Then explain this: if the Vicente hit the ground face-first..."
 
     play music objection fadein 0.5
-    
+    show tony det yell
+    with dissolve
     t "Why does he have such a large wound on the BACK of his head!?"
 
+    show seb nervous2 with dissolve
     s "G-Gyaaah!"
-
+    
+    show tony det neutral
     t "If he died from the fall, the damage would match how he landed."
 
+    show seb nervous
     s "T-Then someone hit him AFTER he fell! Yeah! That's what happened!"
-
+    
+    hide seb
+    hide tony
+    show me yell
+    with dissolve
     me "You're just making shit up now. Why would someone come along and hit a corpse?" 
-
+    
+    hide me
+    show tony det neutral
+    with dissolve
     t "And why hasn't a single person here reported seeing anything?"
-
+    
+    hide me
+    hide tony
+    show seb grr2
+    with dissolve
     s "U.....uuunngh....! Then you explain it, genius! Why does that old crook have that wound!?"
-
+    
+    hide seb
+    show tony det neutral
+    with dissolve
     t "I can think of another possibility. The victim got that wound..." 
     jump fall_choice    
     label fall_choice:
@@ -323,54 +364,109 @@ label vs_sebCE:
                 jump afterfall
 
     label afterfall:
+        hide seb
+        show tony det yell
         t "He got the wound after hitting the ground."
+        
+        hide tony
+        show seb smile2 at slightleft
+        with dissolve
         s "Ah, so you do agree with me!"
+        
+        show me yell at slightright
+        with dissolve
         me "Hold it, isn't this the opposite of what you've been saying?"
+        
+        show me angry
         me "Besides, with all the people here, at least one or two would had seen that happen."
+        
+        hide me
+        show tony aha
+        with dissolve
         t "Huh? Oh, uh.... yeah! You are right! Ahaha..."
+        
+        show seb smile2 at left
+        show me sweat2 at right
+        with dissolve
         me "..."
-        tt "Ugh, I messed that up big time..."
-        tt "Calm down, Tony. Let's try that one more time. If he didn't get injured after the fall, then he got it..."
-        jump fall_choice
 
+        tt aw neutral drop "Ugh, I messed that up big time..."
+        tt neutral drop "Calm down, Tony. Let's try that one more time. If he didn't get injured after the fall, then he got it..."
+        jump fall_choice
     label whilefall:
+        hide seb
+        hide me
+        show tony det yell
         t "The victim was injured while falling."
+        
+        hide tony
+        show me sweat at right
+        with dissolve
         me "...while falling. As in, in the middle of the air?"
+        
+        show seb smile2 at left
         s "I see. Makes sense."
+        
+        show me yell
         me "No, it doesn't! How on earth would anyone pull that off!? There is nowhere to stand on! Just air!"
+        
+        hide seb
+        hide me
+        show tony aw smile drop
         t "O-Oh, you know! Like, maybe someone was waiting below, suspended with a grappling hook!"
+        
+        show tony det yell
         t "Then the body approached, and they hit him with a well-timed strike! Hard!"
+        show me angry
         me "First off, that's insane. Second, you are insane."
-        tt "I don't think it's that unlikely... r-right?"
+        tt aw neutral drop "I don't think it's that unlikely... r-right?"
+        show me sweat
         me "Third, weren't you the one who said he fell face-first, with his arms by his side?"
+        show me sweat2
         me "If the victim got hit during his fall, that would change the trajectory of his fall."
+        show me neutral
         me "What if the person miscalculated and missed? What if they couldn't muster enough strength due to that awkward position?"
+        show me yell
         me "Not to mention, a person hanging from a grappling hook is incredibly suspicious."
-        t "A-All very good points...!"
-        tt "Shit... I need to re-think this. It is a little crazy to think it happened mid-air. So then, that must mean he got it..."
+        
+        t neutral drop "A-All very good points...!"
+        tt aw neutral drop "Shit... I need to re-think this. It is a little crazy to think it happened mid-air. So then, that must mean he got it..."
         jump fall_choice
 
 label b4fall:
-    
+    hide me
+    hide seb
+    show tony neutral
+    with dissolve
     t "What if he was struck on the back of the head before he ever went over the railing?"
-
+    
+    show tony neutral closed
     t "He would've already been dead by then. His body would've fallen limp, unable to protect itself when it hit the ground."
 
+    show tony det yell
     t "That would explain both the position of his body and the bruises on his front."
-
+    
+    hide tony
+    show me smile
+    with dissolve
     me "Seems to me like there's now more than enough reason to start an investigation."
-
+    
+    show me smile3
     me "Obviously, you won't get in the way, right? Mr. Villareal?"
-
+    
+    show en nervous2
+    with dissolve
     en "N-no, of course not... I can't in good conscience let a murderer roam free..."
 
+    show me neutral
     me "Good. Now, follow me, everyone. I need to have a good talk with all of you about your whereabouts."
 
     stop music fadeout 2.5
 
-    tt "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
-    tt "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
-    tt "First, I need to make a quick stop to the trainer lockers..."  
+    tt aw neutral drop "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
+    tt det neutral "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
+    tt det smile "First, I need to make a quick stop to the trainer lockers..."
+    jump act3_main_inves  
 
     
     #InvestigationsAreasNow, access from map
@@ -582,64 +678,116 @@ label b4fall:
 
         lt "Time for my dramatic entrance."
 
+        show en nervous 2 at slightleft
+        with dissolve
         en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
 
+        show me angry
+        with dissolve
         me "Then you clearly don't understand the situation."
 
+        show en nervous3
         en "I promise you, once the race is over, you'll have my full cooperation!"
 
+        show me yell2
         me "That's not how this works. You have to—"
 
         l "—look past your selfish desires and face your responsibilities!"
-
+        
+        show me yell
         me "Exactly—wait, what?"
+        
+        hide me
+        hide en
+        show leo grin shinw
+        with vpunch
+        with dissolve
 
         lt "With a running leap and a flip, I let my poncho flutter dramatically through the air before striking a pose with my arms."
 
+        show leo yell
+
         l "The nightmare of criminals and fighter for justice..."
 
+        show leo think yell
+        with flash
+
         l "El Leopardo is here to assist!"
-
+        
+        hide leo
+        show me sweat2
+        with dissolve
         me ".............."
-
+        
+        show rena angry at left
+        with dissolve
         r "Yo. What's this freak's deal?"
 
+        show cata surprise at right
+        with dissolve
         c "...?"
-
+        
+        hide cata
+        hide me
+        hide rena
+        show en yell
+        with dissolve
         en "E-Excuse me? Sir, I don't know what kind of game you're playing here, but—"
 
-        l "This is no game. This is a matter of life and death, and you're trying to look the other way!"
-
+        l neutral "This is no game. This is a matter of life and death, and you're trying to look the other way!"
+        
+        show en neutral
         en "Erm... Well, we're already behind schedule, you see..."
-
+        
+        hide en
+        show me angry at slightright
+        with dissolve
         me "Despicable..."
-
+        
+        show seb grr2 at slightleft
         s "What are you waiting for!? Kick this clown out of my derby—"
 
+        hide seb grr2
+        hide me
         show en neutral
         pause 1.0
 
+        hide en
+        show seb frown
+        with dissolve
         s "I mean... kick him out of your derby already! He's a lunatic!"
 
-        l "Ah, but would you still say the same if I offered you the answers to this case?"
+        l smile "Ah, but would you still say the same if I offered you the answers to this case?"
 
+        show seb smile2
         s "The answers? Don't kid yourself! What would a masked freak like you know?"
 
-        l "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
+        l neutral "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
 
+        show seb nervous
         s "WHAT!? I, uh... I don't know what he's talking about. I would never..."
 
+        hide seb
+        show me angry
+        with dissolve
         me "..."
 
+        hide me
+        show seb angry
+        with dissolve
         s "More importantly, there's no need to waste any more time on this!"
-
+        
+        show seb smile
         s "We already know who the culprit is!"
 
-        lt "If it's coming from this guy, I seriously doubt it..."
-
+        lt eh neutral "If it's coming from this guy, I seriously doubt it..."
+        
+        show seb smile3
         s "It was that suspicious character found near the body: Antonio Ortiz!"
 
-        l "Say whaaaaaat!?"
+        l yell "Say whaaaaaat!?"
+
+        show seb smile2
 
         s "Yes, yes. Allow me to enlighten you."
 
@@ -648,25 +796,47 @@ label b4fall:
         # contra 1: tony killed him at the top of the railings
         label vs_sebCE2:
             scene placeholder_racetrack1
-            show seb smile3
+            show seb neutral
             with fade
             call fx_testimony
+            
             s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
+            show seb grr
             s "But no more! He's clearly a suspicious person!"
+            show seb angry
             s "We all saw him prodding and standing near the body."
+            show seb grr
             s "Who does that? A cold blooded murderer!"
+            show seb grr2
             s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
 
             hide screen status_indicator
             stop music fadeout 2.5
-
+            
+            show leo think closed at slightleft
+            with dissolve
             l "Mr. Castillo... are you not basing your accusations on prejudice?"
+            
+            show leo neutral
             l "That may have been just a very curious fellow."
+            
+            show seb angry2 at slightright
+            with dissolve 
             s "How dare you! My words are very well-founded!"
+            
+            show seb neutral
             s "Now, if you're done parroting, I believe the inspector has a criminal to catch."
+            
+            show leo grin
             l "Of course. Right as we're done going over your testimony."
+            
+            show seb frown
             s "Not this again... I'm getting déjà vu."
+            
+            show leo think closed
             lt "Yeah, and I'm getting déjà vu too. A glaring contradiction, that is."
+            
+            show leo think yell
             lt "After all the investigating I've done, I know this guy is dead wrong!"
             lt "Now I just have to prove it!"
         
@@ -674,6 +844,7 @@ label b4fall:
         label vs_sebCE2_loop hide: # Before hide was learned.
             call CE_start
             call fx_interrogation
+            show seb neutral
             s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
             if ce_mode == "object":
                 call cutin("objection")
@@ -681,12 +852,15 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "My- *cough* what is so questionable about that young man's appearance?"
+                l eh neutral drop "My- *cough* what is so questionable about that young man's appearance?"
+                
+                show seb smile2
                 s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
-                lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+                
+                lt yell "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
                 with fade
             
-
+            show seb grr
             s "But no more! He's clearly a suspicious person!"
             if ce_mode == "object":
                 call cutin("objection")
@@ -695,10 +869,11 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                lt "What makes you so sure about that?"
+                lt neutral "What makes you so sure about that?"
+                show seb grr
                 s "I'm getting there, mask freak! Stop interrupting me."
                 with fade
-            
+            show seb angry
             s "We all saw him prodding and standing near the body."
             if ce_mode == "object":
                 call cutin("objection")
@@ -707,11 +882,14 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "Uh... perhaps he was just trying to help the downed man?"
+                l grin closed "Uh... perhaps he was just trying to help the downed man?"
+                
+                show seb neutral
                 s "Now he's a parademic? Please!"
-                lt "I do know some first aid..."
+                
+                lt closed drop "I do know some first aid..."
                 with fade
-
+            show seb grr
             s "Who does that? A cold blooded murderer!"
             if ce_mode == "object":
                 call cutin("objection")
@@ -720,12 +898,15 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "It's a bit of a stretch to label him a murderer just for that!"
+                l yell "It's a bit of a stretch to label him a murderer just for that!"
+                
+                show seb angry
                 s "Say what you want, the police should just arrest him and let us run things here!"
-                lt "I don't know if I'll be so lucky twice if I end up there again.
+                
+                lt closed drop "I don't know if I'll be so lucky twice if I end up there again.
                 "
                 with fade
-            
+            show seb grr2
             s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
             #p - contra is here , blood drops
             if ce_mode == "object":
@@ -737,28 +918,45 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "He dropped him right after the attack?"
+                l neutral "He dropped him right after the attack?"
+                show seb angry
                 s "Are your ears clogged? Yes!"
+                
                 l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
+                show seb frown
                 s "Who?"
-                l "...the victim."
+                
+                l eh what "...the victim."
+                
+                show seb smile2
                 s "Oh. Yes. Don't make me repeat the same over and over!"
-                lt "I will when you stop contradicting yourself over and over."
+                
+                with flash
+                lt think closed "I will when you stop contradicting yourself over and over."
                 with fade
             
             hide screen ce_ui
             hide screen status_indicator
+            scene placeholder_racetrack1
+            show leo yell
+            with fade
+            
             lt "I'm not about to let this guy frame me for murder."
+            
+            show leo neutral
             lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
             jump vs_sebCE2_loop
 
             #continue here
             label vs_sebCE_wrong2:
                 $ ce_mode = None
-                l "Mr. Castillo, you have made a serious mistake in your testimony!"
-                show seb smile
+                l yell "Mr. Castillo, you have made a serious mistake in your testimony!"
+                
+                show seb smile3
                 s "The only mistake here is that rag you are carrying around."
-                l "Ugh...!"
+                
+                l closed drop "Ugh...!"
+                
                 lt "It's not a rag, it's a poncho..."
                 # Penalty Damage
                 $ ce_rep -= 1
@@ -771,6 +969,7 @@ label b4fall:
                 jump act3_continue2
         label act3_continue2:
             hide screen status_indicator
+            show leo think closed
             l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
             l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
 
@@ -781,8 +980,6 @@ label b4fall:
             l "Except your explanation is riddled with holes."
 
             s "H-How dare you!"
-
-            
 
             l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
 
