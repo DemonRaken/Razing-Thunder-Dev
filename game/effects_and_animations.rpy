@@ -87,6 +87,7 @@ label cutin(name):
     $ renpy.show(name)
     pause dur
     $ renpy.hide(name)
+    $ renpy.block_rollback()
     return   
 
 #xysize=(config.screen_width, config.screen_height)

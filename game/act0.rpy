@@ -39,7 +39,7 @@ label intro_start:
     return   
 
 label start:
-    #jump start2
+    jump start2
     call intro_start
     jump act1
     return

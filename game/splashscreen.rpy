@@ -1,4 +1,7 @@
+define author = "Raken"
+#define author = "Jeremías Bravo"
 default persistent.chose_lang = False
+
 
 screen language_select:
     vbox:
@@ -22,8 +25,7 @@ label splashscreen:
     scene white with dissolve
     with Pause(1)
 
-    show text "{color=#FF0000}Una producción de Jeremias Bravo{/color}" with dissolve
-    #show text "{color=#FF0000}Una producción de Raken...{/color}" with dissolve
+    show text "{color=#FF0000}Una producción de [author]{/color}" with dissolve
     with Pause(2)
 
     hide text with dissolve

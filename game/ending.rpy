@@ -4,52 +4,50 @@
 
 ## ------------------------------------------------------------------ config ---
 
-## Who appears, in what order, with which sprite and how they're credited.
 define ENDING_CAST = [
+    ("tony smile",  "Antonio Ortiz"),
     ("cata neutral",  "Catalina Moreno"),
-    ("leo neutral",   "El Leopardo"),
-    ("tony neutral",  "Antonio Ortiz"),
-    ("rena neutral",  "Renata Vargas"),
+    ("rena smile",  "Renata Vargas"),
     ("lu neutral",    "Lucas Mendoza"),
-    ("est neutral",   "Esteban Rojas"),
-    ("seb neutral",   "Sebastian Castillo"),
-    ("en neutral",    "Lorenzo Villareal"),
-    ("me neutral",    "Sofía Medina"),
+    ("vi smile",    "Vicente Ruiz"),
+    ("en grin",    "Lorenzo Villareal"),
+    ("me smile",    "Sofía Medina"),
+    ("seb smile3",   "Sebastian Castillo"),
+    ("est smile",   "Esteban Rojas"),
+    ("leo point",   "El Leopardo"),
 ]
 
-## Per-card timings (seconds). Total per card = SLIDE_IN + HOLD + SLIDE_OUT.
 define ENDING_SLIDE_IN  = 0.6
 define ENDING_HOLD      = 3.0
 define ENDING_SLIDE_OUT = 0.6
 
-## Background behind the cards.
-define ENDING_BG = "placeholder_park"
-
-## Horse decoration: 0 hides it; 1.0 = default size; try 1.5–2.0 for ending.
+define ENDING_BG = ""
 define ENDING_HORSE_SCALE = 3
+
+## Layout knobs for the split view.
+##   CREDITS_XPOS — horizontal center of the credits column (0=left, 1=right).
+##   CAST_XPOS    — horizontal resting spot for characters.
+define CREDITS_XPOS = 0.27
+define CAST_XPOS    = 0.78
 
 ## --------------------------------------------------------------- credits ---
 
-## Edit freely. `{b}...{/b}` is bold, `{size=+N}` grows text, `{color=#...}`
-## tints. Blank lines separate sections.
 define CREDITS_TEXT = """
 {size=+14}{b}Razing Thunder{/b}{/size}
 
-{size=-6}This needs translating too ugh{/size}
+{size=-6}...{/size}
 
 {color=#888888}· · ·{/color}
 
 {b}Written and Directed by{/b}
-Raken
+[author]
 
 {b}Character Art{/b}
-Raken
+[author]
 
-{b}Backgrounds{/b}
-The Internetz
 
 {b}Music{/b}
-The Internets
+Peritune
 
 {b}Engine{/b}
 Ren'Py
@@ -62,47 +60,45 @@ Everyone who read it
 {size=+6}Thank you for playing.{/size}
 """
 
-## Scroll tuning:
-##   - If the credits get cut off before the pause ends, make
-##     CREDITS_SCROLL_END more negative (e.g. -3000).
-##   - If they linger on empty black at the end, make it less negative.
-##   - CREDITS_DURATION controls scroll speed.
 define CREDITS_TEXT_WIDTH   = 900
 define CREDITS_TEXT_SIZE    = 26
-define CREDITS_SCROLL_START = 1080    # starting ypos (bottom of screen)
-define CREDITS_SCROLL_END   = -2200   # ending ypos (above the top)
-define CREDITS_DURATION     = 45.0    # total scroll time (seconds)
+define CREDITS_SCROLL_START = 1080
+define CREDITS_SCROLL_END   = -2200
+define CREDITS_DURATION     = 60
 
 ## --------------------------------------------------------------- transforms ---
 
-## One card: slide in from the right, hold, slide out to the left, fade.
+## Slide in from the right, rest on the right side, slide back out right.
 transform ending_card:
     xalign 1.3
     yalign 1.0
     alpha 0.0
-    ease ENDING_SLIDE_IN xalign 0.5 alpha 1.0
+    ease ENDING_SLIDE_IN xalign CAST_XPOS alpha 1.0
     pause ENDING_HOLD
-    ease ENDING_SLIDE_OUT xalign -0.3 alpha 0.0
+    ease ENDING_SLIDE_OUT xalign 1.3 alpha 0.0
 
-## Name label fades in a beat after the portrait arrives.
+## Name label sits above the character, top-right.
 transform ending_name_fade:
-    xpos 0.72
-    ypos 0.865
+    xalign CAST_XPOS
+    #ypos 0.06
+    ypos 0.69
+    xpos 0.69
     alpha 0.0
     pause 0.4
     linear 0.4 alpha 1.0
 
-## Re-anchors the horse bottom-right and applies the configured scale.
+## Bottom-right corner decoration.
 transform ending_horse:
-    xpos 0.82
-    ypos 0.865
+    xpos 0.59
+    ypos 0.59
     xanchor 1.0
     yanchor 1.0
     zoom ENDING_HORSE_SCALE
 
-## Scrolls the credits vbox from below the screen to above it.
+## Scrolls up the left-hand column.
 transform credits_scroll:
-    xalign 0.5
+    xpos CREDITS_XPOS
+    xanchor 0.2
     ypos CREDITS_SCROLL_START
     linear CREDITS_DURATION ypos CREDITS_SCROLL_END
 
@@ -112,8 +108,6 @@ screen ending_name(name):
     zorder 50
     frame:
         at ending_name_fade
-        xalign 0.5
-        yalign 0.15
         background "#000000aa"
         padding (30, 15)
         text name:
@@ -124,8 +118,8 @@ screen ending_name(name):
 
 screen credits_screen():
     zorder 50
-    add Solid("#000000")
-
+    ## No Solid here — the `scene black` behind provides the background so
+    ## the characters on the right remain visible.
     vbox:
         at credits_scroll
         xsize CREDITS_TEXT_WIDTH
@@ -136,7 +130,7 @@ screen credits_screen():
             size CREDITS_TEXT_SIZE
 
     textbutton _("Skip"):
-        action Return()
+        action [SetVariable("ending_skipped", True), Return()]
         xalign 0.98
         yalign 0.96
         text_size 18
@@ -145,39 +139,41 @@ screen credits_screen():
 
 ## ------------------------------------------------------------------ labels ---
 
-label ending_roll_call:
+default ending_skipped = False
+
+## Roll call and credits play simultaneously.
+label ending_sequence:
     scene expression (ENDING_BG or "black") with Dissolve(0.5)
+    $ dossier_enabled = False
+    $ ending_skipped = False
 
     if ENDING_HORSE_SCALE > 0:
         show ctc_horse at ending_horse
 
+    show screen credits_screen
+
     python:
-        total = ENDING_SLIDE_IN + ENDING_HOLD + ENDING_SLIDE_OUT
+        card_total = ENDING_SLIDE_IN + ENDING_HOLD + ENDING_SLIDE_OUT
+        total_roll = card_total * len(ENDING_CAST)
+
         for sprite, name in ENDING_CAST:
-            renpy.show(sprite, at_list=[ending_card])
+            if ending_skipped:
+                break
+            renpy.show(sprite, at_list=[ending_card], zorder=10)
             renpy.show_screen("ending_name", name=name)
-            renpy.pause(total, hard=True)
+            renpy.pause(card_total, hard=True)
             renpy.hide(sprite)
             renpy.hide_screen("ending_name")
 
+        ## If credits scroll longer than the roll call, wait out the rest.
+        if not ending_skipped:
+            remaining = CREDITS_DURATION - total_roll
+            if remaining > 0:
+                renpy.pause(remaining, hard=True)
+
+    hide screen credits_screen
     if ENDING_HORSE_SCALE > 0:
         hide ctc_horse
-
-    scene black with Dissolve(0.8)
-    return
-
-label credits_roll:
-    scene black with Dissolve(0.5)
-    show screen credits_screen
-    ## hard=True: clicks/keys won't dismiss it; only the Skip button will.
-    ## If you'd rather allow click-to-skip, change to hard=False.
-    $ renpy.pause(CREDITS_DURATION, hard=True)
-    hide screen credits_screen
+        scene black with fade
     pause 0.8
-    return
-
-## One entry point: roll call, then credits. Call this from your end label.
-label ending_sequence:
-    call ending_roll_call
-    call credits_roll
     return
