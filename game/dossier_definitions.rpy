@@ -155,14 +155,14 @@ define de_shovel = Evidence(
     _("Bloodstained Shovel"),
     "evidence-shovel",
     _("Found at the stables"),
-    _("A heavy iron shovel normally used for stable work, such as mucking out stalls and moving feed. Its flat blade is smeared with dried blood and traces of hair, with a noticeable dent along its edge.")
+    _("A heavy iron shovel normally used for stable work, such as mucking out stalls and moving feed. Its flat blade is smeared with dried blood and traces of hair, with a noticeable dent along its edge. The blood belongs to the victim.")
 )
 
 define de_blooddrops = Evidence(
     _("Dried Bloodstains"),
     "evidence-blood-drops",
     _("Found inside the stables"),
-    _("A trail of dried blood drops. It leads from a small pool of blood towards the stable's entrance, where it abruptly ends. The pool of blood has been covered with loose hay.")
+    _("A trail of dried blood drops. It leads from a small pool of blood towards the stable's entrance, where it abruptly ends. The pool of blood has been covered with loose hay. The blood belongs to the victim.")
 )
 
 define de_bodybag = Evidence(

@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Razing Test")
+define config.name = _("Razing Thunder")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -188,6 +188,15 @@ init python:
 
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.webp', 'archive')
+    build.classify('game/**.ogg', 'archive')
+    build.classify('game/**.mp3', 'archive')
+    build.classify('game/**.wav', 'archive')
+    build.classify('game/**.ttf', 'archive')
+    build.classify('game/**.rpyc', 'archive')   
+    #build.classify('game/**.rpy', 'archive')   
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.

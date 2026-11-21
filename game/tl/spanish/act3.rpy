@@ -4,7 +4,7 @@
 translate spanish act3intro_f7c7f074:
 
     # tl "Razing Thunder Derby.\n Paddock. \n Evening."
-    tl "Derby Razing Thunder.\n Paddock. \n Atardecer."
+    tl "Derby Trueno Arrasador.\n Paddock. \n Atardecer."
 
 # game/act3.rpy:8
 translate spanish act3intro_fd80db04:
@@ -352,7 +352,7 @@ translate spanish vs_seb_Testimony_6de910d4:
 translate spanish vs_seb_Testimony_f4a28e5d:
 
     # tt "Yes, actually. And I'm going to find the flaw in your words."
-    tt "Sí, la verdad. Y voy a encontrarle la trampa a tus palabras."
+    tt "Sí, de hecho. Y voy a encontrarle el error en tus palabras."
 
 # game/act3.rpy:191
 translate spanish vs_sebCE_752731d7:
@@ -448,7 +448,7 @@ translate spanish vs_sebCE_b7ae45b3:
 translate spanish vs_sebCE_99f44787:
 
     # tt "I should open my \"{color=#FF9900}Dossier{/color}\" and \"{color=#FF9900}Present{/color}\" something that counters his claims."
-    tt "Debería abrir mi \"{color=#FF9900}Expediente{/color}\" y \"{color=#FF9900}Presentar{/color}\" algo que contradiga lo que dice."
+    tt "Debería abrir mi \"{color=#FF9900}Dosier{/color}\" y \"{color=#FF9900}Presentar{/color}\" algo que contradiga lo que dice."
 
 # game/act3.rpy:240
 translate spanish vs_sebCE_wrong_98de9b10:
@@ -8705,3 +8705,580 @@ translate spanish strings:
     old "Names on the list"
     new "Nombres en la lista"
 
+# TODO: Translation updated at 2026-11-20 16:04
+
+# game/act3.rpy:1842
+translate spanish choose_cata_82822a0c:
+
+    # l "..."
+    l "..."
+
+# game/act3.rpy:1843
+translate spanish choose_cata_d43d4da8:
+
+    # l "Catalina Moreno... you are the murderer!"
+    l "Catalina Moreno... ¡vos sos la asesina!"
+
+# game/act3.rpy:1844
+translate spanish choose_cata_0438daba:
+
+    # r "Holy shit, the Ice Queen is the killer!?"
+    r "¡La puta madre, la Reina de Hielo es la asesina!?"
+
+# game/act3.rpy:1845
+translate spanish choose_cata_d19f855d:
+
+    # c "..."
+    c "..."
+
+# game/act3.rpy:1846
+translate spanish choose_cata_3fcaf313:
+
+    # c "What on earth are you doing?"
+    c "¿Qué demonios estás haciendo?"
+
+# game/act3.rpy:1847
+translate spanish choose_cata_17017392:
+
+    # m "I'd like to know too. Why are you accussing her, out of all people?"
+    m "Yo también quiero saber. ¿Por qué la acusás a ella, de todos?"
+
+# game/act3.rpy:1848
+translate spanish choose_cata_978d41f5:
+
+    # l "As you know, her alibi is shaky at best..."
+    l "Como sabés, su coartada es endeble, en el mejor de los casos..."
+
+# game/act3.rpy:1849
+translate spanish choose_cata_2e282168:
+
+    # l "But Ms. Moreno's relationship with the victim was already strained, unlike the others."
+    l "Pero la relación de la señorita Moreno con la víctima ya estaba tensada, a diferencia de los demás."
+
+# game/act3.rpy:1850
+translate spanish choose_cata_2ddfe23d:
+
+    # c "What are you babbling about now? I don't remember having a single exchange with that man."
+    c "¿De qué estás balbuceando ahora? No recuerdo haber tenido ni un intercambio con ese hombre."
+
+# game/act3.rpy:1851
+translate spanish choose_cata_48c65186:
+
+    # l "Maybe. Or maybe not. He saw you in a poor light due to the rumors. Isn't that right, Mr. Mendoza?"
+    l "Tal vez. O tal vez no. Él te veía con malos ojos por los rumores. ¿No es así, señor Mendoza?"
+
+# game/act3.rpy:1852
+translate spanish choose_cata_e2b30c02:
+
+    # lu "W...We did talk about those rumors, but I don't know how true they are..."
+    lu "N...Nosotros hablamos de esos rumores, pero no sé qué tan ciertos son..."
+
+# game/act3.rpy:1853
+translate spanish choose_cata_49696b03:
+
+    # l "That's of little consequence. Wherever they are true or not, what matters is how would Ms. Moreno react to it."
+    l "Eso es de poca importancia. Sean ciertos o no, lo que importa es cómo reaccionaría la señorita Moreno ante eso."
+
+# game/act3.rpy:1854
+translate spanish choose_cata_d19f855d_1:
+
+    # c "..."
+    c "..."
+
+# game/act3.rpy:1855
+translate spanish choose_cata_42c354b5:
+
+    # l "It must have been infuriating, tolerating all these people besmirch your name."
+    l "Debe haber sido exasperante, tolerar que toda esta gente manchara tu nombre."
+
+# game/act3.rpy:1856
+translate spanish choose_cata_4fc51b91:
+
+    # l "So you finally took it upon yourself to teach one of them a lesson!"
+    l "¡Así que finalmente decidiste darle una lección a uno de ellos!"
+
+# game/act3.rpy:1857
+translate spanish choose_cata_cd8b47a6:
+
+    # c "Are you quite done?"
+    c "¿Ya terminaste?"
+
+# game/act3.rpy:1858
+translate spanish choose_cata_762d8b1d:
+
+    # l "Huh...?"
+    l "¿Eh...?"
+
+# game/act3.rpy:1859
+translate spanish choose_cata_fa971723:
+
+    # c "I can't believe what I have to listen to. I had the faintest of trust placed on you..."
+    c "No puedo creer lo que tengo que escuchar. Tenía la más mínima confianza depositada en vos..."
+
+# game/act3.rpy:1860
+translate spanish choose_cata_41e910ad:
+
+    # c "And this is how you repay me?"
+    c "¿Y así me lo pagás?"
+
+# game/act3.rpy:1861
+translate spanish choose_cata_edf55424:
+
+    # lt "What...? Faith in me?"
+    lt "¿Qué...? ¿Confianza en mí?"
+
+# game/act3.rpy:1862
+translate spanish choose_cata_5100031a:
+
+    # c "Is that all you have to say? Frankly, I don't have time to waste on nonsense."
+    c "¿Eso es todo lo que tenés para decir? Francamente, no tengo tiempo que perder con tonterías."
+
+# game/act3.rpy:1863
+translate spanish choose_cata_68ac9a30:
+
+    # me "So you deny the allegations?"
+    me "¿Así que negás las acusaciones?"
+
+# game/act3.rpy:1864
+translate spanish choose_cata_07da1c23:
+
+    # c "I don't even have to. They are so idiotic and lack an actual basis, that it's a waste of breath on my end."
+    c "Ni siquiera tengo que hacerlo. Son tan idiotas y carecen de base real, que es una pérdida de aliento de mi parte."
+
+# game/act3.rpy:1865
+translate spanish choose_cata_b1a4e9cb:
+
+    # me "Even so... the fact remains your alibi remains unconfirmed."
+    me "Aun así... el hecho es que tu coartada sigue sin confirmarse."
+
+# game/act3.rpy:1866
+translate spanish choose_cata_d19f855d_2:
+
+    # c "..."
+    c "..."
+
+# game/act3.rpy:1867
+translate spanish choose_cata_155f9d47:
+
+    # me "Looks like a standstill to me. Sorry, but I am going to take you in for questioning."
+    me "Me parece un empate. Perdón, pero te voy a llevar a interrogar."
+
+# game/act3.rpy:1868
+translate spanish choose_cata_d97d2328:
+
+    # c "Hold on, you can't do that. If you do, I am going to miss out on the race."
+    c "Esperá, no podés hacer eso. Si lo hacés, me voy a perder la carrera."
+
+# game/act3.rpy:1869
+translate spanish choose_cata_7364a416:
+
+    # me "A man is dead, and you care about is some puny event-"
+    me "Hay un hombre muerto, y a vos te importa un evento insignificante—"
+
+# game/act3.rpy:1870
+translate spanish choose_cata_d15da5b8:
+
+    # c "Be quiet! How is my absence from the race going to tell you who did this!?"
+    c "¡Callate! ¿Cómo va a decirte mi ausencia de la carrera quién hizo esto!?"
+
+# game/act3.rpy:1871
+translate spanish choose_cata_7062b633:
+
+    # c "My whereabouts will be the same, no matter how much you ask the same questions over and over!"
+    c "¡Mi paradero va a ser el mismo, no importa cuánto preguntes las mismas cosas una y otra vez!"
+
+# game/act3.rpy:1872
+translate spanish choose_cata_3820771a:
+
+    # me "..."
+    me "..."
+
+# game/act3.rpy:1873
+translate spanish choose_cata_cbc0c1ce:
+
+    # r "Don't take it so personal, Catalina. Poor inspector there is just doing her work."
+    r "No te lo tomes tan personal, Catalina. La pobre inspectora solo está haciendo su trabajo."
+
+# game/act3.rpy:1874
+translate spanish choose_cata_a577cbe4:
+
+    # e "Easy now, Renata. She's clearly under a lot of stress..."
+    e "Tranquila, Renata. Claramente está bajo mucho estrés..."
+
+# game/act3.rpy:1875
+translate spanish choose_cata_c0fec547:
+
+    # c "This is revolting, there are far more likely suspects and you'll jeopardize me?"
+    c "Esto es repugnante, hay sospechosos mucho más probables y ¿vos me vas a perjudicar a mí?"
+
+# game/act3.rpy:1876
+translate spanish choose_cata_52740979:
+
+    # me "Alright, that's enough. We'll be standing all day here arguing at this rate. Take her away."
+    me "Bueno, alcanza. A este ritmo vamos a estar parados todo el día discutiendo. Llévenla."
+
+# game/act3.rpy:1877
+translate spanish choose_cata_ac44750c:
+
+    # c "Maybe you should instead take in the inconsiderate man in the mask, instead!"
+    c "¡Tal vez deberían llevarse al hombre inconsiderado de la máscara, en cambio!"
+
+# game/act3.rpy:1878
+translate spanish choose_cata_b646e3bb:
+
+    # c "That is far more suspicious than anything I have done...!"
+    c "¡Eso es mucho más sospechoso que cualquier cosa que yo haya hecho...!"
+
+# game/act3.rpy:1879
+translate spanish choose_cata_1e4d90bd:
+
+    # lt "D-Damn, I really pushed her buttons this time... multiple police officers manage to take her away, her shouts of complaints fading in the air."
+    lt "M-Mierda, esta vez realmente la hice explotar... varios oficiales de policía logran llevársela, sus gritos de quejas desvaneciéndose en el aire."
+
+# game/act3.rpy:1882
+translate spanish choose_cata_82822a0c_1:
+
+    # l "..."
+    l "..."
+
+# game/act3.rpy:1883
+translate spanish choose_cata_181580f6:
+
+    # l "With an unclear suspect, all the people were questioned one by one..."
+    l "Con un sospechoso poco claro, interrogaron a todas las personas una por una..."
+
+# game/act3.rpy:1884
+translate spanish choose_cata_3b84a76e:
+
+    # l "...but thanks to me, Catalina missed out on the Razing Thunder race."
+    l "...pero gracias a mí, Catalina se perdió la carrera del Trueno Arrasador."
+
+# game/act3.rpy:1885
+translate spanish choose_cata_4bd832a1:
+
+    # l "Obviously, I was fired, so there I wasn't exactly allowed to stay at the derby."
+    l "Obviamente, me echaron, así que no me permitieron quedarme exactamente en el derby."
+
+# game/act3.rpy:1886
+translate spanish choose_cata_99b50da4:
+
+    # l "The case went cold, and I never found who the culprit was."
+    l "El caso se enfrió, y nunca descubrí quién fue el culpable."
+
+# game/act3.rpy:1887
+translate spanish choose_cata_227cb6a6:
+
+    # l "Worst of all, sometime later, a couple of police officers came to my work place to arrest me."
+    l "Lo peor de todo, tiempo después, un par de oficiales de policía vinieron a mi lugar de trabajo a arrestarme."
+
+# game/act3.rpy:1888
+translate spanish choose_cata_99126040:
+
+    # l "It had seem Catalina learned of my true identity, and took it upon herself to let them know."
+    l "Parece que Catalina se enteró de mi verdadera identidad, y se tomó el trabajo de avisarle a ellos."
+
+# game/act3.rpy:1889
+translate spanish choose_cata_12b529e5:
+
+    # l "I denied it, of course, but that didn't help much. The inspector wasn't able to turn a blind eye this time."
+    l "Lo negué, por supuesto, pero no ayudó mucho. La inspectora no pudo hacer la vista gorda esta vez."
+
+# game/act3.rpy:1890
+translate spanish choose_cata_5ce05db9:
+
+    # l "Or maybe she didn't intend to after how things ended. Either way..."
+    l "O tal vez no tenía intención de hacerlo después de cómo terminaron las cosas. De cualquier forma..."
+
+# game/act3.rpy:1891
+translate spanish choose_cata_0f7b099d:
+
+    # l "With my freedom gone, I won't be able to continue my fight against evil- let alone figure out the killer of this case."
+    l "Con mi libertad perdida, no voy a poder continuar mi lucha contra el mal... ni mucho menos descubrir al asesino de este caso."
+
+# game/act3.rpy:1892
+translate spanish choose_cata_28455ee3:
+
+    # l "Betraying Catalina spiralled into all of this... what have I done..?"
+    l "Traicionar a Catalina desencadenó todo esto... ¿qué he hecho..?"
+
+# game/act3.rpy:2037
+translate spanish choose_seba_82822a0c_2:
+
+    # l "..."
+    l "..."
+
+# game/act3.rpy:2039
+translate spanish choose_seba_9de2f45a:
+
+    # l "And with that, my involvement in the case came to an end."
+    l "Y con eso, mi involucramiento en el caso llegó a su fin."
+
+# game/act3.rpy:2041
+translate spanish choose_seba_71ac0e1d:
+
+    # l "I didn't pay much attention to the race results. All I cared about was finding the truth behind Vicente's death."
+    l "No presté mucha atención a los resultados de la carrera. Todo lo que me importaba era encontrar la verdad detrás de la muerte de Vicente."
+
+# game/act3.rpy:2043
+translate spanish choose_seba_d31cd227:
+
+    # l "But I failed to do so."
+    l "Pero fallé en hacerlo."
+
+# game/act3.rpy:2045
+translate spanish choose_seba_d2ec3e38:
+
+    # l "Days after the Derby, I learned that the search for the culprit had gone nowhere."
+    l "Días después del Derby, me enteré de que la búsqueda del culpable no había llegado a ningún lado."
+
+# game/act3.rpy:2047
+translate spanish choose_seba_74f88520:
+
+    # l "By that point, any evidence that could have closed the case had long since disappeared."
+    l "Para ese entonces, cualquier evidencia que hubiera podido cerrar el caso hacía tiempo que había desaparecido."
+
+# game/act3.rpy:2049
+translate spanish choose_seba_22d54a69:
+
+    # l "Not only had the real culprit gotten away, but Sebastian had managed to exploit a technicality and remain free."
+    l "No solo el verdadero culpable se había escapado, sino que Sebastián había logrado aprovecharse de un tecnicismo y permanecer libre."
+
+# game/act3.rpy:2051
+translate spanish choose_seba_2113bd11:
+
+    # l "He's been sending his goons after me day after day to 'repay the favor' for our little encounters."
+    l "Ha estado mandando a sus matones detrás de mí día tras día para 'devolverme el favor' por nuestros pequeños encuentros."
+
+# game/act3.rpy:2053
+translate spanish choose_seba_aa860b5e:
+
+    # l "I've fought them off as best I could, but one ambush caught me off guard."
+    l "Los enfrenté lo mejor que pude, pero una emboscada me agarró desprevenido."
+
+# game/act3.rpy:2055
+translate spanish choose_seba_0cb223ce:
+
+    # l "So this is the last thing I'll see, huh...? A bunch of crooked smiles and bright suits."
+    l "Así que esto es lo último que voy a ver, ¿eh...? Un montón de sonrisas torcidas y trajes brillantes."
+
+# game/act3.rpy:2057
+translate spanish choose_seba_3d8ba2dd:
+
+    # l "Damn... it..."
+    l "Mierda... esto..."
+
+# game/act3.rpy:2097
+translate spanish choose_leo_1a9a002d:
+
+    # l "And just like that, I'm hauled away after my little 'confession'. My identity has been exposed, I'm being charged with murder, and now I'll have to wait for a lawyer before facing trial."
+    l "Y así de simple, me llevan después de mi pequeña 'confesión'. Mi identidad ha sido expuesta, me acusan de asesinato, y ahora voy a tener que esperar a un abogado antes de enfrentar el juicio."
+
+# game/act3.rpy:2099
+translate spanish choose_leo_b4117dfb:
+
+    # l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
+    l "¿Qué pasó con la carrera? ¿Quién mató realmente a Vicente? Nunca voy a poder saber la verdad ahora…"
+
+# game/act3.rpy:2138
+translate spanish choose_med_5f96877c:
+
+    # l "And just like that, I'm hauled away by the police."
+    l "Y así de simple, me llevan la policía."
+
+# game/act3.rpy:2140
+translate spanish choose_med_b4117dfb:
+
+    # l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
+    l "¿Qué pasó con la carrera? ¿Quién mató realmente a Vicente? Nunca voy a poder saber la verdad ahora…"
+
+# game/act3.rpy:2142
+translate spanish choose_med_ac834016:
+
+    # l "The inspector will ensure El Leopardo stays inactive for good now that I've been dettained again."
+    l "La inspectora se va a asegurar de que El Leopardo se quede inactivo para siempre ahora que me han detenido de nuevo."
+
+# game/act3.rpy:2144
+translate spanish choose_med_f1e17c38:
+
+    # l "It's all over..."
+    l "Se acabó todo..."
+
+# game/act3.rpy:2204
+translate spanish choose_thugs_602f9e30:
+
+    # l "Castillo ordering his men to get rid of someone seemed to make a lot of sense."
+    l "Que Castillo ordenara a sus hombres deshacerse de alguien parecía tener mucho sentido."
+
+# game/act3.rpy:2205
+translate spanish choose_thugs_1ba502cb:
+
+    # l "Until it didn't. Despite the inspector following that trail, nothing out from it."
+    l "Hasta que no lo tuvo. A pesar de que la inspectora siguió esa pista, no salió nada de ahí."
+
+# game/act3.rpy:2206
+translate spanish choose_thugs_48847592:
+
+    # l "The race continued its course, then tragedy struck at it's peak..."
+    l "La carrera siguió su curso, luego la tragedia golpeó en su punto más alto..."
+
+# game/act3.rpy:2207
+translate spanish choose_thugs_e8cce576:
+
+    # l "...but even then, things carried on as usual. And the truth was lost forever."
+    l "...pero aun así, las cosas siguieron como de costumbre. Y la verdad se perdió para siempre."# TODO: Translation updated at 2026-11-20 22:35
+
+# game/act3.rpy:703
+translate spanish vs_sebCE2_loop_ca82f719:
+
+    # s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
+    s "Pasé por alto su apariencia cuestionable, dado que es el entrenador de Catalina..."
+
+# game/act3.rpy:710
+translate spanish vs_sebCE2_loop_f43560c3:
+
+    # l "My- *cough* what is so questionable about that young man's appearance?"
+    l "Mi- *cof* ¿qué tiene de cuestionable la apariencia de ese joven?"
+
+# game/act3.rpy:711
+translate spanish vs_sebCE2_loop_014c09d7:
+
+    # s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
+    s "Ese pelo desaliñado, esa cicatriz asquerosa en la cara, las botas feas... ¿necesito seguir?"
+
+# game/act3.rpy:712
+translate spanish vs_sebCE2_loop_ef0ab8fe:
+
+    # lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+    lt "¡No voy a aceptar consejos de moda del tipo que usa dos Rolex en el brazo!"
+
+# game/act3.rpy:716
+translate spanish vs_sebCE2_loop_e08839d1:
+
+    # s "But no more! He's clearly a suspicious person!"
+    s "¡Pero se acabó! ¡Claramente es una persona sospechosa!"
+
+# game/act3.rpy:724
+translate spanish vs_sebCE2_loop_237d2e3b:
+
+    # lt "What makes you so sure about that?"
+    lt "¿Qué te hace estar tan seguro de eso?"
+
+# game/act3.rpy:725
+translate spanish vs_sebCE2_loop_cfedce39:
+
+    # s "I'm getting there, mask freak! Stop interrupting me."
+    s "Estoy llegando, ¡enmascarado de mierda! Dejá de interrumpirme."
+
+# game/act3.rpy:728
+translate spanish vs_sebCE2_loop_65bdacde:
+
+    # s "We all saw him prodding and standing near the body."
+    s "Todos lo vimos hurgando y parado cerca del cuerpo."
+
+# game/act3.rpy:736
+translate spanish vs_sebCE2_loop_96374245:
+
+    # l "Uh... perhaps he was just trying to help the downed man?"
+    l "Eh... ¿quizás solo estaba tratando de ayudar al hombre caído?"
+
+# game/act3.rpy:737
+translate spanish vs_sebCE2_loop_9fbc0afc:
+
+    # s "Now he's a parademic? Please!"
+    s "¿Ahora es paramédico? ¡Por favor!"
+
+# game/act3.rpy:738
+translate spanish vs_sebCE2_loop_e42b53cd:
+
+    # lt "I do know some first aid..."
+    lt "Sí sé un poco de primeros auxilios..."
+
+# game/act3.rpy:741
+translate spanish vs_sebCE2_loop_493a6318:
+
+    # s "Who does that? A cold blooded murderer!"
+    s "¿Quién hace eso? ¡Un asesino a sangre fría!"
+
+# game/act3.rpy:749
+translate spanish vs_sebCE2_loop_01ac028c:
+
+    # l "It's a bit of a stretch to label him a murderer just for that!"
+    l "¡Es un poco exagerado etiquetarlo de asesino solo por eso!"
+
+# game/act3.rpy:750
+translate spanish vs_sebCE2_loop_ba83a2db:
+
+    # s "Say what you want, the police should just arrest him and let us run things here!"
+    s "Decí lo que quieras, ¡la policía debería arrestarlo y dejarnos manejar las cosas acá!"
+
+# game/act3.rpy:751
+translate spanish vs_sebCE2_loop_e4c92bfd:
+
+    # lt "I don't know if I'll be so lucky twice if I end up there again. "
+    lt "No sé si voy a tener tanta suerte dos veces si termino ahí de nuevo. "
+
+# game/act3.rpy:755
+translate spanish vs_sebCE2_loop_f13c1117:
+
+    # s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
+    s "¡Atacó a ese pobre viejo en las gradas, y después lo tiró desde arriba!"
+
+# game/act3.rpy:766
+translate spanish vs_sebCE2_loop_75048330:
+
+    # l "He dropped him right after the attack?"
+    l "¿Lo tiró justo después del ataque?"
+
+# game/act3.rpy:767
+translate spanish vs_sebCE2_loop_b393e8b8:
+
+    # s "Are your ears clogged? Yes!"
+    s "¿Tenés los oídos tapados? ¡Sí!"
+
+# game/act3.rpy:768
+translate spanish vs_sebCE2_loop_fd4f06f7:
+
+    # l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
+    l "Eso significaría que el señor Ruiz fue agredido en lo alto de las gradas, ¿sí?"
+
+# game/act3.rpy:769
+translate spanish vs_sebCE2_loop_6fef3bc9:
+
+    # s "Who?"
+    s "¿Quién?"
+
+# game/act3.rpy:770
+translate spanish vs_sebCE2_loop_398d4c89:
+
+    # l "...the victim."
+    l "...la víctima."
+
+# game/act3.rpy:771
+translate spanish vs_sebCE2_loop_fcd6990c:
+
+    # s "Oh. Yes. Don't make me repeat the same over and over!"
+    s "Ah. Sí. ¡No me hagas repetir lo mismo una y otra vez!"
+
+# game/act3.rpy:772
+translate spanish vs_sebCE2_loop_9857e5ba:
+
+    # lt "I will when you stop contradicting yourself over and over."
+    lt "Lo voy a hacer cuando dejes de contradecirte una y otra vez."
+
+# game/act3.rpy:777
+translate spanish vs_sebCE2_loop_e22cb570:
+
+    # lt "I'm not about to let this guy frame me for murder."
+    lt "No voy a dejar que este tipo me inculpe de asesinato."
+
+# game/act3.rpy:778
+translate spanish vs_sebCE2_loop_18cb6ce7:
+
+    # lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
+    lt "Por suerte, ya cometió un error grave mientras escupía sus mentiras."
+
+translate spanish strings:
+
+    # game/act3.rpy:1029
+    old "no idea"
+    new "ni idea"

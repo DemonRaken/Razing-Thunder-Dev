@@ -8,12 +8,12 @@ init python:
         return None
 
 label fx_testimony:
-    show screen status_indicator("Testimony", "#385cff")
-    #play sound "audio/type.wav"
+    show screen status_indicator(_("Testimony"), "#385cff")
+    play music ce fadein 2.5
     return
 label fx_interrogation:
-    show screen status_indicator("Interrogation", "#FF0000")
-    #play sound "audio/type.wav"
+    show screen status_indicator(_("Interrogation"), "#FF0000")
+    play music ce fadein 2.5
     return
 transform earthquake(dt=3.0, dist=30):
     function renpy.curry(_shake)(dt=dt, dist=dist)   
@@ -126,7 +126,8 @@ label debug_cutins_test:
     define audio.cata = "audio/BGM/Peritune_Black_Crystal_loop.ogg"
     define audio.enzo = "audio/BGM/PerituneMaterial_Creep_loop.ogg"
     define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
-    define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"   
+    define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
+    define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"

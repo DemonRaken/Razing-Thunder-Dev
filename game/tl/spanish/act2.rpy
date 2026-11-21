@@ -71,13 +71,13 @@ translate spanish act2_d5e2df8f:
 translate spanish act2_040ca11f:
 
     # tl "9:40 AM.\nRazing Thunder Derby.\nStables."
-    tl "9:40 a.m.\nDerby Razing Thunder.\nCaballerizas."
+    tl "9:40 a.m.\nDerby Trueno Arrasador.\nCaballerizas."
 
 # game/act2.rpy:35
 translate spanish act2_2b926071:
 
     # tt "Whew… we're finally done with all the paperwork. I'm \"{color=#FF9900}Dama de Plata's{/color}\" trainer now, even if only in name."
-    tt "Uf… por fin terminamos con todo el papeleo. Ahora soy el entrenador de \"{color=#FF9900}Dama de Plata{/color}\", aunque sea solo de nombre."
+    tt "Uf… por fin terminamos con todo el papeleo. Ahora soy el entrenador de \"{color=#FF9900}Dama de Plata{/color}\", aunque sea solo un título."
 
 # game/act2.rpy:37
 translate spanish act2_b42b7173:
@@ -113,7 +113,7 @@ translate spanish act2_5eaf84d9:
 translate spanish act2_351a64fa:
 
     # t det smile "Hmph. Don't underestimate her, La Chispa. Offer her a sweet treat as a reward, and she'll become faster than a lightning bolt. Might even give your horse a run for her money."
-    t det smile "Hmph. No la subestimes a La Chispa. Ofrecele un dulce de premio y se pone más rápida que un rayo. Capaz hasta le da pelea a tu yegua."
+    t det smile "Hmph. No subestimes a La Chispa. Ofrecele algo dulce de premio y se pone más rápida que un rayo. Capaz hasta le da pelea a tu yegua."
 
 # game/act2.rpy:49
 translate spanish act2_00b201a5:
@@ -143,7 +143,7 @@ translate spanish act2_e69e42b8:
 translate spanish act2_43e78ca4:
 
     # t aw neutral drop "…Alright, alright, I'm leaving. Geez."
-    t aw neutral drop "…Bueno, bueno, me voy. La puta madre."
+    t aw neutral drop "…Bueno, bueno, me voy. Dió mío."
 
 # game/act2.rpy:62
 translate spanish act2_885ef559:
@@ -167,7 +167,7 @@ translate spanish act2_43c3aec9:
 translate spanish act2_024772a8:
 
     # t grin "Too busy stuffing your mouth, eh…?"
-    t grin "Muy ocupada rellenándote la boca, ¿eh…?"
+    t grin "Muy ocupada morfando a más no poder, ¿eh…?"
 
 # game/act2.rpy:70
 translate spanish act2_b66c4edc:
@@ -191,31 +191,32 @@ translate spanish act2_85aff88a:
 translate spanish racetrack1_750533dd:
 
     # tl "Razing Thunder Derby. \nMain Racetrack."
-    tl "Derby Razing Thunder.\nPista principal."
+    tl "Derby Trueno Arrasador.\nPista principal."
 
 # game/act2.rpy:80
 translate spanish racetrack1_ed8e2c5d:
 
     # tt "I've seen this beauty of a track on my phone before, but…"
-    tt "Ya había visto esta belleza de pista en el celular, pero…"
+    tt "Ya había visto esta belleza de pista en el celu antes, pero…"
 
 # game/act2.rpy:81
 translate spanish racetrack1_8b362ee4:
 
     # tt "Being here in person is something else! Just looking at this place makes me wanna sign up for the race."
-    tt "¡Estar acá en persona es otra cosa! Solo de mirar este lugar me dan ganas de anotarme a la carrera."
+    tt "¡Estar acá en persona es otra cosa! Solo mirar este lugar me dan ganas de anotarme a la carrera."
 
 # game/act2.rpy:85
 translate spanish racetrack1_1d7e9e93:
 
     # t "Damn, these rows of seats go really high, huh…? Must be about three… no, four stories tall. The breeze must feel amazing up there."
-    t "La puta madre, estas gradas se van muy alto, ¿eh…? Deben tener como tres… no, cuatro pisos. La brisa allá arriba debe ser una locura."
+    t "Pucha, estas gradas se van muy alto, ¿eh…? Deben ser como tres… no, cuatro pisos de alura. La brisa allá arriba debe sentirse genial."
 
 # game/act2.rpy:87
 translate spanish racetrack1_78b64d91:
 
     # tt "Resisting the urge to aura farm on the balcony, I focus on the competitors here. Most of them seem to be taking their horses for a trot, while a handful are having trouble calming down their restless"
-    tt "Resisto las ganas de ir a posar al balcón y me concentro en los competidores de acá. La mayoría parece estar sacando a sus caballos a trotar, mientras que un par tiene problemas para calmar a sus animales"
+    tt "Resistiendo las ganas de ir farmear aura al balcón, me concentro en los competidores de acá."
+    tt "La mayoría parece estar sacando a sus caballos a trotar, mientras que un par tiene problemas para calmar a sus animales."
 
 # game/act2.rpy:89
 translate spanish racetrack1_8d0ebde2:
@@ -227,7 +228,7 @@ translate spanish racetrack1_8d0ebde2:
 translate spanish racetrack1_b9b79950:
 
     # x "Stop. I already told you, you're pushing the creature too early in the last stretch of your stride."
-    x "Pará. Ya te dije: estás forzando al animal demasiado temprano en el tramo final de la zancada."
+    x "Pará. Ya te dije: estás forzando al animal muy temprano en el tramo final de la zancada."
 
 # game/act2.rpy:94
 translate spanish racetrack1_8622b8db:
@@ -239,7 +240,7 @@ translate spanish racetrack1_8622b8db:
 translate spanish racetrack1_309513f8:
 
     # x "Keep letting your nerves control the reins and you'll burn through the animal's stamina before you reach the halfway point of the track. If you don't fall off first, that is."
-    x "Si seguís dejando que los nervios te controlen las riendas, vas a quemar la resistencia del animal antes de llegar a la mitad de la pista. Si no te caés antes, claro."
+    x "Si seguís dejando que los nervios controlen las riendas, vas a agotar la resistencia del animal antes de llegar a la mitad de la pista. Si no te caés antes, claro."
 
 # game/act2.rpy:105
 translate spanish racetrack1_80594f24:
@@ -251,13 +252,13 @@ translate spanish racetrack1_80594f24:
 translate spanish racetrack1_235a4eef:
 
     # tt "Overhearing their conversation, I hop over the railing and invite myself into their chat."
-    tt "Al escuchar la conversación, salto la baranda y me meto en la charla sin pedir permiso."
+    tt "Escuchando la conversación, salto la baranda y me autoinvito a la charla."
 
 # game/act2.rpy:109
 translate spanish racetrack1_d3e0ae58:
 
     # t aha "Passion is all well and good, but you might wanna wait before hitting the nitro."
-    t aha "La pasión está muy bien, pero capaz conviene esperar un toque antes de ponerle nitro."
+    t aha "Tener pasión está muy bien, pero capaz conviene esperar un toque antes de activar el nitro."
     
 # game/act2.rpy:111
 translate spanish racetrack1_cf692daa:
@@ -269,19 +270,19 @@ translate spanish racetrack1_cf692daa:
 translate spanish racetrack1_d1901ec2:
 
     # v "Hoh. And how long should this guy wait, then?"
-    v "Jo. ¿Y cuánto tiempo tendría que esperar este tipo, entonces?"
+    v "Jo. ¿Y cuánto tiempo tendría que esperar este muchacho, entonces?"
 
 # game/act2.rpy:115
 translate spanish racetrack1_fb1f8bf8:
 
     # t grin "Naturally, the horse will tell him that. It's all about body language! I'm telling you, it'll scream at you when it's time to go all out."
-    t grin "Obvio que el caballo se lo va a decir. ¡Es todo cuestión de lenguaje corporal! Te juro que te va a gritar cuando sea el momento de darle con todo."
+    t grin "Naturalmente, el caballo se lo va a decir. ¡Es todo cuestión de lenguaje corporal! Te lo juro, te va a gritar cuando sea el momento de darle con todo."
 
 # game/act2.rpy:117
 translate spanish racetrack1_570fdc8d:
 
     # v "Talking to his ride? Sounds like a very inconsistent and dangerous thing to rely on. We've already measured when fatigue sets in for Lucero and when his acceleration peaks."
-    v "¿Hablarle a su montura? Suena a algo bastante inconsistente y peligroso en lo que apoyarse. Nosotros ya medimos cuándo le llega el cansancio a Lucero y cuándo pica su aceleración."
+    v "¿Hablarle a su montura? Suena a algo bastante inconsistente y peligroso en lo que apoyarse. Nosotros ya medimos cuándo le llega el cansancio a Lucero y cuándo llega a pico su aceleración."
 
 # game/act2.rpy:119
 translate spanish racetrack1_44ec6ea6:
@@ -293,7 +294,7 @@ translate spanish racetrack1_44ec6ea6:
 translate spanish racetrack1_f552c5c1:
 
     # v "Either way, spectators aren't allowed on this side of the fence, champ. You should get moving before security catches you."
-    v "De cualquier forma, los espectadores no pueden estar de este lado de la cerca, campeón. Deberías moverte antes de que te agarre la seguridad."
+    v "De cualquier forma, los espectadores no pueden estar de este lado de la cerca, campeón. Deberías moverte antes de que te agarre seguridad."
 
 # game/act2.rpy:123
 translate spanish racetrack1_0a6035bf:
@@ -347,13 +348,13 @@ translate spanish racetrack1_f934818f:
 translate spanish racetrack1_1ac00e9c:
 
     # lu "A nepo baby through and through. Having everything served on a silver platter from the get-go… I wouldn't be surprised if this is just a hobby for her."
-    lu "Una nena de papá de punta a punta. Tenerlo todo servido en bandeja de plata desde el principio… no me sorprendería que esto sea solo un hobby para ella."
+    lu "Una nepo baby de pies a cabeza. Tenerlo todo servido en bandeja de plata desde el principio… no me sorprendería que esto sea solo un pasatiempo para ella."
 
 # game/act2.rpy:142
 translate spanish racetrack1_4dbef4c7:
 
     # tt aw neutral right "Well, I can't really blame them for having that kind of impression of her. It's a bit harsh, though. Catalina is as serious about competing as anyone else."
-    tt aw neutral right "Bueno, no puedo culparlos del todo por tener esa impresión de ella. Aunque es un toque pesado. Catalina se toma la competencia tan en serio como cualquiera."
+    tt aw neutral right "Bueno, no puedo culparlos del todo por tener esa impresión de ella. Aunque se están pasando un poco. Catalina se toma la competencia tan en serio como cualquiera."
 
 # game/act2.rpy:144
 translate spanish racetrack1_b5c567ce:
@@ -371,7 +372,7 @@ translate spanish racetrack1_7708e89c:
 translate spanish racetrack1_831dc44e:
 
     # v "Right, those. If Lucas is feeling up to it, you can go ahead."
-    v "Ah, sí, esos. Si Lucas se anima, andá nomás."
+    v "Ah, sí, esos. Si Lucas se anima, dale nomás."
 
 # game/act2.rpy:150
 translate spanish racetrack1_33da8357:
@@ -389,7 +390,7 @@ translate spanish racetrack1_investigating_ebff0b34:
 translate spanish racetrack1_investigating_e8a347d1:
 
     # tt aha "If I weren't working on a case, it'd be nice to kick back and just watch the races."
-    tt aha "Si no estuviera laburando en un caso, estaría bueno tirarse a mirar las carreras nomas."
+    tt aha "Si no estuviera trabajando en un caso, estaría bueno tirarse a mirar las carreras nomas."
 
 # game/act2.rpy:163
 translate spanish racetrack1_investigating_40d87097:
@@ -413,13 +414,13 @@ translate spanish racetrack1_investigating_d0767200:
 translate spanish racetrack1_investigating_55b36aea:
 
     # tt aw smile drop "I'm pretty sure whatever prices they're charging over there are way out of my wallet's league, though. I'll pass."
-    tt aw smile drop "Aunque estoy bastante seguro de que los precios que cobran allá están muy por encima de lo que da mi billetera. Paso."
+    tt aw smile drop "Estoy bastante seguro de que los precios que cobran allá están muy por encima de lo que da mi billetera. Paso."
 
 # game/act2.rpy:172
 translate spanish racetrack1_investigating_45682eb5:
 
     # tt neutral "A screen showing recordings of the racers. You can watch the jockeys here once they go out of sight, along with the current standings."
-    tt neutral "Una pantalla que muestra grabaciones de los corredores. Acá podés ver a los jockeys cuando se pierden de vista, junto con la clasificación actual."
+    tt neutral "Una pantalla que muestra grabaciones de los corredores. Acá podés ver a los jockeys cuando los perdes de vista, junto con la clasificación actual."
 
 # game/act2.rpy:173
 translate spanish racetrack1_investigating_de5119f8:
@@ -431,31 +432,31 @@ translate spanish racetrack1_investigating_de5119f8:
 translate spanish racetrack1_investigating_a4afccb9:
 
     # tt grin "Heh. It would be pretty funny if someone filmed everything on horseback, staying ahead of all the other jockeys. No one can keep up with the cameraman."
-    tt grin "Je. Sería bastante gracioso si alguien filmara todo a caballo, quedándose adelante de todos los demás jockeys. Nadie le podría seguir el ritmo al cameraman."
+    tt grin "Je. Sería bastante gracioso si alguien filmara todo a caballo, quedándose adelante de todos los demás jockeys. Nadie puede seguirle ritmo al que graba."
 
 # game/act2.rpy:177
 translate spanish racetrack1_presenting_62732ba9:
 
     # v "Gonna have to turn you down, Antonio. On Lucas' behalf, that is!"
-    v "Voy a tener que rechazarte, Antonio. En nombre de Lucas, ¡eh!"
+    v "Voy a tener que decir que no, Antonio. En nombre de Lucas, ¡obvio!"
 
 # game/act2.rpy:178
 translate spanish racetrack1_presenting_70d47e1c:
 
     # v "Can't let the jockey drink something weird before the race. I'll take the hit."
-    v "No puedo dejar que el jockey tome algo raro antes de la carrera. Yo me hago cargo."
+    v "No puedo dejar que el jockey tome algo raro antes de la carrera. Yo me sacrifico."
 
 # game/act2.rpy:179
 translate spanish racetrack1_presenting_47d541bd:
 
     # lu "You just want to hog it for yourself."
-    lu "Vos solo querés quedártelo todo."
+    lu "Solo andás de mezquino."
 
 # game/act2.rpy:181
 translate spanish racetrack1_topic1_9afadc33:
 
     # t neutral "Know anything about the horses that keep collapsing mid-race?"
-    t neutral "¿Sabés algo de los caballos que se siguen desplomando a mitad de carrera?"
+    t neutral "¿Saben algo de los caballos que se desploman a mitad de carrera?"
 
 # game/act2.rpy:183
 translate spanish racetrack1_topic1_f693e287:
@@ -467,19 +468,19 @@ translate spanish racetrack1_topic1_f693e287:
 translate spanish racetrack1_topic1_01ccb58d:
 
     # lu "I remember seeing her horse collapse as we approached the finish line. There wasn't much time to react."
-    lu "Me acuerdo de ver cómo se le caía el caballo cuando nos acercábamos a la meta. No hubo mucho tiempo para reaccionar."
+    lu "Me acuerdo de ver cómo se le caía su caballo cuando nos acercábamos a la meta. No hubo mucho tiempo para reaccionar."
 
 # game/act2.rpy:187
 translate spanish racetrack1_topic1_0484e697:
 
     # v "That gal Valentina went down like someone fired a cannonball at her horse. Poor thing."
-    v "Esa piba Valentina se vino abajo como si le hubieran pegado un cañonazo al caballo. Pobrecita."
+    v "Esa piba Valentina se vino abajo como si le hubieran pegado un cañonazo al animal. Pobrecita."
 
 # game/act2.rpy:189
 translate spanish racetrack1_topic1_24a2f38b:
 
     # lu "One after another, the best riders keep fumbling right at the end. I don't think it's just a coincidence at this point."
-    lu "Uno detrás del otro, los mejores jinetes se siguen mandando cagadas justo al final. Ya no creo que sea solo una coincidencia."
+    lu "Uno detrás del otro, los mejores jinetes se siguen metiendo la pata justo al final. Yo no creo que sea solo una coincidencia."
 
 # game/act2.rpy:191
 translate spanish racetrack1_topic1_e0c5a603:
@@ -497,7 +498,7 @@ translate spanish racetrack1_topic1_5240b0c6:
 translate spanish racetrack1_topic1_36d4be7e:
 
     # lu "Lucero is ready to deliver. We may be lacking in speed a bit, but we'll pull through."
-    lu "Lucero está listo para darlo todo. Capaz nos falta un poco de velocidad, pero la vamos a sacar."
+    lu "Lucero está listo para darlo todo. Capaz nos falta un poco de velocidad, pero la vamos a remar."
 
 # game/act2.rpy:197
 translate spanish racetrack1_topic1_393d032c:
@@ -509,13 +510,13 @@ translate spanish racetrack1_topic1_393d032c:
 translate spanish racetrack1_topic1_bec91266:
 
     # v "And I'm making extra sure this fella is well-fed and doesn't get the hijinks before the big moment."
-    v "Y yo me estoy asegurando de que este tipo esté bien comido y que no le agarren las pavadas antes del momento clave."
+    v "Y yo me estoy asegurando de que este tipo esté bien comido y que no le agarren las nervios antes del momento clave."
 
 # game/act2.rpy:201
 translate spanish racetrack1_topic1_27f16b8d:
 
     # t smile "Good to know. Hope you guys don't run into any issues after the race begins."
-    t smile "Bien saberlo. Ojalá no tengan ningún problema una vez que arranque la carrera."
+    t smile "Es bueno saberlo. Ojalá no tengan ningún problema una vez que arranque la carrera."
 
 # game/act2.rpy:203
 translate spanish racetrack1_topic1_aca0bb2b:
@@ -539,7 +540,7 @@ translate spanish racetrack1_topic1_aacbab5e:
 translate spanish racetrack1_topic1_47af3199:
 
     # t neutral right "…I see where you're coming from. Fair enough. But I still don't want anyone to drop out."
-    t neutral right "…Entiendo de dónde venís. Está bien. Pero igual no quiero que nadie se baje."
+    t neutral right "…Entiendo de dónde venís. Te lo tomo. Pero igual no quiero que nadie se baje."
 
 # game/act2.rpy:211
 translate spanish racetrack1_topic1_35cb025c:
@@ -551,7 +552,7 @@ translate spanish racetrack1_topic1_35cb025c:
 translate spanish racetrack1_topic1_c5754c2f:
 
     # t aw smile "These folks who've put in all that effort deserve better, yeah? Even if they don't snatch first place."
-    t aw smile "Esta gente que se puso toda esa laburo se merece algo mejor, ¿no? Aunque no se lleven el primer puesto."
+    t aw smile "Esta gente que se puso toda ese esfuerzo se merece algo mejor, ¿no? Aunque no se lleven el primer puesto."
 
 # game/act2.rpy:215
 translate spanish racetrack1_topic1_44ec6ea6:
@@ -563,19 +564,19 @@ translate spanish racetrack1_topic1_44ec6ea6:
 translate spanish racetrack1_topic1_4050eacc:
 
     # v "This guy gets it. That's how a race should be. If it were novice mistakes or fatigue, it wouldn't be such a big deal."
-    v "Este tipo la entiende. Así es como tiene que ser una carrera. Si fueran errores de novato o cansancio, no sería tan grave."
+    v "Este tipo la ve. Así es como tiene que ser una carrera. Si fueran errores de novato o cansancio, no sería tan grave."
 
 # game/act2.rpy:219
 translate spanish racetrack1_topic1_d38546cb:
 
     # v "Alas. We can only pray this gets resolved so the kids can ride as they should."
-    v "Lástima. Solo nos queda rezar para que esto se resuelva y los pibes puedan correr como corresponde."
+    v "Una pena. Solo nos queda rezar para que esto se resuelva y los muchachos puedan correr como corresponde."
 
 # game/act2.rpy:221
 translate spanish racetrack1_topic2_22ff1213:
 
     # v "Alright, young man. Spill the beans. Did the Moreno girl send you here to mess with Lucero?"
-    v "Bueno, joven. Contá la posta. ¿La piba Moreno te mandó acá a joder a Lucero?"
+    v "Bueno, joven. Contá la posta. ¿La piba Moreno te mandó acá a joder con Lucero?"
 
 # game/act2.rpy:223
 translate spanish racetrack1_topic2_255194d6:
@@ -587,19 +588,19 @@ translate spanish racetrack1_topic2_255194d6:
 translate spanish racetrack1_topic2_9ee80fd3:
 
     # v "Then what about hurting Lucas here?"
-    v "¿Y qué pasa con lastimar a Lucas de acá?"
+    v "¿Y qué pasa con lastimar a Lucas acá?"
 
 # game/act2.rpy:227
 translate spanish racetrack1_topic2_bd8ff950:
 
     # t aw neutral drop "That's assault. I'm pretty sure security would kick me out if I tried."
-    t aw neutral drop "Eso es agresión. Estoy bastante seguro de que la seguridad me echaría si lo intentara."
+    t aw neutral drop "Eso es asalto. Estoy bastante seguro de que la seguridad me echaría si lo intentara."
 
 # game/act2.rpy:229
 translate spanish racetrack1_topic2_68f133dd:
 
     # v "Right you are."
-    v "Tenés razón."
+    v "De una."
 
 # game/act2.rpy:231
 translate spanish racetrack1_topic2_05e2433a:
@@ -611,7 +612,7 @@ translate spanish racetrack1_topic2_05e2433a:
 translate spanish racetrack1_topic2_e2d1883c:
 
     # v "It's nothing against you, bud. There are just some unsavory rumors going around."
-    v "No es nada contra vos, che. Solo que andan circulando unos rumores bastante feos."
+    v "No es nada contra vos, amigo. Solo que andan circulando unos rumores bastante feos."
 
 # game/act2.rpy:235
 translate spanish racetrack1_topic2_26a46c4d:
@@ -641,13 +642,13 @@ translate spanish racetrack1_topic2_d5c72a36:
 translate spanish racetrack1_topic2_65f27688:
 
     # v "Hence why they're just rumors. Bribing other trainers to quit their jobs, slipping the officials some cash to overlook doping…"
-    v "Por eso son solo rumores. Sobornar a otros entrenadores para que dejen el laburo, pasarle plata a los oficiales para que miren para otro lado con el dopaje…"
+    v "Por eso son solo rumores. Sobornar a otros entrenadores para que dejen sus puestos, pasarle plata a los oficiales para que miren para otro lado con el dopaje…"
 
 # game/act2.rpy:245
 translate spanish racetrack1_topic2_c315ebb6:
 
     # tt aw neutral drop "I really hate the idea of working for someone who does all that, but I can't outright deny it's possible."
-    tt aw neutral drop "Odio de verdad la idea de laburar para alguien que hace todo eso, pero no puedo negar de plano que sea posible."
+    tt aw neutral drop "Odio de verdad la idea de trabajar para alguien que hace todo eso, pero no puedo negar de plano que sea posible."
 
 # game/act2.rpy:247
 translate spanish racetrack1_topic2_e9ba8a62:
@@ -659,7 +660,8 @@ translate spanish racetrack1_topic2_e9ba8a62:
 translate spanish racetrack1_topic2_0e433f86:
 
     # lu "We don't really know. It's not like he came to tell us before quitting. Some say he got cut off from Moreno's team after being caught red-handed carrying out her orders…"
-    lu "La verdad no sabemos. No es que haya venido a contarnos antes de renunciar. Algunos dicen que lo echaron del equipo de Moreno después de agarrarlo con las manos en la masa cumpliendo sus órdenes…"
+    lu "La verdad no sabemos. No es que haya venido a contarnos antes de renunciar."
+    lu "Algunos dicen que lo echaron del equipo de Moreno después de que lo agarraron con las manos en la masa cumpliendo sus órdenes…"
 
 # game/act2.rpy:251
 translate spanish racetrack1_topic2_6aef60ad:
@@ -671,25 +673,25 @@ translate spanish racetrack1_topic2_6aef60ad:
 translate spanish racetrack1_topic2_42fa137f:
 
     # t aw neutral right "Is that so…?"
-    t aw neutral right "¿Así que eso…?"
+    t aw neutral right "¿Ah, sí…?"
 
 # game/act2.rpy:255
 translate spanish racetrack1_complete_43e71f3c:
 
     # v "Alright, we should get back to it. Lucero here is getting restless."
-    v "Bueno, hay que volver a lo nuestro. Lucero de acá se está poniendo inquieto."
+    v "Bueno, hay que volver a lo nuestro. Lucero acá se está poniendo inquieto."
 
 # game/act2.rpy:257
 translate spanish racetrack1_complete_91fe8c2d:
 
     # t smile "Right, of course. Thank you two for your time."
-    t smile "Claro, por supuesto. Gracias a los dos por el tiempo."
+    t smile "Claro, por supuesto. Gracias a los dos por su tiempo."
 
 # game/act2.rpy:262
 translate spanish racetrack1_complete_d92c69ea:
 
     # tt neutral "The duo nods at me before going back to their business."
-    tt neutral "El dúo me hace una seña con la cabeza antes de volver a lo suyo."
+    tt neutral "El dúo asiente con la cabeza antes de volver a lo suyo."
     
     # game/act2.rpy:264
 translate spanish racetrack1_complete_ee7f9833:
@@ -701,7 +703,7 @@ translate spanish racetrack1_complete_ee7f9833:
 translate spanish paddock1_98c747bf:
 
     # tl "Razing Thunder Derby. \nPaddock."
-    tl "Derby Razing Thunder.\nPaddock."
+    tl "Derby Trueno Arrasador.\nPaddock."
 
 # game/act2.rpy:270
 translate spanish paddock1_033b4eef:
@@ -719,7 +721,7 @@ translate spanish paddock1_f3170237:
 translate spanish paddock1_4331219e:
 
     # x "Hey, you."
-    x "Che, vos."
+    x "Eu, vos."
 
 # game/act2.rpy:276
 translate spanish paddock1_6530defa:
@@ -767,7 +769,7 @@ translate spanish paddock1_86df839a:
 translate spanish paddock1_f42fcc31:
 
     # x "Sorry about that. I know she can be a handful."
-    x "Perdón por eso. Sé que puede ser un poco complicada."
+    x "Perdón por eso. Sé que puede ser bastante intensa."
 
 # game/act2.rpy:300
 translate spanish paddock1_f0a35d39:
@@ -803,7 +805,7 @@ translate spanish paddock1_b666e40f:
 translate spanish paddock1_4b7f627a:
 
     # r "Yeah, but those dumbass officials voided the result and made us race again."
-    r "Sí, pero esos oficiales de mierda anularon el resultado y nos hicieron correr de nuevo."
+    r "Sí, pero esos oficiales tontos anularon el resultado y nos hicieron correr de nuevo."
 
 # game/act2.rpy:315
 translate spanish paddock1_f638af99:
@@ -821,7 +823,7 @@ translate spanish paddock1_4d269302:
 translate spanish paddock1_1a93a255:
 
     # r "Not like I would expect you to get it."
-    r "No es que espere que lo entiendas."
+    r "Pero tampoco espero que vos lo entiendas."
 
 # game/act2.rpy:324
 translate spanish paddock1_91743991:
@@ -917,7 +919,7 @@ translate spanish paddock1_topic1_d42dd164:
 translate spanish paddock1_topic1_f10de96d:
 
     # r "You wish. Even if I had, why should I tell you?"
-    r "Soñá. Y aun si hubiera escuchado algo, ¿por qué te lo tendría que contar?"
+    r "Ni ahí. Y aun si hubiera escuchado algo, ¿por qué te lo tendría que contar?"
 
 # game/act2.rpy:371
 translate spanish paddock1_topic1_e970202f:
@@ -929,7 +931,7 @@ translate spanish paddock1_topic1_e970202f:
 translate spanish paddock1_topic1_f67503f0:
 
     # r "What? For all I know, he's behind it. He might even be trying to find out whether anyone's onto him."
-    r "¿Qué? Para mí él está detrás de esto. Capaz que hasta está tratando de ver si alguien le pisa los talones."
+    r "¿Qué? Bien podría estar detrás de esto. Capaz que hasta está tratando de ver si alguien sospecha de él."
 
 # game/act2.rpy:377
 translate spanish paddock1_topic1_16f4d68d:
@@ -959,7 +961,8 @@ translate spanish paddock1_topic1_78412bbd:
 translate spanish paddock1_topic1_c774c62a:
 
     # e "That's very admirable. Unfortunately, there isn't much we can tell you. We double-checked the water supply and the food used here for signs of foul play, but everything seems clean."
-    e "Eso es muy loable. Lamentablemente, no hay mucho que podamos decirte. Revisamos dos veces el suministro de agua y la comida que se usa acá por si había señales de sabotaje, pero todo parece estar en orden."
+    e "Eso es muy noble de tu parte. Lamentablemente, no hay mucho que podamos decirte." 
+    e "Revisamos dos veces el suministro de agua y la comida que se usa acá por si había señales de sabotaje, pero todo parece estar en orden."
 
 # game/act2.rpy:390
 translate spanish paddock1_topic1_c059de31:
@@ -1025,7 +1028,7 @@ translate spanish paddock1_topic1_2275bad0:
 translate spanish paddock1_topic1_4b93aa53:
 
     # r "Are you brain-dead? The races have only been stopped because horses fainted during them. What does it matter what happens afterward?"
-    r "¿Tenés re loco la cabeza? Las carreras se pararon nomás porque los caballos se desmayaban en plena pista. ¿Qué importa lo que pase después?"
+    r "¿El cerebro lo tenés de adorno? Las carreras se pararon nomás porque los caballos se desmayaban en plena pista. ¿Qué importa lo que pase después?"
 
 # game/act2.rpy:416
 translate spanish paddock1_topic1_79aa0b4a:
@@ -1043,7 +1046,8 @@ translate spanish paddock1_topic1_02106b95:
 translate spanish paddock1_topic1_acdc6ec9:
 
     # tt neutral right "I'd like to be as reassured as Esteban seems to be. But I wonder… Who actually performs these inspections? And how thorough are they, really? If there's room to manipulate the results, then…"
-    tt neutral right "Me gustaría estar tan tranquilo como parece Esteban. Pero me pregunto… ¿Quién hace realmente estas revisiones? ¿Y qué tan exhaustivas son, de verdad? Si hay margen para manipular los resultados, entonces…"
+    tt neutral right "Me gustaría estar tan tranquilo como parece Esteban. Pero me pregunto… ¿Quién hace realmente estas revisiones?"
+    tt neutral right "¿Y qué tan exhaustivas son, de verdad? Si hay margen para manipular los resultados, entonces…"
 
 # game/act2.rpy:422
 translate spanish paddock1_topic2_9b5b08a8:
@@ -1055,7 +1059,7 @@ translate spanish paddock1_topic2_9b5b08a8:
 translate spanish paddock1_topic2_656766a4:
 
     # r "HER? That ice queen makes Elsa look warm and friendly! I can't stand her."
-    r "¿ELLA? ¡Esa reina de hielo hace que Elsa parezca cálida y amigable! No la banco."
+    r "¿ELLA? ¡Esa reina de hielo hace que Elsa parezca cálida y amigable! No me la banco."
 
 # game/act2.rpy:428
 translate spanish paddock1_topic2_0fefc5cf:
@@ -1091,13 +1095,13 @@ translate spanish paddock1_topic2_a3eeaeb2:
 translate spanish paddock1_topic2_13ff5401:
 
     # r "It's especially sweet to take down some sheltered girl who's built her career on her parents' money."
-    r "Es especialmente dulce bajar a una nena de papá que se armó la carrera con la plata de los padres."
+    r "Es especialmente hermoso bajar a una nena consentida que se armó la carrera con la plata de los padres."
 
 # game/act2.rpy:444
 translate spanish paddock1_topic2_a6fbf24f:
 
     # e "That's selling her a little short, don't you think?"
-    e "Eso es quedarse un poco corto con ella, ¿no te parece?"
+    e "Eso es darle poco crédito, ¿no te parece?"
 
 # game/act2.rpy:448
 translate spanish paddock1_topic2_dc43419d:
@@ -1133,13 +1137,13 @@ translate spanish paddock1_topic2_091cd3e6:
 translate spanish paddock1_topic2_a8424955:
 
     # t neutral "I've been wondering about that. What happened to her previous trainer? Why is it that no one would take the job?"
-    t neutral "Me venía preguntando eso. ¿Qué pasó con su entrenador anterior? ¿Por qué nadie quiso tomar el laburo?"
+    t neutral "Me venía preguntando eso. ¿Qué pasó con su entrenador anterior? ¿Por qué nadie quiso tomar su lugar?"
 
 # game/act2.rpy:463
 translate spanish paddock1_topic2_6de989de:
 
     # r "Cause no one wants to get involved in shady crap, that's why!"
-    r "¡Porque nadie quiere meterse en mierdas turbias, por eso!"
+    r "¡Porque nadie quiere meterse en cosas turbias, por eso!"
 
 # game/act2.rpy:465
 translate spanish paddock1_topic2_6d84e2d2:
@@ -1265,19 +1269,19 @@ translate spanish paddock1_complete_082531d1:
 translate spanish paddock1_complete_75ab149a:
 
     # tt aw neutral drop "I can't imagine Catalina being one of them, given what I've heard about her and her family's wealth. Ugh…"
-    tt aw neutral drop "No me imagino a Catalina teniendo que bancarse eso, por lo que escuché sobre ella y la fortuna de su familia. Ugh…"
+    tt aw neutral drop "No me imagino a Catalina teniendo que aguantar eso, por lo que escuché sobre ella y la fortuna de su familia. Ugh…"
 
 # game/act2.rpy:526
 translate spanish stables1_306277f0:
 
     # tl "Razing Thunder Derby.\n Stables."
-    tl "Razing Thunder Derby.\n Cabañas."
+    tl "Derby Trueno Arrasador.\n Caballerizas."
 
 # game/act2.rpy:530
 translate spanish stables1_0a386c6b:
 
     # c "I told you already, I've got that matter handled. You can buzz off now."
-    c "Ya te dije, tengo ese tema resuelto. Ya podés ir a pasear."
+    c "Ya te dije, tengo ese tema resuelto. Ya te podés tomar el palo."
 
 # game/act2.rpy:532
 translate spanish stables1_6530defa:
@@ -1302,7 +1306,7 @@ translate spanish stables1_f61e436a:
 translate spanish stables1_b8a10bac:
 
     # x "So stubborn. I can get in touch with one of my men in no time, really. All you have to do is—"
-    x "Qué terca que sos. Puedo avisarle a uno de mis muchachos en un santiamén, de verdad. Todo lo que tenés que hacer es…"
+    x "Qué terca. Puedo avisarle a uno de mis muchachos en un santiamén, de verdad. Todo lo que tenés que hacer es…"
 
 # game/act2.rpy:544
 translate spanish stables1_81791217:
@@ -1320,13 +1324,13 @@ translate spanish stables1_49bdbdee:
 translate spanish stables1_408823b8:
 
     # t grin "…Hey there! How's it going?"
-    t grin "…¡Hola! ¿Cómo andás?"
+    t grin "…¡Hola! ¿Cómo va?"
 
 # game/act2.rpy:550
 translate spanish stables1_ae095b22:
 
     # x "This chump with the scar? He isn't even dressed for the job!"
-    x "¿Este pibe con la cicatriz? ¡Ni siquiera viene vestido para el laburo!"
+    x "¿Este salame con la cicatriz? ¡Ni siquiera viene vestido para la ocasión!"
 
 # game/act2.rpy:552
 translate spanish stables1_c1542574:
@@ -1374,7 +1378,7 @@ translate spanish stables1_833606ed:
 translate spanish stables1_23656e45:
 
     # tt "Who was that, anyway? I'd better ask before she starts ignoring me again."
-    tt "¿Quién era ese, igual? Más vale que pregunto antes de que vuelva a ignorarme."
+    tt "¿Quién era ese, igual? Más vale que pregunte antes de que vuelva a ignorarme."
 
 # game/act2.rpy:577
 translate spanish stables1_presenting_07817f43:
@@ -1392,7 +1396,7 @@ translate spanish stables1_presenting_111d3f87:
 translate spanish stables1_presenting_281daf78:
 
     # c "…You might as well have picked some grass off the ground. It wouldn't make a difference."
-    c "…Podrías haber agarrado cualquier yuyo del suelo. No haría ninguna diferencia."
+    c "…Podrías haber agarrado pasto del suelo. No haría ninguna diferencia."
 
 # game/act2.rpy:585
 translate spanish stables1_presenting_e0314baa:
@@ -1410,7 +1414,8 @@ translate spanish stables1_presenting_97e9aa7a:
 translate spanish stables1_investigating_3e30cec5:
 
     # t neutral right "Looks like a sturdy step ladder. Maybe someone was changing a lightbulb?"
-    t neutral right "Parece una escalera de mano re sólida. ¿Capaz alguien estaba cambiando una lamparita?"
+    t neutral right "Parece una escalera de tijera bastante resistente. ¿Quizás alguien estaba cambiando una lamparita?"
+    
 
 # game/act2.rpy:593
 translate spanish stables1_investigating_8fae94a2:
@@ -1422,7 +1427,7 @@ translate spanish stables1_investigating_8fae94a2:
 translate spanish stables1_investigating_e4da3dcc:
 
     # t det yell "No, no, see? It folds! That makes it the natural evolution of the standard ladder!"
-    t det yell "¡No, no, ¿ves? ¡Se pliega! ¡Eso la convierte en la evolución natural de la escalera común!"
+    t det yell "¡No, no, ¿ves? ¡Se pliega! ¡Eso la convierte en la evolución natural de la escalera convencional!"
 
 # game/act2.rpy:596
 translate spanish stables1_investigating_6218b584:
@@ -1434,19 +1439,19 @@ translate spanish stables1_investigating_6218b584:
 translate spanish stables1_topic1_8b92d682:
 
     # t neutral "Who were you talking to, Catalina? I could tell from a mile away you couldn't stand the sight of him."
-    t neutral "¿Con quién estabas hablando, Catalina? Se notaba a la legua que no lo podías ni ver."
+    t neutral "¿Con quién estabas hablando, Catalina? Se notaba a la legua que no te caía pésimo."
 
 # game/act2.rpy:601
 translate spanish stables1_topic1_8f6c1c01:
 
     # c "Sebastian Castillo. He's the Sponsorship Director for one of Razing Thunder's main sponsors. They back a handful of jockeys here, including top contenders like Vargas."
-    c "Sebastián Castillo. Es el Director de Patrocinios de uno de los patrocinadores principales del Razing Thunder. Apadrinan a un puñado de jockeys acá, incluyendo a los favoritos como Vargas."
+    c "Sebastián Castillo. Es el Director de Patrocinios de uno de los patrocinadores principales del Trueno Arrasador. Apadrinan a un puñado de jockeys acá, incluyendo a los favoritos como Vargas."
 
 # game/act2.rpy:603
 translate spanish stables1_topic1_0545796f:
 
     # t det yell "Castillo— as in, from THE Castillo family!?"
-    t det yell "¡¿Castillo… como en, de LA familia Castillo!?"
+    t det yell "¡¿Castillo… en plan, de LA familia Castillo!?"
 
 # game/act2.rpy:605
 translate spanish stables1_topic1_d86cc937:
@@ -1458,13 +1463,13 @@ translate spanish stables1_topic1_d86cc937:
 translate spanish stables1_topic1_f170dc72:
 
     # c "You hardly look the part, but you're surprisingly well-informed. That is... commendable."
-    c "No das para nada el perfil, pero estás sorprendentemente bien informado. Eso es… loable."
+    c "No das para nada el perfil, pero estás sorprendentemente bien informado. Eso es… admirable."
 
 # game/act2.rpy:612
 translate spanish stables1_topic1_a87a9f9e:
 
     # tt what drop "What kind of backhanded compliment is that…?"
-    tt what drop "¿Qué clase de cumplido con segunda es ese…?"
+    tt what drop "¿Qué clase de cumplido indirecto es ese…?"
 
 # game/act2.rpy:617
 translate spanish stables1_topic1_5786fd5b:
@@ -1476,19 +1481,19 @@ translate spanish stables1_topic1_5786fd5b:
 translate spanish stables1_topic1_1c219152:
 
     # tt neutral closed "Because it's my JOB to deal with crooks like him…"
-    tt neutral closed "Porque es mi LABURO lidiar con estafadores como él…"
+    tt neutral closed "Porque es mi TRABAJO lidiar con estafadores como él…"
 
 # game/act2.rpy:624
 translate spanish stables1_topic1_6c661f80:
 
     # c "The sponsorship is merely a front. They do actually back jockeys, however…"
-    c "El patrocinio es solo una fachada. Igual, sí bancan a los jockeys…"
+    c "El patrocinio es solo una fachada. Sí respaldan a los jockeys, aunque…"
 
 # game/act2.rpy:626
 translate spanish stables1_topic1_060f5da4:
 
     # t neutral "It comes with its own 'perks', right?"
-    t neutral "Y viene con sus propios 'beneficios', ¿no?"
+    t neutral "Viene con sus propios 'beneficios', ¿no?"
 
 # game/act2.rpy:629
 translate spanish stables1_topic1_ee720f4f:
@@ -1506,13 +1511,13 @@ translate spanish stables1_topic1_34658f0a:
 translate spanish stables1_topic1_d9b02a54:
 
     # t det neutral "All-in— you mean they're telling competitors when to lose and when to win?"
-    t det neutral "¿A fondo…? ¿Me estás diciendo que les marcan a los competidores cuándo perder y cuándo ganar?"
+    t det neutral "Darlo todo— ¿Me estás diciendo que les dicen a los competidores cuándo perder y cuándo ganar?"
 
 # game/act2.rpy:636
 translate spanish stables1_topic1_628449e2:
 
     # t det yell "But that would completely rig the results!"
-    t det yell "¡Pero eso amaña los resultados por completo!"
+    t det yell "¡Pero eso arregla los resultados por completo!"
 
 # game/act2.rpy:638
 translate spanish stables1_topic1_8d5c4c45:
@@ -1524,19 +1529,19 @@ translate spanish stables1_topic1_8d5c4c45:
 translate spanish stables1_topic1_376dc7ac:
 
     # t det neutral right "That's despicable… all for the sake of manipulating the betting market, huh?"
-    t det neutral right "Eso es una porquería… todo por manipular el mercado de apuestas, ¿eh?"
+    t det neutral right "Eso es despreciable... todo por manipular el mercado de apuestas, ¿eh?"
 
 # game/act2.rpy:643
 translate spanish stables1_topic1_68b94b9a:
 
     # c "I hear they even run their own off-the-books betting syndicate. It's quite lucrative, especially during events like this. I want no part of it, however."
-    c "Tengo entendido que hasta manejan su propia red de apuestas en negro. Es un negocio re lucrativo, sobre todo en eventos como este. Pero yo no quiero saber nada con eso."
+    c "Tengo entendido que hasta manejan su propia red de apuestas en negro. Es un negocio bastante lucrativo, sobre todo en eventos como este. Pero yo no quiero saber nada con eso."
 
 # game/act2.rpy:645
 translate spanish stables1_topic1_8effc80e:
 
     # tt closed neutral "Clandestine gambling…"
-    tt closed neutral "Juego clandestino…"
+    tt closed neutral "Apuestas clandestinas..."
 
 # game/act2.rpy:647
 translate spanish stables1_topic1_2d2bcab7:
@@ -1560,7 +1565,7 @@ translate spanish stables1_topic1_3b206a97:
 translate spanish stables1_topic1_7d4a74cd:
 
     # c "One does come to mind, though. Vargas. She's their top pick for promotion. Renata Vargas."
-    c "Una me acuerdo, igual. Vargas. Es su carta más fuerte para promocionar. Renata Vargas."
+    c "De una me acuerdo, igual. Vargas. Es su carta más fuerte para promocionar. Renata Vargas."
 
 # game/act2.rpy:656
 translate spanish stables1_topic1_d6e21214:
@@ -1596,31 +1601,32 @@ translate spanish stables1_topic2_173ef9d7:
 translate spanish stables1_topic2_8555b7a6:
 
     # t det yell "What do you mean, 'and'!? Don't you care about being slandered? They're saying you're using your money to bribe trainers into quitting. Some even claim you're behind the horses collapsing."
-    t det yell "¿Cómo que '¿y?'!? ¿No te importa que te calumnien? Dicen que usás tu plata para sobornar a los entrenadores para que renuncien. Algunos hasta dicen que vos estás detrás de que los caballos se desplomen."
+    t det yell "¿Cómo que '¿y?'!? ¿No te importa que te calumnien? Dicen que usás tu plata para sobornar a los entrenadores para que renuncien." 
+    t det yell "Algunos hasta dicen que vos estás detrás de que los caballos se desplomen."
 
 # game/act2.rpy:670
 translate spanish stables1_topic2_69d8ce9b:
 
     # c "I have an inkling of who told you about that last one. It's not the first time I've heard those accusations from the likes of her."
-    c "Me hago una idea de quién te sopló eso último. No es la primera vez que escucho esas acusaciones de parte de una como ella."
+    c "Me hago una idea de quién te dijo eso último. No es la primera vez que escucho esas acusaciones de parte de alguien como ella."
 
 # game/act2.rpy:673
 translate spanish stables1_topic2_4fe24844:
 
     # c "So? Do you believe those rumors?"
-    c "¿Y? ¿Les creés a esos rumores?"
+    c "¿Y? ¿Le creés a esos rumores?"
 
 # game/act2.rpy:681
 translate spanish rumors_yes_59a193ea:
 
     # t aw neutral drop "It's not just one person saying it. Quite a few people seem to believe it. Plus, you're in a rather favorable position to pull it off, so…"
-    t aw neutral drop "No es solo una persona la que lo dice. Bastante gente parece creerlo. Además, estás en una posición re favorable para hacerlo, así que…"
+    t aw neutral drop "No es solo una persona la que lo dice. Bastante gente parece creerlo. Además, estás en una posición muy favorable para hacerlo, así que…"
 
 # game/act2.rpy:684
 translate spanish rumors_yes_8376cec3:
 
     # c "…If you've already made up your mind, there's not much more for me to say."
-    c "…Si ya te convenciste, no me queda mucho más por decir."
+    c "…Si ya estas convencido, no me queda mucho más por decir."
 
 # game/act2.rpy:687
 translate spanish rumors_no_94c8c51d:
@@ -1632,13 +1638,13 @@ translate spanish rumors_no_94c8c51d:
 translate spanish rumors_no_625870be:
 
     # c "…You're acting as if my word alone were indisputable proof."
-    c "…Hacés como si mi palabra fuera una prueba indiscutible."
+    c "…Hacés como si mi palabra fuera la verdad absoluta."
 
 # game/act2.rpy:692
 translate spanish rumors_no_91e32bcf:
 
     # t neutral "Well, it might not be, but it's reassuring to hear it from you nonetheless."
-    t neutral "Bueno, capaz que no lo sea, pero igual tranquiliza escucharlo de tu boca."
+    t neutral "Bueno, capaz que no lo sea, pero igual tranquiliza escucharlo de vos."
 
 # game/act2.rpy:698
 translate spanish stables1_complete_a15920ea:
@@ -1650,13 +1656,14 @@ translate spanish stables1_complete_a15920ea:
 translate spanish stables1_complete_6584da00:
 
     # t "Because no amount of money is worth the risk?"
-    t "¿Porque no hay tanta plata que valga el riesgo?"
+    t "¿Porque no hay plata que valga el riesgo?"
 
 # game/act2.rpy:703
 translate spanish stables1_complete_877bdbab:
 
     # c "It ruins the reputation of any self-respecting trainer who wants a future in the industry. Most don't want to be caught up in some blackmail scheme or be told to sabotage the racehorses. Ridiculous…"
-    c "Arruina la reputación de cualquier entrenador que se precie y quiera tener futuro en el rubro. La mayoría no quiere que lo metan en algún esquema de extorsión o que le pidan que sabotee a los caballos. Ridículo…"
+    c "Arruina la reputación de cualquier entrenador que se precie y quiera tener futuro en el rubro." 
+    c "La mayoría no quiere que lo metan en algún esquema de extorsión o que le pidan que sabotee a los caballos. Ridículo…"
 
 # game/act2.rpy:705
 translate spanish stables1_complete_1370ddb0:
@@ -1674,13 +1681,13 @@ translate spanish stables1_complete_3af4d755:
 translate spanish stables1_complete_e091e9d0:
 
     # tt neutral right "That's a relief to hear, but I wonder how much of that I can really believe."
-    tt neutral right "Es un alivio escuchar eso, pero me pregunto cuánto me puedo creer realmente."
+    tt neutral right "Es un alivio escuchar eso, pero me pregunto cuánto le puedo creer realmente."
 
 # game/act2.rpy:713
 translate spanish stables1_complete_5204e2a1:
 
     # c "Now, if you aren't planning on quitting after learning all of this, I expect you to be ready on time."
-    c "Ahora, si no pensás renunciar después de enterarte de todo esto, espero que estés listo a la hora."
+    c "Ahora, si no pensás renunciar después de enterarte de todo esto, espero que estés cuando llegue la hora."
 
 # game/act2.rpy:715
 translate spanish stables1_complete_fb53345d:
@@ -1698,13 +1705,13 @@ translate spanish stables1_complete_0f173ebb:
 translate spanish stables1_complete_58a99cd5:
 
     # t aha "How come I don't get a matching uniform? You know, a blue tracksuit, maybe?"
-    t aha "¿Cómo es que no me dan un uniforme a juego? Ya sabés, un chándal azul, capaz."
+    t aha "¿Cómo es que no me dan un uniforme que combine? Ya sabés, una campera azul, capaz."
 
 # game/act2.rpy:725
 translate spanish stables1_complete_372a50b8:
 
     # c "Sorry, I didn't know your size, so I didn't order one."
-    c "Perdón, no sabía tu talle, así que no pedí ninguno."
+    c "Perdón, no sabía tu talle, así que no pedí nada."
 
 # game/act2.rpy:727
 translate spanish stables1_complete_6f985e71:
@@ -1722,7 +1729,7 @@ translate spanish stables1_complete_d58c7d2a:
 translate spanish stables1_complete_e9566c75:
 
     # tt what aw drop "Figures…"
-    tt what aw drop "Obvio…"
+    tt what aw drop "Por supuesto…"
 
 # game/act2.rpy:734
 translate spanish stables1_complete_e85ffe90:
@@ -1734,13 +1741,13 @@ translate spanish stables1_complete_e85ffe90:
 translate spanish stables1_complete_480ea3ca:
 
     # c "First off, no trainer of mine would wear recycled clothing. Second, I have no interest in letting you wear the clothes of a coward who quit. They've already been disposed of."
-    c "Primero, ningún entrenador mío usaría ropa reciclada. Segundo, no tengo ningún interés en dejarte usar la ropa de un cobarde que se rajó. Ya fue todo a la basura."
+    c "Primero, ningún entrenador mío va a usar ropa reciclada. Segundo, no tengo ningún interés en dejarte usar la ropa de un cobarde que se rajó. Ya fue todo a la basura."
 
 # game/act2.rpy:740
 translate spanish stables1_complete_beedee2d:
 
     # tt what det drop "So much for that."
-    tt what det drop "Bueno, se acabó eso."
+    tt what det drop "Que lástima."
 
 # game/act2.rpy:744
 translate spanish lockers1_01faa769:
@@ -1752,7 +1759,7 @@ translate spanish lockers1_01faa769:
 translate spanish lockers1_06165f08:
 
     # x "Oh, but I am! Don't you know? The show must go on!"
-    x "¡Oh, pero sí! ¿No sabés? ¡El show debe continuar!"
+    x "¡Oh, pero claro! ¿No lo sabé? ¡El show debe continuar!"
 
 # game/act2.rpy:748
 translate spanish lockers1_633e9da7:
@@ -1770,7 +1777,7 @@ translate spanish lockers1_9994e98f:
 translate spanish lockers1_9a2c1fd9:
 
     # x "Well now! It's your job to prevent that, yes? It's why I made an exception and allowed you in."
-    x "¡Mirá vos! Es tu trabajo evitar eso, ¿no? Por eso hice una excepción y te dejé entrar."
+    x "¡Vaya! Es su trabajo evitar eso, ¿no? Por eso hice una excepción y le dejé entrar."
 
 # game/act2.rpy:760
 translate spanish lockers1_bc9f6b05:
@@ -1782,19 +1789,19 @@ translate spanish lockers1_bc9f6b05:
 translate spanish lockers1_fb79d2a2:
 
     # x "Has my magnanimous cooperation not been to your liking, Inspector?"
-    x "¿Mi magnánima cooperación no fue de tu agrado, Inspector?"
+    x "¿Mi magnánima cooperación no fue de su agrado, inspectora?"
     
 # game/act2.rpy:764
 translate spanish lockers1_d08bbcb0:
 
     # x "If you're not happy, then I am not happy."
-    x "Si vos no estás contento, yo tampoco."
+    x "Si no estás contenta, entonces yo no estoy contento."
 
 # game/act2.rpy:766
 translate spanish lockers1_74470657:
 
     # x "Oh, I'm pretty unhappy, alright, you conniving son of a—"
-    x "Uy, estoy re mal, sí, che, vos sos un hijo de p—"
+    x "Pero claro, me siento bastante desdichada, retorciddo hijo de—"
 
 # game/act2.rpy:768
 translate spanish lockers1_45b13847:
@@ -1806,13 +1813,13 @@ translate spanish lockers1_45b13847:
 translate spanish lockers1_1d79ebf7:
 
     # x "Oh! Howdy, young man. The inspector here and I were having a pleasant chat about the Razing Thunder event."
-    x "¡Ah! ¿Qué tal, joven? La inspectora acá presente y yo estábamos teniendo una charla muy agradable sobre el evento Razing Thunder."
+    x "¡Ah! ¿Qué tal, joven? La inspectora acá presente y yo estábamos teniendo una charla muy agradable sobre el evento Trueno Arrasador."
 
 # game/act2.rpy:772
 translate spanish lockers1_23be7742:
 
     # x "It's anything but pleasant... What the hell are you doing here, Ortiz? I've got enough crap to deal with as it is, thanks to this guy."
-    x "Nada que ver con agradable... ¿Qué carajos hacés acá, Ortiz? Ya tengo suficiente quilombo con el que lidiar, encima por culpa de este tipo."
+    x "Nada que ver con agradable... ¿Qué carajos hacés acá, Ortiz? Ya tengo suficiente quilombo con el que lidiar, gracias a este tipo."
 
 # game/act2.rpy:774
 translate spanish lockers1_3c627d0b:
@@ -1830,7 +1837,7 @@ translate spanish lockers1_4cc6abf6:
 translate spanish lockers1_de4e342c:
 
     # t what aw drop "It's nice to see you too, Inspector Medina."
-    t what aw drop "El gusto es mío, inspectora Medina."
+    t what aw drop "Un gusto verla de nuevo, inspectora Medina."
 
 # game/act2.rpy:784
 translate spanish lockers1_da4c4220:
@@ -1848,37 +1855,37 @@ translate spanish lockers1_cc9c0f4b:
 translate spanish lockers1_f02cb135:
 
     # tt neutral right "The inspector managed to take me in for questioning a while ago, so she knows about me being El Leopardo..."
-    tt neutral right "La inspectora me logró hacer declarar hace un tiempo, así que sabe que yo soy El Leopardo..."
+    tt neutral right "La inspectora logró arrestarme y hacerme declarar hace un tiempo, así que sabe que yo soy El Leopardo..."
 
 # game/act2.rpy:790
 translate spanish lockers1_f269d42d:
 
     # tt neutral closed "...but as for how I'm still allowed to walk free? I have no idea."
-    tt neutral closed "...pero en cuanto a cómo es que sigo suelto por la calle... ni la más remota idea."
+    tt neutral closed "...pero en cuanto a cómo es que sigo suelto por la vida... ni idea."
 
 # game/act2.rpy:792
 translate spanish lockers1_6059ff5c:
 
     # tt neutral "Arbitrary exercise of justice will put you in the slammer. We're both aware of that. So why?—"
-    tt neutral "La justicia arbitraria te manda en cana. Los dos sabemos eso. Entonces, ¿por qué?—"
+    tt neutral "Ejercer justicia arbitrariamente te manda en cana. Los dos sabemos eso. Entonces, ¿por qué?—"
 
 # game/act2.rpy:799
 translate spanish lockers1_8aeeb1ae:
 
     # me "…I swear, if I find out you sneaked in here, I'm—"
-    me "…te juro que, si me entero de que te colaste acá, te—"
+    me "…lo juro, me llego a enterar de que te colaste acá, voy a—"
 
 # game/act2.rpy:801
 translate spanish lockers1_692fe339:
 
     # x "Oho, a trespasser? Quite daring. I have security on speed dial for cases like this."
-    x "Ojo, ¿un intruso? Qué audacia. Tengo a seguridad en marcado rápido para estos casos."
+    x "Jo, jo, ¿un intruso? Qué audacia. Tengo a seguridad en marcado rápido para estos casos."
 
 # game/act2.rpy:803
 translate spanish lockers1_62e75293:
 
     # t det yell "Whoa! Hang on now, I'm here on a job! Catalina Moreno hired me as her trainer! You can check with her if you want."
-    t det yell "¡Epa! ¡Tranqui, tranquilo! ¡Estoy acá por trabajo! ¡Catalina Moreno me contrató como su entrenador! ¡Pueden preguntarle a ella si quieren!"
+    t det yell "¡Wow! ¡Un momento, estoy acá por trabajo! ¡Catalina Moreno me contrató como su entrenador! ¡Pueden preguntarle a ella si quieren!"
 
 # game/act2.rpy:805
 translate spanish lockers1_1be56007:
@@ -1890,19 +1897,19 @@ translate spanish lockers1_1be56007:
 translate spanish lockers1_9827166e:
 
     # me "Why did she have to go and get you of all people?"
-    me "¿Por qué tuvo que ir a buscarte a vos, justo a vos?"
+    me "¿Por qué tuvo que ir a buscarte a vos de entre todas las personas?"
 
 # game/act2.rpy:809
 translate spanish lockers1_57a044fd:
 
     # t aw smile drop "Apparently, I was the only one willing to take the job…"
-    t aw smile drop "Al parecer, fui el único que se animó a agarrar el trabajo…"
+    t aw smile drop "Al parecer, fui el único que se animó a tomar el trabajo…"
 
 # game/act2.rpy:811
 translate spanish lockers1_e59d435e:
 
     # me "…That checks out."
-    me "…Eso cierra."
+    me "…por supuesto."
 
 # game/act2.rpy:813
 translate spanish lockers1_98475eae:
@@ -1926,7 +1933,7 @@ translate spanish lockers1_a45c7031:
 translate spanish lockers1_434ecf45:
 
     # t det yell "Oh…! You're the host of Razing Thunder?"
-    t det yell "¡Ah! ¿Usted es el anfitrión de Razing Thunder?"
+    t det yell "¡Ah! ¿Usted es el anfitrión de Trueno Arrasador?"
 
 # game/act2.rpy:823
 translate spanish lockers1_e6fe91a3:
@@ -1986,7 +1993,7 @@ translate spanish lockers1_investigating_c509fa74:
 translate spanish lockers1_investigating_aa3fd139:
 
     # tt aw smile "…If the situation calls for it, anyway. But I doubt it."
-    tt aw smile "…Si la situación lo pide, al menos. Pero dudo que pase."
+    tt aw smile "…Si la situación lo requiere, al menos. Pero dudo que pase."
 
 # game/act2.rpy:850
 translate spanish lockers1_investigating_bcd2f8b2:
@@ -2010,13 +2017,13 @@ translate spanish lockers1_topic1_f6fba927:
 translate spanish lockers1_topic1_a4130897:
 
     # en "My boy! Are those eyes of yours just for decoration? Have you not taken a single look around you?"
-    en "¡Muchacho! ¿Esos ojos que tiene son solo para decorar? ¿No miró un poco a su alrededor?"
+    en "¡Muchacho! ¿Esos ojos que tiene estan de adorno? ¿No te tomaste ni un segundo para mirar a tu alrededor?"
 
 # game/act2.rpy:861
 translate spanish lockers1_topic1_c902fbbb:
 
     # tt what drop "This coming from the guy wearing alien sunglasses indoors..."
-    tt what drop "Esto dicho por el tipo que usa unos lentes de sol de alien adentro..."
+    tt what drop "Esto me lo dice el tipo que usa unos lentes de sol de alien adentro..."
 
 # game/act2.rpy:863
 translate spanish lockers1_topic1_5ac61dcc:
@@ -2028,7 +2035,8 @@ translate spanish lockers1_topic1_5ac61dcc:
 translate spanish lockers1_topic1_ad55210f:
 
     # en "Top professional jockeys gathered in one place, carefully selected based on their records and achievements. State-of-the-art facilities! A jaw-dropping prize of SEVEN AND A HALF MILLION"
-    en "¡Los mejores jinetes profesionales reunidos en un solo lugar, cuidadosamente seleccionados por sus récords y logros! ¡Instalaciones de última generación! ¡Un premio que quita el aliento de SIETE MILLONES Y MEDIO"
+    en "¡Los mejores jinetes profesionales reunidos en un solo lugar, cuidadosamente seleccionados por sus récords y logros! ¡Instalaciones de última generación!"
+    en "¡Un premio que quita el aliento de SIETE MILLONES Y MEDIO"
 
 # game/act2.rpy:867
 translate spanish lockers1_topic1_5b77d2c0:
@@ -2040,7 +2048,7 @@ translate spanish lockers1_topic1_5b77d2c0:
 translate spanish lockers1_topic1_384af663:
 
     # en "I tell you, name me one competition more glamorous than mine, and I'll eat my hat!"
-    en "¡Se lo digo, nómbrame una competencia más glamorosa que la mía y me como el sombrero!"
+    en "¡Se lo digo, nómbreme una competencia más glamorosa que la mía y me como mi sombrero!"
 
 # game/act2.rpy:871
 translate spanish lockers1_topic1_8d1f621c:
@@ -2052,13 +2060,13 @@ translate spanish lockers1_topic1_8d1f621c:
 translate spanish lockers1_topic1_868798a2:
 
     # en "Those are only held every four years, Mr. Ortiz. Razing Thunder is right at your fingertips every year! It's our very own carnival."
-    en "Eso solo se hace cada cuatro años, señor Ortiz. ¡Razing Thunder lo tiene al alcance de la mano todos los años! Es nuestro propio carnaval."
+    en "Eso solo se hace cada cuatro años, señor Ortiz. ¡Trueno Arrasador lo tiene al alcance de la mano todos los años! Es nuestro propio carnaval."
 
 # game/act2.rpy:875
 translate spanish lockers1_topic1_5eeb3db0:
 
     # t neutral drop "How are you able to afford all this?"
-    t neutral drop "¿Cómo hace para bancar todo esto?"
+    t neutral drop "¿Cómo hace para costear todo esto?"
 
 # game/act2.rpy:877
 translate spanish lockers1_topic1_3a196557:
@@ -2070,7 +2078,7 @@ translate spanish lockers1_topic1_3a196557:
 translate spanish lockers1_topic1_8559501b:
 
     # en "Sponsors, my boy! Everyone makes a generous contribution to get their name out at such a spectacular event as this."
-    en "¡Patrocinadores, muchacho! Todos hacen una contribución generosa para que su nombre suene en un evento tan espectacular como este."
+    en "¡Patrocinadores, muchacho! Todos hacen una contribución generosa para que su nombre aparezca en un evento tan espectacular como este."
 
 # game/act2.rpy:881
 translate spanish lockers1_topic1_dd0c506a:
@@ -2100,25 +2108,25 @@ translate spanish lockers1_topic1_c8f141e7:
 translate spanish lockers1_topic1_6c65ed79:
 
     # en "…but I'd never stoop so low! What do you take me for?"
-    en "…¡pero nunca rebajaría a ese nivel! ¿Por quién me toma?"
+    en "…¡pero nunca me rebajaría a ese nivel! ¿Por quién me toma?"
 
 # game/act2.rpy:891
 translate spanish lockers1_topic1_f4163191:
 
     # me "A greedy bastard."
-    me "Un codicioso de mierda."
+    me "Un bastardo codicioso."
 
 # game/act2.rpy:893
 translate spanish lockers1_topic1_b2f38c45:
 
     # en "Inspector, Inspector… If I were as avaricious as you make me out to be, you and that young man would have been charged for entry by now. And not at retail price, mind you!"
-    en "Inspectora, inspectora… Si fuera tan avaricioso como me pinta, a usted y a ese joven ya les habrían cobrado la entrada. ¡Y no a precio entero, ojo!"
+    en "Inspectora, inspectora… Si fuera tan avaricioso como me pinta, a usted y a ese joven ya les habrían cobrado la entrada. ¡Y no a precio de lista, ojo!"
 
 # game/act2.rpy:895
 translate spanish lockers1_topic1_cf06a96a:
 
     # me "Piss off. You know I'm investigating, and you've only allowed a handful of my subordinates into the Derby."
-    me "Andate a cagar. Sabés que estoy investigando, y solo dejaste entrar a un puñado de mis subalternos al Derby."
+    me "Andate a cagar. Sabés que estoy investigando, y solo dejaste entrar a un puñado de mis agentes al Derby."
 
 # game/act2.rpy:897
 translate spanish lockers1_topic1_ae273bbf:
@@ -2166,7 +2174,7 @@ translate spanish lockers1_complete_522b37e1:
 translate spanish lockers1_complete_3f097b3d:
 
     # t aw neutral drop "…The racehorses. *Sigh.*"
-    t aw neutral drop "…De los caballos de carrera. *Suspiro.*"
+    t aw neutral drop "...los caballos de carrera. *Suspiro.*"
 
 # game/act2.rpy:920
 translate spanish lockers1_complete_b9ee01a8:
@@ -2184,7 +2192,7 @@ translate spanish lockers1_complete_dc84c84a:
 translate spanish lockers1_complete_40b8aca9:
 
     # me "Sure. Doesn't mean he'll share a word of it if there's a chance it'll hurt his profits."
-    me "Seguro. Eso no significa que vaya a abrir la boca si hay alguna chance de que le toque las ganancias."
+    me "Seguro. Eso no significa que vaya a abrir la boca si hay alguna chance de que le toquen las ganancias."
 
 # game/act2.rpy:926
 translate spanish lockers1_complete_751d9930:
@@ -2214,7 +2222,7 @@ translate spanish lockers1_complete_72b9fb07:
 translate spanish lockers1_complete_ed7fd65b:
 
     # t det neutral "You've got to be kidding me."
-    t det neutral "Me estás cargando."
+    t det neutral "Me estás jodiendo."
 
 # game/act2.rpy:936
 translate spanish lockers1_complete_69b852e3:
@@ -2226,13 +2234,13 @@ translate spanish lockers1_complete_69b852e3:
 translate spanish lockers1_complete_60a14eed:
 
     # me "And even then, it'll take time. They've got security crawling all over this place. I swear, not even a mouse could slip past those guards."
-    me "Y aun así, va a llevar tiempo. Tienen seguridad pululando por todos lados. Te juro que ni un ratón podría esquivar a esos guardias."
+    me "Y aun así, va a llevar tiempo. Tienen seguridad pululando por todos lados. Dios, ni un ratón podría esquivar a esos guardias."
 
 # game/act2.rpy:940
 translate spanish lockers1_complete_8a6b4a5d:
 
     # t neutral right "…Thankfully, I'm not nearly as restricted as you are."
-    t neutral right "…Por suerte, no estoy ni cerca de tan atado de manos como vos."
+    t neutral right "…Por suerte, no estoy ni cerca de tan atado de las manos como vos."
 
 # game/act2.rpy:942
 translate spanish lockers1_complete_12816774:
@@ -2274,7 +2282,7 @@ translate spanish lockers1_complete_b6e035b7:
 translate spanish lockers1_complete_791dca9c:
 
     # me "They were examined here after the incidents, but I don't trust a single veterinarian on this payroll."
-    me "Los examinaron acá después de los incidentes, pero no me fío de ningún veterinario de esta nómina."
+    me "Los examinaron acá después de los incidentes, pero no me fío de ningúno de los veterinarios que trabajan acá."
 
 # game/act2.rpy:960
 translate spanish lockers1_complete_b098eb4d:
@@ -2298,7 +2306,7 @@ translate spanish lockers1_complete_ca6bdb53:
 translate spanish lockers1_complete_3a67520d:
 
     # t det smile "We're on the same side here. We both want to get to the truth—"
-    t det smile "Estamos del mismo lado en esto. Los dos queremos llegar a la verdad…"
+    t det smile "Estamos del mismo lado en esto. Los dos queremos llegar a la verdad—"
 
 # game/act2.rpy:968
 translate spanish lockers1_complete_f0c17719:
@@ -2316,7 +2324,7 @@ translate spanish lockers1_complete_3d82f37d:
 translate spanish lockers1_complete_6625964c:
 
     # me "I'm out."
-    me "Yo me bajo."
+    me "Me largo."
 
 # game/act2.rpy:975
 translate spanish lockers1_complete_6c688cf9:
@@ -2328,7 +2336,7 @@ translate spanish lockers1_complete_6c688cf9:
 translate spanish lockers1_complete_4979ecb2:
 
     # tt neutral closed "I should give this a proper read when I get the chance. For now, I'll add it to my Dossier."
-    tt neutral closed "Debería leer esto bien cuando tenga un rato. Por ahora, lo voy a sumar a mi expediente."
+    tt neutral closed "Debería leer esto bien cuando tenga un rato. Por ahora, lo voy a sumar a mi Dosier."
 
 # game/act2.rpy:981
 translate spanish act2_inves_complete_74193d08:
@@ -2340,7 +2348,7 @@ translate spanish act2_inves_complete_74193d08:
 translate spanish act2_inves_complete_b7922834:
 
     # tt "Huh? I'm getting a phone call. Unknown number… I don't like this. Is it a spam call?"
-    tt "¿Eh? Me entra una llamada. Número desconocido… Esto no me cierra nada. ¿Será spam?"
+    tt "¿Eh? Me entra una llamada. Número desconocido… Esto no me gusta. ¿Será spam?"
 
 # game/act2.rpy:987
 translate spanish act2_inves_complete_a9bab154:
@@ -2352,7 +2360,7 @@ translate spanish act2_inves_complete_a9bab154:
 translate spanish act2_inves_complete_f1ba8721:
 
     # t "Hello?"
-    t "¿Bueno?"
+    t "¿Hola?"
 
 # game/act2.rpy:991
 translate spanish act2_inves_complete_df7a491a:
@@ -2400,7 +2408,7 @@ translate spanish act2_inves_complete_8110b4bd:
 translate spanish act2_inves_complete_ebd63ce3:
 
     # tt "…And she's ignoring me. Oh well, there's still some time before the race begins. I might as well go see what this is about…"
-    tt "…Y me está ignorando. En fin, todavía falta un rato para que arranque la carrera. Más me vale ir a ver de qué se trata…"
+    tt "…Me clavo el visto. En fin, todavía falta un rato para que arranque la carrera. Más me vale ir a ver de qué se trata…"
 
 # game/act2.rpy:1019
 translate spanish parking_196b8bb2:
@@ -2418,7 +2426,7 @@ translate spanish parking_1df3e47f:
 translate spanish parking_4d4aca95:
 
     # t "It's no—"
-    t "No es nin—"
+    t "No es ningún—"
 
 # game/act2.rpy:1032
 translate spanish parking_083a81e9:
@@ -2430,13 +2438,13 @@ translate spanish parking_083a81e9:
 translate spanish parking_804a7e97:
 
     # tt det neutral "Three men in expensive-looking suits surround me. One holds a baton, another an iron wrench, and the last is sporting a pair of heavy brass knuckles."
-    tt det neutral "Tres tipos con unos trajes que parecen caros me rodean. Uno empuña una macana, otro una llave inglesa, y el último luce un par de puños americanos bien pesados."
+    tt det neutral "Tres tipos con trajes que parecen caros me rodean. Uno empuña una porra, otro una llave inglesa, y el último luce un par de nudillos de bronce bien pesados."
 
 # game/act2.rpy:1036
 translate spanish parking_b18eb2bf:
 
     # tga "Yeah, the boys and I didn't want to risk you ignoring our call."
-    tga "Sí, los pibes y yo no queríamos arriesgarnos a que nos ignoraras el llamado."
+    tga "Sí, los muchachos y yo no queríamos arriesgarnos a que nos ignoraras el llamado."
 
 # game/act2.rpy:1038
 translate spanish parking_9ca2ea14:
@@ -2520,13 +2528,13 @@ translate spanish parking_fff1c7a1:
 translate spanish parking_77b91b84:
 
     # tgc "You got paid for your time, and then some! Consider yourself lucky."
-    tgc "Te pagaron por tu tiempo y con yapa. Date por suerte."
+    tgc "Te pagaron por tu tiempo y te dieron un extra. Considerate suertudo."
 
 # game/act2.rpy:1066
 translate spanish parking_dbf4c60e:
 
     # t det neutral "Yeah. Really lucky."
-    t det neutral "Sí. Re suerte."
+    t det neutral "Ajá. Re suertudo."
 
 # game/act2.rpy:1068
 translate spanish parking_519604f2:
@@ -2538,13 +2546,13 @@ translate spanish parking_519604f2:
 translate spanish parking_ef3e2a24:
 
     # tt neutral right "He gestures with his head toward the parking lot exit. They aren't even gonna let me go get La Chispa?"
-    tt neutral right "Señala con la cabeza hacia la salida del estacionamiento. ¿Ni siquiera me van a dejar ir a buscar a La Chispa?"
+    tt neutral right "El señala con la cabeza hacia la salida del estacionamiento. ¿Ni siquiera me van a dejar ir a buscar a La Chispa?"
 
 # game/act2.rpy:1072
 translate spanish parking_6bb13d9a:
 
     # tt det neutral "They really don't want me anywhere near her. In that case, I—"
-    tt det neutral "Ni en chiste me quieren cerca de ella. En ese caso, yo—"
+    tt det neutral "De verdad no me quieren cerca de ella. En ese caso, yo—"
 
 # game/act2.rpy:1081
 translate spanish p_givein_a8db682a:
@@ -2592,13 +2600,13 @@ translate spanish p_refuse_ef51d989:
 translate spanish p_refuse_7c73e06b:
 
     # tga "Idiot! Of course we can't take it! Listen here, you little shit. You can leave here walking with the money, or you can leave in an ambulance. What's it gonna be?"
-    tga "¡Idiota! ¡Obvio que no nos la podemos quedar! Escuchame bien, pibito. Te podés ir de acá caminando con la plata, o te podés ir en ambulancia. ¿Qué va a ser?"
+    tga "¡Idiota! ¡Obvio que no nos la podemos quedar! Escuchame bien, pibito. Te podés ir de acá caminando con la plata, o te podés ir en una camilla. ¿Qué va a ser?"
 
 # game/act2.rpy:1106
 translate spanish p_refuse_967b27d9:
 
     # tt grin "Oh. OH! Dude, this is a golden chance! Okay, don't mess it up, Tony. How did that line go again...?"
-    tt grin "¡Ah! ¡AH! ¡Capo, esta es una chance de oro! Dale, no la cagues, Tony. ¿Cómo era aquella frase…?"
+    tt grin "Ah. ¡AH! ¡Amigo, esta es una chance de oro! Dale, no la cagues, Tony. ¿Cómo era aquella frase…?"
 
 # game/act2.rpy:1108
 translate spanish p_refuse_f00ea79b:
@@ -2610,13 +2618,13 @@ translate spanish p_refuse_f00ea79b:
 translate spanish p_refuse_62136294:
 
     # tt "I take out my phone and call the emergency line, never taking my eyes off the three stooges."
-    tt "Saco el celular y llamo a emergencias, sin sacarles los ojos de encima a los tres boludos."
+    tt "Saco el celular y llamo a emergencias, sin sacarles los ojos de encima a los tres chiflados."
 
 # game/act2.rpy:1113
 translate spanish p_refuse_6e7bced3:
 
     # t neutral right "Hello? Excuse me, I'd like to call an ambulance. Yes, I'm at the Razing Thunder Derby."
-    t neutral right "¿Bueno? Disculpe, necesito una ambulancia. Sí, estoy en el Derby Razing Thunder."
+    t neutral right "¿Hola? Disculpe, necesito una ambulancia. Sí, estoy en el Derby Trueno Arrasador."
 
 # game/act2.rpy:1115
 translate spanish p_refuse_e02000cf:
@@ -2640,7 +2648,7 @@ translate spanish p_refuse_391b2384:
 translate spanish p_refuse_56cd9dc1:
 
     # t "Number of ambulances..."
-    t "Cantidad de ambulancias..."
+    t "Número de ambulancias..."
 
 # game/act2.rpy:1123
 translate spanish p_refuse_b1a56da3:
@@ -2676,13 +2684,13 @@ translate spanish p_refuse_bf66a447:
 translate spanish p_refuse_20d07ba0:
 
     # tt det smile "The three thugs charge at me. I—"
-    tt det smile "Los tres matones me cargan. Yo—"
+    tt det smile "Los tres matones corren hacia mi. Yo—"
 
 # game/act2.rpy:1149
 translate spanish p_badend2_dd562b1c:
 
     # tt neutral drop "I hesitate for a fraction of a second, overthinking my move as all three thugs close in at once. Their combined attack hits me before I can react."
-    tt neutral drop "Dudo una fracción de segundo, dándole demasiadas vueltas a mi jugada mientras los tres matones me cierran el cerco al mismo tiempo. Su ataque combinado me agarra antes de que pueda reaccionar."
+    tt neutral drop "Dudo una fracción de segundo, dándole demasiadas vueltas a mi jugada mientras los tres matones me cierran el paso al mismo tiempo. Su ataque combinado me da antes de que pueda reaccionar."
 
 # game/act2.rpy:1151
 translate spanish p_badend2_eb90a586:
@@ -2694,7 +2702,7 @@ translate spanish p_badend2_eb90a586:
 translate spanish p_badend2_a6e2f86d:
 
     # tt "One of the thugs swings their baton, catching me across the side of my head."
-    tt "Uno de los matones blande su bastón y me da un golpe de lleno en un costado de la cabeza."
+    tt "Uno de los matones blande su garrote y me da un golpe de lleno en un costado de mi cabeza."
 
 # game/act2.rpy:1157
 translate spanish p_badend2_a7cdb8ab:
@@ -2706,7 +2714,7 @@ translate spanish p_badend2_a7cdb8ab:
 translate spanish p_badend2_eee6ae1c:
 
     # tt "My vision flashes white. Before I can regain my balance, a second person drives the heavy wrench into my ribs."
-    tt "Se me nubla la vista con un fogonazo blanco. Antes de que pueda recuperar el equilibrio, un segundo tipo me clava una pesada llave inglesa en las costillas."
+    tt "Se me nubla la vista con un fogonazo blanco. Antes de que pueda recuperar el equilibrio, un segundo tipo me clava la pesada llave inglesa en las costillas."
 
 # game/act2.rpy:1162
 translate spanish p_badend2_69ed12c3:
@@ -2718,19 +2726,19 @@ translate spanish p_badend2_69ed12c3:
 translate spanish p_badend2_b774d67f:
 
     # tt "I double over, struggling to catch my breath. The one with brass knuckles grabs me by the collar and punches me in the stomach."
-    tt "Me doblo por la mitad, luchando por recuperar el aire. El del puño americano me agarra de las solapas y me da un piñazo en la boca del estómago."
+    tt "Me doblo por la mitad, luchando por recuperar el aire. El del puño americano me agarra del cuello de la camisa y me da un piña en el estómago."
 
 # game/act2.rpy:1166
 translate spanish p_badend2_97e46ff7:
 
     # tgc "That's for sticking your nose where it doesn't belong!"
-    tgc "¡Esto es por meter el hocico donde no te llaman!"
+    tgc "¡Esto es por meter las narices donde no te llaman!"
 
 # game/act2.rpy:1170
 translate spanish p_badend2_a93307b9:
 
     # tt "Stumbling backward, I take another blow from the baton across my shoulder, sending me crashing onto the asphalt."
-    tt "Tambaleo hacia atrás y recibo otro bastonazo en el hombro que me manda a caer de lleno contra el asfalto."
+    tt "Tambaleándome hacia atrás, recibo otro garrotazo en el hombro que me manda a caer de lleno contra el asfalto."
 
 # game/act2.rpy:1173
 translate spanish p_badend2_5c4d62f6:
@@ -2742,7 +2750,7 @@ translate spanish p_badend2_5c4d62f6:
 translate spanish p_badend2_168e011c:
 
     # tt "I try to push myself up, only to fall back down after the guy with a wrench kicks me."
-    tt "Intento incorporarme, pero vuelvo a caer cuando el de la llave me tira una patada."
+    tt "Intento reincorporarme, pero vuelvo a caer cuando el de la llave me tira una patada."
 
 # game/act2.rpy:1178
 translate spanish p_badend2_24332118:
@@ -2754,19 +2762,19 @@ translate spanish p_badend2_24332118:
 translate spanish p_badend2_d2178904:
 
     # tt aw neutral drop "The three villains surround me, delivering a final series of kicks and blows while I struggle to protect myself."
-    tt aw neutral drop "Los tres matones me rodean y me bajan a los golpes y patadas mientras intento cubrirme como puedo."
+    tt aw neutral drop "Los tres matones me rodean, y me bajan a los golpes y patadas mientras intento cubrirme como puedo."
 
 # game/act2.rpy:1185
 translate spanish p_badend2_1b59f0ff:
 
     # tga "What's wrong? Not so tough now, are you?!"
-    tga "¿Qué pasó? ¿Ya no sos tan duro, eh?!"
+    tga "¿Qué pasó? ¿Ya no sos la gran cosa, eh?!"
 
 # game/act2.rpy:1187
 translate spanish p_badend2_7538300e:
 
     # tt "A sharp kick hits my side. I curl up, barely able to move."
-    tt "Una patada brutal me da en las costillas. Me hago un ovillo, apenas puedo moverme."
+    tt "Una patada brutal me da en las costillas. Me hago un ovillo, apenas pudiendo moverme."
 
 # game/act2.rpy:1189
 translate spanish p_badend2_f71b1ef6:
@@ -2808,19 +2816,19 @@ translate spanish p_badend2_b552001d:
 translate spanish p_badend2_ed279904:
 
     # tt "…Damn it…"
-    tt "…Maldita sea…"
+    tt "…Mierda…"
 
 # game/act2.rpy:1220
 translate spanish p_baton_7fa1317d:
 
     # tt "The one with a baton steps up first, bringing it down in a heavy vertical strike. Muscle memory kicks in..."
-    tt "El del bastón se adelanta primero y descarga un golpe vertical y pesado. La memoria muscular actúa..."
+    tt "El del garrote se adelanta primero, tirando un golpe vertical y pesado. La memoria muscular actúa..."
 
 # game/act2.rpy:1222
 translate spanish p_baton_ae86b53d:
 
     # tt det yell "...and I step inside his guard, catching his wrist!"
-    tt det yell "...¡y me meto dentro de su guardia, atrapándole la muñeca!"
+    tt det yell "...¡y me meto dentro de su guardia, atrapándo su muñeca!"
 
 # game/act2.rpy:1225
 translate spanish p_baton_df6b7049:
@@ -2832,7 +2840,7 @@ translate spanish p_baton_df6b7049:
 translate spanish p_baton_67518685:
 
     # tt det neutral "Before he can recover, I throw a quick back elbow, knocking him off-balance and sending him crashing right into his buddy. Both of them hit the asphalt in a tangle of limbs."
-    tt det neutral "Antes de que pueda reaccionar, le clavo un codazo rápido hacia atrás que lo desequilibra y lo manda a chocar contra su compañero. Ambos caen al asfalto hechos un enredo de miembros."
+    tt det neutral "Antes de que pueda reaccionar, le clavo un codazo rápido, desequilibrandolo y mandandolo a chocar contra su compañero. Ambos caen al asfalto hechos un revoltijo de brazos y piernas."
 
 # game/act2.rpy:1235
 translate spanish p_baton_54852ffd:
@@ -2850,13 +2858,13 @@ translate spanish p_baton_ac1a7923:
 translate spanish p_baton_217c67e9:
 
     # tt det yell "I duck under the swing, grab his wrist, and twist it sharply against his back, forcing him down onto the hood of the nearest car."
-    tt det yell "Me agacho esquivando el golpe, le agarro la muñeca y se la retuerzo fuerte contra la espalda, obligándolo a caer de pecho sobre el capó del auto más cercano."
+    tt det yell "Me agacho esquivando el golpe, agarro su muñeca y la retuerzo fuerte contra su espalda, obligándolo a caer de pecho sobre el capó del auto más cercano."
 
 # game/act2.rpy:1243
 translate spanish p_baton_6f797abc:
 
     # tt det neutral "With his arm pinned and his balance completely broken, I deliver a sharp, controlled strike with the heel of my hand to the side of his neck. His eyes roll back, and he slumps forward onto the hood,"
-    tt det neutral "Con el brazo inmovilizado y el equilibrio totalmente roto, le suelto un golpe seco y controlado con la base de la mano en el costado del cuello. Pone los ojos en blanco y se desploma hacia adelante sobre el capó,"
+    tt det neutral "Con el brazo inmovilizado y el equilibrio totalmente roto, suelto un golpe seco y controlado con la base de la mano en el costado su cuello. Pone los ojos en blanco y se desploma hacia adelante sobre el capó,"
 
 # game/act2.rpy:1245
 translate spanish p_baton_6db4f480:
@@ -2868,13 +2876,13 @@ translate spanish p_baton_6db4f480:
 translate spanish p_wrench_e1396b2e:
 
     # tt det neutral "The guy with the wrench lunges with a wild, horizontal swing. It's a powerful hit, but way too slow."
-    tt det neutral "El de la llave inglesa se me viene encima con un barrido horizontal salvaje. Pega fuerte, pero es demasiado lento."
+    tt det neutral "El de la llave inglesa se me viene encima con un barrido horizontal salvaje. Es un golpe fuerte, pero demasiado lento."
 
 # game/act2.rpy:1258
 translate spanish p_wrench_2c53d574:
 
     # tt det yell "I duck under the blow, grab his extended arm, and use his own momentum to execute a clean shoulder throw."
-    tt det yell "Me agacho esquivando el golpe, le agarro el brazo estirado y uso su propio impulso para hacerle una perfecta caída de hombro."
+    tt det yell "Me agacho para esquivar el golpe, agarro el brazo extendido y uso su propio impulso para proyectarlo limpiamente por encima de mi hombro."
 
 # game/act2.rpy:1261
 translate spanish p_wrench_01944a29:
@@ -2886,7 +2894,7 @@ translate spanish p_wrench_01944a29:
 translate spanish p_wrench_7dc0027f:
 
     # tt "The baton guy is the last one left. He snaps the weapon open, face red with anger. He lunges at me with a quick, aggressive jab."
-    tt "El de la macana es el último que queda. Abre el arma de un tirón, con la cara roja de bronca. Se me viene encima con una piña rápida y agresiva."
+    tt "El del garrote es el último que queda. Abre el arma de un tirón, con la cara roja de bronca. Se me viene encima con un golpe rápido y directo."
 
 # game/act2.rpy:1269
 translate spanish p_wrench_dc5da5d3:
@@ -2898,13 +2906,13 @@ translate spanish p_wrench_dc5da5d3:
 translate spanish p_wrench_7ecbd26a:
 
     # tt "As he doubles over from the impact, I sweep his legs out from under him, sending him crashing onto the concrete."
-    tt "Mientras se encorva por el golpe, le barre las piernas y lo mando a estrellarse contra el cemento."
+    tt "Mientras se encorva por el golpe, le hago un barrido de piernas y lo mando a estrellarse contra el cemento."
 
 # game/act2.rpy:1277
 translate spanish p_wrench_1d9d84a7:
 
     # tt "The baton skitters away, out of reach."
-    tt "La macana sale disparada, quedando fuera de su alcance."
+    tt "El garrote sale disparado, quedando fuera de su alcance."
 
 # game/act2.rpy:1283
 translate spanish p_brass_fd77a916:
@@ -2916,13 +2924,13 @@ translate spanish p_brass_fd77a916:
 translate spanish p_brass_e00ccb73:
 
     # tt det yell "I parry the strike outward with my forearm, lock his arm, and redirect his forceful punch straight into one of the other men's chest."
-    tt det yell "Le desvío el golpe hacia afuera con el antebrazo, le trabo el brazo y le redirecciono el piñazo directo al pecho de uno de los otros tipos."
+    tt det yell "Le desvío el golpe hacia afuera con el antebrazo, trabo su brazo y le redirecciono el gope directo al pecho de uno de los otros tipos."
 
 # game/act2.rpy:1288
 translate spanish p_brass_46d5e6b8:
 
     # tga "Oof! Watch where you're punching, you idiot!"
-    tga "¡Uf! ¡Mirá dónde pegás, boludo!"
+    tga "¡Uf! ¡Mirá dónde pegás, pelotudo!"
 
 # game/act2.rpy:1290
 translate spanish p_brass_b8724190:
@@ -2934,7 +2942,7 @@ translate spanish p_brass_b8724190:
 translate spanish p_brass_dfeadf53:
 
     # tt det neutral right "That leaves the one with a wrench. He raises it and charges at me with a wild swing."
-    tt det neutral right "Eso deja al de la llave inglesa. La levanta y se me viene encima con un barrido salvaje."
+    tt det neutral right "Queda el de la llave inglesa. Él la levanta y se me viene encima con un golpe desesperado."
 
 # game/act2.rpy:1301
 translate spanish p_brass_b23ad887:
@@ -2952,7 +2960,7 @@ translate spanish p_brass_99d1be23:
 translate spanish p_brass_45140aee:
 
     # tt "Lights out for him. I watch him drop the wrench onto the ground as the alarm of the car goes off."
-    tt "Se le apagó la luz. Lo veo dejar caer la llave inglesa al piso mientras se dispara la alarma del auto."
+    tt "Se le apagaron las luces. Lo veo dejar caer la llave inglesa al piso mientras se dispara la alarma del auto."
 
 # game/act2.rpy:1314
 translate spanish parking_complete_09255c34:
@@ -2964,25 +2972,25 @@ translate spanish parking_complete_09255c34:
 translate spanish parking_complete_7163b2e0:
 
     # tt "I kick the envelope containing the bribe money towards one of the groaning thugs."
-    tt "Le pateo el sobre con la plata del soborno hacia uno de los matones que gimen de dolor."
+    tt "Pateo el sobre con la plata de soborno hacia uno de los matones que gimen de dolor."
 
 # game/act2.rpy:1319
 translate spanish parking_complete_44efe7af:
 
     # t "Keep the change."
-    t "Quedate con el vuelto."
+    t "Quedense con el vuelto."
 
 # game/act2.rpy:1322
 translate spanish parking_complete_9d3ab7a7:
 
     # tt "Straightening my collar, I turn back towards the stables, only to hear a series of shouts and screams in the distance."
-    tt "Me acomodo el cuello de la camisa y me doy vuelta hacia los boxes, solo para escuchar una serie de gritos y chillidos a lo lejos."
+    tt "Me acomodo el cuello de la camisa y me doy la vuelta hacia los caballerizas, solo para escuchar una serie de gritos y chillidos a lo lejos."
 
 # game/act2.rpy:1325
 translate spanish parking_complete_5b61d581:
 
     # t "What's going on now…!? I'd better hurry!"
-    t "¿Qué pasa ahora…? ¡Más vale que me apure!"
+    t "¿¡Qué pasa ahora…!? ¡Más vale que me apure!"
 
 translate spanish strings:
 
@@ -3004,13 +3012,65 @@ translate spanish strings:
 
     # game/act2.rpy:1139
     old "Disarm the man with the baton"
-    new "Desarmar al de la macana"
+    new "Desarmar al tipo de la porra"
 
     # game/act2.rpy:1141
     old "Shoulder throw the man with the wrench"
-    new "Derribar al de la llave inglesa por el hombro"
+    new "Arrojar al de la llave inglesa por encima del hombro"
 
     # game/act2.rpy:1143
     old "Deflect the brass-knuckle punch"
-    new "Desviar el piñazo del de los nudillos de bronce"
+    new "Desviar la piña del de los nudillos de bronce"
+
+# TODO: Translation updated at 2026-11-20 16:04
+
+# game/act2.rpy:770
+translate spanish lockers1_6bec8720:
+
+    # x "Has my magnanimous cooperation not been to your liking, inspector?"
+    x "¿Mi magnánima cooperación no fue de su agrado, inspectora?"
+
+# game/act2.rpy:786
+translate spanish lockers1_65349334:
+
+    # t what aw drop "It's nice to see you too, inspector Medina."
+    t what aw drop "Un gusto verla de nuevo, inspectora Medina."
+
+# game/act2.rpy:902
+translate spanish lockers1_topic1_8f526d45:
+
+    # en "Inspector, inspector… If I were as avaricious as you make me out to be, you and that young man would have been charged for entry by now. And not at retail price, mind you!"
+    en "Inspectora, inspectora… Si fuera tan avaricioso como me pinta, a usted y a ese joven ya les habrían cobrado la entrada. ¡Y no a precio de lista, ojo!"
+
+# game/act2.rpy:972
+translate spanish lockers1_complete_b39bf5b4:
+
+    # t grin "I'll give it a thorough read, then. Thanks, inspector!"
+    t grin "Me lo voy a leer bien a fondo, entonces. ¡Gracias, inspectora!"
+
+# TODO: Translation updated at 2026-11-21 12:25
+
+# game/act2.rpy:1101
+translate spanish act2_inves_complete_4087f9b4:
+
+    # n "{i}*RING!*{/i}"
+    n ""
+
+# game/act2.rpy:1102
+translate spanish act2_inves_complete_8a46c210:
+
+    # n "*Bleep!*"
+    n ""
+
+# game/act2.rpy:1108
+translate spanish act2_inves_complete_6f8083b3:
+
+    # n "*Beep.*"
+    n ""
+
+# game/act2.rpy:1117
+translate spanish act2_inves_complete_6f8083b3_1:
+
+    # n "*Beep.*"
+    n ""
 

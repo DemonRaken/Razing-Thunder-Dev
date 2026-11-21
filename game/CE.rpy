@@ -12,20 +12,20 @@ screen ce_ui():
    tag ce
    zorder 1
    hbox:
-      xalign 0.65
+      xalign 0.7
       yalign 0.75
       spacing 10
       textbutton "◀" action Rollback()
-      textbutton "Press":
+      textbutton _("Press"):
          action SetVariable("ce_mode", None if ce_mode == "press" else "press")
          selected ce_mode == "press" style "ce_button"
-      textbutton "Object":
+      textbutton _("Present"):
          style "ce_button"
          action Show("dossier_ui")
          #action SetVariable("ce_mode", None if ce_mode == "object" else "object") 
          #selected ce_mode == "object" style "ce_button"
       vbox:
-         text "Reputation" size 20 xalign 0.5
+         text _("Reputation") size 20 xalign 0.5
          bar value ce_rep range 10 xsize 200 ysize 20 yalign 0.5
       textbutton "▶" action Return()
               

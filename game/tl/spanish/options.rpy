@@ -13,3 +13,11 @@ translate spanish strings:
     old "Razing Test"
     new "Prueba de Razing"
 
+# TODO: Translation updated at 2026-11-20 10:51
+
+translate spanish strings:
+
+    # game/options.rpy:15
+    old "Razing Thunder"
+    new "Trueno Arrasador"
+

@@ -31,7 +31,7 @@ label act2:
     scene placeholder_stables
     with fade
     tl "9:40 AM.\nRazing Thunder Derby.\nStables."
-    play music happy2
+    play music happy2 fadein 2.5
     tt "Whew… we're finally done with all the paperwork. I'm \"{color=#FF9900}Dama de Plata's{/color}\" trainer now, even if only in name."
     show cata neutral with dissolve
     c "Several participants have withdrawn from the competition, so there are plenty of vacant stalls. You can keep Chispa in one of them."
@@ -95,7 +95,7 @@ label act2:
         t "Hm?"
 
         # Vincent sprite here.
-        show vi smile at slightright
+        show vi angry at slightright
        
         with dissolve
         x "Keep letting your nerves control the reins and you'll burn through the animal's stamina before you reach the halfway point of the track. If you don't fall off first, that is."
@@ -111,10 +111,12 @@ label act2:
 
         lu "Huh? Who are—"
 
+        show vi smile
         v "Hoh. And how long should this guy wait, then?"
         
         t grin "Naturally, the horse will tell him that. It's all about body language! I'm telling you, it'll scream at you when it's time to go all out."
 
+        show vi angry
         v "Talking to his ride? Sounds like a very inconsistent and dangerous thing to rely on. We've already measured when fatigue sets in for Lucero and when his acceleration peaks."
 
         lu "…"
@@ -123,10 +125,12 @@ label act2:
         
         t smile "I'm actually a trainer, just like you. I'm Antonio Ortiz."
 
+        show vi smile
         v "Vicente Ruiz. This boy here is Lucas Mendoza. I don't think I've seen you at the previous races, Antonio. Who's your jockey?"
 
         t "Catalina Moreno. Got hired for the job today."
 
+        show vi angry
         v "Catalina—"
 
         lu "…Moreno?"
@@ -135,21 +139,23 @@ label act2:
         
         t aw smile drop "Uh… I take it you two aren't on friendly terms with her?"
 
+        show vi smile2
         v "Find me someone who is. She won't give you the time of day if you're not one of the top contestants."
 
         lu "A nepo baby through and through. Having everything served on a silver platter from the get-go… I wouldn't be surprised if this is just a hobby for her."
         
-     
         tt aw neutral right "Well, I can't really blame them for having that kind of impression of her. It's a bit harsh, though. Catalina is as serious about competing as anyone else."
 
+        show vi angry
         v "So what does Moreno's trainer want with us? Shouldn't you be helping her prepare?"
 
         t aw smile "That's not in her plans, apparently. I just wanted to ask the other competitors a few things about the race and the recent incidents."
 
+        show vi smile
         v "Right, those. If Lucas is feeling up to it, you can go ahead."
 
         lu "I don't mind. There's still time before the race begins."
-        play music happy
+        play music happy fadein 2.5
 
         $ dossier.add(dp_lucas)
         $ dossier.add(dp_vicente)
@@ -176,7 +182,9 @@ label act2:
             # When checking again
             tt grin "Heh. It would be pretty funny if someone filmed everything on horseback, staying ahead of all the other jockeys. No one can keep up with the cameraman."
         label racetrack1_presenting:
+            show vi angry
             v "Gonna have to turn you down, Antonio. On Lucas' behalf, that is!"
+            show vi smile
             v "Can't let the jockey drink something weird before the race. I'll take the hit."
             lu "You just want to hog it for yourself."
         label racetrack1_topic1:
@@ -186,10 +194,12 @@ label act2:
 
             lu "I remember seeing her horse collapse as we approached the finish line. There wasn't much time to react."
 
+            show vi frown with dissolve
             v "That gal Valentina went down like someone fired a cannonball at her horse. Poor thing."
 
             lu "One after another, the best riders keep fumbling right at the end. I don't think it's just a coincidence at this point."
-
+            
+            show vi angry
             v "But there's just no way all the pros make the same dumb mistake. It's unnatural."
 
             t aw neutral right "It's really worrying. What about your horse? Is it doing okay?"
@@ -197,6 +207,8 @@ label act2:
             lu "Lucero is ready to deliver. We may be lacking in speed a bit, but we'll pull through."
 
             lu "He's been improving lately, too. I just need to make sure I don't push him beyond his limits."
+
+            show vi smile
 
             v "And I'm making extra sure this fella is well-fed and doesn't get the hijinks before the big moment."
 
@@ -218,8 +230,11 @@ label act2:
 
             v "This guy gets it. That's how a race should be. If it were novice mistakes or fatigue, it wouldn't be such a big deal."
 
+            show vi smile2
+
             v "Alas. We can only pray this gets resolved so the kids can ride as they should."
         label racetrack1_topic2:
+            show vi angry with dissolve
             v "Alright, young man. Spill the beans. Did the Moreno girl send you here to mess with Lucero?"
 
             t det yell "What—no! I wouldn't do something like that! It's horrible to hurt animals just to get an advantage."
@@ -232,6 +247,7 @@ label act2:
 
             t aw neutral right "Why do you think Catalina is giving me these kinds of orders? I get that she isn't the most… amicable person, but…"
 
+            show vi frown
             v "It's nothing against you, bud. There are just some unsavory rumors going around."
 
             t neutral "Rumors? About Catalina?"
@@ -249,11 +265,12 @@ label act2:
             t neutral drop "Hang on, is that why her previous trainer quit? Because of the rumors surrounding her, or…?"
 
             lu "We don't really know. It's not like he came to tell us before quitting. Some say he got cut off from Moreno's team after being caught red-handed carrying out her orders…"
-
+            show vi angry
             v "Could be the man just didn't agree with her methods and wanted none of it any longer."
 
             t aw neutral right "Is that so…?"
         label racetrack1_complete:
+            show vi smile
             v "Alright, we should get back to it. Lucero here is getting restless."
 
             t smile "Right, of course. Thank you two for your time."
@@ -325,7 +342,7 @@ label act2:
         r "Not like I would expect you to get it."
 
         tt what det neutral "Why you…! Ugh, I'd better just ask what I need to and get out of here." 
-        play music happy2
+        play music happy2 fadein 2.5
         $ dossier.add(dp_renata)
         $ dossier.add(dp_esteban)
         # Dossier: Presenting evidence (mate)
@@ -336,6 +353,8 @@ label act2:
             show rena angry
 
             r "This shit better not be lukewarm."
+
+            show est smile
 
             e "You don't have to drink it if you don't like it, Renata."
 
@@ -352,6 +371,8 @@ label act2:
 
             show rena neutral 
             r "…"
+
+            show est smile2
 
             e "Renata, I believe that's his…"
 
@@ -372,6 +393,8 @@ label act2:
 
             r "You wish. Even if I had, why should I tell you?"
 
+            show est neutral with dissolve
+
             e "Renata."
 
             show rena angry
@@ -389,9 +412,13 @@ label act2:
             show rena neutral
             r "…Hmph."
 
+            show est neutral
+
             e "That's very admirable. Unfortunately, there isn't much we can tell you. We double-checked the water supply and the food used here for signs of foul play, but everything seems clean."
 
             t neutral "You checked this yourselves?"
+
+            show est frown
 
             e "Yeah. No trainer wants to see another horse collapse, so most of us collaborated to see if we could find anything amiss."
 
@@ -401,11 +428,15 @@ label act2:
 
             t "I see... Then, let me ask you something. Do the horses show any signs of exhaustion before the race? Or exhibit any unusual behavior?"
 
+            show est neutral
+
             e "Not quite. Every horse is examined and saddled before the race begins. If they were feeling unwell to begin with, they wouldn't be cleared to participate."
 
             e "If a horse is truly unwell, a professional will spot it immediately. They were perfectly healthy right up until the moment they fell."
 
             t neutral drop "Zero signs? Are you sure about that?"
+
+            show est angry
 
             e "I stake my reputation on it, Antonio. A trainer's eye doesn't miss these things."
 
@@ -416,6 +447,8 @@ label act2:
             show rena yell with dissolve
 
             r "Are you brain-dead? The races have only been stopped because horses fainted during them. What does it matter what happens afterward?"
+
+            show est smile2
 
             e "It would certainly be concerning if horses were collapsing even after the event was postponed, but I'm not aware of anything like that happening."
 
@@ -431,6 +464,8 @@ label act2:
 
             tt what aw drop "T-The one from the movie…?"
 
+            show est smile with dissolve
+
             e "Her riding skills are remarkable, as expected from someone of her lineage. She's among the top contenders, and one we're keeping a close eye on."
 
             show rena angry
@@ -438,6 +473,8 @@ label act2:
             r "Bah! I already beat her in the previous race, and I'll do it again today!"
 
             t smile "Bitter rivals to the end, huh?"
+
+            show est smile2
 
             e "It's only natural. Renata wants to beat the best and stand at the top."
 
@@ -468,13 +505,13 @@ label act2:
 
             t "Meaning…?"
 
-            
-
             r "She's behind all those accidents you mentioned, genius. She's been getting rid of anyone who stands in her way!"
 
             show rena angry
 
             r "It's pathetic, really. Things should be settled on the racetrack, not by using money, connections, or whatever to take out the competition. It means nothing if you win that way."
+
+            show est neutral with dissolve
 
             e "Those are just rumors, Antonio. There's no proof that Catalina has anything to do with the incidents."
 
@@ -490,7 +527,8 @@ label act2:
             tt aw neutral drop "I can't say I'm thrilled about being treated like some disposable placeholder."
 
             tt neutral drop "Still, that's not what I came here for. As long as she leaves me to my own devices, this arrangement works in my favor."
-        label paddock1_complete:         
+        label paddock1_complete:    
+            show est smile     
             e "Oh, look at the time. We'd better wrap things up here, Renata."
 
             show rena angry with dissolve
@@ -503,11 +541,15 @@ label act2:
 
             r "Not just them, dumbass! Anyone here, really."
 
+            show est neutral
+
             e "There are plenty of people who decide who to bet on just by watching the horses move around the parade ring. That's what makes this such an important moment to show off."
 
             t smile "Oh, that makes sense…"
 
             r "I wouldn't stick around out here this long if I had a choice, though. Watching me race before should be more than enough."
+
+            show est smile
 
             e "We have obligations, Renata. You wouldn't want to lose all that support from your sponsors, would you?"
 
@@ -549,10 +591,13 @@ label act2:
         show cata smile
         c "…Great timing. Look over there. My trainer is back."
 
+        show seb neutral
+
         x "What?"
 
         t grin "…Hey there! How's it going?"
 
+        show seb grr
         x "This chump with the scar? He isn't even dressed for the job!"
 
         tt det yell "Excuse me!? My clothes are very classy!"
@@ -560,6 +605,7 @@ label act2:
         show cata smile3
         c "It doesn't matter. All the paperwork has been taken care of. You can check with the desk if you don't believe me."
 
+        show seb angry
         x "Tch. That's exactly what I'll do. Then I'll have this country bumpkin out of my Derby!"
 
         hide seb
@@ -577,7 +623,7 @@ label act2:
         t aw neutral drop "…Yes, ma'am."
 
         tt "Who was that, anyway? I'd better ask before she starts ignoring me again."
-        play music cata
+        play music cata fadein 2.5
         label stables1_presenting:
             # Dossier > Presenting Mate
             show cata neutral with dissolve
@@ -612,18 +658,18 @@ label act2:
             c "So you've already heard about them. That saves me time."
 
             # Check a flag if they answered they know Moreno in ACT 1. If yes:
+            if knowcata:
+                show cata smile
+                c "You hardly look the part, but you're surprisingly well-informed. That is... commendable."
 
-            show cata smile
-            c "You hardly look the part, but you're surprisingly well-informed. That is... commendable."
-
-            tt what drop "What kind of backhanded compliment is that…?"
+                tt what drop "What kind of backhanded compliment is that…?"
 
             # If they don't know Moreno:
+            else:
+                show cata angry2
+                c "…How is it that you know about a lowlife like him, but not me? Frankly, I am appalled."
 
-            show cata angry2
-            c "…How is it that you know about a lowlife like him, but not me? Frankly, I am appalled."
-
-            tt neutral closed "Because it's my JOB to deal with crooks like him…"
+                tt neutral closed "Because it's my JOB to deal with crooks like him…"
 
             #Back to main branch
 
@@ -758,32 +804,44 @@ label act2:
         show en grin at left
         with dissolve
         
-        show me neutral at slightright
+        show me yell at slightright
         with dissolve
+        
 
         x "There isn't going to be much of a show if all your participants keep dropping like flies!"
 
+        show en smile
+
         x "Well now! It's your job to prevent that, yes? It's why I made an exception and allowed you in."
+
+        show me angry
 
         x "Yeah. A job you aren't making any easier for me to carry out."
 
-        x "Has my magnanimous cooperation not been to your liking, Inspector?"
+        show en neutral
 
+        x "Has my magnanimous cooperation not been to your liking, inspector?"
+        
+        show en yell
         x "If you're not happy, then I am not happy."
 
+        show me angry2
         x "Oh, I'm pretty unhappy, alright, you conniving son of a—"
 
         t neutral drop "Hey, hey! What's going on here?"
 
+        show en smile
+
         x "Oh! Howdy, young man. The inspector here and I were having a pleasant chat about the Razing Thunder event."
 
+        show me neutral with dissolve
         x "It's anything but pleasant... What the hell are you doing here, Ortiz? I've got enough crap to deal with as it is, thanks to this guy."
 
         x "Ah, you two are already acquainted?"
 
         x "Regrettably."
 
-        t what aw drop "It's nice to see you too, Inspector Medina."
+        t what aw drop "It's nice to see you too, inspector Medina."
 
         scene black 
         show me neutral at center
@@ -800,27 +858,32 @@ label act2:
         tt neutral "Arbitrary exercise of justice will put you in the slammer. We're both aware of that. So why?—"
 
         scene placeholder_lockers
-        show en grin at left        
+        show en smile at left        
         show me neutral at slightright
         with fade
-
+        show me yell
         me "…I swear, if I find out you sneaked in here, I'm—"
 
+        show en neutral
         x "Oho, a trespasser? Quite daring. I have security on speed dial for cases like this."
 
         t det yell "Whoa! Hang on now, I'm here on a job! Catalina Moreno hired me as her trainer! You can check with her if you want."
 
-        x "That's wonderful news! I was worried that Ms. Moreno wouldn't be able to compete after her trainer walked out on her…"
+        show en grin
 
+        x "That's wonderful news! I was worried that Ms. Moreno wouldn't be able to compete after her trainer walked out on her…"
+        show me angry
         me "Why did she have to go and get you of all people?"
 
         t aw smile drop "Apparently, I was the only one willing to take the job…"
-
+        show me neutral
         me "…That checks out."
 
         tt neutral drop "Phew... she won't send the K9s after me now, at least."
 
         t neutral "So, who is this you were talking to…?"
+
+        show en smile
 
         en "Ah, where are my manners? Lorenzo Villarreal. I'm the organizer of the greatest horse-racing event you're ever likely to experience."
 
@@ -831,12 +894,12 @@ label act2:
         en "Indeed I am, my boy! How's the place been treating you so far? No doubt the caviar and champagne have sweetened your stay."
 
         t aw smile "I… haven't had either of those."
-
+        show en neutral
         en "Ah. I see. You're one of *those*. Rest assured, you will still be able to enjoy yourself at my Derby."
 
         tt what det drop "One of 'those'? What does that even mean…?" 
         tt neutral right "Anyway, this is a perfect chance to ask about the clandestine gambling. There's no way the host himself doesn't know anything about it."
-        play music enzo
+        play music enzo fadein 2.5
         $ dossier.add(dp_lorenzo)
         $ dossier.add(dp_medina)
         label lockers1_investigating:
@@ -865,55 +928,85 @@ label act2:
 
             t neutral "What can you tell me about the competition? What makes it so prestigious?"
 
+            show en yell
+
             en "My boy! Are those eyes of yours just for decoration? Have you not taken a single look around you?"
 
             tt what drop "This coming from the guy wearing alien sunglasses indoors..."
-
+            show en grin
             en "We have a staggering capacity of over 100,000 spectators! Gourmet meals to feast on before each race…"
-
+            show en yell
             en "Top professional jockeys gathered in one place, carefully selected based on their records and achievements. State-of-the-art facilities! A jaw-dropping prize of SEVEN AND A HALF MILLION" 
             
             en "DOLLARS for the winner!"
 
+            show en grin
+
             en "I tell you, name me one competition more glamorous than mine, and I'll eat my hat!"
 
             t aw smile "Uh… the Olympics?"
-
+            show en yell
             en "Those are only held every four years, Mr. Ortiz. Razing Thunder is right at your fingertips every year! It's our very own carnival."
 
             t neutral drop "How are you able to afford all this?"
-
+            show en smile
             en "Certainly not through my merit alone, I assure you. Though my sheer brilliance accounts for a good chunk of it."
 
+            show en yell
+
             en "Sponsors, my boy! Everyone makes a generous contribution to get their name out at such a spectacular event as this."
+
+            show en grin
 
             en "On that note, make sure you place your bets using BETFIGHTER! There's a handsome prize pool waiting to be won."
 
             t aw smile drop "I-I'm good, thanks. Since you brought up betting, do you know anything about people running clandestine gambling operations based on the race results?"
 
+            show me smile3
+
             me "Yes, Villarreal. Know anything about that? You love keeping your customers hooked on betting."
+
+            show en neutral
 
             en "Goodness, no! I assure you, we only work with official betting houses! Admittedly, hosting a private event gives me more freedom to choose which betting houses we affiliate with…"
 
+            show en nervous
+
             en "…but I'd never stoop so low! What do you take me for?"
+
+            show me angry
 
             me "A greedy bastard."
 
-            en "Inspector, Inspector… If I were as avaricious as you make me out to be, you and that young man would have been charged for entry by now. And not at retail price, mind you!"
+            show en grin
+
+            en "Inspector, inspector… If I were as avaricious as you make me out to be, you and that young man would have been charged for entry by now. And not at retail price, mind you!"
+
+            show me yell
 
             me "Piss off. You know I'm investigating, and you've only allowed a handful of my subordinates into the Derby."
 
+            show en neutral
+
             en "Those are merely precautions! Would you really have me let a plethora of officers swarm the place and scare away the public?"
+
+            show me angry
 
             me "I don't give a rat's ass if they get scared. They can leave. They SHOULD leave, before something worse happens."
 
+            show en grin
             en "Evacuate them, you mean? We complied with your demands the previous two times, and you came up empty-handed. I only wish for the event to run its course properly this time."
+
+            show me sweat2
 
             me "Tch…"
             
             jump lockers1_complete
         label lockers1_complete:
+            show en smile with dissolve
             en "Well now, I'm afraid I have quite a few matters that require my personal attention."
+
+            show en grin
 
             en "Enjoy your stay, and do look forward to the race!"
 
@@ -922,7 +1015,7 @@ label act2:
             # He leaves
 
             hide en with dissolve
-            stop music
+            stop music fadeout 2.5
             t aw neutral drop"…The racehorses. *Sigh.*"
             
             show me neutral at center
@@ -935,13 +1028,19 @@ label act2:
 
             t aw neutral right "Ugh… What about you, inspector? Have the police made any progress?"
 
+            show me frown
+
             me "…We've got a few leads, but we can't properly investigate them until this whole spectacle is over."
 
             t neutral "How come? I'd assume you have more than enough authority to get a search warrant."
 
+            show me neutral
+
             me "Let's just say the orders from the higher-ups are pretty clear: 'Get the hell out of there.'"
 
             t det neutral "You've got to be kidding me."
+
+            show me sweat2
 
             me "It's out of my hands. This is all private property, technically. There's only so much we can do without a new incident being reported."
 
@@ -949,12 +1048,14 @@ label act2:
 
             t neutral right "…Thankfully, I'm not nearly as restricted as you are."
 
+            show me angry
+
             me "If you're thinking of doing something stupid, don't."
 
             t aha "Haha, I wouldn't dream of it…"
 
             me "…"
-
+            show me neutral
             me "Here."
 
             # Receives Medical Report
@@ -965,19 +1066,26 @@ label act2:
 
             me "A copy of the examination results for Perla Negra and the other horses that collapsed."
 
+            show me angry
+
             me "They were examined here after the incidents, but I don't trust a single veterinarian on this payroll."
 
             me "As far as I'm concerned, that slimeball Villarreal has them all in his pocket."
 
-            t grin "I'll give it a thorough read, then. Thanks, Inspector!"
+            t grin "I'll give it a thorough read, then. Thanks, inspector!"
+
+            show me sweat
 
             me "Don't mention it. Seriously, don't. I don't even know why I'm handing this over to you."
 
             t det smile "We're on the same side here. We both want to get to the truth—"
-
+            
+            show me yell
             me "Pull any stupid crap, and the next place you'll be investigating is a jail cell."
 
             t neutral drop "G-Got it…!"
+
+            show me neutral
 
             me "I'm out."
 
@@ -988,13 +1096,16 @@ label act2:
     label act2_inves_complete:
         with fade
         # Phone Call / Ringtone / something
-        "*Bleep!*"
-
+        play sound "new_fashion_tone.ogg" fadein 0.5
+        show layer master at earthquake(dt=1.0, dist=2)
+        n "{i}*RING!*{/i}"
+        n "*Bleep!*"
+        
         show tony neutral with dissolve
 
         tt "Huh? I'm getting a phone call. Unknown number… I don't like this. Is it a spam call?"
 
-        "*Beep.*"
+        n "*Beep.*"
 
         t "Hello?"
 
@@ -1003,7 +1114,7 @@ label act2:
         show tony det neutral right
         t "A package? Who is this?"
 
-        "*Beep.*"
+        n "*Beep.*"
         show tony what drop
         t "They hung up…"
 
@@ -1025,6 +1136,7 @@ label act2:
     label parking:
         scene placeholder_parkinglot
         with fade
+        stop music
 
         tt neutral right "Alright, I'm here now… I guess it makes sense that it's mostly empty, since the race is about to start."
 
@@ -1107,7 +1219,7 @@ label act2:
                     "Bad ending. The truth was lost. But you can pay rent at least."
                     return        
         label p_refuse:
-            play music intense
+            play music intense fadein 2.5
             t det yell "Sorry, I won't be accepting this money. You can hand it back to your boss. Or keep it for yourselves."
 
             tgb "Wow, really? We can keep it—"
@@ -1156,7 +1268,7 @@ label act2:
 
             label p_badend2:
                 # Timeout / Bad Ending Choice (Hesitation)
-                play music sad
+                play music sad fadein 2.5
 
                 tt neutral drop "I hesitate for a fraction of a second, overthinking my move as all three thugs close in at once. Their combined attack hits me before I can react."
 
@@ -1323,7 +1435,7 @@ label act2:
         label parking_complete:
             # Aftermath
             show tony det smile drop with dissolve
-            stop music
+            stop music fadeout 2.5
             t "Whew… Their boss is gonna be furious when he sees the dry-cleaning bill for those fancy suits. And the hospital bills, too."
 
             tt "I kick the envelope containing the bribe money towards one of the groaning thugs."

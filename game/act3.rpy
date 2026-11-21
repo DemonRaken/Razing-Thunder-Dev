@@ -30,7 +30,7 @@ label act3:
         t "......he's dead. He's all bruised up, and his legs are bent in an unnatural way, too."
 
         $ dossier.add(de_victimnotes)
-        scene placeholder_racetrack1
+        scene placeholder_paddock
 
         tt "Damn it… how did this happen!?"
 
@@ -140,15 +140,15 @@ label act3:
                 jump silent
 
         label silent:
-        scene black
-        with fade
-        tt "I stay silent, watching things unfold without intervening."
-        tt "..."
-        tt "Just as feared, the derby staff take away Vicente's body before inspector Medina can properly secure the crime scene."
-        tt "The whole thing is dismissed as an accident."
-        tt "Was it really just a tragedy? Or was there a perpetrator behind his death?"
-        tt "Now I will never know the answer... nor am I really bothered to keep track of what happened at the race next."
-        return
+            scene black
+            with fade
+            tt "I stay silent, watching things unfold without intervening."
+            tt "..."
+            tt "Just as feared, the derby staff take away Vicente's body before inspector Medina can properly secure the crime scene."
+            tt "The whole thing is dismissed as an accident."
+            tt "Was it really just a tragedy? Or was there a perpetrator behind his death?"
+            tt "Now I will never know the answer... nor am I really bothered to keep track of what happened at the race next."
+            return
 label intervene:
     stop music
     t "Wait a moment! This is no accident! It's murder."
@@ -167,7 +167,7 @@ label intervene:
 
 #Tony vs Seb
 label vs_seb_Testimony:
-    scene placeholder_bodycg
+    scene placeholder_paddock
     call fx_testimony
     show seb smile3
     with fade
@@ -178,6 +178,7 @@ label vs_seb_Testimony:
     s "Now, get out of the way so these gentlemen can do their job."
     
     hide screen status_indicator
+    stop music fadeout 2.5
     t "So he just... happened to fall off from up there?"
     s "What do you have infront of you? Stop wasting time and let the good inspector do her thing!"
     t "Right after I ask you a few things..."
@@ -185,7 +186,7 @@ label vs_seb_Testimony:
     tt "Yes, actually. And I'm going to find the flaw in your words."
     
 label vs_sebCE:
-    scene placeholder_bodycg
+    scene placeholder_paddock
     call fx_interrogation
     show seb smile3
     with fade
@@ -193,30 +194,36 @@ label vs_sebCE:
     
     s "Get this through your thick skull: this was an accident."
     if ce_mode == "object":
+        call cutin("objection")
         call vs_sebCE_wrong
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         t "Why are you so sure about that?"
         s "I'm getting to it, you impatient dolt! Hmph..."
         with fade
     
     s "He fell down from the grandstands and died when he hit the floor."
     if ce_mode == "object":
+        call cutin("objection")
         call vs_sebCE_wrong
-    if ce_mode:
+    if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         t "Would a fall from that height actually kill him?"
         s "H-He's dead, isn't he? So obviously it is!"
         with fade
 
     s "It's obvious! The fall killed him! Those bruises and injuries are exactly what you'd expect from such a fall! There's nothing suspicious here!"
     if ce_mode == "object":
+        call cutin("objection")
         if ce_object in [de_victimnotes]:
             call vs_sebCE_right
         else:
             call vs_sebCE_wrong
-    if ce_mode:
+    if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         t "And you're sure those injuries were all caused by the fall?"
         s "Of course! What else could've caused them? Stop wasting my time!"
         tt "Hold on... Is that really the case? Something about his injuries doesn't add up."
@@ -225,15 +232,18 @@ label vs_sebCE:
 
     s "Now, get out of the way so these gentlemen can do their job."
     if ce_mode == "object":
+        call cutin("objection")
         call vs_sebCE_wrong
-    if ce_mode:
+    if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         t "I think you're jumping the gun a bit, trying to clean up so fast!"
         s "Mr. Villareal here has an event to run. The more time we waste on this, the more things will go off schedule."
         t "Zero thoughts spared for the victim here.."
         with fade
 
     hide screen ce_ui
+    hide screen status_indicator
     tt "He won't budge from this until I throw some evidence at his face."
     tt "I should open my \"{color=#FF9900}Dossier{/color}\" and \"{color=#FF9900}Present{/color}\" something that counters his claims."
     jump vs_sebCE
@@ -260,6 +270,7 @@ label vs_sebCE:
         jump act3_continue
  
     label act3_continue:
+    hide screen status_indicator
     
 
     t "It's true that, depending on how he landed, a fall from that height could have killed him..."
@@ -279,6 +290,8 @@ label vs_sebCE:
     s "So what!? He fell face-first! That's what happens when you hit the ground!"
 
     t "Then explain this: if the Vicente hit the ground face-first..."
+
+    play music objection fadein 0.5
     
     t "Why does he have such a large wound on the BACK of his head!?"
 
@@ -348,6 +361,8 @@ label b4fall:
 
     me "Good. Now, follow me, everyone. I need to have a good talk with all of you about your whereabouts."
 
+    stop music fadeout 2.5
+
     tt "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
     tt "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
     tt "First, I need to make a quick stop to the trainer lockers..."  
@@ -361,6 +376,7 @@ label paddock_inves:
 
     lt "Huh. The police officers watching over the scene aren't trying to detain me. I guess the inspector gave them a heads-up? Much appreciated!"
     lt "Time to take a good look around and figure out what happened."
+    play music inves fadein 2.5
     #Points to click: just the body.
     #When done so, zoom in on it.
     lt "I should examine the body more closely... Let's see."
@@ -400,6 +416,7 @@ label stables_inves:
         lt "Why is there a bunch of hay in the middle of the ground? You'd think the staff would tidy up the place more."
         lt "Hang on, I can see something underneath it..."
         lt "Kneeling over, I begin to brush away all of the hay."
+        $ renpy.music.set_volume(0.4, delay=1.0, channel="music")
         lt "What the...!? This looks like someone's blood...!"
         lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
         lt "Huh? The trail suddenly ends before reaching the entrance."
@@ -408,6 +425,7 @@ label stables_inves:
     
     label stables_shovel:
     #click shovel
+        $ renpy.music.set_volume(1.0, delay=1.0, channel="music")
         lt "Wait a minute... What's this doing here?"
 
         lt "A stable shovel. Someone must've left it behind this stall."
@@ -675,6 +693,7 @@ label stables_inves:
             s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
 
             hide screen status_indicator
+            stop music fadeout 2.5
 
             l "Mr. Castillo... are you not basing your accusations on prejudice?"
             l "That may have been just a very curious fellow."
@@ -686,14 +705,16 @@ label stables_inves:
             lt "After all the investigating I've done, I know this guy is dead wrong!"
             lt "Now I just have to prove it!"
 
+        label vs_sebCE2_loop:
             call CE_start
             call fx_interrogation
-
             s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
             if ce_mode == "object":
+                call cutin("objection")
                 call vs_sebCE_wrong2
             if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "My- *cough* what is so questionable about that young man's appearance?"
                 s "That unrefined hair, that nasty scar on his face, the ugly boots... need I go on?"
                 lt "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
@@ -702,20 +723,24 @@ label stables_inves:
 
             s "But no more! He's clearly a suspicious person!"
             if ce_mode == "object":
+                call cutin("objection")
                 call vs_sebCE_wrong2
             #p
-            if ce_mode:
+            if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 lt "What makes you so sure about that?"
                 s "I'm getting there, mask freak! Stop interrupting me."
                 with fade
             
             s "We all saw him prodding and standing near the body."
             if ce_mode == "object":
+                call cutin("objection")
                 call vs_sebCE_wrong2
             #p
-            if ce_mode:
+            if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "Uh... perhaps he was just trying to help the downed man?"
                 s "Now he's a parademic? Please!"
                 lt "I do know some first aid..."
@@ -723,10 +748,12 @@ label stables_inves:
 
             s "Who does that? A cold blooded murderer!"
             if ce_mode == "object":
+                call cutin("objection")
                 call vs_sebCE_wrong2
             #p
-            if ce_mode:
+            if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "It's a bit of a stretch to label him a murderer just for that!"
                 s "Say what you want, the police should just arrest him and let us run things here!"
                 lt "I don't know if I'll be so lucky twice if I end up there again.
@@ -736,12 +763,14 @@ label stables_inves:
             s "He attacked that poor old man at the grandstands, then dropped him from high-up!"
             #p - contra is here , blood drops
             if ce_mode == "object":
+                call cutin("objection")
                 if ce_object in [de_blooddrops]:
                     call vs_sebCE_right2
                 else:
                     call vs_sebCE_wrong2
-            if ce_mode:
+            if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "He dropped him right after the attack?"
                 s "Are your ears clogged? Yes!"
                 l "That would mean Mr. Ruiz was assaulted at the top of the grandstands, yes?"
@@ -752,9 +781,10 @@ label stables_inves:
                 with fade
             
             hide screen ce_ui
+            hide screen status_indicator
             lt "I'm not about to let this guy frame me for murder."
             lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
-            jump vs_sebCE2
+            jump vs_sebCE2_loop
 
             #continue here
             label vs_sebCE_wrong2:
@@ -837,6 +867,7 @@ label act3_continue3:
     s "He attacked that trainer, then moved his body away from the stables!"
     
     hide screen status_indicator
+    stop music fadeout 2.5
     l "So... you stand by your accusation."
     s "You don't get to where I am by retracting at the slightest error."
     lt "It's been several errors."
@@ -848,18 +879,22 @@ label act3_continue3:
     s "Fine then, I admit it. That old crook died at the stables."
     #press
     if ce_mode == "object":
+        call cutin("objection")
         call vs_sebCE_wrong3
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "Was that so hard?"
         s "S-Silence!"
         with fade
 
     s "That still doesn't clear the country bumpkin's name!"
     if ce_mode == "object":
+        call cutin("objection")
         call vs_sebCE_wrong3
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "Why do you insist on calling m- on calling him that..?"
         s "I have twenty reasons explaining why. Number one..."
         l "Never mind. Moving on..."
@@ -868,6 +903,7 @@ label act3_continue3:
     if ce_seb_bodybag:
         s "He attacked that trainer, then used some kind of body bag to transport him out from the stables!"
         if ce_mode == "object":
+            call cutin("objection")
             $ ce_mode = None
             if ce_object in [de_bodybag]:
                 call vs_sebCE_right3
@@ -875,6 +911,7 @@ label act3_continue3:
                 call vs_sebCE_wrong3
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Where did he get the bag from?"
             s "How should I know? I am not a criminal! eBay? Drone delivery?"
             lt "Man. If drones started handing out crime tools like candy, we'd all be in big trouble."
@@ -884,9 +921,11 @@ label act3_continue3:
     else:
         s "He attacked that trainer, then moved his body away from the stables!"
         if ce_mode == "object":
+            call cutin("objection")
             call vs_sebCE_wrong3
         if ce_mode == "press":
             $ ce_seb_bodybag = True
+            call cutin("holdit")
             $ ce_mode = None
             l "How did he pull that off in a derby full of people?"
             l "I'd imagine Mr. Ortiz would risk being seen."
@@ -900,6 +939,7 @@ label act3_continue3:
     
 
     hide screen ce_ui
+    hide screen status_indicator
     lt "Parts of his explanation are too vague. I should press for details."
     lt "He's bound to mess up, that will be my chance to counter attack."
     jump vs_sebCE_3
@@ -917,10 +957,10 @@ label act3_continue3:
         return
     
     label vs_sebCE_right3:
-    $ ce_mode = None
-    $ ce_rep += 2
-    call CE_end
-    jump act3_continue4
+        $ ce_mode = None
+        $ ce_rep += 2
+        call CE_end
+        jump act3_continue4
     
 label act3_continue4:
     l "Interestingly enough... I agree with what you just said, Mr. Castillo."
@@ -994,25 +1034,37 @@ label act3_continue4:
 
     #Choose here, but no real consequences, Medina interrupts you. Heck, make a time out choice even.
 
-    menu:
+    default chosen_murderer = _("no idea")
+
+    menu timed_menu_chosen_murderer (screen="timed_choice", timeout=10.0, timeout_label="act3_continue5"):
         "Esteban":
+            $ chosen_murderer = _("Esteban")
             jump act3_continue5
         "Catalina":
+            $ chosen_murderer = _("Catalina")
             jump act3_continue5
         "El Leopardo":
+            $ chosen_murderer = _("El Leopardo")
             jump act3_continue5
         "Sebastian":
+            $ chosen_murderer = _("Sebastian")
             jump act3_continue5
         "Renata":
+            $ chosen_murderer = _("Renata")
             jump act3_continue5
         "Medina":
+            $ chosen_murderer = _("Medina")
             jump act3_continue5
         "Lorenzo":
+            $ chosen_murderer = _("Lorenzo")
             jump act3_continue5
         "Lucas":
+            $ chosen_murderer = _("Lucas")
             jump act3_continue5
         "Castillo's Underlings":
-            jump act3_continue5
+            $ chosen_murderer = _("Castillo's Underlings")
+            jump act3_continue5   
+
 label act3_continue5:
     me "Hold it right there. I know what you're thinking..."
     
@@ -1075,6 +1127,7 @@ label bigCE_loop:
     c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
     
     hide screen status_indicator
+    stop music fadeout 2.5
     scene placeholder_racetrack1
     with fade
     lt "Yikes... talk about an overload of information!"
@@ -1093,18 +1146,22 @@ label bigCE_loop:
     with fade
     en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Does it really count as overseeing if you're doing it from up there?"
             en "Most certainly! It offers the best view, after all! You can see the entire racetrack!"
             with fade
     
     en "But the inspector here insisted on following me everywhere!"
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Huh... Is that true, inspector?"
             me "Damn right it is. I needed answers, one way or another."
             lt "Scary."
@@ -1112,9 +1169,11 @@ label bigCE_loop:
     
     en "She even brought Mr. Castillo along! I had the 'pleasure' of being stuck with the two of them until 10:42 AM."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "I've got two questions. Are you certain about the time? And why was Mr. Castillo there?"
             en "Absolutely! There are several monitors displaying the news and movies, each with a clock."
             me "I can vouch for that. And as for that scumbag, I wanted to keep an eye on him."
@@ -1124,9 +1183,11 @@ label bigCE_loop:
 
     r "I was at the café from 10 AM. I was starving, so I figured I'd grab something to eat."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "What did you have?"
             r "What the hell do you care? You gonna write an article about it and post it online?"
             l "No, that wasn't what I had in mind... Just carry on."
@@ -1134,9 +1195,11 @@ label bigCE_loop:
 
     r "Anyway, I got a phone call from my trainer about twenty minutes later. Give or take."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Could you be a little more specific about the time...?"
             r "You really are insufferable, you know that?"
             lt "I'm just doing my job."
@@ -1154,9 +1217,11 @@ label bigCE_loop:
 
     e "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Did you notice anything unusual while you were there?"
             e "I'm afraid not. I was simply relaxing and watching the other jockeys and their horses go by."
             l "I see... and how long did you stay there for, again?"
@@ -1165,9 +1230,11 @@ label bigCE_loop:
 
     r "The old man showed up a little while after the call, and we headed to the racetrack to do some preparations."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "So you left together sometime around 10:24 AM... Were you together the entire time after that?"
             r "Nah. After he showed up at the café, I went to the restroom while he watched my stuff."
             e "I even had to pay for her meal while waiting for her return. I dare say it was a rather calculated move on her part."
@@ -1177,9 +1244,11 @@ label bigCE_loop:
     if ce_rena_phone:
         r "We left at 10:34 AM! That's when all that corpse-related bullshit happened! I'm NOT lying!"
         if ce_mode == "object":
+            call cutin("objection")
             call bigCE_wrong
         if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                     # Press — Nothing new
                 l "You're absolutely certain about that, even knowing the body was reported at 10:42?"
                 r "Maybe the report got the time wrong, then! I KNOW I left that café at 10:24, after meeting the old man!"
@@ -1187,6 +1256,7 @@ label bigCE_loop:
     else:
         r "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
         if ce_mode == "object":
+            call cutin("objection")
             # Press — CONTRADICTION! THEY COULDN'T HAVE LEFT AT 10:34 BECAUSE THE BODY WAS REPORTED AT 10:42 AM!
             if ce_object in [de_victimnotes]:
                 call bigCE_Renata
@@ -1195,6 +1265,7 @@ label bigCE_loop:
        
         if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "And that's when you came across the body?"
                 r "Yeah. Turns out Enzo's security staff sucks at their jobs, huh? Letting a murderer in."
                 en "Excuse me!? My security personnel are highly trained professionals, fully equipped to handle any situation!"
@@ -1205,9 +1276,11 @@ label bigCE_loop:
 
     lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Since that was the last time he was seen alive, I have to ask... Did he seem any different than usual?"
             lu "Not really. He was his usual nagging, straightforward self."
             with fade
@@ -1215,9 +1288,11 @@ label bigCE_loop:
     if ce_luca_cloth:
         lu "I don't know why those clothes and that notebook were in my locker!"
         if ce_mode == "object":
+            call cutin("objection")
             call bigCE_wrong
         if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 # Press — No new contradiction
                 l "Are you absolutely certain none of these things belong to you?"
                 lu "I am! I swear! I have no idea how they got there!"
@@ -1227,6 +1302,7 @@ label bigCE_loop:
         lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without asking for permission."
         # Press — CONTRADICTION! LUCAS HAS THE HAWAIIAN SHIRT IN HIS LOCKER!
         if ce_mode == "object":
+            call cutin("objection")
             $ ce_mode = None
             if ce_object in [de_casualclothes, de_notebook]:
                 call bigCE_Lucas
@@ -1234,6 +1310,7 @@ label bigCE_loop:
                 call bigCE_wrong
         if ce_mode == "press":
                 $ ce_mode = None
+                call cutin("holdit")
                 l "Can you remember anything distinctive about this man?"
                 lu "...Just that he was wearing an orange shirt with flowers on it. Sorry."
                 l "That's fine. What exactly was he doing with your horse?"
@@ -1243,9 +1320,11 @@ label bigCE_loop:
 
     lu "Don Vicente said he'd handle it himself, then went after that person towards the stables. I headed over to the observation area by the grandstands."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "How long did you stay there?"
             lu "About 32 minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
             l "I see..."
@@ -1255,9 +1334,11 @@ label bigCE_loop:
 
     c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
     if ce_mode == "object":
+        call cutin("objection")
         call bigCE_wrong
     if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "That's it? Can't you tell me a little more about what you were doing?"
             c "Would you like me to recite my entire training routine? I don't see how that's relevant to the investigation."
             me "It isn't."
@@ -1267,7 +1348,8 @@ label bigCE_loop:
             with fade
     # BigCE End
 
-    hide screen ce_ui 
+    hide screen ce_ui
+    hide screen status_indicator
     lt "Let's go over everything... Assuming my math hasn't gotten rusty..."
     lt "Lorenzo, Sebastian, and the inspector were together at the luxury observatory from 10 AM until 10:42 AM."
     lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM.They met at 10:24 AM at the cafe before heading off for the racetrack."
@@ -1836,16 +1918,63 @@ label act3_continue6:
             jump choose_thugs
 
     label choose_cata:
+        scene placeholder_racetrack1
         show cata angry2
-        l "Catalina did it."
+        with fade
+        l "..."
+        l "Catalina Moreno... you are the murderer!"
+        r "Holy shit, the Ice Queen is the killer!?"
+        c "..."
+        c "What on earth are you doing?"
+        m "I'd like to know too. Why are you accussing her, out of all people?"
+        l "As you know, her alibi is shaky at best..."
+        l "But Ms. Moreno's relationship with the victim was already strained, unlike the others."
+        c "What are you babbling about now? I don't remember having a single exchange with that man."
+        l "Maybe. Or maybe not. He saw you in a poor light due to the rumors. Isn't that right, Mr. Mendoza?"
+        lu "W...We did talk about those rumors, but I don't know how true they are..."
+        l "That's of little consequence. Wherever they are true or not, what matters is how would Ms. Moreno react to it."
+        c "..."
+        l "It must have been infuriating, tolerating all these people besmirch your name."
+        l "So you finally took it upon yourself to teach one of them a lesson!"
+        c "Are you quite done?"
+        l "Huh...?"
+        c "I can't believe what I have to listen to. I had the faintest of trust placed on you..."
+        c "And this is how you repay me?"
+        lt "What...? Faith in me?"
+        c "Is that all you have to say? Frankly, I don't have time to waste on nonsense."
+        me "So you deny the allegations?"
+        c "I don't even have to. They are so idiotic and lack an actual basis, that it's a waste of breath on my end."
+        me "Even so... the fact remains your alibi remains unconfirmed."
+        c "..."
+        me "Looks like a standstill to me. Sorry, but I am going to take you in for questioning."
+        c "Hold on, you can't do that. If you do, I am going to miss out on the race."
+        me "A man is dead, and you care about is some puny event-"
+        c "Be quiet! How is my absence from the race going to tell you who did this!?"
+        c "My whereabouts will be the same, no matter how much you ask the same questions over and over!"
+        me "..."
+        r "Don't take it so personal, Catalina. Poor inspector there is just doing her work."
+        e "Easy now, Renata. She's clearly under a lot of stress..."
+        c "This is revolting, there are far more likely suspects and you'll jeopardize me?"
+        me "Alright, that's enough. We'll be standing all day here arguing at this rate. Take her away."
+        c "Maybe you should instead take in the inconsiderate man in the mask, instead!"
+        c "That is far more suspicious than anything I have done...!"
+        lt "D-Damn, I really pushed her buttons this time... multiple police officers manage to take her away, her shouts of complaints fading in the air."
         scene black
         with fade
-        l "This is a bad end. Expand on me."
-        with fade
+        l "..."
+        l "With an unclear suspect, all the people were questioned one by one..."
+        l "...but thanks to me, Catalina missed out on the Razing Thunder race."
+        l "Obviously, I was fired, so there I wasn't exactly allowed to stay at the derby."
+        l "The case went cold, and I never found who the culprit was."
+        l "Worst of all, sometime later, a couple of police officers came to my work place to arrest me."
+        l "It had seem Catalina learned of my true identity, and took it upon herself to let them know."
+        l "I denied it, of course, but that didn't help much. The inspector wasn't able to turn a blind eye this time."
+        l "Or maybe she didn't intend to after how things ended. Either way..."
+        l "With my freedom gone, I won't be able to continue my fight against evil- let alone figure out the killer of this case."
+        l "Betraying Catalina spiralled into all of this... what have I done..?"
         return
     label choose_rena:
         show rena angry2
-        l "Renata did it."
         with fade
 
         l "Renata Vargas, you are the culprit!"
@@ -1987,27 +2116,27 @@ label act3_continue6:
         scene black
         with fade
 
-        lt "..."
+        l "..."
 
-        lt "And with that, my involvement in the case came to an end."
+        l "And with that, my involvement in the case came to an end."
 
-        lt "I didn't pay much attention to the race results. All I cared about was finding the truth behind Vicente's death."
+        l "I didn't pay much attention to the race results. All I cared about was finding the truth behind Vicente's death."
 
-        lt "But I failed to do so."
+        l "But I failed to do so."
 
-        lt "Days after the Derby, I learned that the search for the culprit had gone nowhere."
+        l "Days after the Derby, I learned that the search for the culprit had gone nowhere."
 
-        lt "By that point, any evidence that could have closed the case had long since disappeared."
+        l "By that point, any evidence that could have closed the case had long since disappeared."
 
-        lt "Not only had the real culprit gotten away, but Sebastian had managed to exploit a technicality and remain free."
+        l "Not only had the real culprit gotten away, but Sebastian had managed to exploit a technicality and remain free."
 
-        lt "He's been sending his goons after me day after day to 'repay the favor' for our little encounters."
+        l "He's been sending his goons after me day after day to 'repay the favor' for our little encounters."
 
-        lt "I've fought them off as best I could, but one ambush caught me off guard."
+        l "I've fought them off as best I could, but one ambush caught me off guard."
 
-        lt "So this is the last thing I'll see, huh...? A bunch of crooked smiles and bright suits."
+        l "So this is the last thing I'll see, huh...? A bunch of crooked smiles and bright suits."
 
-        lt "Damn... it..."
+        l "Damn... it..."
 
         # End game // game over screen
         with fade
@@ -2047,9 +2176,9 @@ label act3_continue6:
         scene black
         with fade
 
-        lt "And just like that, I'm hauled away after my little 'confession'. My identity has been exposed, I'm being charged with murder, and now I'll have to wait for a lawyer before facing trial."
+        l "And just like that, I'm hauled away after my little 'confession'. My identity has been exposed, I'm being charged with murder, and now I'll have to wait for a lawyer before facing trial."
 
-        lt "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
+        l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
 
         return
 
@@ -2088,9 +2217,13 @@ label act3_continue6:
         scene black
         with fade
 
-        lt "And just like that, I'm hauled away after my little 'confession'."
+        l "And just like that, I'm hauled away by the police."
 
-        lt "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
+        l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
+
+        l "The inspector will ensure El Leopardo stays inactive for good now that I've been dettained again."
+
+        l "It's all over..."
 
         with fade
         return
@@ -2150,7 +2283,10 @@ label act3_continue6:
         me "If that's the accusation you're making, then I suppose we can consider the matter settled and investigate things further with that in mind."
         scene black
         with fade
-        lt "Hm... Could Castillo really have been behind all this? Did he simply order his men to have Vicente killed?"
+        l "Castillo ordering his men to get rid of someone seemed to make a lot of sense."
+        l "Until it didn't. Despite the inspector following that trail, nothing out from it."
+        l "The race continued its course, then tragedy struck at it's peak..."
+        l "...but even then, things carried on as usual. And the truth was lost forever."
         with fade
         return
     label choose_luc:
@@ -2433,6 +2569,7 @@ label debug:
         e "I realize that this was the wrong thing to do. My apologies."
        
         hide screen status_indicator
+        stop music fadeout 2.5
         scene placeholder_racetrack1
         show est frown
         with fade
@@ -2462,9 +2599,11 @@ label debug:
         show est 
         e "My smoking break really did take that long. A bad habit, I'm well aware."
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "A bad habit indeed. Your words are like smoke that will be carried away by the wind."
             e "Heh, give me some credibility, Mr. Leopardo, I just started to explain things..."
             with fade
@@ -2472,9 +2611,11 @@ label debug:
         show est frown
         e "After I met with Renata at the café, she confessed her guilt to me about what she had done."
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "And what exactly would drive her to do that?"
             e "I like to believe I am a rather reliable person. It's only natural she would seek support from her trainer."
             lt "Reliable? More like arrogant."
@@ -2483,9 +2624,11 @@ label debug:
         show est frown2
         e "She killed a man in cold blood… and was terrified of the consequences."
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "Why didn't you immediately alert the police?"
             e "As something of a mentor figure, I didn't want to abandon her like that."
             e "Would you be able to turn someone close to you over to the authorities, Mr. Leopardo?"
@@ -2498,13 +2641,15 @@ label debug:
         show est angry
         e "Renata even enlisted the help of her sponsors to cover her tracks before eventually turning to me..."
         if ce_mode == "object":
+            call cutin("objection")
             if ce_object in [de_callrecords]:
                 call vs_esteCE_RIGHT
             else:
                 call vs_esteCE_WRONG
 
-        if ce_mode:
+        if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             
             l neutral "You mean Castillo's people, yes? Are you saying Ms. Vargas went out of her way to contact them?"
             
@@ -2521,9 +2666,11 @@ label debug:
         show est frown
         e "We worked together for a long time as trainer and jockey, so I felt compelled to protect her."
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "You say you've worked together for a long time. Didn't it strike you as strange that she would suddenly murder someone?"
             e "Quite so. But as you may know, Renata tends to have some... explosive outbursts."
             e "I simply chalked it up to that."
@@ -2533,9 +2680,11 @@ label debug:
         e "She insisted on changing the times on our phones to provide her with a cover story."
 
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "So you're saying Renata came up with that on the spot?"
             e "Rather than on the spot, she must have been dreading it ever since I called."
             e "Perhaps she had a guilty conscience, in case the police looked into her phone?"
@@ -2544,9 +2693,11 @@ label debug:
         
         e "I realize that this was the wrong thing to do. My apologies."
         if ce_mode == "object":
+            call cutin("objection")
             call vs_esteCE_WRONG
         if ce_mode == "press":
             $ ce_mode = None
+            call cutin("holdit")
             l "That's it? You're willing to confess to being an accomplice to MURDER, and 'my apologies' is all you can say?"
             e "I deeply regret it, Mr. Leopardo. I assure you. I am ready to accept whatever punishment the law deems fit."
             lt "Oh, the law would've let you slip free if they'd bought your little charade. That's why I'm here."
@@ -2767,57 +2918,57 @@ label debug:
     
     label youcantcook:
 
-    hide me
-    hide rena
-    show est angry at right
-    show leo neutral at left
-    with dissolve
+        hide me
+        hide rena
+        show est angry at right
+        show leo neutral at left
+        with dissolve
 
-    l "I'm afraid there's no need for that."
+        l "I'm afraid there's no need for that."
 
-    show est yell
+        show est yell
 
-    e "What...? I have a right to explain myself—"
+        e "What...? I have a right to explain myself—"
 
-    show leo neutral right
+        show leo neutral right
 
-    l "You stumbled upon her at the stables and contacted Mr. Castillo. Did I get that right?"
+        l "You stumbled upon her at the stables and contacted Mr. Castillo. Did I get that right?"
 
-    show est smile
-    e "Wh... I mean, yes, that is what I was about to say."
-    
-    show leo closed
-    l "Mhm. That's what I thought."
+        show est smile
+        e "Wh... I mean, yes, that is what I was about to say."
+        
+        show leo closed
+        l "Mhm. That's what I thought."
 
-    show rena frown2
-    with dissolve
-    r "I was never at the stables! I was at the café!"
-    
-    show est frown
-    e "Renata, how long will you keep struggling like this?"
+        show rena frown2
+        with dissolve
+        r "I was never at the stables! I was at the café!"
+        
+        show est frown
+        e "Renata, how long will you keep struggling like this?"
 
-    show rena nervous
-    r "..."
+        show rena nervous
+        r "..."
 
-    show leo think yell
+        show leo think yell
 
-    l "You're the one struggling in vain, Mr. Rojas."
+        l "You're the one struggling in vain, Mr. Rojas."
 
-    l "You speak of illusions that can never become reality."
+        l "You speak of illusions that can never become reality."
 
-    show est angry
-    e "What...!?"
+        show est angry
+        e "What...!?"
 
-    show leo neutral
+        show leo neutral
 
-    l "The reason you're wrong is because..."
+        l "The reason you're wrong is because..."
 
-    menu phone_or_cafe:
-        "The phone call":
-            jump da_phone_call
-        "Renata was at the café":
-            jump da_cafe
-    label da_cafe:
+        menu phone_or_cafe:
+            "The phone call":
+                jump da_phone_call
+            "Renata was at the café":
+                jump da_cafe
+label da_cafe:
         show leo yell
         l "Ms. Vargas was at the café! You couldn't have stumbled into her at the stables!"
         show est angry
@@ -2828,7 +2979,7 @@ label debug:
         lt "He's right... I need retrace my steps."
         jump phone_or_cafe
 
-    label da_phone_call:
+label da_phone_call:
     hide screen status_indicator
     hide est
     hide rena
@@ -2914,6 +3065,8 @@ label LastCE:
     call fx_testimony
     show est yell
     with fade
+    stop music
+    play music ce2 fadein 2.5
     
     e "There's no reason for me to kill Vicente!"
     
@@ -2937,6 +3090,7 @@ label LastCE:
     
     scene placeholder_racetrack1
     hide screen status_indicator
+    stop music fadeout 2.5
     show leo think closed at slightleft
     show est grit-red at slightright
     with fade
@@ -2956,12 +3110,16 @@ label LastCE:
     show est yell
     with fade
     call CE_start
+    stop music
+    play music ce2 fadein 1.0 fadeout 1.0
     
     e "There's no reason for me to kill Vicente!"
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "I'm not so sure about that. There are a number of reasons one can have to kill a man."
         e "None of them apply to me! And you will see why soon."
         with fade
@@ -2969,9 +3127,11 @@ label LastCE:
     show est yell-rerd
     e "I barely spoke to the man! Are you now going to say I hated him!?"
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "I wouldn't say you have to hate him to have a reason to silence him."
         e "Is that right? Then what reason would that be!?"
         lt "You know damn well what your reason is..."
@@ -2980,9 +3140,11 @@ label LastCE:
     show est grit-red
     e "We were both trainers! I stand to gain nothing from his death."
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "So the idea of having less competition to increase your odds of winning only applies to Ms. Vargas and not you?"
         e "I am not the one getting on the damn horse, Leopardo...!"
         e "My job is to prepare her for the race, not compete against the other trainers."
@@ -2994,9 +3156,11 @@ label LastCE:
     show est angry
     e "I was simply going about my duties that morning."
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l neutral "I thought you were having a break to smoke?"
         show est yell-rerd
         e "That's- ugh! Alright, so I was smoking! Happy!? Are you done tripping me up!?"
@@ -3007,9 +3171,11 @@ label LastCE:
     show est yell
     e "I had no reason to interfere with his work, let alone attack him!"
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l neutral "Someone did interfere with his work that morning, though. He wouldn't be dead otherwise."
         show est angry
         e "It's got nothing to do with me. I have no need to meddle with other trainers."
@@ -3041,9 +3207,11 @@ label LastCE:
     show est frown2
     e "Why would I throw away my career and life over someone I barely knew?"
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l neutral "Why would Renata? She's in the same position as you."
         show est angry
         e "A mistake from youth? A wish to take out a competitor through their trainer?"
@@ -3062,9 +3230,11 @@ label LastCE:
     show est angry
     e "I had absolutely nothing to gain from his death!"
     if ce_mode == "object":
-            call LastCE_WRONG
+        call cutin("objection")
+        call LastCE_WRONG
     if ce_mode == "press":
         $ ce_mode = None
+        call cutin("holdit")
         l "People have killed for less. It isn't always about getting something from it."
         e "How rich! So now I am a psycho killer, is that it!?"
         l "I'm saying that a lack of motive doesn't make you innocent."
@@ -3086,7 +3256,7 @@ label LastCE:
 label LastCE_WRONG:
     $ ce_mode = None
     l "This proves your testimony wrong, Mr. Rojas!!"
-    show es angry
+    show e angry
     e "Ahahah! Getting so desperate that you're throwing random evidence around, Leopardo!?"
     l "Guh...!"
     lt "That was the wrong piece of evidence... Calm down, me. Let's try that!"
@@ -3576,4 +3746,6 @@ label EpilogueNarration:
         with fade
         "The end."
         #Why do you loop back to Esteban's CE!? Go back to the main menu!!!!
+call ending_sequence
+$ MainMenu(confirm=False)()   # Workaround to jump to main menu
 return

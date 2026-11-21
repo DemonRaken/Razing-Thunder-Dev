@@ -1,6 +1,7 @@
 # ACT 1 Starts here.
 label act1:
   scene black
+  stop music
   x "It's the final stretch to the finish line!"
   x "The contestants are giving it their all, but what is this...!?"
   x "Perla Negra is taking the lead!"
@@ -12,7 +13,7 @@ label act1:
   
   scene placeholder_backalley with dissolve:
     zoom 1.5
-  stop music
+  
   tl "9:45 PM. \nAlleway."
 
   lt "The grip on my phone tightens instinctively as I watch the violent fall, shocked."
@@ -26,7 +27,7 @@ label act1:
   l "What a nasty fall! And she was so close to claiming first place, too…"
 
   show thug at center
-  play music eccentric
+  play music eccentric fadein 2.5 fadeout 2.5
 
   tg "Bastard! When I get out of these, I'm going to smash that phone on your stupid face!"
 
@@ -95,18 +96,18 @@ label act1:
 
   tg "Son of a- hey! {size=+6}COME BACK!!!{/size}"
 
-  lt neutral right "No thanks. Like I wanna throw in the slammer with you. Once the cops go away, I'll see if I can get into contact with that customer of his."
+  lt neutral right "No thanks. Like I wanna be thrown in the slammer with you. Once the cops go away, I'll see if I can get into contact with that customer of his."
 
   l smile "Let's hurry up, Chispa. With some luck, we'll be done before the clock hits midnight."
 
   ch "Neigh!"
-  stop music
+  stop music fadeout 2.5
 
   scene placeholder_office 
   with fade
 
-  tl "8:00 AM. \nTony's Odd Jobs Agency."  
-  play music happy
+  tl "8:00 AM. \nSoto Services Agency."  
+  play music happy fadein 2.5 
 
   lt "Last night, we came across the person I was looking for shortly after. The guy hadn't run too far away, and it looked like the color drained from his face the moment I brought up the debt collector"
   
@@ -148,6 +149,7 @@ label act1:
   
 
 # Make screen shake here because phone went off and maybe add photoshpped whatsapp conversation!!!1
+  play music happy volume 0.4
   play sound "new_fashion_tone.ogg" fadein 0.5
   show layer master at earthquake(dt=1.0, dist=2)
   n "{i}*RING!*{/i}"
@@ -179,7 +181,7 @@ label act1:
   pause
   hide phone whatsapp boss 16 9 with dissolve
   show leo neutral
-
+  play music happy volume 1.0
   lt "Yup. She's got a new gig for me. A special one at that, considering it's last-minute and happening today."
 
   lt "I continue reading the job description, resigning myself to putting my plans on hold."
@@ -207,14 +209,14 @@ label act1:
   $ renpy.notify(_("Dossier is now available."))
   l "Vital information always goes there. It would be no joke to say that the very balance of the world depends on it...!"
   lt "Anyway, time to move!"
-  stop music
+  stop music fadeout 2.5
   show leo at right
   with move
 
   scene placeholder_park 
   with fade
 
-  tl "{b}9:20 AM. \nPlaza.{/b}"
+  tl "9:20 AM. \nPlaza."
 
   lt "This should be the place… Chispa makes it a cinch to get around in no time."
   
@@ -266,7 +268,7 @@ label act1:
   scene placeholder_park
   show cata yell
   with fade
-  play music cata fadein 1.0 fadeout 1.0
+  play music cata fadein 2.5 fadeout 2.5
   c "—hey. I'm talking to you. Are you even listening?"
   
   t neutral blush "Wha- sorry! I zoned out there for a sec."
@@ -274,13 +276,13 @@ label act1:
   c "Good grief. As I was saying, who you are is inconsequential, and my reputation precedes me, so let's keep introductions short."
 
   tt what drop "Geez… you sure know how to pick 'em, boss. This is gonna be one hell of a day…"
-
+  default knowcata = False
   menu:
 
         t neutral "Right. Your reputation. I…"
 
         "I know who you are":
-
+            $ knowcata = True
             jump iknow
 
         "I have no idea who you are.":
@@ -381,6 +383,6 @@ label act1continues:
   t aha "Thanks, girl. I can always count on you."
 
   tt smile "Huffing, I hold onto the reins and hurry to go after my 'delightful' employer."
-  stop music
+  stop music fadeout 2.5
 
 jump act2

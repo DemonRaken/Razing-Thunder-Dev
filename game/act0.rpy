@@ -39,18 +39,25 @@ label intro_start:
     return   
 
 label start:
+    #jump start2
     call intro_start
+    jump act1
+    return
+
+label start2:
     call cheat_get_all_evidence
     scene placeholder_office:
         blur 150
         linear 3.0 blur 0
     menu:
-        "Jump to Act I":
-            jump act1
-        "Jump to Act II":
-            jump act2
-        "Jump to Act III":
-            jump act3
+        "Jump to Portal":
+            jump paddock_inves
+        # "Jump to Act I":
+        #     jump act1
+        #  "Jump to Act II":
+        #     jump act2
+        # "Jump to Act III":
+        #     jump act3
         "Jump to Debug":
             jump debug
         "Jump to Debug Room":
