@@ -2690,7 +2690,8 @@ translate spanish p_refuse_20d07ba0:
 translate spanish p_badend2_dd562b1c:
 
     # tt neutral drop "I hesitate for a fraction of a second, overthinking my move as all three thugs close in at once. Their combined attack hits me before I can react."
-    tt neutral drop "Dudo una fracción de segundo, dándole demasiadas vueltas a mi jugada mientras los tres matones me cierran el paso al mismo tiempo. Su ataque combinado me da antes de que pueda reaccionar."
+    tt neutral drop "Dudo una fracción de segundo, dándole demasiadas vueltas a mi jugada mientras los tres matones me cierran el paso al mismo tiempo." 
+    tt neutral drop "Su ataque combinado me da antes de que pueda reaccionar."
 
 # game/act2.rpy:1151
 translate spanish p_badend2_eb90a586:

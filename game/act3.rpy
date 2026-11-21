@@ -381,17 +381,25 @@ label vs_sebCE:
         me "Besides, with all the people here, at least one or two would had seen that happen."
         
         hide me
+        hide seb
         show tony aha
         with dissolve
         t "Huh? Oh, uh.... yeah! You are right! Ahaha..."
         
-        show seb smile2 at left
-        show me sweat2 at right
+        show seb smile3 at slightleft
+        show me sweat2 at slightright
+        hide tony
         with dissolve
         me "..."
-
-        tt aw neutral drop "Ugh, I messed that up big time..."
-        tt neutral drop "Calm down, Tony. Let's try that one more time. If he didn't get injured after the fall, then he got it..."
+        
+        hide seb
+        hide me
+        show tony aw neutral drop
+        with dissolve
+        tt "Ugh, I messed that up big time..."
+        
+        show tony neutral drop
+        tt "Calm down, Tony. Let's try that one more time. If he didn't get injured after the fall, then he got it..."
         jump fall_choice
     label whilefall:
         hide seb
@@ -400,11 +408,12 @@ label vs_sebCE:
         t "The victim was injured while falling."
         
         hide tony
-        show me sweat at right
+        show me sweat at slightright
         with dissolve
         me "...while falling. As in, in the middle of the air?"
         
-        show seb smile2 at left
+        show seb smile2 at slightleft
+        with dissolve
         s "I see. Makes sense."
         
         show me yell
@@ -413,15 +422,29 @@ label vs_sebCE:
         hide seb
         hide me
         show tony aw smile drop
+        with dissolve
         t "O-Oh, you know! Like, maybe someone was waiting below, suspended with a grappling hook!"
         
         show tony det yell
         t "Then the body approached, and they hit him with a well-timed strike! Hard!"
-        show me angry
+        
+        hide tony
+        show seb smile3 at slightleft
+        show me angry at slightright
+        with dissolve
         me "First off, that's insane. Second, you are insane."
-        tt aw neutral drop "I don't think it's that unlikely... r-right?"
-        show me sweat
+        
+        hide seb
+        hide me
+        show tony neutral drop
+        with dissolve
+        tt "I don't think it's that unlikely... r-right?"
+        
+        hide tony
+        show seb smile3 at slightleft
+        show me sweat at slightright
         me "Third, weren't you the one who said he fell face-first, with his arms by his side?"
+        
         show me sweat2
         me "If the victim got hit during his fall, that would change the trajectory of his fall."
         show me neutral
@@ -429,8 +452,13 @@ label vs_sebCE:
         show me yell
         me "Not to mention, a person hanging from a grappling hook is incredibly suspicious."
         
+        hide me
+        hide seb
+        show tony neutral drop
+        with dissolve
         t neutral drop "A-All very good points...!"
-        tt aw neutral drop "Shit... I need to re-think this. It is a little crazy to think it happened mid-air. So then, that must mean he got it..."
+        show tony aw neutral drop
+        tt "Shit... I need to re-think this. It is a little crazy to think it happened mid-air. So then, that must mean he got it..."
         jump fall_choice
 
 label b4fall:
@@ -674,15 +702,16 @@ label b4fall:
     label ce1:
         scene placeholder_granstands
         with fade
+        stop music fadeout 2.5
         lt "I rush all the way over here. The inspector is surrounded by officers, Castillo's underlings, and the jockeys..."
 
         lt "Time for my dramatic entrance."
 
-        show en nervous 2 at slightleft
+        show en nervous2 at slightleft
         with dissolve
         en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
 
-        show me angry
+        show me angry at slightright
         with dissolve
         me "Then you clearly don't understand the situation."
 
@@ -699,7 +728,7 @@ label b4fall:
         
         hide me
         hide en
-        show leo grin shinw
+        show leo grin shine
         with vpunch
         with dissolve
 
@@ -745,6 +774,7 @@ label b4fall:
         me "Despicable..."
         
         show seb grr2 at slightleft
+        with dissolve
         s "What are you waiting for!? Kick this clown out of my derby—"
 
         hide seb grr2

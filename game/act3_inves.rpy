@@ -1,7 +1,99 @@
+label act3_main_inves:
+    show text _("{size=150}{color=#ff5100}Investigation{/color}{/size}") at truecenter, investigation_text_zoom
+    pause 2.0
+    hide text
+    $ aai_active = True
+    $ aai_travel_left = [mp_stables, mp_grandstands, mp_paddock] # add locations to investigate
+    jump act3_main_inves_maptravel_mode
+
+label act3_main_inves_end:
+    n "This was the end."
+    show text _("{size=150}{color=#ff5100}Investigation\nComplete{/color}{/size}")  at truecenter, investigation_text_zoom
+    pause 2.0
+    hide text
+    $ aai_active = False
+    lt "I invested everything. Now, I must hurry and confront my first target."
+    jump inves_complete
+
+label act3_main_inves_maptravel_mode:
+    if len(aai_travel_left) == 0: # done all investigations
+        lt "Huh, it seems I investigated everything. I am ready!"
+        jump act3_main_inves_end
+        
+    $ dossier_tab_control = "map"
+    call screen dossier_ui
+    if aai_travel in aai_travel_done:
+        lt "I already went to [aai_travel.name]."
+        jump act3_main_inves_maptravel_mode
+    if aai_travel not in aai_travel_left:
+        lt "I don't have to do anything at [aai_travel.name]"
+        jump act3_main_inves_maptravel_mode
+    lt "I know! I'll visit [aai_travel.name] next!"
+    $ dossier_tab_control = "evidence"
+    if aai_travel == mp_stables: # locations jump table
+        jump stables_inves
+    if aai_travel == mp_grandstands:
+        jump racetrack_inves
+    if aai_travel == mp_paddock:
+        jump paddock_inves
+
+
+# =================
+#    STABLES
+# =================
+
+
+label stables_inves:
+    scene placeholder_stables
+    with fade
+    lt "Hey Chispa. Hope you weren't feeling too lonely without me."
+    lt "Wait... this place feels... off. Something's different."
+
+    while aai_active:
+        call screen aai_main_menu
+        while aai_mode == "talk":
+            menu:
+                "Ask Chispa: Were you lonely without me?":
+                    l "Hey Chispa, you weren't lonely, right?"
+                    l "Were you fed well? Do you want something?"
+                    l "Don't make that face, I'll come back before you know it!"
+                "Ask Chispa: Did you see anything?":
+                    l "Hey, Chispa, did you see anything?"
+                    ch "Neigh!"
+                    l "Thought so."
+                "Close":
+                    $ aai_mode = None
+        if aai_mode == "present":
+            $ dossier_tab_control = "evidence"
+            call screen dossier_ui
+            if ce_object in [dp_leo, de_mate]:
+                l "Oh, I really love mate. Mate, oh my love."
+                ch "Neigh! Neigh!"
+                l "Chispa, you aren't allowed to drink from my Mate."
+            elif ce_object in [dp_chispa]:
+                l "Chispa, you are so lovely, look at you."
+                ch "Neigh! Neeeeigh! Neeeigh!!!"
+                l "There there, calm down. I have to focus."
+            else:
+                l "Chispa what do you think about [ce_object.name]?"
+                ch "Neigh! Neigh!"
+                l "Thought so."
+        elif aai_mode == "examine":
+            if mp_stables in aai_travel_left:
+                while(mp_stables in aai_travel_left):
+                    call screen aai_examine_stables
+            else:
+                lt "I've already examined this area."
+                lt "I better {b}MOVE{/b} somewhere else instead."
+        elif aai_mode == "move":
+            jump act3_main_inves_maptravel_mode
+    return
+
 screen aai_examine_stables():
         imagemap:
-            idle "placeholder_stables"
-            hover Transform("placeholder_stables",  matrixcolor=BrightnessMatrix(0.3))
+            yalign 1.0   # imagemap doesn't show like scene without this.
+            idle            "placeholder_stables"
+            hover Transform("placeholder_stables", matrixcolor=BrightnessMatrix(0.3))   
             hotspot (1327, 205, 369, 673) action Call("stables_blood")
             hotspot (344, 479, 652, 361) action Call("stables_shovel")
 
@@ -39,7 +131,20 @@ label stables_shovel:
 
     lt "This is a huge find... but, damn... what a way to go."
     lt "Alright, what's next...?"
+    $ aai_investigated(mp_stables)
     return
+
+
+# =================
+#    Paddock and rest
+# =================
+
+screen aai_examine_paddock():
+        imagemap:
+            yalign 1.0   # imagemap doesn't show like scene without this.
+            idle            "placeholder_paddock"
+            hover Transform("placeholder_paddock", matrixcolor=BrightnessMatrix(0.3))   
+            hotspot (141, 377, 874, 316) action Call("aai_paddock_body")
 
 label paddock_inves:
     scene placeholder_paddock
@@ -49,6 +154,31 @@ label paddock_inves:
     lt "Huh. The police officers watching over the scene aren't trying to detain me. I guess the inspector gave them a heads-up? Much appreciated!"
     lt "Time to take a good look around and figure out what happened."
     play music inves fadein 2.5
+    while aai_active:
+        call screen aai_main_menu
+        while aai_mode == "talk":
+            menu:
+                "Talk to Police officers?":
+                    lt "No, I should stay away."
+                "Close":
+                    $ aai_mode = None
+        if aai_mode == "present":
+            $ dossier_tab_control = "evidence"
+            call screen dossier_ui
+            lt "I better not show it to the police."
+        elif aai_mode == "examine":
+            if mp_paddock in aai_travel_left:
+                while(mp_paddock in aai_travel_left):
+                    call screen aai_examine_paddock
+            else:
+                lt "I've already examined this area."
+                lt "I better {b}MOVE{/b} somewhere else instead."
+        elif aai_mode == "move":
+            jump act3_main_inves_maptravel_mode
+
+label aai_paddock_body:
+    show layer master:
+        linear 2.0 zoom 1.5
     #Points to click: just the body.
     #When done so, zoom in on it.
     lt "I should examine the body more closely... Let's see."
@@ -56,30 +186,71 @@ label paddock_inves:
     lt "...Huh? This looks like dirt, but it doesn't match the ground around the parade ring. There's something else mixed in..."
     lt "Is this... bits of hay? Huh."
     lt "Maybe I should check the stables..."
+    $ aai_investigated(mp_paddock)
+    show layer master:
+        linear 2.0 zoom 1.0
+    return
 
-#Investigation start Sign or animation or something.
+
+# =================
+#    Racetrack
+# =================
+
+
+screen aai_examine_granstands():
+        imagemap:
+            yalign 1.0   # imagemap doesn't show like scene without this.
+            idle            "placeholder_granstands"
+            hover Transform("placeholder_granstands", matrixcolor=BrightnessMatrix(0.3))   
+            hotspot (141, 377, 874, 316) action Call("racetrack_inves_vip")
+            hotspot (1140, 679, 647, 214) action Call("racetrack_inves_railing")
 
 label racetrack_inves:
         scene placeholder_granstands
         with fade
+        
+        while aai_active:
+            call screen aai_main_menu
+            while aai_mode == "talk":
+                menu:
+                    "Close":
+                        $ aai_mode = None
+            if aai_mode == "present":
+                $ dossier_tab_control = "evidence"
+                call screen dossier_ui
+                lt "But there is no body to show it to."
+            elif aai_mode == "examine":
+                if mp_grandstands in aai_travel_left:
+                    while(mp_grandstands in aai_travel_left):
+                        call screen aai_examine_granstands
+                else:
+                    lt "I've already examined this area."
+                    lt "I better {b}MOVE{/b} somewhere else instead."
+            elif aai_mode == "move":
+                jump act3_main_inves_maptravel_mode
+        return
+
+label racetrack_inves_vip:
         #Inves point Vip Lunge box
         lt "It's closed off for now, with police officers standing guard."
         lt "If I had to guess, Inspector Medina is questioning people inside."
         lt "I swear... Lorenzo must be fighting like hell to keep anyone from being taken to the police station."
+        $ aai_investigated(mp_grandstands)
+        return
+
+label racetrack_inves_railing:
         #railing
         lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
         lt "You'd have to deliberately climb over it to jump... or have someone throw you over."
+        return
     
-label stables_inves:
-    scene placeholder_stables
-    with fade
-    lt "Hey Chispa. Hope you weren't feeling too lonely without me."
-    lt "Wait... this place feels... off. Something's different."
+    
+# =================
+#    Lockers
+# =================
 
-    call screen aai_examine_stables
     
-    
-    label lockers_inves:
+label lockers_inves:
         scene placeholder_lockers
         with fade
         l "What's with this locker? It's been left open."
@@ -116,7 +287,13 @@ label stables_inves:
         
         $ dossier.add(de_notebook)
 
-    label breakroom_intro:
+
+# =================
+#    Breakroom
+# =================
+
+
+label breakroom_intro:
         lt "I've never been here before, but during the day, I saw Castillo's underlings coming and going through the hallway that leads here."
 
         lt "There's no mistaking them. They all wear those ridiculously expensive, flashy golden suits."
@@ -210,10 +387,11 @@ label stables_inves:
             l "Nnh... I need to get this thing analyzed. Pronto."
             
 
+# =================
+#    Investigation COMPLETE
+# =================
 
-    #Investigation COMPLETE
-
-    label inves_complete:
+label inves_complete:
         of "Mr. Leopardo, correct?"
         lt "Ah- one of the police officers working for Medina just approached me."
         l "Indeed, that would be me! How may I help you?"
@@ -241,3 +419,4 @@ label stables_inves:
         l "She hung up..."
         lt "This is messed up. But no matter..."
         l "...for the ally of justice is here to save the truth! Prepare yourselves, villains!"
+        jump ce1
