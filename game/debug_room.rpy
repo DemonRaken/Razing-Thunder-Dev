@@ -113,6 +113,7 @@ label debug_cutins_test:
     c "Just come and let's do my Cross-Examination and be done with it."
 
     define audio.embrace = "audio/BGM/Peritune_Last_Embrace.ogg"
+    define audio.embrace_offvo = "audio/BGM/Peritune_Last_Embrace_offvo.ogg"
     define audio.thought_route = "audio/BGM/Peritune_Cerebral_Maze.ogg"
     define audio.sad = "audio/BGM/Peritune_Echoed_Art.ogg"
     define audio.ending = "audio/BGM/Peritune_Last_Embrace.ogg"
@@ -128,6 +129,11 @@ label debug_cutins_test:
     define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
     define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
     define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
+
+style navigation_button:
+    properties gui.button_properties("navigation_button")
+    hover_sound "sfx/menu/coin2.ogg"
+    activate_sound "sfx/menu/shell.ogg"   
 
 image deleteme_flicker_night:
     "neighborhood 2 night light"

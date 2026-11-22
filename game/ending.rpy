@@ -18,7 +18,8 @@ define ENDING_CAST = [
 ]
 
 define ENDING_SLIDE_IN  = 0.6
-define ENDING_HOLD      = 3.0
+#define ENDING_HOLD      = 3.0
+
 define ENDING_SLIDE_OUT = 0.6
 
 define ENDING_BG = ""
@@ -32,6 +33,32 @@ define CAST_XPOS    = 0.78
 
 ## --------------------------------------------------------------- credits ---
 
+define CREDITS_TEXT_WIDTH   = 900
+define CREDITS_TEXT_SIZE    = 26
+define CREDITS_SCROLL_START = 1080
+define CREDITS_SCROLL_END   = -2200
+define CREDITS_DURATION     = 28
+
+define ENDING_HOLD      = CREDITS_DURATION/(len(ENDING_CAST)*2)
+
+define track_list = """
+Backstreet Swing
+Black Crystal
+Cerebral Maze
+Echoed Art
+Last Embrace (vocals)
+Oceanfront
+Rituale Machina
+Secret Corridor
+Silent Shadows
+Silent Witness
+Sunlit Cafe
+Tender Gaze (vocals)
+The City Breathes Your Name
+Wacky Witness
+Material Creep
+"""
+
 define CREDITS_TEXT = """
 {size=+14}{b}Razing Thunder{/b}{/size}
 
@@ -39,32 +66,46 @@ define CREDITS_TEXT = """
 
 {color=#888888}· · ·{/color}
 
-{b}Written and Directed by{/b}
+{b}Created by{/b}
+[author]
+
+{b}Writing and Direction{/b}
+[author]
+
+{b}Editing and Proofreading{/b}
 [author]
 
 {b}Character Art{/b}
 [author]
 
+{b}Additional Art{/b}
+[author]
 
 {b}Music{/b}
-Peritune
+PeriTune (peritune.com)
+{i}[track_list]{/i}
+
+{b}Sound Effects{/b}
+Joseph SARDIN - BigSoundBank.com
 
 {b}Engine{/b}
-Ren'Py
+Ren’Py by PyTom and contributors
+
+{b}Beta Testers{/b}
+TBA
 
 {b}Special Thanks{/b}
-Everyone who read it
+Everyone who read it to the end.
 
 {color=#888888}· · ·{/color}
 
 {size=+6}Thank you for playing.{/size}
+
+{size=-4}© 2026 [author]. All rights reserved.
+Version [_version]
+https://demonraken.itch.io/razing-thunder{/size}
 """
 
-define CREDITS_TEXT_WIDTH   = 900
-define CREDITS_TEXT_SIZE    = 26
-define CREDITS_SCROLL_START = 1080
-define CREDITS_SCROLL_END   = -2200
-define CREDITS_DURATION     = 60
 
 ## --------------------------------------------------------------- transforms ---
 
@@ -115,6 +156,7 @@ screen ending_name(name):
             color "#ffffff"
             outlines [(2, "#000000", 1, 1)]
             xalign 0.5
+            font gui.name_text_font
 
 screen credits_screen():
     zorder 50
@@ -128,6 +170,7 @@ screen credits_screen():
             text_align 0.5
             color "#ffffff"
             size CREDITS_TEXT_SIZE
+            font gui.text_font
 
     textbutton _("Skip"):
         action [SetVariable("ending_skipped", True), Return()]
@@ -146,6 +189,9 @@ label ending_sequence:
     scene expression (ENDING_BG or "black") with Dissolve(0.5)
     $ dossier_enabled = False
     $ ending_skipped = False
+    $ quick_menu = False
+
+    play music ending
 
     if ENDING_HORSE_SCALE > 0:
         show ctc_horse at ending_horse
@@ -171,9 +217,23 @@ label ending_sequence:
             if remaining > 0:
                 renpy.pause(remaining, hard=True)
 
-    hide screen credits_screen
-    if ENDING_HORSE_SCALE > 0:
-        hide ctc_horse
+    if not ending_skipped:
+        pause 0.8
+        show text "Thank you for playing!":
+            xalign 0.5
+            yalign 0.6
+            alpha 0.0
+            linear 0.8 alpha 1.0
+        pause 2.0
         scene black with fade
-    pause 0.8
+        pause 0.2
+        stop music fadeout 1.5
+        pause 1.5
+    
+    hide screen credits_screen
+    hide ctc_horse
+    scene black
+    stop music
+    $ quick_menu = True
+    $ config.main_menu_music = audio.embrace_offvo
     return
