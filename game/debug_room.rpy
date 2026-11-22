@@ -37,6 +37,9 @@ screen status_indicator(annoucement, colorize):
         ypos 20
         outlines [(2, "#FFFFFF", 0, 0)]
 
+style chosen_style is default:
+    color "#888888"
+    hover_color "#aaaaaa"   
 
 label debug_room:
     show screen status_indicator("Debug Room", "#FF0000")
