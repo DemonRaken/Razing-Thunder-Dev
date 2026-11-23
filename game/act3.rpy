@@ -869,7 +869,7 @@ label b4fall:
             lt "After all the investigating I've done, I know this guy is dead wrong!"
             lt "Now I just have to prove it!"
         
-        $ cutin("cross_examination")
+        call cutin("cross_examination")
         label vs_sebCE2_loop hide: # Before hide was learned.
             call CE_start
             call fx_interrogation
@@ -1134,7 +1134,7 @@ label act3_continue3:
     lt "It's been several errors."
     lt "Hm... nothing in particular seems wrong, but that's because he's skimming over the details."
     lt "I should press him and get a fuller picture of his version of events."
-    $ cutin("cross_examination")
+    call cutin("cross_examination")
 label vs_sebCE_3_loop hide:
     call CE_start
     call fx_interrogation
@@ -1405,7 +1405,7 @@ label bigCE_loop:
     me "Hey, you're gonna ask them something or not?"
     l "Oh, yes! Yes, I will."
     lt "I wonder if there's anything off about these alibis. Let's find out."
-    $ cutin("cross_examination")
+    call cutin("cross_examination")
 label bigCE_loop_ce hide:
     call CE_start
     call fx_interrogation
@@ -2861,7 +2861,7 @@ label debug:
         call fx_interrogation
         show est smile2
         with fade
-        $ cutin("cross_examination")
+        call cutin("cross_examination")
         call CE_start
 
         show est 
@@ -3377,7 +3377,7 @@ label LastCE:
     show est grit-red
     e "Nngh..."
 
-    $ cutin("cross_examination")
+    call cutin("cross_examination")
     label LastCE_Loop:
     scene placeholder_racetrack1
     call fx_interrogation
