@@ -272,16 +272,15 @@ label vs_sebCE:
         show seb smile3
         s "I was afraid of this. It does seem like it's 'listen to stupid' o'clock right now."
         t "Gah!!"
-        $ ce_rep -= 1
+        call ce_penalty(1)
         t "Damn. Looks like I was wrong..."
         # Penalty Damage
-        $ ce_rep -= 1
         with fade
         return
     
     label vs_sebCE_right:
         $ ce_mode = None
-        $ ce_rep += 2
+        $ ce_rep += 0.5
         call CE_end
         jump act3_continue
  
@@ -989,12 +988,12 @@ label b4fall:
                 
                 lt "It's not a rag, it's a poncho..."
                 # Penalty Damage
-                $ ce_rep -= 1
+                call ce_penalty(2)
                 with fade
                 return
             label vs_sebCE_right2:
                 $ ce_mode = None
-                $ ce_rep += 2
+                $ ce_rep += 0.5
                 call CE_end
                 jump act3_continue2
         label act3_continue2:
@@ -1003,54 +1002,115 @@ label b4fall:
             l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
             l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
 
+            hide leo
+            show seb smile
+            with dissolve
+
             s "A fine summary! Now that you understand, how about you leave already?"
 
             play music objection fadein 0.5
-
+            hide seb
+            show leo think yell
+            with dissolve
             l "Except your explanation is riddled with holes."
 
+            hide leo
+            show seb grr3
+            with dissolve
             s "H-How dare you!"
+
+            hide seb
+            show leo yell
+            with dissolve
 
             l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
 
+            hide leo
+            show seb angry
+            with dissolve
             s "He ran! All the way down, as fast as he could!"
 
+            hide seb
+            show leo neutral right
+            with dissolve
             l "It's quite a distance to cover. He would've arrived after you, not before you."
-
+            
+            show leo neutral
             l "And that's not even the biggest problem."
 
+            hide leo
+            show seb frown
+            with dissolve
             s "There's... more?"
 
+            hide seb
+            show leo grin
+            with dissolve
             l "I'm afraid so. Lots more."
 
+            show leo neutral
             l "For starters, there was a distinct lack of blood at the top of the grandstands."
-
+            
+            hide leo
+            show seb grr
+            with dissolve
             s "That's easy! It was cleaned up!"
 
             call cutin("objection")
 
+            show leo closed
             l "Luminol test."
 
+            hide leo
+            show seb frown
+            with dissolve
             s "What?"
 
+            hide seb
+            show leo neutral 
+            with dissolve
             l "Forensics examined the area thoroughly. Even if someone wipes away the blood, luminol can still react with the traces left behind, revealing what the naked eye can't see."
 
-            l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell."
+            show leo think closed
+            l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell from."
 
+            show leo grin
             l "But there was one place where the victim's blood *was* found. Care to guess where?"
-
+            
+            hide leo
+            show seb nervous
+            with dissolve
             s "...Mmmmnngh...."
 
+            call cutin("takethat")
+            hide seb
+            show leo point
+            with flash
             l "Allow me then: Vicente's blood was discovered at the derby's stables!"
 
+            hide leo
+            show seb nervous2
+            with dissolve
             s "I-Impossible!"
+
+            hide seb
+            show me angry
+            with dissolve
 
             me "Forensics confirmed the blood is a match. There's no doubt about it."
 
+            hide me
+            show seb angry3
+            with dissolve
             s ".....that doesn't change a thing though!"
 
+            hide seb
+            show leo neutral
+            with dissolve
             l "...? It seems you don't intend on dropping the accusation."
 
+            hide leo
+            show seb grr2
             s "Of course not! And you will see why right now!"
             stop music
 label act3_continue3:
@@ -1157,13 +1217,13 @@ label vs_sebCE_3_loop hide:
         lt "Fuck!"
         lt "Ugh, that didn't go so well..."
         # Penalty Damage
-        $ ce_rep -= 1
+        call ce_penalty (2)
         with fade
         return
     
     label vs_sebCE_right3:
         $ ce_mode = None
-        $ ce_rep += 2
+        $ ce_rep += 0.5
         call CE_end
         jump act3_continue4
     
@@ -1595,7 +1655,7 @@ label bigCE_wrong:
     me "Or maybe you should check if that mask isn't cutting off the oxygen flow to your brain."
     lt "Ugh... just tell me I was mistaken. So rude..."
     # Penalty Damage
-    $ ce_rep -= 1
+    call ce_penalty(3)
     with fade
     return
 
@@ -1603,7 +1663,7 @@ label bigCE_wrong:
 label bigCE_Renata:
     $ ce_rena_phone = True
     $ ce_mode = None
-    $ ce_rep += 2
+    $ ce_rep += 0.5
     # Objection
     l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
     r "Are you deaf? Yeah."
@@ -1627,7 +1687,7 @@ label bigCE_Lucas:
     # Counter response here.
     $ ce_luca_cloth = True
     $ ce_mode = None
-    $ ce_rep += 2
+    $ ce_rep += 0.5
     l "Let me ask you something, Mr. Mendoza. Is this the outfit the man was wearing?"
     lu "Yes! That's exactly what he had on. But... how do you...?"
     l "I'm having a hard time believing you saw someone else wearing these."
@@ -2850,7 +2910,7 @@ label debug:
         e "Renata even enlisted the help of her sponsors to cover her tracks before eventually turning to me..."
         if ce_mode == "object":
             call cutin("objection")
-            if ce_object in [de_callrecords]:
+            if ce_object in [de_callrecords, de_alibi]:
                 call vs_esteCE_RIGHT
             else:
                 call vs_esteCE_WRONG
@@ -2939,7 +2999,7 @@ label debug:
         return
     label vs_esteCE_RIGHT:
         $ ce_mode = None
-        $ ce_rep += 2
+        $ ce_rep += 0.5
         show leo neutral
         call CE_end
         l "That's fascinating. It is true that the Inspector established that Castillo's men were contacted by their boss to dispose of the body..."
@@ -3480,7 +3540,7 @@ label LastCE_WRONG:
 
 label LastCE_RIGHT:
     $ ce_mode = None
-    $ ce_rep += 2
+    $ ce_rep += 0.5
     call CE_end
     jump LastCE_Continue
 

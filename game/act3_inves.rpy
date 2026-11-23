@@ -75,7 +75,7 @@ screen aai_examine_allinone(area_name):
                     xsize h.xywh[2]
                     ysize h.xywh[3]
 
-    textbutton "Back":
+    textbutton _("Back"):
             action [SetVariable("aai_break", True), Return()] 
             align (0.95, 0.05) 
             text_size 32

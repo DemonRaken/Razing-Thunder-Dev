@@ -79,13 +79,13 @@ screen aai_main_menu():
         xalign 0.5
         yalign 0.7
         spacing 50
-        textbutton "Talk" style "aai_button":
+        textbutton _("Talk") style "aai_button":
             action [SetVariable("aai_mode", "talk"), Return()]
-        textbutton "Examine"  style "aai_button":
+        textbutton _("Examine")  style "aai_button":
             action [SetVariable("aai_mode", "examine"), Return()]
-        textbutton "Present" style "aai_button":
+        textbutton _("Present") style "aai_button":
             action [SetVariable("aai_mode", "present"), Return()]
-        textbutton "Move" style "aai_button":
+        textbutton _("Move") style "aai_button":
             action [SetVariable("aai_mode", "move"), Return()]
 
 

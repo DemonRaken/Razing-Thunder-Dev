@@ -11,23 +11,24 @@ screen ce_ui():
 
    tag ce
    zorder 1
-   hbox:
-      xalign 0.7
-      yalign 0.75
-      spacing 10
-      textbutton "◀" action Rollback()
-      textbutton _("Press"):
-         action SetVariable("ce_mode", None if ce_mode == "press" else "press")
-         selected ce_mode == "press" style "ce_button"
-      textbutton _("Present"):
-         style "ce_button"
-         action Show("dossier_ui")
-         #action SetVariable("ce_mode", None if ce_mode == "object" else "object") 
-         #selected ce_mode == "object" style "ce_button"
-      vbox:
-         text _("Reputation") size 20 xalign 0.5
-         bar value ce_rep range 10 xsize 200 ysize 20 yalign 0.5
-      textbutton "▶" action Return()
+   showif quick_menu:
+      hbox:
+         xalign 0.7
+         yalign 0.75
+         spacing 10
+         textbutton "◀" action Rollback()
+         textbutton _("Press"):
+            action SetVariable("ce_mode", None if ce_mode == "press" else "press")
+            selected ce_mode == "press" style "ce_button"
+         textbutton _("Present"):
+            style "ce_button"
+            action Show("dossier_ui")
+            #action SetVariable("ce_mode", None if ce_mode == "object" else "object") 
+            #selected ce_mode == "object" style "ce_button"
+         vbox:
+            text _("Reputation") size 20 xalign 0.5
+            bar value ce_rep range 10 xsize 200 ysize 20 yalign 0.5
+         textbutton "▶" action Return()
               
 screen game_over():
       tag game_over
@@ -46,6 +47,7 @@ label game_over:
       stop music
       scene black with dissolve   # fade to black
       show screen game_over()          # show the text + decoration
+      play music sad fadein 0.5
       pause 3.0                        # keep it on screen for 3 seconds
       hide screen game_over with dissolve
       $ MainMenu(confirm=False)()      # return to main menu

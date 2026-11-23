@@ -314,7 +314,19 @@ translate spanish strings:
     old "Ask both: Who am I?"
     new ""
 
-    # game/investigations.rpy:197
-    old "Close"
-    new ""
+# TODO: Translation updated at 2026-11-22 22:43
+
+translate spanish strings:
+
+    # game/investigations.rpy:82
+    old "Talk"
+    new "Hablar"
+
+    # game/investigations.rpy:84
+    old "Examine"
+    new "Examinar"
+
+    # game/investigations.rpy:88
+    old "Move"
+    new "Moverse"
 

@@ -42,3 +42,5 @@ translate spanish strings:
     old "Travel!"
     new "Moverse!"
 
+    old "Close"
+    new "Cerrar"

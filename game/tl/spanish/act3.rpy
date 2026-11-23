@@ -9281,4 +9281,167 @@ translate spanish strings:
 
     # game/act3.rpy:1029
     old "no idea"
-    new "ni idea"
+    new "ni idea"# TODO: Translation updated at 2026-11-22 22:43
+
+# game/act3.rpy:157
+translate spanish intervene_6b89a902:
+
+    # t det yell "Wait a moment! This is no accident! It's murder."
+    t det yell ""
+
+# game/act3.rpy:169
+translate spanish intervene_4cbd2869:
+
+    # tt what det neutral "Hmph. Surprised I'm still hanging around...?"
+    tt what det neutral ""
+
+# game/act3.rpy:171
+translate spanish intervene_edde665e:
+
+    # t det neutral "I did. But that doesn't make it an accident."
+    t det neutral ""
+
+# game/act3.rpy:257
+translate spanish vs_sebCE_e2b112a3:
+
+    # tt "Zero thoughts spared for the victim here.."
+    tt ""
+
+# game/act3.rpy:459
+translate spanish whilefall_c04ee950:
+
+    # t neutral drop "A-All very good points...!"
+    t neutral drop ""
+
+# game/act3.rpy:494
+translate spanish b4fall_8cc7a192:
+
+    # tt aw neutral drop "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
+    tt aw neutral drop ""
+
+# game/act3.rpy:495
+translate spanish b4fall_2504030a:
+
+    # tt det neutral "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
+    tt det neutral ""
+
+# game/act3.rpy:496
+translate spanish b4fall_6429b474:
+
+    # tt det smile "First, I need to make a quick stop to the trainer lockers..."
+    tt det smile ""
+
+# game/act3.rpy:766
+translate spanish ce1_4c1061a0:
+
+    # l neutral "This is no game. This is a matter of life and death, and you're trying to look the other way!"
+    l neutral ""
+
+# game/act3.rpy:790
+translate spanish ce1_8f42b574:
+
+    # l smile "Ah, but would you still say the same if I offered you the answers to this case?"
+    l smile ""
+
+# game/act3.rpy:795
+translate spanish ce1_404ee7b2:
+
+    # l neutral "Quite a lot, actually, Mr. Castillo. For instance, I know you have a habit of siccing your men on people who inconvenience you."
+    l neutral ""
+
+# game/act3.rpy:813
+translate spanish ce1_aff17af1:
+
+    # lt eh neutral "If it's coming from this guy, I seriously doubt it..."
+    lt eh neutral ""
+
+# game/act3.rpy:818
+translate spanish ce1_5e2701f7:
+
+    # l yell "Say whaaaaaat!?"
+    l yell ""
+
+# game/act3.rpy:885
+translate spanish vs_sebCE2_1f9bf0a1:
+
+    # l eh neutral drop "My- *cough* what is so questionable about that young man's appearance?"
+    l eh neutral drop ""
+
+# game/act3.rpy:890
+translate spanish vs_sebCE2_2d7faf56:
+
+    # lt yell "I'm not taking fashion advice from the guy wearing two rolexs on his arm!"
+    lt yell ""
+
+# game/act3.rpy:902
+translate spanish vs_sebCE2_06dfb7b3:
+
+    # lt neutral "What makes you so sure about that?"
+    lt neutral ""
+
+# game/act3.rpy:915
+translate spanish vs_sebCE2_77019a17:
+
+    # l grin closed "Uh... perhaps he was just trying to help the downed man?"
+    l grin closed ""
+
+# game/act3.rpy:920
+translate spanish vs_sebCE2_64357a18:
+
+    # lt closed drop "I do know some first aid..."
+    lt closed drop ""
+
+# game/act3.rpy:931
+translate spanish vs_sebCE2_3736bf5f:
+
+    # l yell "It's a bit of a stretch to label him a murderer just for that!"
+    l yell ""
+
+# game/act3.rpy:936
+translate spanish vs_sebCE2_148b2421:
+
+    # lt closed drop "I don't know if I'll be so lucky twice if I end up there again. "
+    lt closed drop ""
+
+# game/act3.rpy:951
+translate spanish vs_sebCE2_32a3cdda:
+
+    # l neutral "He dropped him right after the attack?"
+    l neutral ""
+
+# game/act3.rpy:959
+translate spanish vs_sebCE2_ee0fe339:
+
+    # l eh what "...the victim."
+    l eh what ""
+
+# game/act3.rpy:965
+translate spanish vs_sebCE2_22cc3101:
+
+    # lt think closed "I will when you stop contradicting yourself over and over."
+    lt think closed ""
+
+# game/act3.rpy:983
+translate spanish vs_sebCE_wrong2_27925fe0:
+
+    # l yell "Mr. Castillo, you have made a serious mistake in your testimony!"
+    l yell ""
+
+# game/act3.rpy:988
+translate spanish vs_sebCE_wrong2_38b67ba3:
+
+    # l closed drop "Ugh...!"
+    l closed drop ""
+
+# game/act3.rpy:1076
+translate spanish act3_continue2_9beeab0a:
+
+    # l "Yet they found no traces of blood on the railing or the ground beneath the spot where the victim supposedly fell from."
+    l ""
+
+# game/act3.rpy:1408
+translate spanish bigCE_loop_8e1eb4ed:
+
+    # lt "I wonder if there's anything off about these alibis. Let's find out."
+    lt ""
+

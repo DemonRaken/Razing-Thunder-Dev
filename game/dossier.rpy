@@ -88,10 +88,10 @@ screen dossier_ui():
 
         vbox:
             xalign 0.915
-            yalign 0.59
+            yalign 0.55
             text _("Dossier")
             null height 5
-            textbutton "Close" action Hide("dossier_ui")   
+            textbutton _("Close") action Hide("dossier_ui")   
 
         showif renpy.get_screen("ce") or aai_active and aai_mode == "present":
             imagebutton:
