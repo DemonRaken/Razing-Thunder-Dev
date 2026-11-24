@@ -18,19 +18,20 @@ init 2 python:
 
     act3_inves_examine_areas = {
         mp_stables.name: AAI_ExamineArea(mp_stables.name, mp_stables.image, [
-            AAI_Hotspot((1327,  205, 369, 673), "stables_blood"),
-            AAI_Hotspot(( 344,  479, 652, 361), "stables_shovel"),
+            AAI_Hotspot((822, 818, 284, 192), "stables_blood"),
+            AAI_Hotspot((1375, 818, 232, 240), "stables_shovel"),
         ]),
-        mp_paddock.name: AAI_ExamineArea(mp_paddock.name, mp_paddock.image, [
-            AAI_Hotspot((1075, 998, 614, 369), "aai_paddock_body"),
-        ]),
+        # mp_paddock.name: AAI_ExamineArea(mp_paddock.name, mp_paddock.image, [
+            
+        # ]),
         mp_grandstands.name: AAI_ExamineArea(mp_grandstands.name, mp_grandstands.image, [
             AAI_Hotspot(( 141, 377, 874, 316), "racetrack_inves_vip"),
             AAI_Hotspot((367, 209, 507, 162), "racetrack_inves_railing"),
+            AAI_Hotspot((508, 733, 430, 166), "racetrack_inves_body"),
         ]),
         mp_lockers.name: AAI_ExamineArea(mp_lockers.name, mp_lockers.image, [
-            AAI_Hotspot((753, 869, 340, 380), "lockers_inves_openlocker"),
-            AAI_Hotspot((600, 569, 526, 219), "lockers_inves_throusers"),
+            AAI_Hotspot((36, 829, 397, 486), "lockers_inves_openlocker"),
+            #AAI_Hotspot((109, 329, 327, 502), "lockers_inves_throusers"),
         ]),
         mp_breakroom.name: AAI_ExamineArea(mp_breakroom.name, mp_breakroom.image, [
             AAI_Hotspot((1736, 528, 183, 405), "breakroom_invest_trashbin"),
@@ -95,21 +96,24 @@ label act3_main_inves:
     pause 2.0
     hide text
     $ aai_active = True
-    $ aai_travel_left = [mp_stables, mp_grandstands, mp_paddock, mp_lockers, mp_breakroom] # add locations to map for investigation
+    $ aai_travel_left = [mp_stables, mp_grandstands, mp_lockers, mp_breakroom] # add locations to map for investigation
+    play music inves fadein 2.5
     jump act3_main_inves_maptravel_mode
 
 label act3_main_inves_end:
-    n "This was the end."
+    #n "This was the end."
     show text _("{size=150}{color=#ff5100}Investigation\nComplete{/color}{/size}")  at truecenter, investigation_text_zoom
     pause 2.0
     hide text
     $ aai_active = False
-    lt "I investigated everything. Now, I must hurry and confront my first target."
+    lt "I got quite a lot of evidence. I should hurry and have the police officers analyze what they can."
+    lt "Who knows when the inspector will finish with the questioning?"
+    with fade
     jump inves_complete
 
 label act3_main_inves_maptravel_mode:
     if len(aai_travel_left) == 0: # done all investigations
-        lt "Huh, it seems I investigated everything. I am ready!"
+        lt "Hm... seems like I looked everywhere worth checking. I'm ready now!"
         jump act3_main_inves_end
         
     $ dossier_tab_control = "map"
@@ -126,8 +130,8 @@ label act3_main_inves_maptravel_mode:
         jump stables_inves
     if aai_travel == mp_grandstands:
         jump racetrack_inves
-    if aai_travel == mp_paddock:
-        jump paddock_inves
+    # if aai_travel == mp_paddock:
+    #     jump paddock_inves
     if aai_travel == mp_lockers:
         jump lockers_inves
     if aai_travel == mp_breakroom:
@@ -157,7 +161,7 @@ label stables_blood:
     lt "Kneeling over, I begin to brush away all of the hay."
     $ renpy.music.set_volume(0.4, delay=1.0, channel="music")
     play sound se_flash
-    lt "What the...!? This looks like someone's blood...!"
+    lt "What the...!? This looks like someone's blood...!" with flash
     lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
     lt "Huh? The trail suddenly ends before reaching the entrance."
     lt "That's weird. I'll notify one of the officers about it. Better safe than sorry."
@@ -172,7 +176,7 @@ label stables_shovel:
 
     lt "The blade is covered in something dark and flaky. At first, I thought it was dirt..."
     play sound se_flash
-    l "...Wait. Is that blood!?"
+    l "...Wait. Is that blood!?" with flash
 
     lt "And this dent... Looks like it's been damaged pretty badly."
 
@@ -258,65 +262,42 @@ label stables_inves:
 #             hover Transform("placeholder_paddock", matrixcolor=BrightnessMatrix(0.3))   
 #             hotspot (141, 377, 874, 316) action Call("aai_paddock_body")
 
-label paddock_inves:
-    scene placeholder_paddock
-    with fade
-    lt "There. Now I'm dressed for the occasion. El Leopardo is on the case...!"
+# label paddock_inves:
+#     scene placeholder_paddock
+#     with fade
+#     lt "There. Now I'm dressed for the occasion. El Leopardo is on the case...!"
 
-    lt "Huh. The police officers watching over the scene aren't trying to detain me. I guess the inspector gave them a heads-up? Much appreciated!"
-    lt "Time to take a good look around and figure out what happened."
-    default paddock_invest_officer_test = False
-    play music inves fadein 2.5
-    while aai_active:
-        call screen aai_main_menu
-        while aai_mode == "talk":
-            menu:
-                "Talk to the Police officers" if not paddock_invest_officer_test:
-                    of "Stay back. No civilians are allowed past this point."
-                    l "Hello, Officer. I want to ask questions."
-                    of "No answers will be given to civilians."
-                    l "Geez, can I at least stay here?"
-                    of "Give me your ID Card."
-                    l "No, unless you show me your own to authenthicate."
-                    of "Tch. Fine, do not past this point."
-                    lt "What's wrong with them? They are so tense."
-                    $ paddock_invest_officer_test = True
-                "Talk to the Police officers" if paddock_invest_officer_test:
-                    lt "No, I should stay away from them. They seem very unfriendly."
-                "Close":
-                    $ aai_mode = None
-        if aai_mode == "present":
-            $ dossier_tab_control = "evidence"
-            call screen dossier_ui
-            lt "I better not show that to the police officers. They don't seem willing to listen to anything I have to ask."
-        elif aai_mode == "examine":
-            if mp_paddock in aai_travel_left:
-                call act3_aai_examine(mp_paddock)        
-            else:
-                lt "I've already examined this area."
-                lt "I better {b}MOVE{/b} somewhere else instead."
-        elif aai_mode == "move":
-            jump act3_main_inves_maptravel_mode
-
-label aai_paddock_body:
-    show layer master:
-        xalign 0.5
-        yalign 0.5
-        zoom 1.0
-        linear 2.0 zoom 2.0
-    #Points to click: just the body.
-    #When done so, zoom in on it.
-    lt "I should examine the body more closely... Let's see."
-    lt "There's that deep, nasty wound on the back of his head... and the bruises on the front..."
-    lt "...Huh? This looks like dirt, but it doesn't match the ground around the parade ring. There's something else mixed in..."
-    lt "Is this... bits of hay? Huh."
-    show layer master:
-        xalign 0.5
-        yalign 0.5
-        zoom 2.0
-        linear 2.0 zoom 1.0
-    lt "Maybe I should check the stables..."
-    return
+    
+#     while aai_active:
+#         call screen aai_main_menu
+#         while aai_mode == "talk":
+#             menu:
+#                 "Talk to the Police officers" if not paddock_invest_officer_test:
+#                     of "Stay back. No civilians are allowed past this point."
+#                     l "Hello, Officer. I want to ask questions."
+#                     of "No answers will be given to civilians."
+#                     l "Geez, can I at least stay here?"
+#                     of "Give me your ID Card."
+#                     l "No, unless you show me your own to authenthicate."
+#                     of "Tch. Fine, do not past this point."
+#                     lt "What's wrong with them? They are so tense."
+#                     $ paddock_invest_officer_test = True
+#                 "Talk to the Police officers" if paddock_invest_officer_test:
+#                     lt "No, I should stay away from them. They seem very unfriendly."
+#                 "Close":
+#                     $ aai_mode = None
+#         if aai_mode == "present":
+#             $ dossier_tab_control = "evidence"
+#             call screen dossier_ui
+#             lt "I better not show that to the police officers. They don't seem willing to listen to anything I have to ask."
+#         elif aai_mode == "examine":
+#             if mp_paddock in aai_travel_left:
+#                 call act3_aai_examine(mp_paddock)        
+#             else:
+#                 lt "I've already examined this area."
+#                 lt "I better {b}MOVE{/b} somewhere else instead."
+#         elif aai_mode == "move":
+#             jump act3_main_inves_maptravel_mode
 
 
 # =================
@@ -335,17 +316,34 @@ label aai_paddock_body:
 label racetrack_inves:
         scene placeholder_granstands
         with fade
-        
+        lt "Huh. The police officers watching over the scene aren't trying to detain me. I guess the inspector gave them a heads-up? Much appreciated!"
+        lt "Time to take a good look around and figure out what happened."
+        default racetrack_invest_officer_test = False
         while aai_active:
             call screen aai_main_menu
             while aai_mode == "talk":
                 menu:
+                    "Talk to the Police officers" if not racetrack_invest_officer_test:
+                        of "Stay back. No civilians are allowed past this point."
+                        l "Hello, officer. I want to ask some questions."
+                        of "Oh, you're the masked clown the inspector told us about..."
+                        l "I am not a clown! I'm El Leopardo! Ally of justice and nightmare of evil!"
+                        of "She said to let you investigate, but don't disturb our agents."
+                        l "You don't have to tell me that! I know that much."
+                        of "And anything important you come across, you WILL turn it over to us."
+                        of "Concealing evidence is a major crime."
+                        l "I had no intention of doing that in the first place."
+                        lt "Looks like I'll have to turn in any major findings to them."
+                        lt "Well, that's handy. I don't exactly have access to a lab to perform tests and the like."
+                        $ racetrack_invest_officer_test = True
+                    "Talk to the Police officers" if racetrack_invest_officer_test:
+                        lt "I already talked to the officers. I should focus on the investigation now."
                     "Close":
                         $ aai_mode = None
             if aai_mode == "present":
                 $ dossier_tab_control = "evidence"
                 call screen dossier_ui
-                lt "But there is nobody to show it to."
+                lt "They seem busy right now. I'll hand over the evidence once I'm done investigating."
             elif aai_mode == "examine":
                 if mp_grandstands in aai_travel_left:
                     call act3_aai_examine(mp_grandstands)        
@@ -368,7 +366,27 @@ label racetrack_inves_railing:
         lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
         lt "You'd have to deliberately climb over it to jump... or have someone throw you over."
         return
-    
+
+label racetrack_inves_body:
+        show layer master:
+            xalign 0.5
+            yalign 0.5
+            zoom 1.0
+            linear 2.0 zoom 2.0
+        #Points to click: just the body.
+        #When done so, zoom in on it.
+        lt "I should examine the body more closely... Let's see."
+        lt "There's that deep, nasty wound on the back of his head... and the bruises on the front..."
+        lt "...Huh? This looks like dirt, but it doesn't match the ground around the parade ring. There's something else mixed in..."
+        play sound se_flash
+        lt "Is this... bits of hay? Huh." with flash
+        show layer master:
+            xalign 0.5
+            yalign 0.5
+            zoom 2.0
+            linear 2.0 zoom 1.0
+        lt "Maybe I should check the stables..."
+        return    
     
 # =================
 #    Lockers
@@ -376,7 +394,7 @@ label racetrack_inves_railing:
 
     
 label lockers_inves:
-        scene placeholder_lockers
+        scene placeholder_lockers_1
         with fade
         
         while aai_active:
@@ -407,8 +425,8 @@ label lockers_inves_openlocker:
         l "A... hawaiin shirt? A pair of sunglasses, too..."
         lt "I guess these must belong to one of the jockeys."
         $ dossier.add(de_casualclothes)
-        return
-label lockers_inves_throusers:
+#         return
+# label lockers_inves_throusers:
         l "Hm? Hey, that's a notebook on top of the trousers..."
         lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
         l "What do we have here...{w}\n...{w}\n...!?"
@@ -505,7 +523,7 @@ label breakroom_intro:
 
         lt "I drive my palm into his jaw."
 
-        play sound se_pain
+        play sound se_manpain
 
         tg "Oof!"
 
@@ -580,6 +598,7 @@ label breakroom_invest_trashbin:
 # =================
 
 label inves_complete:
+        stop music fadeout 2.5
         of "Mr. Leopardo, correct?"
         lt "Ah- one of the police officers working for Medina just approached me."
         l "Indeed, that would be me! How may I help you?"
@@ -589,10 +608,11 @@ label inves_complete:
         $ dossier.add(de_shovel)
         of "Take this copy of the shovel report."
         $ dossier.add(de_blooddrops)
-        of "Also take this is the blood report."
+        of "Also, take this. It's a reportt on the blood you found."
         $ dossier.add(de_bodybag)
-        of "Finally, take this bag report."
-        
+        of "Finally, here is a report on the bag you found."
+        lt "Nothing on the clothes and notebook...? Well, it is far away from the crime scene."
+        lt "I guess they didn't see any connection to the murder. But I can't afford to do the same, I'll keep them with me."
         l "Much appreciated, friend! With this, we're one step closer to bringing down the villain behind it!"
         of "R-Right... that was all."
         lt "I watch him leave in a hurry."

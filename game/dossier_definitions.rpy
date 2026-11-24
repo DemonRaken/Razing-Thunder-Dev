@@ -113,7 +113,7 @@ define mp_stables = MapData(
 
 define mp_lockers = MapData(
     _("Jockeys Locker Room"),
-    "placeholder_lockers",  # Image file
+    "placeholder_lockers_1",  # Image file
     _("A designated area where jockeys can change clothes, store their belongings, and prepare for their races.")
 )
 
