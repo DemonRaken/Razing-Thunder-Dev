@@ -133,6 +133,12 @@ label debug_cutins_test:
     define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
     define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
 
+    define audio.se_punch1 = "sfx/fight/punch1.ogg"
+    define audio.se_punch2 = "sfx/fight/punch2.ogg"
+    define audio.se_manpain = "sfx/fight/manpain.ogg"
+    define audio.se_anvil = "sfx/anvil.ogg"
+    define audio.se_flash = audio.se_anvil
+
 style navigation_button:
     properties gui.button_properties("navigation_button")
     hover_sound "sfx/menu/coin2.ogg"

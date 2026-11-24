@@ -26,7 +26,7 @@ init 2 python:
         ]),
         mp_grandstands.name: AAI_ExamineArea(mp_grandstands.name, mp_grandstands.image, [
             AAI_Hotspot(( 141, 377, 874, 316), "racetrack_inves_vip"),
-            AAI_Hotspot((1140, 679, 647, 214), "racetrack_inves_railing"),
+            AAI_Hotspot((367, 209, 507, 162), "racetrack_inves_railing"),
         ]),
         mp_lockers.name: AAI_ExamineArea(mp_lockers.name, mp_lockers.image, [
             AAI_Hotspot((753, 869, 340, 380), "lockers_inves_openlocker"),
@@ -156,6 +156,7 @@ label stables_blood:
     lt "Hang on, I can see something underneath it..."
     lt "Kneeling over, I begin to brush away all of the hay."
     $ renpy.music.set_volume(0.4, delay=1.0, channel="music")
+    play sound se_flash
     lt "What the...!? This looks like someone's blood...!"
     lt "...yeah. No doubt about it, this is dried up blood. Moreover, it looks like a few drops lead outside..."
     lt "Huh? The trail suddenly ends before reaching the entrance."
@@ -170,7 +171,7 @@ label stables_shovel:
     lt "A stable shovel. Someone must've left it behind this stall."
 
     lt "The blade is covered in something dark and flaky. At first, I thought it was dirt..."
-
+    play sound se_flash
     l "...Wait. Is that blood!?"
 
     lt "And this dent... Looks like it's been damaged pretty badly."
@@ -215,11 +216,11 @@ label stables_inves:
             $ dossier_tab_control = "evidence"
             call screen dossier_ui
             if ce_object in [dp_leo, de_mate]:
-                l "Oh, I really love mate. Mate, oh my love."
+                l "I'll have a quick sip from my mate before continuing the investigation."
                 ch "Neigh! Neigh!"
-                l "Chispa, you aren't allowed to drink from my Mate."
+                l "Chispa, you aren't allowed to drink from my mate."
             elif ce_object in [dp_chispa]:
-                l "Chispa, you are so lovely, look at you."
+                l "Chispa, you are so adorable! Look at you."
                 ch "Neigh! Neeeeigh! Neeeigh!!!"
                 l "There there, calm down. I have to focus."
             else:
@@ -411,7 +412,7 @@ label lockers_inves_throusers:
         l "Hm? Hey, that's a notebook on top of the trousers..."
         lt "I do feel bad snooping through someone's belongings, but... it's for the sake of the investigation!"
         l "What do we have here...{w}\n...{w}\n...!?"
-        play sound "sfx/anvil.ogg"
+        play sound se_flash
         lt "T-This...! The pages here are full with dates from various derby competitions!" with flash
         lt "I recognize some of the horses' names, too..."
         lt "Perla Negra is listed here! That's the one they showed on the news!"
@@ -468,7 +469,7 @@ label breakroom_intro:
 
         lt "A few seconds later, I hear footsteps rushing toward the door. They're getting closer... Gotta hide!"
 
-        play sound "sfx/fight/manpain.ogg"
+        play sound se_manpain
 
         tg "AHHHH! FIRE! FIRE!!!"
 
@@ -494,17 +495,17 @@ label breakroom_intro:
 
         lt "I toss my poncho over the man's face, catching him completely off guard."
 
-        play sound "sfx/fight/punch2.ogg"
+        play sound se_punch2
 
         tg "!?"
 
-        play sound "sfx/fight/punch1.ogg"
+        play sound se_punch1
 
         lt "He stumbles around, struggling to pull it off. By the time he manages, I've already stepped in close."
 
         lt "I drive my palm into his jaw."
 
-        play sound "sfx/fight/manpain.ogg"
+        play sound se_pain
 
         tg "Oof!"
 
@@ -553,7 +554,7 @@ label breakroom_invest_trashbin:
     lt "Rubbish, empty bottles, cigarettes... That's a fire hazard."
 
     lt "...{w}..."
-    play sound "sfx/anvil.ogg"
+    play sound se_flash
     lt "...! Hey, there's a black bag underneath all this. It's been crumpled up, too." with flash
 
     lt "I dig through the rubbish and pull the bag out. Whoa, this thing is way bigger than I expected..."
