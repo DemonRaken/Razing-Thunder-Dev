@@ -72,7 +72,7 @@ label start2:
         linear 3.0 blur 0
     menu:
         "Jump to Portal":
-            jump BigCECulpritChoice
+            jump act3_main_inves
         # "Jump to Act I":
         #     jump act1
         #  "Jump to Act II":
@@ -87,4 +87,8 @@ label start2:
             jump bigCE
         "Jump to Ending":
             call ending_sequence
+    return
+
+label demo:
+    call ending_sequence
     return

@@ -58,8 +58,9 @@ screen aai_examine_allinone(area_name):
 
         imagemap:
             yalign 1.0
-            idle  area.image
-            hover Transform(area.image, matrixcolor=BrightnessMatrix(0.3))
+            idle  area.image + "_inves"
+            hover area.image + "_hover"
+            # hover Transform(area.image, matrixcolor=BrightnessMatrix(0.3))
 
             for h in area.hotspots:
                 hotspot h.xywh action [
@@ -356,7 +357,7 @@ label racetrack_inves:
 
 label racetrack_inves_vip:
         #Inves point Vip Lunge box
-        lt "It's closed off for now, with police officers standing guard."
+        lt "Thhe VIP luxury box. It's closed off for now, with police officers standing guard."
         lt "If I had to guess, Inspector Medina is questioning people inside."
         lt "I swear... Lorenzo must be fighting like hell to keep anyone from being taken to the police station."
         return
@@ -394,7 +395,7 @@ label racetrack_inves_body:
 
     
 label lockers_inves:
-        scene placeholder_lockers_1
+        scene placeholder_lockers
         with fade
         
         while aai_active:

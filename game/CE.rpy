@@ -53,12 +53,15 @@ label game_over:
       $ MainMenu(confirm=False)()      # return to main menu
       return   
 
-
+default seen_announce_interrogation = False
 
 label CE_start:
    # Turn off Rollback for the CE only
    #$ config.rollback_enabled = False
    $ renpy.block_rollback()
+   if not seen_announce_interrogation:
+      $ seen_announce_interrogation = True
+      call announce_interrogation
    play music ce fadein 2.5
    show screen ce_ui
    return
@@ -67,6 +70,7 @@ label CE_end:
    hide screen ce_ui
    # Turn on RollBack again.
    #$ config.rollback_enabled = True
+   $ seen_announce_interrogation = False
    $ renpy.block_rollback()
    stop music fadeout 2.5
    return
@@ -158,3 +162,10 @@ label ce_penalty(amount):
       n "Leopardo Suddenly Collapsed on the spot."
       n "He never woke up."
       call game_over
+
+label announce_interrogation:
+   show text _("{size=150}{color=#FF0000}Interrogation{/color}{/size}") at truecenter, investigation_text_zoom
+   pause 2.0
+   hide text
+   return
+

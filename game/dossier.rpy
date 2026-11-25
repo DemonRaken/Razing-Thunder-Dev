@@ -143,9 +143,9 @@ screen dossier_ui():
                     hotspot (251, 373, 161, 172):
                         selected (dossier_map == mp_breakroom)
                         action SetScreenVariable("dossier_map", mp_breakroom)
-                    hotspot (407, 392, 132, 140):
-                        selected (dossier_map == mp_corridor)
-                        action SetScreenVariable("dossier_map", mp_corridor)
+                    # hotspot (407, 392, 132, 140):
+                    #     selected (dossier_map == mp_corridor)
+                    #     action SetScreenVariable("dossier_map", mp_corridor)
                     hotspot (575, 392, 132, 140):
                         selected (dossier_map == mp_paddock)
                         action SetScreenVariable("dossier_map", mp_paddock)

@@ -915,7 +915,7 @@ label b4fall:
             with fade
             
         
-        call cutin("cross_examination")
+        #call cutin("cross_examination")
         label vs_sebCE2_loop hide: # Before hide was learned.
             
             call CE_start
@@ -1567,7 +1567,7 @@ label bigCE_loop:
     lt "I wonder if there's anything off about these alibis. Let's find out."
     hide leo
     with dissolve
-    call cutin("cross_examination")
+    #call cutin("cross_examination")
 label bigCE_loop_ce hide:
     call CE_start
     call fx_interrogation
@@ -3681,7 +3681,7 @@ label debug:
         call fx_interrogation
         show est smile2
         with fade
-        call cutin("cross_examination")
+        #call cutin("cross_examination")
         call CE_start
 
         show est 
@@ -4197,7 +4197,7 @@ label LastCE:
     show est grit-red
     e "Nngh..."
 
-    call cutin("cross_examination")
+    #call cutin("cross_examination")
     label LastCE_Loop:
     scene placeholder_racetrack1
     call fx_interrogation
