@@ -72,7 +72,7 @@ label start2:
         linear 3.0 blur 0
     menu:
         "Jump to Portal":
-            jump b4fall
+            jump BigCECulpritChoice
         # "Jump to Act I":
         #     jump act1
         #  "Jump to Act II":

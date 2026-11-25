@@ -2,7 +2,7 @@
 label act3:
     $ dossier_enabled = True
     label act3intro:
-        scene placeholder_paddock
+        scene placeholder_granstands
         with fade
         tl "Razing Thunder Derby.\n Paddock. \n Evening."
         tt "Running at full speed, the gathering crowd immediately gets my attention. Following their gaze, I move past people to see what's got their attention…"
@@ -30,7 +30,7 @@ label act3:
         t "......he's dead. He's all bruised up, and his legs are bent in an unnatural way, too."
 
         $ dossier.add(de_victimnotes)
-        scene placeholder_paddock
+        scene placeholder_granstands
 
         tt "Damn it… how did this happen!?"
 
@@ -124,11 +124,16 @@ label act3:
         s "So you see, this is but a tragic accident."
 
         show en neutral
+        hide seb
+        hide me
+        with dissolve
 
         en "It is quite regrettable… however, these things can happen. I will take care of it."
 
         tt "With a snap of his fingers, security staff begin to approach from within the crowd. Oh no, are they already going to dispose of the body…?"
+        hide en
         show me sweat2
+        with dissolve
         me "Tch, you're pulling that card now?"
 
         tt "Whatever reinforcements the inspector could call, they'll arrive too late. By then, some evidence might be lost."
@@ -143,6 +148,7 @@ label act3:
                 jump silent
 
         label silent:
+            stop music fadeout 2.5
             scene black
             with fade
             tt "I stay silent, watching things unfold without intervening."
@@ -153,14 +159,16 @@ label act3:
             tt "Now I will never know the answer... nor am I really bothered to keep track of what happened at the race next."
             return
 label intervene:
-    stop music
+    stop music fadeout 2.5
     t det yell "Wait a moment! This is no accident! It's murder."
 
     show me sweat
 
     me "Ortiz..."
 
+    hide me
     show seb angry3
+    with dissolve
     s "Hah? Wait a moment, y-you...! What are you doing-"
     
     show seb angry
@@ -175,7 +183,7 @@ label intervene:
 
 #Tony vs Seb
 label vs_seb_Testimony:
-    scene placeholder_paddock
+    scene placeholder_granstands
     call fx_testimony
     show seb neutral
     with fade
@@ -190,14 +198,32 @@ label vs_seb_Testimony:
     
     hide screen status_indicator
     stop music fadeout 2.5
+    hide seb
+    show tony neutral
+    with dissolve
     t "So he just... happened to fall off from up there?"
+
+    hide tony
+    show seb neutral
+    with dissolve
     s "What do you have infront of you? Stop wasting time and let the good inspector do her thing!"
+
+    hide seb
+    show tony det neutral
+    with dissolve
     t "Right after I ask you a few things..."
+    hide tony
+    show seb frown
+    with dissolve
     s "What is this, some kind of interrogation?"
+    
+    hide seb
+    show tony det neutral right
+    with dissolve
     tt "Yes, actually. And I'm going to find the flaw in your words."
     
 label vs_sebCE:
-    scene placeholder_paddock
+    scene placeholder_granstands
     call fx_interrogation
     show seb neutral
     with fade
@@ -210,7 +236,7 @@ label vs_sebCE:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        t "Why are you so sure about that?"
+        t neutral "Why are you so sure about that?"
         show seb grr
         s "I'm getting to it, you impatient dolt! Hmph..."
         with fade
@@ -222,7 +248,7 @@ label vs_sebCE:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        t "Would a fall from that height actually kill him?"
+        t neutral "Would a fall from that height actually kill him?"
         show seb grr
         s "H-He's dead, isn't he? So obviously it is!"
         with fade
@@ -237,10 +263,11 @@ label vs_sebCE:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        t "And you're sure those injuries were all caused by the fall?"
+        t neutral "And you're sure those injuries were all caused by the fall?"
         show seb neutral
         s "Of course! What else could've caused them? Stop wasting my time!"
-        tt "Hold on... Is that really the case? Something about his injuries doesn't add up."
+        play sound se_flash
+        tt neutral closed "Hold on... Is that really the case? Something about his injuries doesn't add up." with flash
         with fade
 
     show seb grr
@@ -251,15 +278,20 @@ label vs_sebCE:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        t "I think you're jumping the gun a bit, trying to clean up so fast!"
+        t det yell "I think you're jumping the gun a bit, trying to clean up so fast!"
         show seb angry
         s "Mr. Villareal here has an event to run. The more time we waste on this, the more things will go off schedule."
-        tt "Zero thoughts spared for the victim here.."
-        with fade
+        tt what aw drop "Zero thoughts spared for the victim here.."
+        #with fade
 
     hide screen ce_ui
     hide screen status_indicator
+    hide seb
+    show tony neutral right
+    # with dissolve
+    with fade
     tt "He won't budge from this until I throw some evidence at his face."
+    show tony neutral closed
     tt "I should open my \"{color=#FF9900}Dossier{/color}\" and \"{color=#FF9900}Present{/color}\" something that counters his claims."
     jump vs_sebCE
     
@@ -481,18 +513,25 @@ label b4fall:
     show me smile3
     me "Obviously, you won't get in the way, right? Mr. Villareal?"
     
+    hide me
     show en nervous2
     with dissolve
     en "N-no, of course not... I can't in good conscience let a murderer roam free..."
 
+    hide en
     show me neutral
+    with dissolve
     me "Good. Now, follow me, everyone. I need to have a good talk with all of you about your whereabouts."
 
     stop music fadeout 2.5
-
-    tt aw neutral drop "The inspector is taking everyone back to the main racetrack. \nWhew, that was a close one..."
+    hide me
+    with dissolve
+    
+    tt aw neutral drop "The inspector is taking everyone back to the luxury box. \nWhew, that was a close one..."
     tt det neutral "...but this is no time to be resting. I have to find out as much as I can. Who knows what other crap that guy Castillo will try to pull off?"
     tt det smile "First, I need to make a quick stop to the trainer lockers..."
+    with fade
+    lt smile "There. Now I'm dressed for the occasion. El Leopardo is on the case...!"
     jump act3_main_inves  
 
     
@@ -520,7 +559,7 @@ label b4fall:
 #         with fade
 #         #Inves point Vip Lunge box
 #         lt "It's closed off for now, with police officers standing guard."
-#         lt "If I had to guess, Inspector Medina is questioning people inside."
+#         lt "If I had to guess, inspector Medina is questioning people inside."
 #         lt "I swear... Lorenzo must be fighting like hell to keep anyone from being taken to the police station."
 #         #railing
 #         lt "That's a long way down... Judging by the distance between this railing and the ground, I don't think someone could just trip and fall over it. It practically reaches my neck."
@@ -699,7 +738,7 @@ label b4fall:
 #         l "...for the ally of justice is here to save the truth! Prepare yourselves, villains!"
 
     label ce1:
-        scene placeholder_granstands
+        scene placeholder_racetrack1
         with fade
         stop music fadeout 2.5
         lt "I rush all the way over here. The inspector is surrounded by officers, Castillo's underlings, and the jockeys..."
@@ -708,7 +747,7 @@ label b4fall:
 
         show en nervous2 at slightleft
         with dissolve
-        en "Once again, I understand your concerns, Inspector, but I simply cannot afford to cancel the event again."
+        en "Once again, I understand your concerns, inspector, but I simply cannot afford to cancel the event again."
 
         show me angry at slightright
         with dissolve
@@ -738,9 +777,10 @@ label b4fall:
         l "The nightmare of criminals and fighter for justice..."
 
         show leo think yell
-        with flash
+        play sound flash
+        play music leo fadein 2.5
 
-        l "El Leopardo is here to assist!"
+        l "El Leopardo is here to assist!" with flash
         
         hide leo
         show me sweat2
@@ -779,6 +819,7 @@ label b4fall:
         hide seb grr2
         hide me
         show en neutral
+        with dissolve
         pause 1.0
 
         hide en
@@ -819,6 +860,7 @@ label b4fall:
         show seb smile2
 
         s "Yes, yes. Allow me to enlighten you."
+        stop music fadeout 2.5
 
         #CE goes here.
 
@@ -843,7 +885,8 @@ label b4fall:
             stop music fadeout 2.5
             
             show leo think closed at slightleft
-            with dissolve
+            hide seb
+            with fade
             l "Mr. Castillo... are you not basing your accusations on prejudice?"
             
             show leo neutral
@@ -862,18 +905,23 @@ label b4fall:
             show seb frown
             s "Not this again... I'm getting déjà vu."
             
-            show leo think closed
-            lt "Yeah, and I'm getting déjà vu too. A glaring contradiction, that is."
+            hide leo
+            show seb at center
+            with dissolve
+            lt "Yeah, and I'm getting déjà vu too. Of a glaring contradiction, that is."
             
-            show leo think yell
             lt "After all the investigating I've done, I know this guy is dead wrong!"
             lt "Now I just have to prove it!"
+            with fade
+            
         
         call cutin("cross_examination")
         label vs_sebCE2_loop hide: # Before hide was learned.
+            
             call CE_start
             call fx_interrogation
-            show seb neutral
+            hide leo
+            show seb neutral at center
             s "I overlooked his questionable appearance, given that he's Catalina's trainer..."
             if ce_mode == "object":
                 call cutin("objection")
@@ -898,7 +946,7 @@ label b4fall:
             if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                lt neutral "What makes you so sure about that?"
+                l neutral "What makes you so sure about that?"
                 show seb grr
                 s "I'm getting there, mask freak! Stop interrupting me."
                 with fade
@@ -940,7 +988,7 @@ label b4fall:
             #p - contra is here , blood drops
             if ce_mode == "object":
                 call cutin("objection")
-                if ce_object in [de_blooddrops]:
+                if ce_object in [de_blooddrops, de_shovel]:
                     call vs_sebCE_right2
                 else:
                     call vs_sebCE_wrong2
@@ -960,9 +1008,9 @@ label b4fall:
                 show seb smile2
                 s "Oh. Yes. Don't make me repeat the same over and over!"
                 
-                with flash
-                lt think closed "I will when you stop contradicting yourself over and over."
-                with fade
+                play sound se_flash
+                lt think closed "I will when you stop contradicting yourself over and over." with flash
+                #with fade
             
             hide screen ce_ui
             hide screen status_indicator
@@ -974,6 +1022,10 @@ label b4fall:
             
             show leo neutral
             lt "Thankfully, he's already made one grave mistake while spewing his falsehoods."
+            hide leo 
+            with dissolve
+            with fade
+            
             jump vs_sebCE2_loop
 
             #continue here
@@ -997,78 +1049,63 @@ label b4fall:
                 call CE_end
                 jump act3_continue2
         label act3_continue2:
+            scene placeholder_racetrack1
             hide screen status_indicator
-            show leo think closed
+            show seb neutral at slightright
+            show leo think closed at slightleft
+            with fade
             l "So, you're claiming that Mr. Ortiz attacked the victim at the top of the grandstands... then threw him over the railing..."
-            l "...where he landed at the parade ring, right where the body was found. Did I get that right?"
+            l "...where he landed ultimately on the dirt track below, right where the body was found. Did I get that right?"
 
-            hide leo
             show seb smile
-            with dissolve
 
             s "A fine summary! Now that you understand, how about you leave already?"
 
             play music objection fadein 0.5
-            hide seb
             show leo think yell
             with dissolve
             l "Except your explanation is riddled with holes."
 
-            hide leo
             show seb grr3
             with dissolve
             s "H-How dare you!"
 
-            hide seb
             show leo yell
             with dissolve
-
             l "If Mr. Ortiz threw the victim from that height, how did he manage to show up and \"prod\" at the corpse, as you put it earlier?"
 
-            hide leo
             show seb angry
-            with dissolve
             s "He ran! All the way down, as fast as he could!"
 
-            hide seb
             show leo neutral right
-            with dissolve
             l "It's quite a distance to cover. He would've arrived after you, not before you."
             
             show leo neutral
             l "And that's not even the biggest problem."
 
-            hide leo
             show seb frown
-            with dissolve
             s "There's... more?"
 
-            hide seb
             show leo grin
-            with dissolve
             l "I'm afraid so. Lots more."
 
             show leo neutral
             l "For starters, there was a distinct lack of blood at the top of the grandstands."
             
-            hide leo
             show seb grr
-            with dissolve
             s "That's easy! It was cleaned up!"
 
             call cutin("objection")
 
             show leo closed
-            l "Luminol test."
-
-            hide leo
-            show seb frown
             with dissolve
+            play sound se_flash
+            l "Luminol test." with flash
+
+            show seb frown
             s "What?"
 
-            hide seb
             show leo neutral 
-            with dissolve
             l "Forensics examined the area thoroughly. Even if someone wipes away the blood, luminol can still react with the traces left behind, revealing what the naked eye can't see."
 
             show leo think closed
@@ -1077,22 +1114,18 @@ label b4fall:
             show leo grin
             l "But there was one place where the victim's blood *was* found. Care to guess where?"
             
-            hide leo
             show seb nervous
-            with dissolve
             s "...Mmmmnngh...."
 
             call cutin("takethat")
-            hide seb
             show leo point
-            with flash
-            l "Allow me then: Vicente's blood was discovered at the derby's stables!"
+            play sound se_flash
+            l "Allow me then: Vicente's blood was discovered at the derby's stables!" with flash
 
-            hide leo
             show seb nervous2
-            with dissolve
             s "I-Impossible!"
 
+            hide leo
             hide seb
             show me angry
             with dissolve
@@ -1112,7 +1145,7 @@ label b4fall:
             hide leo
             show seb grr2
             s "Of course not! And you will see why right now!"
-            stop music
+            stop music fadeout 2.5
 label act3_continue3:
     # contra 2: tony used the bag to carry the body from the stables
     #Leo vs Seb Round 2 CE
@@ -1120,26 +1153,33 @@ label act3_continue3:
     default ce_seb_bodybag = False
     label vs_sebCE_3:
     scene placeholder_racetrack1
-    show seb smile3
+    show seb angry
     with fade
     call fx_testimony
     s "Fine then, I admit it. That old crook died at the stables."
+    show seb grr
     s "That still doesn't clear the country bumpkin's name!"
+    show seb grr2
     s "He attacked that trainer, then moved his body away from the stables!"
     
     hide screen status_indicator
     stop music fadeout 2.5
-    l "So... you stand by your accusation."
+    hide seb
+    with fade
+    l neutral right "So... you stand by your accusation."
+    show seb smile3
+    with dissolve
     s "You don't get to where I am by retracting at the slightest error."
-    lt "It's been several errors."
-    lt "Hm... nothing in particular seems wrong, but that's because he's skimming over the details."
-    lt "I should press him and get a fuller picture of his version of events."
+    lt eh what "It's been several errors."
+    lt neutral right "Hm... nothing in particular seems wrong, but that's because he's skimming over the details."
+    lt neutral "I should press him and get a fuller picture of his version of events."
     call cutin("cross_examination")
 label vs_sebCE_3_loop hide:
     call CE_start
     call fx_interrogation
     scene placeholder_racetrack1
-    show seb smile3
+    hide leo
+    show seb angry
     with fade
     s "Fine then, I admit it. That old crook died at the stables."
     #press
@@ -1149,10 +1189,11 @@ label vs_sebCE_3_loop hide:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        l "Was that so hard?"
+        l grin closed "Was that so hard?"
+        show seb grr3
         s "S-Silence!"
         with fade
-
+    show seb grr
     s "That still doesn't clear the country bumpkin's name!"
     if ce_mode == "object":
         call cutin("objection")
@@ -1160,12 +1201,14 @@ label vs_sebCE_3_loop hide:
     if ce_mode == "press":
         $ ce_mode = None
         call cutin("holdit")
-        l "Why do you insist on calling m- on calling him that..?"
+        l eh neutral "Why do you insist on calling m- on calling him that..?"
+        show seb smile3
         s "I have twenty reasons explaining why. Number one..."
-        l "Never mind. Moving on..."
+        l eh neutral drop "Never mind. Moving on..."
         with fade
 
     if ce_seb_bodybag:
+        show seb grr2
         s "He attacked that trainer, then used some kind of body bag to transport him out from the stables!"
         if ce_mode == "object":
             call cutin("objection")
@@ -1177,13 +1220,16 @@ label vs_sebCE_3_loop hide:
         if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Where did he get the bag from?"
+            l neutral"Where did he get the bag from?"
+            show seb neutral
             s "How should I know? I am not a criminal! eBay? Drone delivery?"
-            lt "Man. If drones started handing out crime tools like candy, we'd all be in big trouble."
-            lt "Speaking of trouble... it doesn't seem Sebastian has realized what it means to have used that method."
-            lt "At the very least, I know it's impossible for me to have done it. I just gotta prove it now!"
+            lt eh what"Man. If drones started handing out crime tools like candy, we'd all be in big trouble."
+            lt neutral right "Speaking of trouble... it doesn't seem Sebastian has realized what it means to have used that method."
+            play sound se_flash
+            lt smile "At the very least, I know it's impossible for me to have done it. I just gotta prove it now!" with flash
             with fade
     else:
+        show seb grr2
         s "He attacked that trainer, then moved his body away from the stables!"
         if ce_mode == "object":
             call cutin("objection")
@@ -1192,30 +1238,37 @@ label vs_sebCE_3_loop hide:
             $ ce_seb_bodybag = True
             call cutin("holdit")
             $ ce_mode = None
-            l "How did he pull that off in a derby full of people?"
-            l "I'd imagine Mr. Ortiz would risk being seen."
+            l neutral "How did he pull that off in a derby full of people?"
+            l neutral right "I'd imagine Mr. Ortiz would risk being seen."
+            show seb grr
             s "Must I spell it out? That runt didn't drag him by the feet in broad daylight!"
-            l "Then how did he do it?"
+            show seb neutral
+            l eh neutral "Then how did he do it?"
             s "Some kind of bag, perhaps? Dark enough so no one can tell!"
-            lt "...people tend to give themselves away at times. This is one of them."
-            l "That sounds important. Revise your testimony, Mr. Castillo."
+            lt closed "...people tend to give themselves away at times. This is one of them."
+            l smile "That sounds important. Revise your testimony, Mr. Castillo."
+            show seb smile2
             s "Fine, you creep. I'll say it as many times as needed."
-            with fade
+            #with fade
     
 
     hide screen ce_ui
     hide screen status_indicator
+    hide seb
+    show leo think closed
+    with fade
     lt "Parts of his explanation are too vague. I should press for details."
     lt "He's bound to mess up, that will be my chance to counter attack."
+    # hide leo
     jump vs_sebCE_3_loop
 
     label vs_sebCE_wrong3:
         $ ce_mode = None
-        l "Your testimony contradicts the evidence!"
-        show seb smile
+        l yell "Your testimony contradicts the evidence!"
+        show seb smile3
         s "No."
-        lt "Fuck!"
-        lt "Ugh, that didn't go so well..."
+        lt closed drop "Fuck!"
+        lt eh neutral drop "Ugh, that didn't go so well..."
         # Penalty Damage
         call ce_penalty (2)
         with fade
@@ -1228,76 +1281,126 @@ label vs_sebCE_3_loop hide:
         jump act3_continue4
     
 label act3_continue4:
+    hide screen status_indicator
+    stop music fadeout 2.5
+    scene placeholder_racetrack1
+    show leo think closed at slightleft
+    show seb grr2 at slightright
+    with fade
     l "Interestingly enough... I agree with what you just said, Mr. Castillo."
+
+    show seb smile2
 
     s "Even numbskulls like you can listen to reason. There may be hope for you yet."
 
+    show leo think yell
     l "Sorry to disappoint you, but I was referring to the method of transportation."
 
+    show leo think closed
     l "Yes, it's highly likely that a body bag was used to transport the victim's body."
-
+    show leo neutral
     l "But... the person you're accusing couldn't have been the one to use that bag."
 
+    show seb angry3
     s "H-How can you know that!? You can buy a bag like that anywhere!"
 
+    show leo neutral right
     l "True. But you still have to dispose of it afterward."
 
+    show leo neutral
     l "Mr. Castillo. Any idea where the body bag used to transport the victim was found?"
 
+    show seb grr
     s "Hah! How should I know!? Was it dumped in a river?"
 
-    call cutin("objection")
-
-    l "It was found inside the staff break room. At the bottom of their trash bin, to be precise."
-
+    call cutin("takethat")
+    play music objection fadein 2.5
+    show leo point
+    play sound se_flash
+    l "It was found inside the staff break room. At the bottom of their trash bin, to be precise." with flash
+    show seb nervous2
     s "WHA- How do you-!?"
-
+    
+    show leo neutral
     l "The door happened to be open. And an officer happened to check inside."
-
+    show leo closed
     l "What he found was quite damning: a bag stained with the victim's dried blood."
 
     s "W-Wait, wait, wait! I can explain! This... proves nothing!"
 
+    show seb angry4
     s "That creep just got rid of the bag in that room!"
 
+    show leo yell
     l "That's impossible, and you know it, Mr. Castillo."
-
+    show seb nervous
     s "...!"
-
+    show leo neutral
     l "Mr. Villareal, security has been tightened considerably since the horse collapse incident, correct?"
-
+    
+    hide leo
+    hide seb
+    show en neutral
+    with dissolve
     en "Huh? Yes, that's right. We've increased patrols and made sure the public doesn't wander into restricted areas..."
 
+    hide en
+    show leo yell
+    with dissolve
     l "The staff break room is one of those restricted areas. Unauthorized personnel aren't allowed anywhere near it."
+    
+    show leo point
+    play sound se_flash
+    l "Which means only people working behind the scenes could have disposed of the bag there!" with flash
 
-    l "Which means only people working behind the scenes could have disposed of the bag there!"
-
+    hide leo
+    show seb nervous2
+    with dissolve
     s "AAAHHH!"
 
+    hide seb
+    show leo grin closed
+    with dissolve
     lt "Well, I did manage to get in there relatively easily, but I'm certainly not going to tell him that. Especially when I've got him on the ropes."
 
+    show leo yell
     l "Mr. Castillo! You often boast about having your underlings take care of things for you..."
 
+    show leo grin
     l "How about we give them a call? I'm sure they'll be happy to explain why an area meant for staff to rest..."
-
+    
+    show leo neutral
     l "...was being used to hide a piece of evidence connected to the murder."
 
-    l "I'm sure they'll have something very interesting to share with the rest of us!"
+    show leo point
+    with dissolve
+    play sound se_flash
+    l "I'm sure they'll have something very interesting to share with the rest of us!" with flash
 
+    hide leo
+    show seb nervous
+    with dissolve
     s "....n...nnnh...."
 
+    show layer master at earthquake(dt=2.0, dist=10)
+    show seb nervous2
+    with dissolve
     s "Nooooo!"
 
-    scene placeholder_racetrack2
+    pause .5
+    stop music fadeout 2.5
+
+    scene placeholder_granstands
+    show me smile
     with fade
 
     #fade here
 
     me "Got some news. Castillo's men finally 'fessed up. Two of them hid the body bag in the break room. On their boss' orders, of course."
 
-    l "I knew it, so they truly played a part in this."
+    l neutral "I knew it, so they truly played a part in this."
 
-    l "Then this means the culprit behind Vicente's murder is...!"
+    l yell "Then this means the culprit behind Vicente's murder is...!"
 
     #Choose here, but no real consequences, Medina interrupts you. Heck, make a time out choice even.
 
@@ -1333,40 +1436,52 @@ label act3_continue4:
             jump act3_continue5   
 
 label act3_continue5:
+    scene placeholder_granstands
+    show me angry
     me "Hold it right there. I know what you're thinking..."
     
     # Breather, Medina finally gets to present people's alibis to Tony.
-    
+    show me sweat2
     me "I'm afraid you'll be disappointed if you're planning on pointing the finger at him."
 
-    l "What do you mean, Inspector?"
+    l neutral "What do you mean, inspector?"
+
+    show me neutral
 
     me "Alibis. Out of the hundreds of people attending today's derby, we questioned those who had the closest ties to the victim or were seen near the scene."
 
     me "That leaves us with these suspects."
 
-    l "Really? Just them?"
+    l neutral drop "Really? Just them?"
+
+    show me sweat
     
     me "That's what we're left with after ruling out the possibility of a random attack."
 
-    l "Just to get this out of the way... What about robbery?"
+    l neutral right "Just to get this out of the way... What about robbery?"
 
+    show me neutral
     me "His wallet was still on him. There wasn't much inside, just some spare change, his ID, and the like."
 
-    l "I see..."
+    l think closed "I see..."
 
     me "Anyway, we questioned the most likely suspects separately. Going over everyone's whereabouts together might help us uncover something."
 
-    l "Something...? Does that mean you haven't settled on a suspect, Inspector?"
+    l neutral "Something...? Does that mean you haven't settled on a suspect, inspector?"
 
+    show me smile
     me "I have. But there's no harm in going over the facts, is there?"
 
+    show me smile3
     me "Especially after all those interruptions from Castillo. A proper review of the case might bring something to light."
 
-    l "Hm. If you say so..."
-
+    l neutral right "Hm. If you say so..."
+    show me neutral
     me "Alright. Let's hear it, then. Tell us what you were doing today between 10 and 11 AM."
 
+    hide me
+    show rena angry
+    with dissolve
     r "Tch. What a waste of time..."
 
 
@@ -1376,41 +1491,89 @@ label bigCE:
     default ce_luca_cloth = False
 label bigCE_loop:
     scene placeholder_racetrack1
-    show en neutral
+    show en neutral at slightleft
+    show me neutral at slightright
     with fade
     call fx_testimony
 
     en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
+    
+    show en yell
     en "But the inspector here insisted on following me everywhere!"
+    
+    show en neutral
     en "She even brought Mr. Castillo along! I had the 'pleasure' of being stuck with the two of them until 10:42 AM."
+    
+    hide en
+    hide me
+    show rena neutral at slightleft
+    show est neutral at slightright
+    with dissolve
     r "I was at the café from 10 AM. I was starving, so I figured I'd grab something to eat."
+    
+    show rena angry
     r "Anyway, I got a phone call from my trainer about twenty minutes later. Give or take."
+
+    show est smile
     e "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
+    
+    show rena neutral
     r "The old man showed up a little while after the call, and we headed to the racetrack to do some preparations."
-    "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
+    
+    show rena yell
+    r "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
+
+    hide rena
+    hide est
+    show lu frown at slightleft
+    show cata neutral at slightright
+    with dissolve
     lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
+
+    show lu yell2
     lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without asking for permission."
+
+    show lu frown
     lu "Don Vicente said he'd handle it himself, then went after that person towards the stables. I headed over to the observation area by the grandstands."
+
+    show cata neutral
     c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
     
     hide screen status_indicator
     stop music fadeout 2.5
     scene placeholder_racetrack1
+    
+    hide lu
+    hide cata
+    show leo eh what
     with fade
     lt "Yikes... talk about an overload of information!"
+    show leo think closed drop
     lt "This is a lot to take in..."
     lt "I better write some of it down now before I forget."
     #Dossier- add alibis notes to the Dossier!!!!
     $ dossier.add(de_alibi)
+    
+    hide leo
+    show me angry
+    with dissolve
     me "Hey, you're gonna ask them something or not?"
+    
+    hide me
+    show leo neutral drop
+    with dissolve
     l "Oh, yes! Yes, I will."
+    show leo neutral right
     lt "I wonder if there's anything off about these alibis. Let's find out."
+    hide leo
+    with dissolve
     call cutin("cross_examination")
 label bigCE_loop_ce hide:
     call CE_start
     call fx_interrogation
     scene placeholder_racetrack1
-    show en neutral
+    show en neutral at slightleft
+    show me neutral at slightright
     with fade
     en "Around 10 AM, I was supposed to be overseeing the event's proceedings from the comfort of the luxury observatory in the VIP box..."
     if ce_mode == "object":
@@ -1419,10 +1582,12 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Does it really count as overseeing if you're doing it from up there?"
+            l neutral "Does it really count as overseeing if you're doing it from up there?"
+            show en smile
             en "Most certainly! It offers the best view, after all! You can see the entire racetrack!"
             with fade
-    
+    show en yell at slightleft
+    show me neutral at slightright
     en "But the inspector here insisted on following me everywhere!"
     if ce_mode == "object":
         call cutin("objection")
@@ -1430,11 +1595,13 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Huh... Is that true, inspector?"
+            l neutral drop "Huh... Is that true, inspector?"
+            show me yell
             me "Damn right it is. I needed answers, one way or another."
-            lt "Scary."
+            lt eh what "Scary."
             with fade
-    
+    show en neutral at slightleft
+    show me neutral at slightright
     en "She even brought Mr. Castillo along! I had the 'pleasure' of being stuck with the two of them until 10:42 AM."
     if ce_mode == "object":
         call cutin("objection")
@@ -1442,13 +1609,20 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "I've got two questions. Are you certain about the time? And why was Mr. Castillo there?"
+            l neutral "I've got two questions. Are you certain about the time? And why was Mr. Castillo there?"
+            show en grin
             en "Absolutely! There are several monitors displaying the news and movies, each with a clock."
+            show me angry
             me "I can vouch for that. And as for that scumbag, I wanted to keep an eye on him."
-            l "Smart thinking, considering everything... Did he do anything in particular while he was with you?"
+            l think closed "Smart thinking, considering everything... Did he do anything in particular while he was with you?"
+            show me neutral
             me "Just his usual nonsense. He spent most of the time on his phone."
             with fade
-
+    hide en
+    hide me
+    show rena neutral at slightleft
+    show est neutral at slightright
+    with dissolve
     r "I was at the café from 10 AM. I was starving, so I figured I'd grab something to eat."
     if ce_mode == "object":
         call cutin("objection")
@@ -1456,11 +1630,14 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "What did you have?"
+            l neutral "What did you have?"
+            show rena smile3
             r "What the hell do you care? You gonna write an article about it and post it online?"
-            l "No, that wasn't what I had in mind... Just carry on."
+            l closed drop "No, that wasn't what I had in mind... Just carry on."
             with fade
-
+    
+    show rena angry at slightleft
+    show est neutral at slightright
     r "Anyway, I got a phone call from my trainer about twenty minutes later. Give or take."
     if ce_mode == "object":
         call cutin("objection")
@@ -1468,21 +1645,29 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Could you be a little more specific about the time...?"
+            l neutral "Could you be a little more specific about the time...?"
+            show rena yell
             r "You really are insufferable, you know that?"
-            lt "I'm just doing my job."
+            lt eh neutral drop "I'm just doing my job."
+            show rena angry
             r "Ugh, just look at it yourself. See? 10:17 AM. Close enough, isn't it?"
-            l "I suppose..."
-            l "Would you mind if we played the recording? Just to be thorough."
+            l neutral right "I suppose..."
+            l neutral "Would you mind if we played the recording? Just to be thorough."
+            show rena neutral
             r "Knock yourself out. It's pretty boring shit, though."
+            scene black
+            with fade
             lt "..."
             lt "Most of the call was just Esteban checking in on Renata, asking where she was and telling her he'd meet her at the café."
             lt "The whole thing lasted about four minutes."
-            lt "I should make a note of that."
+            scene placeholder_racetrack1
+            with fade
+            lt neutral right "I should make a note of this call."
             $ dossier.add(de_callrecords)
             # Dossier updated!!!!
             with fade
-
+    show rena angry at slightleft
+    show est smile at slightright
     e "At 10 AM, I was taking a smoking break by the grandstands before meeting up with Renata."
     if ce_mode == "object":
         call cutin("objection")
@@ -1490,12 +1675,15 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Did you notice anything unusual while you were there?"
+            l neutral "Did you notice anything unusual while you were there?"
+            show est smile2
             e "I'm afraid not. I was simply relaxing and watching the other jockeys and their horses go by."
-            l "I see... and how long did you stay there for, again?"
+            l think closed "I see... and how long did you stay there for, again?"
+            show est neutral
             e "About 17 minutes, give or take."
             with fade
-
+    show rena neutral at slightleft
+    show est smile at slightright
     r "The old man showed up a little while after the call, and we headed to the racetrack to do some preparations."
     if ce_mode == "object":
         call cutin("objection")
@@ -1503,13 +1691,18 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "So you left together sometime around 10:24 AM... Were you together the entire time after that?"
+            l neutral "So you left together sometime around 10:24 AM... Were you together the entire time after that?"
+            show rena angry
             r "Nah. After he showed up at the café, I went to the restroom while he watched my stuff."
+            show est smile2
             e "I even had to pay for her meal while waiting for her return. I dare say it was a rather calculated move on her part."
+            show rena smile
             r "Buzz off. I let you use my money to pay!"
             with fade
     
     if ce_rena_phone:
+        show rena yell2 at slightleft
+        show est neutral at slightright
         r "We left at 10:34 AM! That's when all that corpse-related bullshit happened! I'm NOT lying!"
         if ce_mode == "object":
             call cutin("objection")
@@ -1518,10 +1711,13 @@ label bigCE_loop_ce hide:
                 $ ce_mode = None
                 call cutin("holdit")
                     # Press — Nothing new
-                l "You're absolutely certain about that, even knowing the body was reported at 10:42?"
+                l yell "You're absolutely certain about that, even knowing the body was reported at 10:42?"
+                show rena yell2
                 r "Maybe the report got the time wrong, then! I KNOW I left that café at 10:24, after meeting the old man!"
                 with fade
     else:
+        show rena yell at slightleft
+        show est smile at slightright
         r "Anyway, shit hit the fan less than 10 minutes later. We both left to see what all the commotion was about."
         if ce_mode == "object":
             call cutin("objection")
@@ -1534,14 +1730,27 @@ label bigCE_loop_ce hide:
         if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "And that's when you came across the body?"
+                l neutral "And that's when you came across the body?"
+                show rena smile2
                 r "Yeah. Turns out Enzo's security staff sucks at their jobs, huh? Letting a murderer in."
+                hide rena
+                hide est
+                show en yell2
+                with vpunch
                 en "Excuse me!? My security personnel are highly trained professionals, fully equipped to handle any situation!"
-                lt "Those same professionals somehow managed to miss a bunch of crooks carrying a body around in broad daylight..."
-                lt "...Wait. When exactly did Renata say they left? Something's weird here..."
+                hide en
+                with dissolve
+                lt eh what "Those same professionals somehow managed to miss a bunch of crooks carrying a body around in broad daylight..."
+                play sound se_flash
+                lt neutral right "...Wait. When exactly did Renata say they left? Something's weird here..." with flash
                 with fade
     
-
+    hide rena
+    hide en
+    hide est
+    show lu frown at slightleft
+    show cata neutral at slightright
+    with dissolve
     lu "...Don Vicente and I spent some time together at the parade ring around 10 AM. We only stayed together for about ten minutes, though..."
     if ce_mode == "object":
         call cutin("objection")
@@ -1549,11 +1758,14 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "Since that was the last time he was seen alive, I have to ask... Did he seem any different than usual?"
+            l neutral "Since that was the last time he was seen alive, I have to ask... Did he seem any different than usual?"
+            show lu smile2
             lu "Not really. He was his usual nagging, straightforward self."
             with fade
     
     if ce_luca_cloth:
+        show lu nervous2 at slightleft
+        show cata at slightright
         lu "I don't know why those clothes and that notebook were in my locker!"
         if ce_mode == "object":
             call cutin("objection")
@@ -1562,11 +1774,14 @@ label bigCE_loop_ce hide:
                 $ ce_mode = None
                 call cutin("holdit")
                 # Press — No new contradiction
-                l "Are you absolutely certain none of these things belong to you?"
+                l neutral "Are you absolutely certain none of these things belong to you?"
+                show lu nervous
                 lu "I am! I swear! I have no idea how they got there!"
-                l "..."
+                l neutral drop "..."
                 with fade
     else:
+        show lu yell2 at slightleft
+        show cata neutral at slightright
         lu "...Although, there was this guy wearing a Hawaiian shirt, a hat, and sunglasses. He kept doting on Lucero without asking for permission."
         # Press — CONTRADICTION! LUCAS HAS THE HAWAIIAN SHIRT IN HIS LOCKER!
         if ce_mode == "object":
@@ -1579,13 +1794,16 @@ label bigCE_loop_ce hide:
         if ce_mode == "press":
                 $ ce_mode = None
                 call cutin("holdit")
-                l "Can you remember anything distinctive about this man?"
+                l neutral right "Can you remember anything distinctive about this man?"
+                show lu neutral
                 lu "...Just that he was wearing an orange shirt with flowers on it. Sorry."
                 l "That's fine. What exactly was he doing with your horse?"
+                show lu angry
                 lu "He was petting Lucero and letting him lick his hands. We were worried he might be feeding him something he shouldn't."
-                l "I see..."
+                l think closed "I see..."
                 with fade
-
+    show lu frown at slightleft
+    show cata neutral at slightright
     lu "Don Vicente said he'd handle it himself, then went after that person towards the stables. I headed over to the observation area by the grandstands."
     if ce_mode == "object":
         call cutin("objection")
@@ -1593,13 +1811,14 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "How long did you stay there?"
+            l neutral "How long did you stay there?"
+            show lu neutral
             lu "About 32 minutes. I was still waiting for Don Vicente to come back when I heard the commotion and headed back to the parade ring."
-            l "I see..."
+            l closed "I see..."
             with fade
     # Press
-    
-
+    show lu frown at slightleft
+    show cata neutral at slightright
     c "I took Dama de Plata to the racetrack at 10 AM sharp to practice. We stayed there until the body was discovered."
     if ce_mode == "object":
         call cutin("objection")
@@ -1607,29 +1826,52 @@ label bigCE_loop_ce hide:
     if ce_mode == "press":
             $ ce_mode = None
             call cutin("holdit")
-            l "That's it? Can't you tell me a little more about what you were doing?"
+            l eh what "That's it? Can't you tell me a little more about what you were doing?"
+            show cata deadpan
             c "Would you like me to recite my entire training routine? I don't see how that's relevant to the investigation."
+            hide lu
+            hide cata
+            show me angry
+            with dissolve
             me "It isn't."
-            l "Did you speak to any of the other jockeys, perhaps? Or...?"
+            hide me
+            show lu frown at slightleft
+            show cata deadpan at slightright
+            with dissolve
+            l neutral drop "Did you speak to any of the other jockeys, perhaps? Or...?"
+            show cata neutral
             c "No."
-            lt "Well, that was incredibly helpful."
-            with fade
+            lt eh neutral drop "Well, that was incredibly unhelpful."
+            #with fade
     # BigCE End
 
     hide screen ce_ui
     hide screen status_indicator
+    hide cata
+    hide lu
+    show leo neutral right
+    with fade
     lt "Let's go over everything... Assuming my math hasn't gotten rusty..."
+    show leo think closed
     lt "Lorenzo, Sebastian, and the inspector were together at the luxury observatory from 10 AM until 10:42 AM."
-    lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM.They met at 10:24 AM at the cafe before heading off for the racetrack."
+    lt "Renata was at the café since 10 AM. She received a call from Esteban at 10:17 AM. They met at 10:24 AM at the cafe before heading off for the racetrack."
+    show leo think closed drop
     lt "But they left at 10:34 AM to investigate the big commotion around Vicente's body."
     lt "Esteban was smoking from 10 AM to 10:17 AM by the grandstands."
     lt "Lucas was with Vicente at the parade ring from 10 AM for about ten minutes. Afterwards, he spent roughly 25 minutes at the observation area by the grandstands."
+    show leo eh what
+    with dissolve
     lt "...my head hurts."
-    #UPDATE DOSSIER WITH ALIBIS NOTES!!!!
 
+    hide leo
+    show me neutral
+    with dissolve
     me "Got all that? Only a handful of these accounts can be independently confirmed, but at least we've got a clearer picture of everyone's whereabouts."
     me "Now, do you have any issues with the alibis?"
 
+    hide me
+    show leo neutral right
+    with dissolve
     lt "That's a good question. After hearing all of that, is there anything about these alibis that bothers me?"
 
 
@@ -1639,23 +1881,34 @@ label bigCE_loop_ce hide:
         menu:
             "Something bothers me":
                 # Big problems. (Go back to the interrogation.)
+                show leo neutral
                 l "I do. There are a couple of more of things I'd like to ask about."
                 jump bigCE_loop_ce
             "Nothing bothers me":
                 # No problems. (End interrogation.)
-                l "I think we've covered everything, Inspector. We can move on."
+                show leo neutral
+                l "I think we've covered everything, inspector. We can move on."
                 jump act3_continue6    
 
 label bigCE_wrong:
     $ ce_mode = None
-    l "This piece of proof shows the hole in that statement!"
+    l yell "This piece of proof shows the hole in that statement!"
+    hide en
+    hide rena
+    hide me
+    hide lu
+    hide cata
+    hide est
     show me neutral
+    with dissolve
     me "...I don't see anything wrong with it."
-    l "Are you sure? Maybe you have to check again."
+    l smile "Are you sure? Maybe you have to check again."
+    show me angry2
     me "Or maybe you should check if that mask isn't cutting off the oxygen flow to your brain."
-    lt "Ugh... just tell me I was mistaken. So rude..."
+    lt closed drop "Ugh... just tell me I was mistaken. So rude..."
     # Penalty Damage
     call ce_penalty(3)
+    hide me
     with fade
     return
 
@@ -1664,57 +1917,148 @@ label bigCE_Renata:
     $ ce_rena_phone = True
     $ ce_mode = None
     $ ce_rep += 0.5
+    stop music fadeout 2.5
     # Objection
-    l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
-    r "Are you deaf? Yeah."
-    l "And you left because the discovery of the body caused a commotion."
-    r "That's right, Captain Obvious."
-    l "That's impossible, Ms. Vargas."
-    r "Huh? Are you calling me a liar?"
-    l "Do you know what time the body was reported?"
-    r "Like I said! Sometime around 10:34!"
-    l "10:42 AM. You're off by eight minutes."
-    r "What? But that's not—"
-    e "Perhaps Renata simply got confused about the time...?"
-    r "I'm NOT confused! We met at 10:24 AM, and it wasn't even ten minutes before people started screaming and making a scene!"
-    r "I know because I checked my phone before we left the café!"
-    lt "Her timing is clearly off, but she insists she's not mistaken..."
-    lt "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
-    lt "I'll have to keep this in mind."
+    hide rena
+    hide est
+    hide screen ce_ui
+    hide screen status_indicator
+    show rena neutral at slightright
+    show leo neutral at slightleft
     with fade
-    return
+    l "Just to make sure I've got this straight... You two left sometime around 10:34 AM?"
+    show rena yell
+    r "Are you deaf? Yeah."
+    show leo think closed
+    l "And you left because the discovery of the body caused a commotion."
+    show rena smile2
+    r "That's right, Captain Obvious."
+    show leo yell
+    l "That's impossible, Ms. Vargas."
+    show rena angry2
+    r "Huh? Are you calling me a liar?"
+    show leo neutral
+    l "Do you know what time the body was reported?"
+    show rena yell
+    r "Like I said! Sometime around 10:34!"
+    call cutin("takethat")
+    show leo point
+    play sound se_flash
+    play music objection fadein 2.5
+    l "10:42 AM. You're off by eight minutes." with flash
+    show rena frown2
+    r "What? But that's not—"
+    
+    hide leo
+    hide rena
+    show est neutral
+    with dissolve
+    e "Perhaps Renata simply got confused about the time...?"
+    
+    show rena yell2
+    hide est
+    with dissolve
+    r "I'm NOT confused! We met at 10:24 AM, and it wasn't even ten minutes before people started screaming and making a scene!"
+    show rena angry2
+    r "I know because I checked my phone before we left the café!"
+    lt closed "Her timing is clearly off, but she insists she's not mistaken..."
+    lt neutral right "Does she have a reason to lie? Or is there something else behind this discrepancy...?"
+    lt neutral "I'll have to keep this in mind."
+    stop music fadeout 2.5
+    with fade
+    jump bigCE_loop_ce
+    #return
 label bigCE_Lucas:
     # Counter response here.
     $ ce_luca_cloth = True
     $ ce_mode = None
     $ ce_rep += 0.5
+    hide screen ce_ui
+    hide screen status_indicator
+    stop music fadeout 2.5
+    hide cata
+    show leo neutral at slightleft
+    show lu neutral at slightright
+    with fade
     l "Let me ask you something, Mr. Mendoza. Is this the outfit the man was wearing?"
+    
+    show lu yell2
     lu "Yes! That's exactly what he had on. But... how do you...?"
+    
+    show leo yell
     l "I'm having a hard time believing you saw someone else wearing these."
+    
+    show lu frown
     lu "Huh?"
-    l "After all, these clothes were found inside your personal locker!"
+    
+    show leo point
+    play sound se_flash
+    play music objection fadein 2.5
+    l "After all, these clothes were found inside your personal locker!" with flash
+    
+    show lu nervous
     lu "What!?"
+
+    show leo yell
     l "Care to explain that?"
+
+    show lu nervous2
     lu "I... I don't know! I don't own clothes like that! I really did see someone wearing that outfit!"
 
+    hide lu
+    hide leo
+    show me sweat2
+    with dissolve
     me "Damn. Why does a tacky vacation outfit matter, Leopardo? Do you have something against Hawaiian shirts?"
-    l "I don't have anything against them, Inspector..."
+    hide me
+    show leo think closed
+    with dissolve
+    l "I don't have anything against them, inspector..."
+    show leo think yell
     l "It's not the clothes themselves that bother me. It's where they were found."
+    show leo neutral
     l "Mr. Mendoza claims he saw someone wearing them, yet they were found in his possession..."
+    show leo neutral right
     l "And that's not all. They were found alongside another rather peculiar item."
 
+    show me neutral
+    hide leo
+    with dissolve
     me "A peculiar item?"
+    
+    call cutin("takethat")
+    hide me
+    show leo think closed
+    with dissolve
     l "This notebook, to be precise. I'm still trying to make heads or tails of it myself..."
+    show me frown
+    hide leo
+    with dissolve
     me "Let me see that..."
-    me "...! Aren't these all the horses that collapsed before their races?"
+    show me yell
+    play sound se_flash
+    me "...! Aren't these all the horses that collapsed before their races?" with flash
+    hide me
+    show leo neutral
     l "So you recognize them too. And it looks like each entry has a monetary value attached to it."
+    hide leo
+    show me sweat2
+    with dissolve
     me "A betting ledger? But all these horses ended up losing... And the last entry is for your own horse."
+    show me yell
     me "Care to explain this, Mendoza?"
-
+    hide me
+    show lu nervous2
+    with dissolve
     lu "I-I don't know anything about that! The notebook isn't mine! Neither are the clothes!"
+    show me neutral
+    hide lu
+    with dissolve
     me "Denying everything isn't going to get you very far..."
+    hide me
     with fade
-    return
+    stop music fadeout 0.5
+    jump bigCE_loop_ce
 
 # DELETABLE
 # #ONLY WHEN YOU SPOT THE TWO EXISTING CONTRAS THIS SHOULD SHOW UP!!
@@ -1727,19 +2071,27 @@ label bigCE_Lucas:
 #     # If ending the interrogation, skip to selecting a culprit.
 #     return
 
-
+default thought_route_complete = False
 label act3_thoughtroute:
     scene black
     show leo think closed
+    stop music fadeout 2.5
     with fade
     # Found both contradictions
     lt "..."
+    show leo think closed drop
     lt "Gaaah, it's as the inspector said! These alibis are difficult to verify..."
+    show leo neutral right
     lt "However, two things stand out after all the questions I asked."
+    show leo closed
     lt "First: Renata's account is off by about ten minutes. She's adamant that the body was reported earlier than it actually was."
+    show leo neutral
     lt "Second: Lucas had in his possession the very clothes worn by someone he claims was feeding his horse."
+    show leo neutral right
     lt "Not to mention that notebook listing all the horses that collapsed during previous races..."
+    show leo closed drop
     lt "Both of them are sticking to their stories despite the evidence. What am I supposed to make of this...?"
+    show leo yell
     lt "Guess it's time to give the ol' noggin a good workout. I'm gonna go over the facts one more time."
     play music thought_route fadein 2.5
 
@@ -1748,6 +2100,7 @@ label act3_thoughtroute:
     #with fade
     label rock_kick_shovel:
         show leo think closed
+        with fade
         l "According to Lucas, Vicente left the parade ring to pursue someone wearing an orange Hawaiian shirt."
         l "That would have led him to the stables."
         l "When he caught up with that person, he was attacked with..."
@@ -1906,7 +2259,7 @@ label act3_thoughtroute:
             jump tr_notebook
         label tr_lost:
             show leo think closed
-            l "Even a quick check of the race results confirms it. Every horse with a crossed-out entry lost after collapsing during its race."
+            l "Even a quick online check of the race results confirms it. Every horse with a crossed-out entry lost after collapsing during its race."
             l "Except for the last one: Lucero."
             jump tr_losing_horse
     label tr_losing_horse:
@@ -1979,7 +2332,7 @@ label act3_thoughtroute:
         l "That would explain why the amounts differ. The more prestigious the horse, the higher the compensation for sabotaging it."
         l "And if Lucero is listed here, that means someone is being paid to make him collapse next..."
         l "This isn't just someone tampering with racehorses."
-        l "It's an organized operation. Someone is paying people to rig the races!"
+        l "It's an organized operation. {color=#FF0000}Someone is paying people to rig the races{/color}!"
         jump tr_rena1
     label tr_rena1:
         show leo think closed
@@ -1996,7 +2349,7 @@ label act3_thoughtroute:
                 jump tr_rena_off
         label tr_rena_count:
             show leo think closed drop
-            l "Haha... in all seriousness, insulting her in my mind won't give me real answer."
+            l "Haha... in all seriousness, insulting her in my mind won't give me a real answer."
             l "I should refocus..."
             jump tr_rena1
         label tr_rena_alibi:
@@ -2008,7 +2361,7 @@ label act3_thoughtroute:
             jump tr_rena1
         label tr_rena_off:
             show leo think closed
-            lt "Her phone's time was off... but in what way?"
+            l "Her phone's time was off... but in what way?"
             menu:
                 "Ten minutes slow":
                     jump tr_rena_slow
@@ -2077,7 +2430,9 @@ label act3_thoughtroute:
             jump tr_rena3
         label tr_rena_someone:
             show leo think closed
-            l "Someone else tampered with her phone's clock...! That's it!"
+            stop music fadeout 2.5
+            play sound se_flash
+            l "{color=#FF0000}Someone else tampered with her phone's clock...{/color}! That's it!" with flash
             l "It would explain why she's so adamant that the times are correct, even when they aren't."
             l "Besides, if Renata had done it herself, her account of the meeting wouldn't necessarily match Esteban's."
             l "Hell, she couldn't even have known there WOULD be a meeting to account for!"
@@ -2085,91 +2440,121 @@ label act3_thoughtroute:
             l "Their accounts would have to match, down to the minute."
             l "...."
             l "So that's it..."
-            l "Someone is being paid to sabotage the horses listed in the notebook and tried to frame Lucas for it..."
-            l "...and the time in Renata's phone was tampered with without her knowledge!!"
-            
+            l "{color=#FF0000}Someone is being paid to sabotage the horses{/color} listed in the notebook and tried to frame Lucas for it..."
+            l "...and the time in {color=#FF0000}Renata's phone was tampered{/color} with without her knowledge!!"
+            $ thought_route_complete = True
             jump act3_thoughtrouteComplete
     #THOUGHT ROUTE FINISH!!!!!!
 label act3_continue6:
     scene placeholder_racetrack1
     with fade
     # Did not find both contradictions
-    lt "Most of them spent their time alone, so it's certainly difficult to verify or disprove their alibis..."
-    lt "Nothing in particular stands out to me right now."
+    lt neutral right "Most of them spent their time alone, so it's certainly difficult to verify or disprove their alibis..."
+    lt closed drop "Nothing in particular stands out to me right now."
     label act3_thoughtrouteComplete:
     scene placeholder_racetrack1
+    show me neutral at slightright
     with fade
     # Both converge here. Finding the contradictions helps uncover the truth!
 
     me "Well? Any thoughts you'd like to share?"
 
-    lt "..."
+    lt think closed "..."
 
-    en "Ahem. I don't mean to interrupt your diligent efforts to bring this nefarious murderer to justice, Inspector, but..."
+    show en neutral at slightleft
+    with dissolve
 
+    en "Ahem. I don't mean to interrupt your diligent efforts to bring this nefarious murderer to justice, inspector, but..."
+
+    show me angry
     me "What is it?"
 
+    show en nervous3
+    with dissolve
     en "Well, we're only twenty minutes away from the start of the event! People need to get to their posts and make their final preparations."
 
+    show me yell
     me "You're aware that Castillo was involved in moving the body, correct?"
 
+    show en nervous2
     en "I'm aware of that, yes—"
 
+    show me angry
     me "And you know his underlings were involved as well."
 
+    show en yell3
     en "Yes, I know that too—"
 
-    me "Those are serious offenses. Obstruction of justice."
+    show me yell2
+    me "Those are serious offenses. It's called obstruction of justice."
 
+    show en yell
     en "I understand! But I must insist that this matter be resolved, one way or another, so we can get on with the event!"
 
+    show me angry2
     me "You're in no position to make demands—"
 
-    l "It's quite alright, Inspector! For I, El Leopardo, have glimpsed the answers we've all been seeking!"
+    play sound se_flash
+    play music leo fadein 2.5
+    l grin shine "It's quite alright, inspector! For I, El Leopardo, have glimpsed the answers we've all been seeking!" with flash
 
+    show me sweat
     me "What?"
 
+    show en grin
     en "Oho! So you've figured out who the culprit is, Mr. Leopardo? Magnificent!"
 
-    lu "Who is it? Who killed Don Vicente?"
+    hide en
+    hide me
+    
+    show rena angry at left
+    show cata neutral at right
+    show lu yell1
+    with dissolve
+    lu "Who is it? Who killed Don Vicente!?"
 
-    l "Ah—"
+    l neutral drop "Ah—"
 
+    show rena yell2
     r "Come on! We've got other things to do! Spit it out!"
 
     l "Yes, I understand, but—"
 
     c "Despite your rather suspicious appearance, you managed to dismantle Castillo's ridiculous claims without breaking a sweat."
 
+    show cata smile
     c "If you know who's behind this, then you should tell us."
 
-    l "..."
+    l closed "..."
 
-    lt "What a pickle. All I wanted to do was establish how the murder was carried out..."
+    $ renpy.music.set_volume(0.4, delay=1.0, channel="music")
 
-    lt "But now everyone's waiting for an answer, and time is running out. I'll just have to take a shot in the dark and hope for the best."
+    lt closed drop "What a pickle. All I wanted to do was establish how the murder was carried out..."
 
-    lt "Based on everything I've gathered, the culprit attacked Vicente in the stables..."
+    lt neutral right "But now everyone's waiting for an answer, and time is running out. I'll just have to take a shot in the dark and hope for the best."
 
-    lt "...then stuffed his body into a bag and had it transported all the way to the grandstands, where it was thrown over the railing."
+    lt closed "Based on everything I've gathered, the culprit attacked Vicente in the stables..."
 
-    lt "Castillo's underlings were definitely involved, which means the possibility of accomplices can't be ruled out."
+    lt neutral "...then stuffed his body into a bag and had it transported all the way to the top of the grandstands, where it was thrown over the railing."
 
-    lt "Is there anyone else connected to the Castillos besides Sebastian...?"
+    lt neutral right "Castillo's underlings were definitely involved, which means the possibility of accomplices can't be ruled out."
 
-    lt "Hmm..."
+    lt "Is there anyone else connected to the Castillos besides Renata...?"
 
-    lt "The horse collapses, the clandestine betting, the motive for murder..."
+    lt closed "Hmm..."
+
+    lt neutral "The horse collapses, the clandestine betting, the motive for murder..."
 
     lt "There has to be a connection between all of them...!"
 
-    l "The culprit is..."
+    l yell "The culprit is..."
 
 
-    menu:
+    menu BigCECulpritChoice:
         "El Leopardo":
             jump choose_leo
         "Catalina":
+            stop music fadeout 2.5
             jump choose_cata
         "Lucas":
             jump choose_luc
@@ -2188,52 +2573,168 @@ label act3_continue6:
 
     label choose_cata:
         scene placeholder_racetrack1
-        show cata angry2
+        show leo closed at slightleft
+        show cata smile at slightright
         with fade
+        play music intense fadein 2.5
         l "..."
+        show leo point
         l "Catalina Moreno... you are the murderer!"
+        
+        hide leo
+        hide cata
+        show rena frown2
+        with dissolve
         r "Holy shit, the Ice Queen is the killer!?"
+        
+        show cata surprise at slightright
+        show leo point at slightleft
+        hide rena
+        with dissolve
         c "..."
+        
+        show cata yell
         c "What on earth are you doing?"
-        m "I'd like to know too. Why are you accussing her, out of all people?"
+        
+        hide leo
+        hide cata
+        show me angry
+        with dissolve
+        me "I'd like to know too. Why are you accussing her, out of all people?"
+        
+        show leo neutral right at slightleft
+        show cata angry at slightright
+        hide me
+        with dissolve
         l "As you know, her alibi is shaky at best..."
+        
+        show leo neutral
         l "But Ms. Moreno's relationship with the victim was already strained, unlike the others."
+        
+        show cata yell
         c "What are you babbling about now? I don't remember having a single exchange with that man."
+        
+        show leo yell
         l "Maybe. Or maybe not. He saw you in a poor light due to the rumors. Isn't that right, Mr. Mendoza?"
+        
+        hide leo
+        hide cata
+        show lu frown
+        with dissolve
         lu "W...We did talk about those rumors, but I don't know how true they are..."
+        
+        hide lu
+        show leo neutral at slightleft
+        show cata angry at slightright
         l "That's of little consequence. Wherever they are true or not, what matters is how would Ms. Moreno react to it."
+        
+        show cata angry2
         c "..."
+        
+        show leo yell
         l "It must have been infuriating, tolerating all these people besmirch your name."
+        
+        show leo point
         l "So you finally took it upon yourself to teach one of them a lesson!"
+        
+        show cata yell2
         c "Are you quite done?"
+
+        show leo neutral drop
+        stop music fadeout 2.5
         l "Huh...?"
+        
+        show cata angry
         c "I can't believe what I have to listen to. I had the faintest of trust placed on you..."
+        
+        show cata frown
         c "And this is how you repay me?"
         lt "What...? Faith in me?"
+        
+        show cata yell
         c "Is that all you have to say? Frankly, I don't have time to waste on nonsense."
+        
+        hide cata
+        hide leo
+        show me neutral
+        with dissolve
         me "So you deny the allegations?"
+       
+        hide me
+        show cata angry2
+        with dissolve
         c "I don't even have to. They are so idiotic and lack an actual basis, that it's a waste of breath on my end."
+        
+        hide cata
+        show me angry
+        with dissolve
         me "Even so... the fact remains your alibi remains unconfirmed."
+        
+        hide me
+        show cata frown2
+        with dissolve
         c "..."
+        
+        hide cata
+        show me frown
+        with dissolve
         me "Looks like a standstill to me. Sorry, but I am going to take you in for questioning."
+        
+        hide me
+        show cata nervous
+        with dissolve
         c "Hold on, you can't do that. If you do, I am going to miss out on the race."
-        me "A man is dead, and you care about is some puny event-"
+        
+        hide cata
+        show me yell
+        with dissolve
+        me "A man is dead, and all you care about is some puny event-"
+        
+        hide me
+        show cata nervous2
+        with dissolve
         c "Be quiet! How is my absence from the race going to tell you who did this!?"
+        show cata nervous3
         c "My whereabouts will be the same, no matter how much you ask the same questions over and over!"
+        
+        hide cata
+        show me frown
+        with dissolve
         me "..."
+        
+        hide me
+        show rena smile3 at slightleft
+        show est neutral at slightright
+        with dissolve
         r "Don't take it so personal, Catalina. Poor inspector there is just doing her work."
+        show est frown
         e "Easy now, Renata. She's clearly under a lot of stress..."
+        
+        hide est
+        hide rena
+        show cata nervous1
+        with dissolve
         c "This is revolting, there are far more likely suspects and you'll jeopardize me?"
+        
+        hide cata
+        show me yell
+        with dissolve
         me "Alright, that's enough. We'll be standing all day here arguing at this rate. Take her away."
+        
+        hide me
+        show cata nervous2
+        with dissolve
         c "Maybe you should instead take in the inconsiderate man in the mask, instead!"
-        c "That is far more suspicious than anything I have done...!"
-        lt "D-Damn, I really pushed her buttons this time... multiple police officers manage to take her away, her shouts of complaints fading in the air."
+        show cata nervous3
+        c "Parading around like that is far more suspicious than anything I have done...!"
+        lt think closed drop "D-Damn, I really pushed her buttons this time... multiple police officers manage to take her away, her shouts of complaints fading in the air."
+        
         scene black
         with fade
         l "..."
         l "With an unclear suspect, all the people were questioned one by one..."
         l "...but thanks to me, Catalina missed out on the Razing Thunder race."
-        l "Obviously, I was fired, so there I wasn't exactly allowed to stay at the derby."
+        l "Obviously, I was fired, so I wasn't exactly allowed to stay at the derby."
         l "The case went cold, and I never found who the culprit was."
         l "Worst of all, sometime later, a couple of police officers came to my work place to arrest me."
         l "It had seem Catalina learned of my true identity, and took it upon herself to let them know."
@@ -2241,69 +2742,128 @@ label act3_continue6:
         l "Or maybe she didn't intend to after how things ended. Either way..."
         l "With my freedom gone, I won't be able to continue my fight against evil- let alone figure out the killer of this case."
         l "Betraying Catalina spiralled into all of this... what have I done..?"
+        call game_over
         return
     label choose_rena:
-        show rena angry2
+        scene placeholder_racetrack1
+        show leo point at slightleft
+        show rena angry2 at slightright
         with fade
+        play music intense fadein 2.5
+        
+        play sound se_flash
+        l "Renata Vargas, you are the culprit!" with flash
 
-        l "Renata Vargas, you are the culprit!"
-
+        show rena yell2
         r "What the fuck did you say!?"
 
         r "Get real! I'm no damn killer!"
 
+        hide leo
+        hide rena
+        show me yell
+        with dissolve
         me "Leopardo, what are you basing this on?"
 
+        show rena angry2 at slightright
+        show leo think closed at slightleft
+        hide me
+        with dissolve
         l "Ms. Vargas is one of the suspects without a clear alibi..."
 
+        show leo neutral
         l "Not to mention her connection to the Castillos. She's sponsored by them."
 
+        show leo point
         l "It isn't a stretch to say she could have enlisted their help to dispose of the body!"
-
+        
+        hide leo
+        hide rena
+        show me sweat2
+        with dissolve
         me "...That is a possibility. Castillo's company has every reason to promote her image and boost its own by having her win."
 
+        show me angry
         me "Eliminating the competition would further that agenda."
 
+        hide me
+        show rena yell2 at slightleft
+        show est neutral at slightright
+        with vpunch
         r "Oh, this is so not happening! I hate those people as much as the next person!"
 
+        show rena angry2
         r "Come on, old man! Tell them! It's not me!"
 
+        show est frown
         e "..."
 
+        show rena frown
         r "Old man...?"
 
+        show est frown2
         e "I'm sorry, Renata. They're right about you being in a favorable position."
 
+        show rena nervous
         r "Not you too...!"
 
+        show est neutral
         e "I can vouch for her not being the kind of person who would resort to murder... but..."
 
+        show est frown
         e "I also know how ambitious she is. How badly she wants to prove herself and establish herself as the very best."
 
+        show rena nervous2
         r "You've got to be kidding me..."
 
-        me "That's reasonable suspicion in my book. You're under arrest, Ms. Vargas."
+        hide rena
+        hide est
+        show me neutral
+        with dissolve
 
-        r "No! I'm not missing the Derby race over this crap! This is YOUR fault!"
+        me "That's probably cause in my book. You're under arrest, Ms. Vargas."
+
+        show rena nervous3
+        hide me
+        with dissolve
+        r "No! I'm not missing the Derby race over this crap!" 
+        
+        show rena yell2
+        r "This is YOUR fault!"
 
         # Wham! She punches Leopardo.
-
+        
+        hide rena
+        show leo closed drop
+        play sound se_punch2
+        with vpunch
         l "Agh!"
 
-        # Medina and several officers step in to restrain Renata as I watch from the ground, holding my bruised face.
+        lt "Medina and several officers step in to restrain Renata as I watch from the ground, holding my bruised face."
 
         lt "Yeowch... She packs a punch."
 
+        show rena yell2
+        hide leo
+        with dissolve
         r "I won't forget this, you masked bastard!"
 
+        show me yell
+        hide rena
+        with dissolve
         me "Take her away!"
-
+        
+        hide me
+        show rena nervous4
+        with dissolve
         r "Let me go! I didn't do it!"
         
         scene black
+        stop music fadeout 2.5
         with fade
 
         # Fade into black.
+
 
         l "..."
 
@@ -2313,7 +2873,7 @@ label act3_continue6:
 
         l "But then, something unexpected happened. His horse collapsed, just like the others in the previous incidents."
 
-        l "The race wasn't stopped or postponed this time, though. Not with Lorenzo's wishes to consider."
+        l "The race wasn't stopped or postponed this time, though. Not with Lorenzo's wishes to push forward."
 
         l "When all was said and done, Catalina seemed utterly disappointed with how things had turned out..."
 
@@ -2338,49 +2898,90 @@ label act3_continue6:
         l "Maybe I should consider retiring as a detective if this is the kind of harm I cause..."
 
         # End the game here
-
-        with fade
+        call game_over
         return
     label choose_seba:
+        scene placeholder_racetrack1
+        show leo point at slightleft
+        show me neutral at slightright
+        with fade
+        play music intense fadein 2.5
         l "The culprit is none other than Sebastian Castillo!"
+
+        show leo closed think
 
         l "After having his subordinates dispose of the body and attempting to pass off Vicente's death as nothing more than an accident..."
 
+        show leo think yell
         l "He then tried to pin it on an innocent bystander!"
 
+        show me sweat2
         me "..."
 
         me "That would be a plausible theory, and everything you've mentioned is true, yes."
 
+        show me neutral
         me "But you're missing one small detail."
 
+        show leo neutral
         l "Huh? What's that?"
 
+        show me yell2
+        with vpunch
         me "I was with him. At the time of the murder!"
-
+        
+        show leo neutral drop
         l "..."
+        stop music fadeout 2.5
+        play music eccentric fadein 2.5
 
-        l "Oh..."
+        show leo closed drop
+        l "Ooohh..."
 
+        show me angry2
         me "Don't 'oh' me! Were you not paying any attention!?"
 
+        hide leo
+        hide me
+        show en neutral
+        with dissolve
         en "My, it must have been quite a traumatic and exhausting ordeal if Mr. Leopardo managed to overlook such an important detail."
 
         en "Once again, I was also present with the two of them. I assure you, the inspector speaks the truth."
 
+        hide en
+        show me yell
+        with dissolve
         me "Not that I'd lie about it to begin with. Do you think I enjoy giving that dirtbag an alibi?"
 
+        show leo think smile drop
+        hide me
+        with dissolve
         l "I-I see. Well, let me give it another try..."
-
+        
+        hide leo
+        show me angry
         me "No. You're clearly out of your depth. Castillo is definitely involved in some shady business, but Vicente's murder isn't one of them. Not directly, at least."
 
+        hide me
+        show leo eh what
+        with dissolve
         l "T-Then maybe he sent someone to carry out his orders...?"
 
+        show me yell2
+        hide leo
+        with dissolve
         me "...Throwing out random guesses isn't going to do you any good. We're done here."
-
+        
+        show me angry2
         me "I'm going to resume the investigation after the race. What a waste of my time..."
 
+        hide me
+        show leo closed drop
+        with dissolve
         l "..."
+
+        stop music fadeout 2.5
 
         scene black
         with fade
@@ -2406,40 +3007,79 @@ label act3_continue6:
         l "So this is the last thing I'll see, huh...? A bunch of crooked smiles and bright suits."
 
         l "Damn... it..."
-
-        # End game // game over screen
-        with fade
+        call game_over
         return
     label choose_leo:
+        scene placeholder_racetrack1
+        show leo point
+        with fade
+        play music intense fadein 2.5
         l "Actually, I'm the one who reaped Mr. Ruiz's soul. It was me."
 
+        hide leo
+        show en yell3 at left
+        show lu angry at right
+        show me angry
+        with dissolve
         en "What!?"
-
+        
+        show lu angry2
         lu "You!?"
-
+        
+        show me yell
+        stop music fadeout 2.5
         me "Have you gone completely insane!? You just finished proving that it couldn't have been you!"
 
+        hide me
+        hide en
+        hide lu
+        show rena frown at slightleft
+        show cata surprise at slightright
+        with dissolve
         r "Huh? I thought he just proved that Antonio guy was innocent."
-
+        
+        play music eccentric
+        show cata deadpan2
         c "…"
 
+        hide cata
+        hide rena
+        show leo grin closed
+        with dissolve
         l "…Oh! I guess you're right! Just a little joke to lighten the mood, haha!"
 
+        hide leo
+        show me yell2
+        with dissolve
         me "…"
 
+        show me angry2
         me "…"
 
+        show leo grin closed
+        hide me
+        with dissolve
         lt "The inspector snaps a pair of handcuffs around my wrists while I desperately try to laugh it off."
 
+        show leo grin
         l "Haha… Wait, what-?"
 
+        show me yell
+        hide leo
+        with dissolve
         me "Play stupid games, win stupid prizes."
 
+        show me angry
         me "You can continue your little joke down at the station."
 
-        l "Wait, Inspector! I'm not done with this case yet!"
+        show leo neutral drop
+        hide me
+        with dissolve
+        l "Wait, inspector! I'm not done with this case yet!"
 
+        show leo yell
         l "Inspectoooooor!"
+        stop music fadeout 2.5
 
         scene black
         with fade
@@ -2447,39 +3087,82 @@ label act3_continue6:
         l "And just like that, I'm hauled away after my little 'confession'. My identity has been exposed, I'm being charged with murder, and now I'll have to wait for a lawyer before facing trial."
 
         l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
-
+        call game_over
         return
 
         #Game over.
     label choose_med:
-        show me angry2
+        scene placeholder_racetrack1
+        show leo point
+        with fade
+        play music intense fadein 2.5
         #Accuse Medina
-        l "It was none other than Inspector Medina herself!"
+        play sound se_flash
+        l "It was none other than inspector Medina herself!" with flash
+        
+        hide leo
+        show en yell3
+        with dissolve
+        en "What!? The good inspector has been plotting to sabotage my glorious event through this senseless violence!?"
 
-        en "What!? The good Inspector has been plotting to sabotage my glorious event through this senseless violence!?"
-
+        show leo point
+        hide en
+        with dissolve
+        stop music fadeout 2.5
         lt "I'm promptly slapped with a pair of handcuffs following my accusation."
 
+        l "Eh?"
+
+        hide leo
+        show me angry2
+        with dissolve
         me "No. Just... no."
 
+        show leo yell
+        hide me
+        with dissolve
         l "H-Hey, wait a moment-"
 
+        hide leo
+        show me yell2
+        with dissolve
         me "First off, I have an alibi! I've been busting my ass investigating this place!"
 
+        show me angry2
         me "Second, I have absolutely no motive to attack that man!"
 
+        show leo neutral drop
+        hide me
+        with dissolve
         l "Inspector-"
 
+        show me angry
+        hide leo
+        with dissolve
         me "And third! I. Am. With. The goddamn. POLICE!"
 
+        show leo smile drop
+        hide me
+        with dissolve
         l "I mean... that doesn't necessarily guarantee-"
 
-        me "Oh, you're actually going there!? If you're going to accuse me of being some kind of corrupt cop who also happens to be a serial killer targeting random strangers, then you'd better have some damn good evidence!"
+        show me yell2
+        hide leo
+        with dissolve
+        me "Oh, you're actually going there!? If you're going to accuse me of being some kind of corrupt cop who also happens to be a serial killer targeting random strangers,"
+        me "then you'd better have some damn good evidence!"
 
+        show me angry
         me "Well!?"
 
+        hide me
+        show leo closed drop
+        with dissolve
         l "…"
 
+        show me yell2
+        hide leo
+        with dissolve
         me "That's what I thought. Get him the hell out of here."
 
         scene black
@@ -2489,162 +3172,299 @@ label act3_continue6:
 
         l "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
 
-        l "The inspector will ensure El Leopardo stays inactive for good now that I've been dettained again."
+        l "The inspector will ensure El Leopardo stays inactive for good now that I've been detained again."
 
         l "It's all over..."
-
-        with fade
+        call game_over
         return
 
         # Bad End.
     label choose_enzo:
         #Accuse Villareal
-        show en angry
-        l "It was Villareal! He's the mastermind behind this whole affair!"
-
+        scene placeholder_racetrack1
+        show leo point
+        with fade
+        play music intense fadein 2.5
+        play sound se_flash
+        l "It was Villareal! He's the mastermind behind this whole affair!" with flash
+        hide leo
+        show en yell3
+        with dissolve
         en "Whaaaaaat!?"
 
+        hide en
+        show me sweat2
+        with dissolve
         me "What the hell are you basing that on?"
 
+        show leo yell
+        hide me
+        with dissolve
         l "Well, the man's greedy as hell. Wouldn't surprise me if Vicente owed him a few bucks, failed to pay up, and ended up on the receiving end of his revenge."
 
+        show me yell
+        hide leo
+        with dissolve
         me "Being greedy doesn't make someone a murderer. We looked into the victim's affairs, and there's nothing suggesting Vicente owed Villareal any money."
 
+        hide me
+        stop music fadeout 2.5
+        play music enzo fadein 2.5
+        show en yell2
+        with dissolve
         en "That's right! I'm not in the debt collection business!"
 
-        en "I've been hounded by the Inspector here practically nonstop! I haven't had a moment to myself, let alone an opportunity to attack anyone!"
+        show en nervous
+        en "I've been hounded by the inspector here practically nonstop! I haven't had a moment to myself, let alone an opportunity to attack anyone!"
 
+        show en yell2
         en "And why, in God's green earth, would I want to murder one of the jockeys or trainers invited to this exclusive event!?"
 
+        show en angry
         en "That would throw the entire competition into chaos and bring everything to a halt! Look at the mess we're in already!"
 
+        hide en
+        show leo closed drop
         l "E-Err..."
 
+        show me sweat
+        hide leo
+        with dissolve
         me "..."
-
+        
+        show me sweat2
         me "Guess I got my hopes up a little too much, huh?"
+        stop music fadeout 2.5
 
+        show me neutral
         me "I'll take it from here. You're dismissed."
-
+        
+        show leo yell
+        hide me
+        with dissolve
         l "Huh? No, I can still-"
 
+        show me yell2
+        hide leo
+        with dissolve
         me "You're done. Out."
+
+        show leo think closed drop
+        hide me
+        with dissolve
 
         l "..."
 
         scene black
+        hide leo
         with fade
         lt "What happened to the race? Who really killed Vicente? I'll never get to know the truth now…"
-        with fade
+        call game_over
         return
     label choose_thugs:
-        #Choosing underlings
-        show tthug
+        scene placeholder_racetrack1
+        show leo think closed
+        with fade
+        play music intense fadein 2.5
         l "Castillo's underlings were acting on orders to conceal evidence."
-
+        show leo yell
         l "So it's certainly possible that one of them was also responsible for carrying out the murder."
 
+        hide leo
+        show me neutral
+        with dissolve
         me "It's possible, but we don't have anything pointing to any one of them in particular..."
 
+        show me angry
         me "Although, I suppose that would technically mean Castillo himself orchestrated the whole thing."
 
+        show me smile
         me "If that's the accusation you're making, then I suppose we can consider the matter settled and investigate things further with that in mind."
+        stop music fadeout 2.5
         scene black
+        hide me
         with fade
         l "Castillo ordering his men to get rid of someone seemed to make a lot of sense."
-        l "Until it didn't. Despite the inspector following that trail, nothing out from it."
+        l "Until it didn't. Despite the inspector following that trail, nothing came out from it."
         l "The race continued its course, then tragedy struck at it's peak..."
         l "...but even then, things carried on as usual. And the truth was lost forever."
-        with fade
+        call game_over
         return
     label choose_luc:
         #Choose Lucas
-        show lu angry2
+        scene placeholder_racetrack1
+        show leo neutral at slightleft
+        show lu neutral at slightright
+        with fade
         l "Out of all the people here, he was the one closest to the victim, with ample opportunity to carry out the attack..."
+        show leo point
+        play sound se_flash
+        play music intense fadein 2.5
+        l "That's right, Lucas Mendoza!" with flash
 
-        l "That's right, Lucas Mendoza!"
-
+        show lu yell
         lu "What...!?"
-
+        show lu yell1
         lu "M-Me!? You're accusing me!?"
 
+        show lu angry2
         lu "Here I was starting to believe you could actually find out who did it..."
-
+        show lu yell1
         lu "You're wrong! I would never hurt Don Vicente like that!"
+
+        hide leo
+        hide lu
+        show rena neutral at slightleft
+        show cata frown2 at slightright
+        with dissolve
 
         c "That really does sound unlikely. You'd better have a good reason for pointing the finger at him."
 
+        show rena angry
         r "Yeah. What exactly makes you think he's the culprit?"
-
+        hide rena
+        hide cata
+        show leo think closed
+        with dissolve
         l "Well, it's quite simple..."
 
         l "Given their relationship as trainer and jockey, Lucas could easily have gained Don Vicente's trust and learned where he would be at any given time."
-
+        hide leo
+        show me sweat2
+        with dissolve
         me "I could somewhat understand if you were accusing one of the other three. After all, they're technically competitors..."
 
+        show me sweat
         me "But his own jockey? Someone he personally trained and mentored?"
 
+        hide me
+        show leo neutral
+        with dissolve
         l "Things aren't always what they seem. Their seemingly close relationship may have been far more strained than we thought."
 
+        show leo yell
         l "In any case, Mr. Mendoza's alibi is just as shaky as the rest."
 
+        hide leo
+        show lu nervous2
+        with dissolve
         lu "Hang on a minute...! I'm not the killer!"
 
+        show lu nervous
         lu "I respected Mr. Ruiz! He believed in me and helped me grow as a jockey!"
-
+        
+        show lu frown
         lu "Even though I'm one of the lesser-known jockeys, even though I don't have any sponsors backing me..."
 
+        show lu yell1
         lu "He stayed by my side! And you're telling me I killed someone like that!?"
 
+        show leo neutral
+        hide lu
+        with dissolve
         l "I'm afraid my suspicions have led me to that conclusion, Mr. Mendoza."
 
+        show lu angry2
+        hide leo
+        with dissolve
         lu "But why!? Do you have any evidence!?"
 
-        # If you didn't do the thought route, continue from here.
+        if not thought_route_complete:
 
-        e "Excuse me..."
+            # If you didn't do the thought route, continue from here.
+            hide lu
+            show est neutral
+            with dissolve
+            e "Excuse me..."
 
-        l "Hm?"
+            hide est
+            show leo neutral
+            with dissolve
+            l "Hm?"
 
-        r "The hell, old man? Don't interrupt them now. Looks like they caught goody two-shoes here for what he really is."
+            show rena angry
+            hide leo
+            with dissolve
 
-        e "Yes, that's not my intention. I just couldn't help but notice something Mr. Mendoza said earlier."
+            r "The hell, old man? Don't interrupt them now. Looks like they caught goody two-shoes here for what he really is."
 
-        lu "What...?"
+            hide rena
+            show est smile2
+            e "Yes, that's not my intention. I just couldn't help but notice something Mr. Mendoza said earlier."
 
-        e "You mentioned that Vicente followed someone wearing peculiar clothes?"
+            hide est
+            show lu frown
+            with dissolve
+            lu "What...?"
 
-        lu "Y-Yeah..."
+            show est neutral
+            hide lu
+            with dissolve
+            e "You mentioned that Vicente followed someone wearing peculiar clothes?"
 
-        lu "Ah... that must be it! The man Don Vicente followed! He's the one you're looking for!"
+            show lu neutral
+            hide est
+            with dissolve
+            lu "Y-Yeah..."
+            
+            show lu yell1
+            lu "Ah... that must be it! The man Don Vicente followed! He's the one you're looking for!"
 
-        lt "The man in the Hawaiian shirt..."
-
-        l "Mr. Mendoza... I'm afraid that's impossible."
+            show leo think closed
+            hide lu
+            with dissolve
+            lt "The man in the Hawaiian shirt..."
+            show leo think yell
+            l "Mr. Mendoza... I'm afraid that's impossible."
 
         # If you did the thought route, continue from here.
 
+        show leo neutral
+        hide lu
+        with dissolve
         l "Those clothes you're talking about were found inside your locker."
-
+        
+        show lu nervous
+        hide leo
+        with dissolve
         lu "Ah..."
 
-        l "If anything, I'd say that implicates you even further. You're blaming some non-existent man, and you even disguised yourself in those clothes!"
+        show leo point
+        hide lu
+        play sound se_flash
+        l "If anything, I'd say that implicates you even further. You're blaming some non-existent man, and you even disguised yourself in those clothes!" with flash
 
+        show lu nervous2
+        hide leo
+        with dissolve
         lu "No! This is wrong, I..."
-
+        
+        hide lu
+        show me yell
+        with dissolve
         me "I've heard enough. We'll take it from here. You're coming with us, Mr. Mendoza."
 
+        show lu nervous2
+        hide me
+        with dissolve
         lu "......"
 
+        show leo neutral drop
+        hide lu
+        with dissolve
+        stop music fadeout 2.5
         lt "Lucas's spirit seems broken as he resigns himself to being taken into police custody. I watch as he leaves the Derby."
-
+        
+        show leo neutral right
         lt "He insisted he wasn't the killer until the very end... Did he really kill his own trainer? And why?"
-
+        
+        show leo closed drop
         lt "Did I really make the right choice...?"
 
         lt "..."
 
         scene black
+        hide leo
         with fade
 
         l "The race continued as scheduled. All the competitors gave it their very best..."
@@ -2670,7 +3490,7 @@ label act3_continue6:
         l "Maybe I should consider retiring as a detective, too, if this is the kind of harm I cause..."
 
         # End THE GAME HERE
-        with fade
+        call game_over
         return
     label choose_este:
         #Accuse Esteban (true end)
@@ -2806,7 +3626,7 @@ label act3_continue6:
 
         l "You're deflecting, Mr. Rojas. I asked you a question. Answer it."
 
-        e "Hmph. If you insist. But I'll be filing a formal complaint over this slander. With the Inspector present, I expect it to be handled swiftly."
+        e "Hmph. If you insist. But I'll be filing a formal complaint over this slander. With the inspector present, I expect it to be handled swiftly."
 
         me "Only if you're talking out of your ass."
 
@@ -3002,7 +3822,7 @@ label debug:
         $ ce_rep += 0.5
         show leo neutral
         call CE_end
-        l "That's fascinating. It is true that the Inspector established that Castillo's men were contacted by their boss to dispose of the body..."
+        l "That's fascinating. It is true that the inspector established that Castillo's men were contacted by their boss to dispose of the body..."
         l "...which means the killer must have reached out to either them or Mr. Castillo."
         jump vs_estebanCE2
 
@@ -3782,7 +4602,7 @@ label Epilogue:
     with fade
     
     me "You managed to make that freak go silent. Impressive."
-    l "It was not me, but the special effect the words of truth had on his soul, Inspector!"
+    l "It was not me, but the special effect the words of truth had on his soul, inspector!"
     me "...I'll tolerate your little act since you wrapped up the case nice and tight."
     me "Thank you, El Leopardo."
 

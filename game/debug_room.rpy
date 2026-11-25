@@ -38,8 +38,9 @@ screen status_indicator(annoucement, colorize):
         outlines [(2, "#FFFFFF", 0, 0)]
 
 style chosen_style is default:
-    color "#888888"
-    hover_color "#aaaaaa"   
+    properties gui.text_properties("choice_button")
+    idle_color "#86684b"
+    hover_color "#ac9454"     
 
 label debug_room:
     show screen status_indicator("Debug Room", "#FF0000")
@@ -132,6 +133,7 @@ label debug_cutins_test:
     define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
     define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
     define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
+    define audio.leo = "audio/BGM/Peritune_Wacky_Witnes_loop.ogg"
 
     define audio.se_punch1 = "sfx/fight/punch1.ogg"
     define audio.se_punch2 = "sfx/fight/punch2.ogg"

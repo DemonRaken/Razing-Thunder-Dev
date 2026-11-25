@@ -44,11 +44,11 @@ screen game_over():
 
 label game_over:
       $ renpy.block_rollback()
-      stop music
-      scene black with dissolve   # fade to black
+      stop music fadeout 0.5
+      scene black with dissolve # fade to black
       show screen game_over()          # show the text + decoration
       play music sad fadein 0.5
-      pause 3.0                        # keep it on screen for 3 seconds
+      pause 7.0                        # keep it on screen for 3 seconds
       hide screen game_over with dissolve
       $ MainMenu(confirm=False)()      # return to main menu
       return   
@@ -59,7 +59,7 @@ label CE_start:
    # Turn off Rollback for the CE only
    #$ config.rollback_enabled = False
    $ renpy.block_rollback()
-   play music ce
+   play music ce fadein 2.5
    show screen ce_ui
    return
 
@@ -68,7 +68,7 @@ label CE_end:
    # Turn on RollBack again.
    #$ config.rollback_enabled = True
    $ renpy.block_rollback()
-   stop music
+   stop music fadeout 2.5
    return
 
 label testCataCE:
