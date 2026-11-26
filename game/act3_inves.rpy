@@ -37,10 +37,10 @@ init 2 python:
             AAI_Hotspot((1736, 528, 183, 405), "breakroom_invest_trashbin"),
         ]),
     }
-
+   
     def area_complete(area_name):
         return all(act3_inves_examined.get((area_name, h.label), False)
-                    for h in act3_inves_examine_areas[area_name].hotspots)
+                for h in act3_inves_examine_areas[area_name].hotspots)
 
     def area_examined_count(area_name):
         return sum(act3_inves_examined.get((area_name, h.label), False)
@@ -49,8 +49,8 @@ init 2 python:
 default act3_inves_examined = {}   # {(area_name, label): True}
 default aai_break = False
 
-screen aai_examine_allinone(area_name):
-    $ area = act3_inves_examine_areas[area_name]
+screen aai_examine_allinone(area_name, actinvesexarea=act3_inves_examine_areas):
+    $ area = actinvesexarea[area_name]
     fixed:
         xalign 0.5          # imagemap defaults to xalign 0.5; preserve that
         yalign 1.0

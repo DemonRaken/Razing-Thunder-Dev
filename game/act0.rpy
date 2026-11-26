@@ -79,6 +79,8 @@ label start2:
         #     jump act2
         "Jump to Act III":
             jump act3
+        "Jump to Act II Inves":
+            jump act2_main_inves
         "Jump to Act III Inves":
             jump b4fall
         "Jump to Debug":
