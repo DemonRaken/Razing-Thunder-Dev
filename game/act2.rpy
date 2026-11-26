@@ -108,7 +108,7 @@ label act2:
         tt "Overhearing their conversation, I hop over the railing and invite myself into their chat."
         
         t aha "Passion is all well and good, but you might wanna wait before hitting the nitro."
-
+        show lu yell2
         lu "Huh? Who are—"
 
         show vi smile
@@ -119,6 +119,7 @@ label act2:
         show vi angry
         v "Talking to his ride? Sounds like a very inconsistent and dangerous thing to rely on. We've already measured when fatigue sets in for Lucero and when his acceleration peaks."
 
+        show lu neutral
         lu "…"
 
         v "Either way, spectators aren't allowed on this side of the fence, champ. You should get moving before security catches you."
@@ -133,6 +134,7 @@ label act2:
         show vi angry
         v "Catalina—"
 
+        show lu angry
         lu "…Moreno?"
         
         tt neutral drop "Yikes. Both their faces just soured."
@@ -142,6 +144,7 @@ label act2:
         show vi smile2
         v "Find me someone who is. She won't give you the time of day if you're not one of the top contestants."
 
+        show lu yell
         lu "A nepo baby through and through. Having everything served on a silver platter from the get-go… I wouldn't be surprised if this is just a hobby for her."
         
         tt aw neutral right "Well, I can't really blame them for having that kind of impression of her. It's a bit harsh, though. Catalina is as serious about competing as anyone else."
@@ -153,7 +156,8 @@ label act2:
 
         show vi smile
         v "Right, those. If Lucas is feeling up to it, you can go ahead."
-
+        
+        show lu smile
         lu "I don't mind. There's still time before the race begins."
         play music happy fadein 2.5
 
@@ -186,17 +190,20 @@ label act2:
             v "Gonna have to turn you down, Antonio. On Lucas' behalf, that is!"
             show vi smile
             v "Can't let the jockey drink something weird before the race. I'll take the hit."
+            show lu smile2
             lu "You just want to hog it for yourself."
         label racetrack1_topic1:
             t neutral "Know anything about the horses that keep collapsing mid-race?"
 
+            show lu neutral
             lu "A little. Me and the rest were all chasing the lead jockey back then."
-
+            show lu frown
             lu "I remember seeing her horse collapse as we approached the finish line. There wasn't much time to react."
 
             show vi frown with dissolve
             v "That gal Valentina went down like someone fired a cannonball at her horse. Poor thing."
 
+            show lu angry
             lu "One after another, the best riders keep fumbling right at the end. I don't think it's just a coincidence at this point."
             
             show vi angry
@@ -204,8 +211,10 @@ label act2:
 
             t aw neutral right "It's really worrying. What about your horse? Is it doing okay?"
 
+            show lu smile3
             lu "Lucero is ready to deliver. We may be lacking in speed a bit, but we'll pull through."
 
+            show lu smile2
             lu "He's been improving lately, too. I just need to make sure I don't push him beyond his limits."
 
             show vi smile
@@ -214,10 +223,12 @@ label act2:
 
             t smile "Good to know. Hope you guys don't run into any issues after the race begins."
 
+            show lu angry
             lu "…You're not hoping we'll drop out like Valentina and the others, are you?"
 
             t neutral drop "N-no? Why would you think that?"
 
+            show lu yell
             lu "You are Moreno's trainer."
 
             t neutral right "…I see where you're coming from. Fair enough. But I still don't want anyone to drop out."
@@ -226,6 +237,7 @@ label act2:
 
             t aw smile "These folks who've put in all that effort deserve better, yeah? Even if they don't snatch first place."
 
+            show lu neutral
             lu "…"
 
             v "This guy gets it. That's how a race should be. If it were novice mistakes or fatigue, it wouldn't be such a big deal."
@@ -243,7 +255,24 @@ label act2:
 
             t aw neutral drop "That's assault. I'm pretty sure security would kick me out if I tried."
 
-            v "Right you are."
+            v "Right you are. We already have our hands full preparing as best as we can."
+            
+            show lu angry
+            lu "We really can't afford any mistakes at this stage..."
+
+            t neutral "Why do you need to win that badly?"
+
+            v "This isn't just a hobby, kid. It's a professional career. We can't exactly have Lucas compete in races on goodwill alone."
+
+            show lu frown
+            lu "Cash prizes are usually help us keep things going, but..."
+
+            show vicete smile
+            v "It would be a whole lot story with backing from a proper sponsor. But I say this kid will make it through, without or without one!"
+
+            tt neutral right "Huh... seems like they have it rough. So there jockeys who compete this way too, without any financial support.."
+
+            tt neutral "Wait, I should ask Vicente why he thinks Catalina is some kind mobster leader."
 
             t aw neutral right "Why do you think Catalina is giving me these kinds of orders? I get that she isn't the most… amicable person, but…"
 
@@ -252,8 +281,11 @@ label act2:
 
             t neutral "Rumors? About Catalina?"
 
+            show lu angry
+            with dissolve
             lu "Like how she's using her family's wealth to take ownership of the other competitors' horses and force them to quit."
-
+            
+            show lu neutral
             lu "I don't know how much of that is true, but I wouldn't be surprised if someone was pulling strings behind the scenes."
 
             t neutral drop "Wha… So you're saying she's paying her way to win? There's no way that'd go unnoticed."
@@ -263,7 +295,7 @@ label act2:
             tt aw neutral drop "I really hate the idea of working for someone who does all that, but I can't outright deny it's possible."
 
             t neutral drop "Hang on, is that why her previous trainer quit? Because of the rumors surrounding her, or…?"
-
+            show lu frown
             lu "We don't really know. It's not like he came to tell us before quitting. Some say he got cut off from Moreno's team after being caught red-handed carrying out her orders…"
             show vi angry
             v "Could be the man just didn't agree with her methods and wanted none of it any longer."
@@ -271,6 +303,7 @@ label act2:
             t aw neutral right "Is that so…?"
         label racetrack1_complete:
             show vi smile
+            show lu neutral
             v "Alright, we should get back to it. Lucero here is getting restless."
 
             t smile "Right, of course. Thank you two for your time."
@@ -1277,12 +1310,14 @@ label act2:
                 tt "One of the thugs swings their baton, catching me across the side of my head."
 
                 with vpunch
+                play sound se_punch1
 
                 t det yell "GAH—!"
 
                 tt "My vision flashes white. Before I can regain my balance, a second person drives the heavy wrench into my ribs."
 
                 with vpunch
+                play sound se_punch2
                 t aw neutral drop "Guh...!"
 
                 tt "I double over, struggling to catch my breath. The one with brass knuckles grabs me by the collar and punches me in the stomach."
@@ -1294,16 +1329,19 @@ label act2:
                 tt "Stumbling backward, I take another blow from the baton across my shoulder, sending me crashing onto the asphalt."
 
                 with vpunch
+                play sound se_punch1
                 t det "Ngh...! Damn it...!"
 
-              
                 tt "I try to push myself up, only to fall back down after the guy with a wrench kicks me."
 
                 tgb "Stay down!"
 
                 with vpunch
+                play sound se_punch2
                 with vpunch
+                play sound se_punch1
                 with vpunch
+                play sound se_punch2
                 tt aw neutral drop "The three villains surround me, delivering a final series of kicks and blows while I struggle to protect myself."
 
                 tga "What's wrong? Not so tough now, are you?!"
@@ -1363,7 +1401,8 @@ label act2:
 
                 with vpunch
                 tt det yell "I duck under the swing, grab his wrist, and twist it sharply against his back, forcing him down onto the hood of the nearest car."
-
+                
+                play sound se_punch1
                 tt det neutral "With his arm pinned and his balance completely broken, I deliver a sharp, controlled strike with the heel of my hand to the side of his neck. His eyes roll back, and he slumps forward onto the hood,"
                 
                 tt "completely out cold."
@@ -1389,7 +1428,7 @@ label act2:
                 with dissolve
 
                 tt "The baton guy is the last one left. He snaps the weapon open, face red with anger. He lunges at me with a quick, aggressive jab."
-
+                play sound se_punch2
                 tt det yell "I parry his arm outward, step inside his guard, and deliver a sharp elbow to his ribs."
 
                 with vpunch
@@ -1409,6 +1448,7 @@ label act2:
                 tt det yell "I parry the strike outward with my forearm, lock his arm, and redirect his forceful punch straight into one of the other men's chest."
 
                 with vpunch
+                play sound se_punch2
                 tga "Oof! Watch where you're punching, you idiot!"
 
                 tt det neutral "While the two argue, I give the brass knuckle wearer a sharp shove, sending him stumbling backward into the baton holding one. Both lose their footing and crash onto the ground."
@@ -1425,6 +1465,7 @@ label act2:
                 tt det neutral "I sidestep the attack, letting him pass right by me."
 
                 with vpunch
+                play sound se_punch1
                 tt det yell "Before he can turn around, I grab his shoulder and use his momentum to send him crashing face-first onto the hood of a nearby car."
 
                 hide tthug_copy

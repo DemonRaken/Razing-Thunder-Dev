@@ -27,7 +27,7 @@ label act1:
   l "What a nasty fall! And she was so close to claiming first place, too…"
 
   show thug at center
-  play music eccentric fadein 2.5 fadeout 2.5
+  play music eccentric fadein 2.5
 
   tg "Bastard! When I get out of these, I'm going to smash that phone on your stupid face!"
 
@@ -47,7 +47,7 @@ label act1:
 
   l "The defender of the innocent and eternal ally of justice...!"
 
-  l "I am El Leopardo!"
+  l "I am El Leopardo!" with flash
 
   tg "…"
 

@@ -72,13 +72,15 @@ label start2:
         linear 3.0 blur 0
     menu:
         "Jump to Portal":
-            jump act3_main_inves
+            jump LastCE_Loop
         # "Jump to Act I":
         #     jump act1
         #  "Jump to Act II":
         #     jump act2
         "Jump to Act III":
             jump act3
+        "Jump to Act III Inves":
+            jump b4fall
         "Jump to Debug":
             jump debug
         "Jump to Debug Room":

@@ -233,7 +233,7 @@ define dp_leo = CharacterProfile(
 
 define dp_chispa = CharacterProfile(
     _("La Chispa"),
-    "side chispa smile",  # Image file
+    "pchispa",  # Image file
     _("Age: 4"),
     _("My trusty mare and partner in crime-fighting. I couldn't ask for a better friend to watch my back.")
 )
