@@ -267,7 +267,7 @@ label act2:
             show lu frown
             lu "Cash prizes are usually help us keep things going, but..."
 
-            show vicete smile
+            show vi smile
             v "It would be a whole lot story with backing from a proper sponsor. But I say this kid will make it through, without or without one!"
 
             tt neutral right "Huh... seems like they have it rough. So there jockeys who compete this way too, without any financial support.."

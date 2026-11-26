@@ -304,7 +304,7 @@ label vs_sebCE:
         show seb smile3
         s "I was afraid of this. It does seem like it's 'listen to stupid' o'clock right now."
         t "Gah!!"
-        call ce_penalty(1)
+        call ce_penalty(1, notLeo=True)
         t "Damn. Looks like I was wrong..."
         # Penalty Damage
         with fade
@@ -4533,7 +4533,6 @@ label LastCE:
             jump LastCE_Loop
         label chasechase:
             jump LastCE_RIGHT
-        with fade
 
     show est frown2
     e "Why would I throw away my career and life over someone I barely knew?"

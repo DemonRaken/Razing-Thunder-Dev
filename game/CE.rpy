@@ -67,7 +67,9 @@ label CE_start:
    return
 
 label CE_end:
+   
    hide screen ce_ui
+   hide screen status_indicator
    # Turn on RollBack again.
    #$ config.rollback_enabled = True
    $ seen_announce_interrogation = False
@@ -153,14 +155,15 @@ label cata_flawed_testimony_CE_right:
    call CE_end
    jump deleteme
 
-label ce_penalty(amount):
+label ce_penalty(amount, notLeo=False):
    $ ce_rep -= amount
    if ce_rep <= 0:
       call CE_end
-      lt "Ack. Something happened to me."
+      $ tlt = tt if notLeo else lt
+      tlt "Ack... I made too many mistakes!"
       scene black with fade
-      n "Leopardo Suddenly Collapsed on the spot."
-      n "He never woke up."
+      tlt "I can't concentrate, at this rate, I'll never find the truth...!"
+      tlt "I can't give up...!"
       call game_over
 
 label announce_interrogation:
