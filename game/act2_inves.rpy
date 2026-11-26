@@ -97,10 +97,7 @@ label act2_aai_examine(areaname):
 
 # When presenting anyhing other than mate to people [profiles/evidence] (No reaction, basically)
 # Lucas & Vicente
-show vi smile2
-v "Sorry kid, I don't know what you want me to say about that."
-show lu neutral
-lu "Me neither..."
+
     #end
 
 # Renata & Esteban
@@ -142,39 +139,30 @@ label act2_racetrack_inves:
          
         while aai_mode == "talk":
             menu:
-                "Ask Chispa: Were you lonely without me?":
-                    l "Hey Chispa, you weren't lonely, right?"
-                    l "Were you fed well? Do you want something?"
-                    l "Don't make that face, I'll come back before you know it!"
-                "Ask Chispa: Did you see anything?":
-                    l "Hey, Chispa, did you see anything?"
-                    ch "Neigh!"
-                    l "Thought so."
+                "Collapsing horses":
+                    call racetrack1_topic1
+                "Catalina Moreno":
+                    call racetrack1_topic2
                 "Close":
                     $ aai_mode = None
         if aai_mode == "present":
             $ dossier_tab_control = "evidence"
             call screen dossier_ui
             if ce_object in [dp_leo, de_mate]:
-                l "I'll have a quick sip from my mate before continuing the investigation."
-                ch "Neigh! Neigh!"
-                l "Chispa, you aren't allowed to drink from my mate."
-            elif ce_object in [dp_chispa]:
-                l "Chispa, you are so adorable! Look at you."
-                ch "Neigh! Neeeeigh! Neeeigh!!!"
-                l "There there, calm down. I have to focus."
+                call racetrack1_presenting_mate
             else:
-                l "Chispa what do you think about [ce_object.name]?"
-                ch "Neigh! Neigh!"
-                l "Me too."
+                show vi smile2
+                v "Sorry kid, I don't know what you want me to say about that."
+                show lu neutral
+                lu "Me neither..."
         elif aai_mode == "examine":
             if mp_stables in aai_travel_left:
-                call act3_aai_examine(mp_stables)        
+                call act2_aai_examine(mp_stables)        
             else:
                 lt "I've already examined this area."
                 lt "I better {b}MOVE{/b} somewhere else instead."
         elif aai_mode == "move":
-            jump act3_main_inves_maptravel_mode
+            jump act2_main_inves_maptravel_mode
     return
 label racetrack1:
     tl "Razing Thunder Derby. \nMain Racetrack."
@@ -285,7 +273,7 @@ label racetrack1_investigating:
         tt "Given the aerial footage, they probably use a drone to film it."
         # When checking again
         tt grin "Heh. It would be pretty funny if someone filmed everything on horseback, staying ahead of all the other jockeys. No one can keep up with the cameraman."
-label racetrack1_presenting:
+label racetrack1_presenting_mate:
         show vi angry
         v "Gonna have to turn you down, Antonio. On Lucas' behalf, that is!"
         show vi smile
