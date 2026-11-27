@@ -1,6 +1,7 @@
 define config.overlay_screens += ["dossier_icon"]
 define config.keymap['input_next_line'] = ['K_RETURN', 'K_KP_ENTER']   
 default dossier_enabled = True
+default dossier_map_enabled = True
 
 default dossier_tab_control = "evidence"
 
@@ -116,6 +117,8 @@ screen dossier_ui():
             spacing 30
             for i,j in zip(("evidence", "profiles", "notes", "map"),
                             (_("Evidence"),_("Profiles"),_("Notes"),_("Map"))):
+                if i == "map" and not dossier_map_enabled:
+                    $ i,j = "",""
                 imagebutton:
                     idle ("button-sel" if dossier_tab == i else "button-empty")
                     idle_foreground Text(j, xalign=0.5, yalign=0.5)
@@ -174,7 +177,7 @@ screen dossier_ui():
                             xmaximum 400
                             ymaximum 300
                             length 5000
-            else:
+            elif dossier_tab == "evidence":
                 use _dossier_items_chooser
 
         vbox:

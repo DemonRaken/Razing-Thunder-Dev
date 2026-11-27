@@ -4,9 +4,9 @@
 
 init 3 python:
     act2_inves_examine_areas = {
-        mp_stables.name: AAI_ExamineArea(mp_stables.name, mp_stables.image, [
+        mp_stables.name: AAI_ExamineArea(mp_stables.name, mp_stables.image + "_act2", [
             AAI_Hotspot((822, 818, 284, 192), "stables_stepladder"),
-            AAI_Hotspot((1375, 818, 232, 240), "stables_shovel"),
+            #AAI_Hotspot((1375, 818, 232, 240), "stables_"),
         ]),
         # mp_paddock.name: AAI_ExamineArea(mp_paddock.name, mp_paddock.image, [
             
@@ -43,7 +43,7 @@ label act2_main_inves:
     pause 2.0
     hide text
     $ aai_active = True
-    $ aai_travel_left = [mp_stables, mp_grandstands, mp_lockers, mp_breakroom] # add locations to map for investigation
+    $ aai_travel_left = [mp_stables, mp_grandstands, mp_lockers, mp_paddock] # add locations to map for investigation
     play music inves fadein 2.5
     jump act2_main_inves_maptravel_mode
 
@@ -81,8 +81,7 @@ label act2_main_inves_maptravel_mode:
         jump act2_paddock_inves
     if aai_travel == mp_lockers:
         jump act2_lockers_inves
-    if aai_travel == mp_breakroom:
-        jump act2_breakroom_intro
+
 
 label act2_aai_examine(areaname):
     #while(mp_stables in aai_travel_left):
@@ -95,45 +94,58 @@ label act2_aai_examine(areaname):
         $ quick_menu = True
         return
 
-# When presenting anyhing other than mate to people [profiles/evidence] (No reaction, basically)
-# Lucas & Vicente
 
+label act2_generic_present_lucas_vicente:
+    # When presenting anyhing other than mate to people [profiles/evidence] (No reaction, basically)
+    # Lucas & Vicente
+    show vi smile2 at slightright
+    show lu neutral at slightleft
+    with dissolve
+    v "Sorry kid, I don't know what you want me to say about that."
+    lu "Me neither..."
     #end
+    return
 
-# Renata & Esteban
-show rena smile
-r "What, you're giving that to me?"
-t det neutral "No! I just wanted to ask what you think about it!"
-show rena smile2
-r "Lame."
-#end
+label act2_generic_present_renata_esteban:
+    # Renata & Esteban
+    show rena smile
+    r "What, you're giving that to me?"
+    t det neutral "No! I just wanted to ask what you think about it!"
+    show rena smile2
+    r "Lame."
+    #end
+    return
 
-# Catalina
-t smile "Catalina, what do you think about this?"
-show cata deadpan
-c "I think I have better things to do than play 20 questions with you."
-tt "Can't say I didn't try..."
-#end
+label act2_generic_present_catalina:
+    # Catalina
+    t smile "Catalina, what do you think about this?"
+    show cata deadpan
+    c "I think I have better things to do than play 20 questions with you."
+    tt "Can't say I didn't try..."
+    #end
+    return
 
-# Enzo & Medina
-show en yell
-en "Magnificent! Truly, one of it's kind! What an amazing discovery you've made here, my boy!"
-t det yell blush "R-Really?"
+label act2_generic_present_enzo_medina:
+    # Enzo & Medina
+    show en yell at slightleft
+    show me neutral at slightright
+    en "Magnificent! Truly, one of it's kind! What an amazing discovery you've made here, my boy!"
+    t det yell blush "R-Really?"
 
-show me sweat2
-me "...you don't have a clue what he just showed you, do you?"
+    show me sweat2
+    me "...you don't have a clue what he just showed you, do you?"
 
-show en smile
-en "None!"
+    show en smile
+    en "None!"
 
-t aw neutral drop "..."
-#End
-
+    t aw neutral drop "..."
+    #End
+    return
 
 label act2_racetrack_inves:
     scene placeholder_granstands with fade
     stop music
-    call racetrack1
+    $ callonce("racetrack1")
     while aai_active:
         call screen aai_main_menu
          
@@ -402,3 +414,153 @@ label racetrack1_complete:
         tt neutral "The duo nods at me before going back to their business."
 
         tt neutral closed "Alright, where to go next…?"
+        return
+
+label stables1_presenting:
+    # Dossier > Presenting Mate
+    show cata neutral with dissolve
+    c "How kind of you. What brand of yerba did you use?"
+
+    t smile "Tarawii."
+    
+    show cata frown with dissolve
+    c "…You might as well have picked some grass off the ground. It wouldn't make a difference."
+    
+    show cata smile2
+    c "Next time, try using Crauz."
+
+    tt aw neutral right "But I like Tarawii..."
+    return
+
+label act2_stables_inves:
+    scene placeholder_stables with fade
+    stop music
+    #$ callonce("stables1")
+    while aai_active:
+        call screen aai_main_menu
+         
+        while aai_mode == "talk":
+            menu:
+                "Collapsing horses":
+                    call stables1_topic1
+                "Catalina Moreno":
+                    call stables1_topic2
+                "Close":
+                    $ aai_mode = None
+        if aai_mode == "present":
+            $ dossier_tab_control = "evidence"
+            call screen dossier_ui
+            if ce_object in [dp_leo, de_mate]:
+                call stables1_presenting
+                
+            else:
+                call act2_generic_present_catalina
+        elif aai_mode == "examine":
+            if mp_stables in aai_travel_left:
+                call act2_aai_examine(mp_stables)        
+            else:
+                lt "I've already examined this area."
+                lt "I better {b}MOVE{/b} somewhere else instead."
+        elif aai_mode == "move":
+            jump act2_main_inves_maptravel_mode
+    return
+# Dossier: Presenting evidence (mate)
+label paddock1_presenting:
+    show rena smile at slightleft
+    show est neutral at slightright
+    with dissolve
+    r "So you can be useful. I was feeling pretty thirsty."
+
+    show rena angry
+
+    r "This shit better not be lukewarm."
+
+    show est smile
+
+    e "You don't have to drink it if you don't like it, Renata."
+
+    t det yell "It isn't lukewarm! That'd defeat the point of carrying a thermos."
+
+    show rena neutral
+
+    r "We'll see about that… *sip sip sip*"
+
+    show rena smile with dissolve
+    r "…Hm. Hah! Not bad. I'll be keeping this."
+
+    t aha "Wha—oh, haha. Good one."
+
+    show rena neutral 
+    r "…"
+
+    show est smile2
+
+    e "Renata, I believe that's his…"
+
+    show rena yell
+    r "What? He can get another one."
+
+    tt what drop "This was a mistake."
+    return
+label act2_paddock_inves:
+    scene placeholder_paddock with fade
+    stop music
+    #$ callonce("stables1")
+    while aai_active:
+        call screen aai_main_menu
+         
+        while aai_mode == "talk":
+            menu:
+                "Collapsing horses":
+                    call paddock1_topic1
+                "Catalina Moreno":
+                    call paddock1_topic2
+                "Close":
+                    $ aai_mode = None
+        if aai_mode == "present":
+            $ dossier_tab_control = "evidence"
+            call screen dossier_ui
+            if ce_object in [dp_leo, de_mate]:
+                call paddock1_presenting
+                
+            else:
+                call act2_generic_present_renata_esteban
+        elif aai_mode == "examine":
+            if mp_stables in aai_travel_left:
+                call act2_aai_examine(mp_stables)        
+            else:
+                lt "I've already examined this area."
+                lt "I better {b}MOVE{/b} somewhere else instead."
+        elif aai_mode == "move":
+            jump act2_main_inves_maptravel_mode
+    return
+label act2_lockers_inves:
+    scene placeholder_lockers with fade
+    stop music
+    #$ callonce("stables1")
+    while aai_active:
+        call screen aai_main_menu
+         
+        while aai_mode == "talk":
+            menu:
+                "Razing Thunder Derby":
+                    call lockers1_topic1
+                "Close":
+                    $ aai_mode = None
+        if aai_mode == "present":
+            $ dossier_tab_control = "evidence"
+            call screen dossier_ui
+            if ce_object in [dp_leo, de_mate]:
+                call paddock1_presenting
+                
+            else:
+                call act2_generic_present_enzo_medina
+        elif aai_mode == "examine":
+            if mp_stables in aai_travel_left:
+                call act2_aai_examine(mp_stables)        
+            else:
+                lt "I've already examined this area."
+                lt "I better {b}MOVE{/b} somewhere else instead."
+        elif aai_mode == "move":
+            jump act2_main_inves_maptravel_mode
+    return

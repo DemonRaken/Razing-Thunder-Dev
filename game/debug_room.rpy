@@ -1,3 +1,18 @@
+#check if label is in list! if it isn't, play, if it is, don't
+default seen_once_labels = []
+init python:
+    def callonce (label_name):
+        if label_name not in seen_once_labels:
+            seen_once_labels.append(label_name)
+            renpy.call(label_name)
+        return
+        
+
+
+# =========================== #
+#            Effects          #
+# =========================== #
+
 init python:
     def _shake(trans, st, at, dt=3.0, dist=30):
         if st <= dt:
@@ -6,6 +21,8 @@ init python:
             trans.yoffset = int(dist * decay * (renpy.random.random() * 2 - 1))
             return 0.01
         return None
+
+
 
 label fx_testimony:
     show screen status_indicator(_("Testimony"), "#385cff")
@@ -41,6 +58,41 @@ style chosen_style is default:
     properties gui.text_properties("choice_button")
     idle_color "#86684b"
     hover_color "#ac9454"     
+
+# =========================== #
+#    MUSIC Definitions        #
+# =========================== #
+
+
+define audio.embrace = "audio/BGM/Peritune_Last_Embrace.ogg"
+define audio.embrace_offvo = "audio/BGM/Peritune_Last_Embrace_offvo.ogg"
+define audio.thought_route = "audio/BGM/Peritune_Cerebral_Maze.ogg"
+define audio.sad = "audio/BGM/Peritune_Echoed_Art.ogg"
+define audio.ending = "audio/BGM/Peritune_Last_Embrace.ogg"
+define audio.ending2 = "audio/BGM/Peritune_Tender_Gaze.ogg"
+define audio.ce = "audio/BGM/Peritune_Silent_Shadows_loop.ogg"
+define audio.ce2 = "audio/BGM/Peritune_Silent_Witness_loop.ogg"
+define audio.objection = "audio/BGM/PeriTune_Secret_Corridor_loop.ogg"
+define audio.happy = "audio/BGM/PeriTune_Oceanfront_loop.ogg"
+define audio.happy2 = "audio/BGM/Peritune_Sunlit_Cafe_loop.ogg"
+define audio.eccentric = "audio/BGM/PeriTune_Backstreet_Swing_loop.ogg"
+define audio.cata = "audio/BGM/Peritune_Black_Crystal_loop.ogg"
+define audio.enzo = "audio/BGM/PerituneMaterial_Creep_loop.ogg"
+define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
+define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
+define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
+define audio.leo = "audio/BGM/Peritune_Wacky_Witnes_loop.ogg"
+
+# =========================== #
+#      Sound Effects          #
+# =========================== #
+
+define audio.se_punch1 = "sfx/fight/punch1.ogg"
+define audio.se_punch2 = "sfx/fight/punch2.ogg"
+define audio.se_manpain = "sfx/fight/manpain.ogg"
+define audio.se_anvil = "sfx/anvil.ogg"
+define audio.se_flash = audio.se_anvil
+
 
 label debug_room:
     show screen status_indicator("Debug Room", "#FF0000")
@@ -116,30 +168,7 @@ label debug_cutins_test:
     call cutin("cross_examination")
     c "Just come and let's do my Cross-Examination and be done with it."
 
-    define audio.embrace = "audio/BGM/Peritune_Last_Embrace.ogg"
-    define audio.embrace_offvo = "audio/BGM/Peritune_Last_Embrace_offvo.ogg"
-    define audio.thought_route = "audio/BGM/Peritune_Cerebral_Maze.ogg"
-    define audio.sad = "audio/BGM/Peritune_Echoed_Art.ogg"
-    define audio.ending = "audio/BGM/Peritune_Last_Embrace.ogg"
-    define audio.ending2 = "audio/BGM/Peritune_Tender_Gaze.ogg"
-    define audio.ce = "audio/BGM/Peritune_Silent_Shadows_loop.ogg"
-    define audio.ce2 = "audio/BGM/Peritune_Silent_Witness_loop.ogg"
-    define audio.objection = "audio/BGM/PeriTune_Secret_Corridor_loop.ogg"
-    define audio.happy = "audio/BGM/PeriTune_Oceanfront_loop.ogg"
-    define audio.happy2 = "audio/BGM/Peritune_Sunlit_Cafe_loop.ogg"
-    define audio.eccentric = "audio/BGM/PeriTune_Backstreet_Swing_loop.ogg"
-    define audio.cata = "audio/BGM/Peritune_Black_Crystal_loop.ogg"
-    define audio.enzo = "audio/BGM/PerituneMaterial_Creep_loop.ogg"
-    define audio.intense = "audio/BGM/PeriTune_Rituale Machina_loop.ogg"
-    define config.main_menu_music = "audio/BGM/Peritune_Tender_Gaze_inst.ogg"
-    define audio.inves = "audio/BGM/Peritune_The_City_Breathes_Your_Name_loop.ogg"
-    define audio.leo = "audio/BGM/Peritune_Wacky_Witnes_loop.ogg"
 
-    define audio.se_punch1 = "sfx/fight/punch1.ogg"
-    define audio.se_punch2 = "sfx/fight/punch2.ogg"
-    define audio.se_manpain = "sfx/fight/manpain.ogg"
-    define audio.se_anvil = "sfx/anvil.ogg"
-    define audio.se_flash = audio.se_anvil
 
 style navigation_button:
     properties gui.button_properties("navigation_button")

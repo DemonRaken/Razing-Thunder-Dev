@@ -137,42 +137,8 @@ label paddock1:
         play music happy2 fadein 2.5
         $ dossier.add(dp_renata)
         $ dossier.add(dp_esteban)
-        # Dossier: Presenting evidence (mate)
-        label paddock1_presenting:
-            show rena smile with dissolve
-            r "So you can be useful. I was feeling pretty thirsty."
-
-            show rena angry
-
-            r "This shit better not be lukewarm."
-
-            show est smile
-
-            e "You don't have to drink it if you don't like it, Renata."
-
-            t det yell "It isn't lukewarm! That'd defeat the point of carrying a thermos."
-
-            show rena neutral
-
-            r "We'll see about that… *sip sip sip*"
-
-            show rena smile with dissolve
-            r "…Hm. Hah! Not bad. I'll be keeping this."
-
-            t aha "Wha—oh, haha. Good one."
-
-            show rena neutral 
-            r "…"
-
-            show est smile2
-
-            e "Renata, I believe that's his…"
-
-            show rena yell
-            r "What? He can get another one."
-
-            tt what drop "This was a mistake."
-        label paddock1_investigating:
+        
+        #label paddock1_investigating:
         label paddock1_topic1:
             t neutral "So you said Picaro is in good health, but do you know anything about the other jockeys' horses? Any idea why they keep collapsing…?"
             
@@ -416,29 +382,16 @@ label stables1:
 
         tt "Who was that, anyway? I'd better ask before she starts ignoring me again."
         play music cata fadein 2.5
-        label stables1_presenting:
-            # Dossier > Presenting Mate
-            show cata neutral with dissolve
-            c "How kind of you. What brand of yerba did you use?"
-
-            t smile "Tarawii."
-            
-            show cata frown with dissolve
-            c "…You might as well have picked some grass off the ground. It wouldn't make a difference."
-            
-            show cata smile2
-            c "Next time, try using Crauz."
-
-            t aw neutral right "But I like Tarawii..."
-        label stables1_investigating:
-            # Investigation
-            # Stepladder
-            t neutral right "Looks like a sturdy step ladder. Maybe someone was changing a lightbulb?"
-            show cata neutral
-            c "It's just a regular ladder."
-            t det yell "No, no, see? It folds! That makes it the natural evolution of the standard ladder!"
-            show cata deadpan with dissolve
-            c "…"
+        
+        # label stables1_investigating:
+        #     # Investigation
+        #     # Stepladder
+        #     t neutral right "Looks like a sturdy step ladder. Maybe someone was changing a lightbulb?"
+        #     show cata neutral
+        #     c "It's just a regular ladder."
+        #     t det yell "No, no, see? It folds! That makes it the natural evolution of the standard ladder!"
+        #     show cata deadpan with dissolve
+        #     c "…"
         label stables1_topic1:
             t neutral "Who were you talking to, Catalina? I could tell from a mile away you couldn't stand the sight of him."
             
@@ -792,7 +745,7 @@ label lockers1:
             show me sweat2
 
             me "Tch…"
-            
+            return
             jump lockers1_complete
         label lockers1_complete:
             show en smile with dissolve
